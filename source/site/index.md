@@ -1,0 +1,5 @@
+---
+# layout: default
+---
+
+<p>Thanks for paying attention. This is indeed Dorel.io. We will populate content in the next months.</p>
