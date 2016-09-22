@@ -1,30 +1,38 @@
 # dorel.github.io
-Dorel.io Website
+
+url: http://www.dorel.io/
 
 Notes: 
 - GitHub pages enabled
-- url: http://www.dorel.io/
 - uses Jekyll to generate pages
 
-# Run Jekyll locally
+# Github pages
 
-## Dependencies
+https://www.dorel.io uses [GithubPages](https://pages.github.com/). So the pages are hosted directly from the github repository.
 
+Configuration for this is stated in _config.yml. A CNAME record has been added in the CNAME file to make the site available via the custom URL 'www.dorel.io'.
+
+# Jekyll
+
+[Jekyll](https://jekyllrb.com/) is the static site generator used to transform the markdown files into html webpages. 
+
+## Run Jekyll locally
+
+Having the site (Jekyll) available locally allows you to:
+- preview changes before they are comitted to the repo
+- preview your site changes
+- troubleshoot build errors
+
+### Generate Jekyll site files locally
+
+**Dependencies**
 - ruby version 2.X.X
 - bundler
-
-## Generate Jekyll site files locally
-
-To build your Jekyll site locally, preview your site changes, and troubleshoot build errors, you must have Jekylll site files on your local computer. This allows you to preview changes before they are comitted to the repo. 
-
-The local files for https://dorel.io are stored in ./source/site/..
-
-### Steps to run local server
 
 Run `$ bundle install` to install all the gems.
 
 Run `$ bundle exec jekyll serve` to start the local server.
 
-This will compile the source/site/.. folder into a *temporary* folder '_site'.
+This will compile the site's source files defined in the folder `source/site/..` into a *temporary* folder named '_site/', which in turn is used for hosting the site locally. 
 
-Now the following url can be used in your browser to see the pages locally: `http://localhost:4000/`. Changes made to the source/site files will be reflected on this url automatically.
+Now the following url can be used in your browser to see these pages locally: `http://localhost:4000/`. Changes made to the source/site files will be reflected on this url automatically.
