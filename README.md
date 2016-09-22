@@ -1,27 +1,33 @@
 # dorel.github.io
 
+url: http://www.dorel.io/
+
 Notes: 
 - GitHub pages enabled
-- url: http://www.dorel.io/
 - uses Jekyll to generate pages
 
 # Github pages
 
-https://www.dorel.io is hosted via GithubPages. Configuration for this is stated in _config.yml. To make the site accessible via the custom URL 'www.dorel.io', a CNAME record has been added in the CNAME file.
+https://www.dorel.io uses [GithubPages](https://pages.github.com/). So the pages are hosted directly from the github repository.
 
-# Run Jekyll locally
+Configuration for this is stated in _config.yml. A CNAME record has been added in the CNAME file to make the site available via the custom URL 'www.dorel.io'.
+
+# Jekyll
+
+[Jekyll](https://jekyllrb.com/) is the static site generator used to transform the markdown files into html webpages. 
+
+## Run Jekyll locally
 
 Having the site (Jekyll) available locally allows you to:
 - preview changes before they are comitted to the repo
 - preview your site changes
 - troubleshoot build errors
 
-## Dependencies
+### Generate Jekyll site files locally
 
+**Dependencies**
 - ruby version 2.X.X
 - bundler
-
-## Generate Jekyll site files locally
 
 Run `$ bundle install` to install all the gems.
 
