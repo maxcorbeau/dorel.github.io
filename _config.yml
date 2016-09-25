@@ -10,9 +10,24 @@ source:       ./source/site
 # layouts_dir:  _layouts
 # data_dir:     _data
 # includes_dir: _includes
-# collections:
-#   posts:
-#     output:   true
+collections:
+  # posts:
+  #   output: true
+  service-manual:
+    output: true
+    # permalink: "/service-manual/:path/"
+  service-manual/agile:
+    output: true
+  service-manual/helping-people-to-use-your-service:
+    output: true
+  srevice-manual/making-software:
+    output: true
+  srevice-manual/measurement:
+    output: true
+  service-manual/technology:
+    output: true
+  service-manual/user-centred-design:
+    output: true
 
 # # Handling Reading
 # safe:         false
