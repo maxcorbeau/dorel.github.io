@@ -1,6 +1,6 @@
 ---
-title: dorel.io (service design guide)
-# layout: default
+layout: default
+title: Welcome to dorel.io
 ---
 
 <p>Thanks for paying attention. This is indeed Dorel.io. We will populate content in the next months.</p>

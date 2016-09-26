@@ -1,6 +1,7 @@
 ## GitPages + Jekyll setup
 name: Dorel.io
-description: Service design guide
+title: Service Design Guide
+description: Service Design Guide information
 theme: minima # github pages only supports minima theme
 
 ## Jekyll setup
@@ -62,7 +63,7 @@ collections:
 # show_dir_listing: false
 
 # # Outputting
-# permalink:     date
+permalink:     none
 # paginate_path: /page:num
 # timezone:      null
 
