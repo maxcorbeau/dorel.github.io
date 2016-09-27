@@ -27,6 +27,7 @@ Having the site (Jekyll) available locally allows you to:
 
 **Dependencies**
 - ruby version 2.X.X
+- jekyll 3.1
 - bundler
 
 Run `$ bundle install` to install all the gems.

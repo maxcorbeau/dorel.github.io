@@ -1,5 +1,6 @@
 ---
 title: Maintaining version control in coding
+published: true
 ---
 
 Technology

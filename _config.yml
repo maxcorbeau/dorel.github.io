@@ -12,23 +12,26 @@ source:       ./source/site
 # data_dir:     _data
 # includes_dir: _includes
 collections:
-  # posts:
-  #   output: true
   service-manual:
     output: true
-    # permalink: "/service-manual/:path/"
-  service-manual/agile:
+  technology:
     output: true
-  service-manual/helping-people-to-use-your-service:
+    permalink: /service-manual/:collection/:path/
+  agile:
     output: true
-  srevice-manual/making-software:
+    permalink: /service-manual/:collection/:path/
+  helping-people-to-use-your-service:
     output: true
-  srevice-manual/measurement:
+    permalink: /service-manual/:collection/:path/
+  making-software:
     output: true
-  service-manual/technology:
+    permalink: /service-manual/:collection/:path/
+  measurement:
     output: true
-  service-manual/user-centred-design:
+    permalink: /service-manual/:collection/:path/
+  user-centred-design:
     output: true
+    permalink: /service-manual/:collection/:path/
 
 # # Handling Reading
 # safe:         false
@@ -63,7 +66,7 @@ collections:
 # show_dir_listing: false
 
 # # Outputting
-permalink:     none
+# permalink:     none
 # paginate_path: /page:num
 # timezone:      null
 
