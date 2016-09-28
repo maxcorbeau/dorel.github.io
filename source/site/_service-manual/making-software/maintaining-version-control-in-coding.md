@@ -8,6 +8,14 @@ Technology
 
 When contributing to the project start your development in a separate branch. Please take close attention of the branching conventions stated below. 
 
+## TL;DR
+
+While contributing do the following:
+1. Create a Github Ticket in the corresponding branch.
+2. Create a new branch starting from the develop branch and call it: ticket/gh-[issue nr]. For example: `ticket/gh-15`
+3. Fix the issue in this branch.
+4. Merge the branch into develop.
+
 ## branching model: gitflow
 
 The develop branch is default and is where the developed features will be merged in. Off this develop branch feature branches can be branched to develop functionality. The master branch is a direct representation of what's released on production. 
@@ -26,7 +34,7 @@ The typical workflow is that you get a ticket assigned. For future reference in 
 
 Example of branch name when working on a ticket:
 
-$ git checkout -b "prjct-x_ticket-name-hyphend"
+`$ git checkout -b "prjct-x_ticket-name-hyphend"`
 
 Where 'prjct' stands for project, and the first letter from each word in the project's name will be used for the prefix. The x stands for the ticket number. After the underscore is the ticket's name. 
 
