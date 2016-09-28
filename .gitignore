@@ -1,3 +1,6 @@
 _site
 .sass-cache
 .jekyll-metadata
+
+# Ignore DS_Store (for our Mac loving friends)
+.DS_Store

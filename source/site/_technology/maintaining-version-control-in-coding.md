@@ -12,6 +12,12 @@ The develop branch is default and is where the developed features will be merged
 
 Detailed in formation on Gitflow can be found on [gitflow, a successful git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 
+## tagging
+
+New releases (in Master) should be tagged following the [Semantic Versioning 2.0.0](http://semver.org) standard.
+
+Example: `v0.0.1`
+
 ## branching
 
 The typical workflow is that you get a ticket assigned. For future reference in the git history, this ticket reference needs to be reflected in both the branch as in the commit message. 
