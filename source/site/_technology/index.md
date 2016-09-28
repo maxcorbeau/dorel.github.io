@@ -1,4 +1,5 @@
 ---
+layout: manual
 title: technology
 ---
 

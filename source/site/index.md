@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: Welcome to dorel.io
 ---
 
@@ -10,7 +10,7 @@ title: Welcome to dorel.io
       *   The following includes lets you loop through the collection to list
       *   all entries in that collection.
       *   
-      *   If you set »published: true« in front matter of a collection page 
+      *   If you set »published: true« in front matter of a collection page
       *   the page becomes a link in the loop meaning that it's available to the public
       *
   {% endcomment %}
