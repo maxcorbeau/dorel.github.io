@@ -1,10 +1,8 @@
 ---
+layout: manual
 title: Maintaining version control in coding
+published: true
 ---
-
-Technology
-
-# {{page.title}}
 
 When contributing to the project start your development in a separate branch. Please take close attention of the branching conventions stated below. 
 

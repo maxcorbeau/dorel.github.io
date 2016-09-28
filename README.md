@@ -27,11 +27,12 @@ Having the site (Jekyll) available locally allows you to:
 
 **Dependencies**
 - ruby version 2.X.X
+- jekyll 3.1
 - bundler
 
 Run `$ bundle install` to install all the gems.
 
-Run `$ bundle exec jekyll serve` to start the local server.
+Run `$ bundle exec jekyll serve` in the root folder (same where _config.yml) exists to start the local server.
 
 This will compile the site's source files defined in the folder `source/site/..` into a *temporary* folder named '_site/', which in turn is used for hosting the site locally. 
 

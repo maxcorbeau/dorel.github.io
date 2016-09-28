@@ -1,20 +1,44 @@
 ---
-layout: default
+layout: home
 title: Welcome to dorel.io
 ---
 
-<p>Thanks for paying attention. This is indeed Dorel.io. We will populate content in the next months.</p>
+<div>
 
-<div style="display:none;">
+  {% comment %}
+      *
+      *   The following includes lets you loop through the collection to list
+      *   all entries in that collection.
+      *   
+      *   If you set »published: true« in front matter of a collection page
+      *   the page becomes a link in the loop meaning that it's available to the public
+      *
+  {% endcomment %}
 
-	<h2>Service manual:</h2>
+  {% for collection in site.collections %}
 
-	<ul class="servicemanual">
-	{% for manual in site.service-manual %}
+    <p>{{ collection.label }}</p>
+    <ul>
+        {% for manual in site[collection.label] %}
 
-		<li>servicemanual title: {{ manual.title }}</li>
+          {% if manual.published == null %} 
+            <li class="draft">
+              <p>{{ manual.title }}</p>
+              <!-- keep this url in comment for dev reference: -->
+              <!-- a href="{{ site.url }}{{ manual.url }}">{{ manual.title }}</a-->
+          {% else %}
+            <li>
+              <a href="{{ site.url }}{{ manual.url }}">{{ manual.title }}</a>
+          {% endif %}
 
-	{% endfor %}
-	</ul>
+          </li>
+
+        {% endfor %}
+    </ul>
+
+  {% endfor %}
+
+{% if site.technology != null %}
+{% endif %}
 
 </div>
