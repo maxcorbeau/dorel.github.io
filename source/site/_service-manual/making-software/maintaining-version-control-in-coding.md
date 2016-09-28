@@ -16,6 +16,7 @@ While contributing do the following:
 3. Fix the issue in this branch.
 4. Commit with the issue number in the message first and a verb before you explaining what you have done. Example: `gh-15 rework foo bar`. You can repeat this step if needed.
 5. Create a merge & pull request, start the request with the ticket number. For example: `gh-15`.
+6. Add the pull request hash or url to the issue and close it.
 
 ## branching model: gitflow
 
