@@ -15,7 +15,7 @@ While contributing do the following:
 2. Create a new branch starting from the develop branch and call it: ticket/gh-[issue nr]. For example: `ticket/gh-15`
 3. Fix the issue in this branch.
 4. Commit with the issue number in the message first and a verb before you explaining what you have done. Example: `gh-15 rework foo bar`. You can repeat this step if needed.
-5. Merge the branch into develop.
+5. Create a merge & pull request, start the request with the ticket number. For example: `gh-15`.
 
 ## branching model: gitflow
 
