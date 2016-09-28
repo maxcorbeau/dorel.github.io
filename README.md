@@ -1,5 +1,9 @@
 # dorel.github.io
 
+Master branch | Develop branch
+--- | ---
+[![Build Status](https://travis-ci.org/dorel/dorel.github.io.svg?branch=master)](https://travis-ci.org/dorel/dorel.github.io) | [![Build Status](https://travis-ci.org/dorel/dorel.github.io.svg?branch=develop)](https://travis-ci.org/dorel/dorel.github.io)
+
 url: http://www.dorel.io/
 
 Notes: 
