@@ -1,0 +1,15 @@
+language: ruby
+
+sudo: true
+
+rvm:
+  - 2.1.2
+
+before_install:
+  - sudo apt-get update
+
+before_script:
+  - sudo apt-get install hunspell -y
+  - find . -type f -exec hunspell -l *.md {} \;
+
+# script:
