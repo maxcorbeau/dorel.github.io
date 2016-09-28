@@ -1,23 +1,10 @@
 ---
+layout: manual
 title: Maintaining version control in coding
+published: true
 ---
 
-Technology
-
-# {{page.title}}
-
 When contributing to the project start your development in a separate branch. Please take close attention of the branching conventions stated below. 
-
-## TL;DR
-
-While contributing do the following:
-
-1. Create a Github Ticket in the corresponding branch.
-2. Create a new branch starting from the develop branch and call it: ticket/gh-[issue nr]. For example: `ticket/gh-15`
-3. Fix the issue in this branch.
-4. Commit with the issue number in the message first and a verb before you explaining what you have done. Example: `gh-15 rework foo bar`. You can repeat this step if needed.
-5. Create a merge & pull request, start the request with the ticket number. For example: `gh-15`.
-6. Add the pull request hash or url to the issue and close it.
 
 ## branching model: gitflow
 
@@ -37,12 +24,12 @@ The typical workflow is that you get a ticket assigned. For future reference in 
 
 Example of branch name when working on a ticket:
 
-`$ git checkout -b "ticket/prjct-x_ticket-name-hyphend"`
+$ git checkout -b "prjct-x_ticket-name-hyphend"
 
 Where 'prjct' stands for project, and the first letter from each word in the project's name will be used for the prefix. The x stands for the ticket number. After the underscore is the ticket's name. 
 
-- Example of github ticket system, gh: `ticket/gh-3\_create-git-guidelines`
-- Example of JIRA ticket system: `ticket/DSG-1245\_create-polymer-integration`
+- Example of github ticket system, gh: gh-3\_create-git-guidelines
+- Example of JIRA ticket system: DSG-1245\_create-polymer-integration
 
 projects:
 - lowercase project name: 'gh' = Github project: Tickets in the issue list of the repo
