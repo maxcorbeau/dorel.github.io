@@ -11,6 +11,7 @@ When contributing to the project start your development in a separate branch. Pl
 ## TL;DR
 
 While contributing do the following:
+
 1. Create a Github Ticket in the corresponding branch.
 2. Create a new branch starting from the develop branch and call it: ticket/gh-[issue nr]. For example: `ticket/gh-15`
 3. Fix the issue in this branch.
