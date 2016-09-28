@@ -12,4 +12,6 @@ before_script:
   - sudo apt-get install hunspell -y
   - find . -type f -exec hunspell -l *.md {} \;
 
+notifications:
+  slack: djg:N3jInrNM7K6PfRz2EglMUmeF
 # script:
