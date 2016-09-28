@@ -10,7 +10,7 @@ before_install:
 
 before_script:
   - sudo apt-get install hunspell -y
-  - find . -type f -exec hunspell -l *.md {} \;
+  - find . -iname *.md -type f -exec hunspell -l {} \;
 
 notifications:
   slack: djg:N3jInrNM7K6PfRz2EglMUmeF
