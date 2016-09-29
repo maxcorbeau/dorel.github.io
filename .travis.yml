@@ -1,15 +1,14 @@
-language: ruby
+sudo: required
 
-sudo: true
-
-rvm:
-  - 2.1.2
+dist: trusty
 
 before_install:
   - sudo apt-get update
 
 before_script:
+  # Install Hunspell spell checker
   - sudo apt-get install hunspell -y
+  # Run Hunspell spell checker
   - find . -iname '*.md' -type f -exec hunspell -l {} \;
 
 notifications:
