@@ -24,12 +24,12 @@ The typical workflow is that you get a ticket assigned. For future reference in 
 
 Example of branch name when working on a ticket:
 
-`$ git checkout -b "prjct-x_ticket-name-hyphend"`
+`$ git checkout -b "ticket/prjct-x_ticket-name-hyphend"`
 
 Where 'prjct' stands for project, and the first letter from each word in the project's name will be used for the prefix. The x stands for the ticket number. After the underscore is the ticket's name. 
 
-- Example of github ticket system, gh: gh-3\_create-git-guidelines
-- Example of JIRA ticket system: DSG-1245\_create-polymer-integration
+- Example of github ticket system, gh: `ticket/gh-3\_create-git-guidelines`
+- Example of JIRA ticket system: `ticket/DSG-1245\_create-polymer-integration`
 
 projects:
 - lowercase project name: 'gh' = Github project: Tickets in the issue list of the repo
