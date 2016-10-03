@@ -5,6 +5,7 @@ url: http://www.dorel.io/
 Notes: 
 - GitHub pages enabled
 - uses Jekyll to generate pages
+- uses bower for package dependencies
 
 # Github pages
 
@@ -26,9 +27,12 @@ Having the site (Jekyll) available locally allows you to:
 ### Generate Jekyll site files locally
 
 **Dependencies**
+- bower
 - ruby version 2.X.X
 - jekyll 3.1
 - bundler
+
+Run `$ bower install` to install all the dependencies.
 
 Run `$ bundle install` to install all the gems.
 
