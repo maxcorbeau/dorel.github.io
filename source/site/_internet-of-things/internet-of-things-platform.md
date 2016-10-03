@@ -1,15 +1,19 @@
 ---
 layout: manual
-title: How to use the CMS service
-published: true
+title: Internet of Things platform
+published: false
 ---
 
 Helping people to use the cms service
 
 # {{page.title}}
 
-Dorel's CMS service is build on top of one of the most powerful content management systems around: [Wordpress](https://en.wikipedia.org/wiki/WordPress)
+...introduction...
 
-## Wordpress as a Service
+## Connecting Devices
+...
 
-Within 24 hours you can create a completely new Wordpress installation on any domain.
+## Understanding hardware
+Hardware requirenments based on the following: 
+
+## Internet of Things platform
