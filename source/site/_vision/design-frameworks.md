@@ -1,10 +1,10 @@
 ---
 layout: manual
-title: Choosing Technology
+title: Design Frameworks
 published: false
 ---
 
-Technology
+Design Frameworks
 
 # {{page.title}}
 

@@ -1,6 +1,6 @@
 ---
 layout: manual
-title: Choosing Technology
+title: CMS Architecture
 published: false
 ---
 

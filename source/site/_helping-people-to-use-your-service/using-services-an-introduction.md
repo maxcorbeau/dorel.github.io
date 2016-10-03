@@ -1,10 +1,10 @@
 ---
 layout: manual
-title: Choosing Technology
+title: Using services, an introduction
 published: false
 ---
 
-Technology
+How to use a service?
 
 # {{page.title}}
 
