@@ -24,7 +24,7 @@ The typical workflow is that you get a ticket assigned. For future reference in 
 
 Example of branch name when working on a ticket:
 
-$ git checkout -b "prjct-x_ticket-name-hyphend"
+`$ git checkout -b "prjct-x_ticket-name-hyphend"`
 
 Where 'prjct' stands for project, and the first letter from each word in the project's name will be used for the prefix. The x stands for the ticket number. After the underscore is the ticket's name. 
 
