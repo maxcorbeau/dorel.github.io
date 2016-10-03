@@ -1,6 +1,6 @@
 ---
 layout: manual
-title: Choosing Technology
+title: Cloud Architecture
 published: false
 ---
 

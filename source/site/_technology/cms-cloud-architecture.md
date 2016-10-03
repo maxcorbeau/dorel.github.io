@@ -1,5 +1,7 @@
 ---
-title: Cloud Architecture
+layout: manual
+title: CMS Cloud Architecture
+published: true
 ---
 
 Technology
@@ -7,6 +9,8 @@ Technology
 # {{page.title}}
 
 Dorel leverages the power of the Google Cloud to bring webservices as fast as possible to the end-users.
+
+_Note: click [here](./container-architecture) for the container architecture_
 
 ## Platforms
 
