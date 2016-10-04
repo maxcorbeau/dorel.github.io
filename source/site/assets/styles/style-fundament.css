@@ -70,3 +70,6 @@ img {
     height: auto;
     border: 0;
 }
+.container {
+    width: 100%;
+}
