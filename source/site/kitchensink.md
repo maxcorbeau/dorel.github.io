@@ -8,7 +8,8 @@ layout: blank
   <title>{{ page.title }} - {{ site.title }} - dorel.io</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <!--link rel="css/stylesheet" href="style.css"-->
+  <!-- Fundament style to reset browser defaults -->
+  <link rel="stylesheet" type="text/css" href="./assets/styles/style-fundament.css">
 
   {% comment %}
     *
