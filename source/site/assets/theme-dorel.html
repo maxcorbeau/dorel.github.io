@@ -49,11 +49,6 @@ Version: 0.0.1
       }
     }
 
-    .page h1 {
-      margin-bottom:1rem;
-      @apply(--paper-font-headline);
-    }
-
     .list-manuals ul {
       padding: .5rem 0;
     }
@@ -77,6 +72,40 @@ Version: 0.0.1
 
     .draft {
       color: var(--theme-color-disabled);
+    }
+
+    article p {
+      line-height: 1.45em;
+      @apply(--ui-bodycopy-margins);
+    }
+
+    article h1 {
+      @apply(--paper-font-display1);
+      @apply(--ui-bodycopy-margins);
+    }
+
+    article h2 {
+      @apply(--paper-font-headline);
+      @apply(--ui-bodycopy-margins);
+    }
+
+    article h3 {
+      @apply(--paper-font-title);
+      @apply(--ui-bodycopy-margins);
+    }
+
+    article h4 {
+      @apply(--paper-font-body2);
+      @apply(--ui-bodycopy-margins);
+    }
+
+    article ul {
+      margin-left: 1.25em;
+    }
+
+    article ul li {
+      padding: .25em 0;
+      display: list-item;
     }
 
    /*
@@ -124,7 +153,11 @@ Version: 0.0.1
         --theme-brand-color: rgb(0, 122, 195);
         --theme-brand-color-complementary: rgb(195, 112, 0);
 
-        
+        /* custom property mixin */
+
+        --ui-bodycopy-margins: {
+          margin-bottom: 1em;
+        };
 
 
         /* Example of custom properties (similar to mixins in Sass)
