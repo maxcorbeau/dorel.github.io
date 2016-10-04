@@ -3,7 +3,7 @@ layout: home
 title: Welcome to dorel.io
 ---
 
-<div>
+  <h1>Manuals</h1>
 
   {% comment %}
       *
@@ -15,30 +15,32 @@ title: Welcome to dorel.io
       *
   {% endcomment %}
 
-  {% for collection in site.collections %}
+  <ul class="list-manuals">
+  
+    {% for collection in site.collections %}
+      <li>
+        <p class="list-title"><strong>{{ collection.label }}</strong></p>
+        <ul>
+            {% for manual in site[collection.label] %}
 
-    <p>{{ collection.label }}</p>
-    <ul>
-        {% for manual in site[collection.label] %}
+              {% if manual.published == null %} 
+                <li class="draft">
+                  <p>{{ manual.title }} (coming soon)</p>
+                  <!-- keep this url in comment for dev reference: -->
+                  <!-- a href="{{ site.url }}{{ manual.url }}">{{ manual.title }}</a-->
+              {% else %}
+                <li>
+                  <a href="{{ site.url }}{{ manual.url }}">{{ manual.title }}</a>
+              {% endif %}
 
-          {% if manual.published == null %} 
-            <li class="draft">
-              <p>{{ manual.title }}</p>
-              <!-- keep this url in comment for dev reference: -->
-              <!-- a href="{{ site.url }}{{ manual.url }}">{{ manual.title }}</a-->
-          {% else %}
-            <li>
-              <a href="{{ site.url }}{{ manual.url }}">{{ manual.title }}</a>
-          {% endif %}
+              </li>
 
-          </li>
+            {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
 
-        {% endfor %}
-    </ul>
+  </ul>
 
-  {% endfor %}
-
-{% if site.technology != null %}
-{% endif %}
-
-</div>
+  {% if site.technology != null %}
+  {% endif %}

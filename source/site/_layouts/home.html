@@ -2,15 +2,22 @@
 
 <body class="fullbleed layout vertical">
 
-  <!-- paper-header-panel must have an explicit height -->
-  <paper-header-panel class="flex">
-    <paper-toolbar>
-      <div>Header</div>
-    </paper-toolbar>
-    <div>Content</div>
-  </paper-header-panel>
+  {% include site-header.html %}
 
-  {{ content }}
+  <div class="flex-horizontal">
+
+    <div class="content-background"><div>
+
+      <article class="page flexchild">
+
+        {{ content }}
+
+      </article>
+
+    </div>
+
+  </div>
+
 </body>
 
 {% include bottom.html %}
