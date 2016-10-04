@@ -11,6 +11,7 @@
     "paper-toolbar": "polymerelements/paper-toolbar#^1.1.6",
     "paper-badge": "polymerelements/paper-badge#^1.1.4",
     "iron-iconset": "polymerelements/iron-iconset#^1.0.5",
-    "paper-styles": "polymerelements/paper-styles#^1.1.5"
+    "paper-styles": "polymerelements/paper-styles#^1.1.5",
+    "paper-input": "polymerelements/paper-input#^1.1.20"
   }
 }

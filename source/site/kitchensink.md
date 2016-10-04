@@ -29,145 +29,35 @@ layout: blank
   
   <!-- paper-styles -->
   <link rel="import" href="/bower_components/paper-styles/color.html">
-  <link rel="import" href="/bower_components/paper-styles/default-theme">
   <link rel="import" href="/bower_components/paper-styles/shadow.html">
   <link rel="import" href="/bower_components/paper-styles/typography.html">
+
+  <!-- themes 
+  Add theme files the <head> tag _AFTER_ the
+  webcomponents-lite.min.js and other HTML imports. 
+  - These can be used for the template switcher.
+  -->
+  <link rel="import" href="/bower_components/paper-styles/default-theme">
 
   <!--script src="/bower_components/platform/platform.js"></script-->
 </head>
 
-  <!-- paper-styles custom styling -->
-  <style>
-    .redlines {
-      background: linear-gradient(0deg, transparent, transparent 3.5px, rgba(255,0,0,0.2) 3.5px, rgba(255,0,0,0.2) 4px);
-      background-size: 100% 4px;
-    }
-    .paragraph {
-      margin-bottom: 20px;
-    }
-  </style>
-  <style is="custom-style">
-    .paper-font-display4 {
-      @apply(--paper-font-display4);
-    }
-    .paper-font-display3 {
-      @apply(--paper-font-display3);
-    }
-    .paper-font-display2 {
-      @apply(--paper-font-display2);
-    }
-    .paper-font-display1 {
-      @apply(--paper-font-display1);
-    }
-    .paper-font-headline {
-      @apply(--paper-font-headline);
-    }
-    .paper-font-title {
-      @apply(--paper-font-title);
-    }
-    .paper-font-subhead {
-      @apply(--paper-font-subhead);
-    }
-    .paper-font-body2 {
-      @apply(--paper-font-body2);
-    }
-    .paper-font-body1 {
-      @apply(--paper-font-body1);
-    }
-    .paper-font-caption {
-      @apply(--paper-font-caption);
-    }
-    .paper-font-menu {
-      @apply(--paper-font-menu);
-    }
-    .paper-font-button {
-      @apply(--paper-font-button);
-    }
-    .mobile-app {
-      max-width: 320px;
-    }
-    .toolbar {
-      height: 144px;
-      padding: 16px;
-      background: var(--default-primary-color);
-      color: var(--text-primary-color);
-      @apply(--paper-font-display1);
-    }
-    .item, .disabled-item {
-      position: relative;
-      padding: 8px;
-      border: 1px solid;
-      border-color: var(--divider-color);
-      border-top: 0;
-    }
-    .item .primary {
-      color: var(--primary-text-color);
-      @apply(--paper-font-body2);
-    }
-    .item .secondary {
-      color: var(--secondary-text-color);
-      @apply(--paper-font-body1);
-    }
-    .disabled-item {
-      color: var(--disabled-text-color);
-      @apply(--paper-font-body2);
-    }
-    .fab {
-      position: absolute;
-      box-sizing: border-box;
-      padding: 8px;
-      width: 56px;
-      height: 56px;
-      right: 16px;
-      top: -28px;
-      border-radius: 50%;
-      text-align: center;
-      background: var(--accent-color);
-      color: var(--text-primary-color);
-      @apply(--paper-font-display1);
-    }
-    .shadow {
-      display: inline-block;
-      padding: 8px;
-      margin: 16px;
-      height: 50px;
-      width: 50px;
-    }
-    .shadow-2dp {
-      @apply(--shadow-elevation-2dp);
-    }
-    .shadow-3dp {
-      @apply(--shadow-elevation-3dp);
-    }
-    .shadow-4dp {
-      @apply(--shadow-elevation-4dp);
-    }
-    .shadow-6dp {
-      @apply(--shadow-elevation-6dp);
-    }
-    .shadow-8dp {
-      @apply(--shadow-elevation-8dp);
-    }
-    .shadow-12dp {
-      @apply(--shadow-elevation-12dp);
-    }
-    .shadow-16dp {
-      @apply(--shadow-elevation-16dp);
-    }
-  </style>
+<!-- Custom style for polymer objects -->
+<style is="custom-style">
 
-  <!-- paper icon buttons -->
-  <style is="custom-style" include="demo-pages-shared-styles">
-    .vertical-section-container {
-      max-width: 550px;
-    }
-    paper-icon-button, test-button {
-      padding: 3px;
-      border-radius: 3px;
-      margin-left: 30px;
-      margin-right: 30px;
-    }
-  </style>
+  .shadow {
+    display: inline-block;
+    padding: 8px;
+    margin: 16px;
+    height: 50px;
+    width: 50px;
+  }
+
+  .shadow-2dp {
+    @apply(--shadow-elevation-2dp);
+  }
+
+</style>
 
 <body>
 
@@ -367,6 +257,17 @@ layout: blank
           </template>
         </demo-snippet>
 
+    </section>
+
+    <section>
+      <paper-input label="text input"></paper-input>
+      <paper-textarea label="autoresizing textarea input"></paper-textarea>
+      <paper-input label="password input" type="password"></paper-input>
+      <paper-input label="disabled input" disabled></paper-input>
+      <paper-input-container>
+        <label>Your name</label>
+        <input is="iron-input">
+      </paper-input-container>
     </section>
 
   </main>
