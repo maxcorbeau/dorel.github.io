@@ -2,14 +2,24 @@ sudo: required
 
 dist: trusty
 
+language: ruby
+
+rvm:
+  - 2.2
+  - jruby
+  - rbx-2
+
 before_install:
   - sudo apt-get update
 
 before_script:
   # Install Hunspell spell checker
-  - sudo apt-get install hunspell -y
+  # - sudo apt-get install hunspell -y
   # Run Hunspell spell checker
-  - find . -iname '*.md' -type f -exec hunspell -l {} \;
+  # - find . -iname '*.md' -type f -exec hunspell -l {} \;
+  
+script:
+  - bundle exec jekyll build
 
 notifications:
   slack: djg:N3jInrNM7K6PfRz2EglMUmeF
