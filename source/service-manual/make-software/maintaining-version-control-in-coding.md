@@ -52,6 +52,12 @@ Start a commit message again with first the ticket number.
 
 Write the commit message in imperative. Typical commit message start with "Add..", "Fix..", "Rework..", "Enable..", "Replace..", "Polish.." etc.
 
+### commit message Githook
+
+It might be helpful to install a githook. The githook checks if your message is correct and lets you change it in case you have made a mistake or have forgotten to mention it.
+
+[Install the Dorel webhook](https://github.com/dorel/git-hooks).
+
 ## git paticipation
 
 Two types of developers
