@@ -5,8 +5,6 @@ category: Help people to use your service
 draft: true
 ---
 
-How to use a service?
-
-# {{page.title}}
+{% include breadcrumbs.html %}
 
 ...

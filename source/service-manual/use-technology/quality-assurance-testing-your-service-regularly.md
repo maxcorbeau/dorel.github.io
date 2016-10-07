@@ -5,8 +5,6 @@ category: Use technology
 draft: true
 ---
 
-Technology
-
-# {{page.title}}
+{% include breadcrumbs.html %}
 
 ...

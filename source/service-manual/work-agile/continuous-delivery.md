@@ -5,8 +5,6 @@ category: Continous delivery
 draft: true
 ---
 
-Agile
-
-# {{page.title}}
+{% include breadcrumbs.html %}
 
 ...

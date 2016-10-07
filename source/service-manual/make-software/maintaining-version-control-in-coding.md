@@ -5,6 +5,8 @@ category: Making software
 draft: false
 ---
 
+{% include breadcrumbs.html %}
+
 When contributing to the project start your development in a separate branch. Please take close attention of the branching conventions stated below. 
 
 ## branching model: gitflow

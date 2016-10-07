@@ -5,8 +5,6 @@ category: Vision
 draft: true
 ---
 
-Design Frameworks
-
-# {{page.title}}
+{% include breadcrumbs.html %}
 
 ...

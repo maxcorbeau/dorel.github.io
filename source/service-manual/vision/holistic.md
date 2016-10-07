@@ -5,9 +5,7 @@ category: Vision
 draft: false
 ---
 
-Vision
-
-# {{page.title}}
+{% include breadcrumbs.html %}
 
 Dorel's holistic vision for digital services revolves around a global platform strategy which is divided into three sections. Every section follows up a section after an undefined period of time. The time axis is not intended to be used after a period of time, but rather to when the next horizon becomes the first operational one.
 
@@ -35,7 +33,7 @@ To map out all these visionaries, Dorel uses certain design methods and principl
 
 ## Three Horizon Diagram
 
-![Ecosystems and Platforms](/assets/ecosystems-and-platforms.png "Ecosystems and Platforms")
+![Ecosystems and Platforms](/assets/img/ecosystems-and-platforms.png "Ecosystems and Platforms")
 
 ## Additional Information
 

@@ -5,9 +5,7 @@ category: Use technology
 draft: false
 ---
 
-Technology
-
-# {{page.title}}
+{% include breadcrumbs.html %}
 
 Dorel leverages the power of the Google Cloud to bring webservices as fast as possible to the end-users.
 
@@ -68,4 +66,4 @@ There are three types of expires headers:
 
 ### Setup
 
-![Content Delivery Setup](/assets/gcloud-loadbalance-architecture.png "Content Delivery Setup")
+![Content Delivery Setup](/assets/img/gcloud-loadbalance-architecture.png "Content Delivery Setup")

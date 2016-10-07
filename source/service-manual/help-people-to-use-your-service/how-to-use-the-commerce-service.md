@@ -5,8 +5,6 @@ category: Help people to use your service
 draft: true
 ---
 
-Helping people to use the cms service
-
-# {{page.title}}
+{% include breadcrumbs.html %}
 
 ...

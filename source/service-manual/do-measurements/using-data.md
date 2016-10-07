@@ -5,8 +5,6 @@ category: Do measurements
 draft: true
 ---
 
-Measurement
-
-# {{page.title}}
+{% include breadcrumbs.html %}
 
 ...

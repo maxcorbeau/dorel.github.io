@@ -5,9 +5,7 @@ category: Vision
 draft: false
 ---
 
-Vision
-
-# {{page.title}}
+{% include breadcrumbs.html %}
 
 For platforms and ecosystems, Dorel uses custom definitions based on generally accepted terms. Things that are not fetchable in one of these two categories are often applications (see below).
 

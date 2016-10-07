@@ -5,9 +5,7 @@ category: Internet of Things
 draft: true
 ---
 
-Helping people to use the cms service
-
-# {{page.title}}
+{% include breadcrumbs.html %}
 
 ...introduction...
 
