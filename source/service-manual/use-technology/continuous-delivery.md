@@ -1,7 +1,7 @@
 ---
 layout: manual
 title: Continues Delivery
-category: Continous delivery
+category: Use technology
 draft: true
 ---
 

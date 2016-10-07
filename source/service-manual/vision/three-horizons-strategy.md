@@ -1,6 +1,6 @@
 ---
 layout: manual
-title: Holistic Strategy
+title: Three Horizons Strategy
 category: Vision
 draft: false
 ---

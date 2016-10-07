@@ -2,7 +2,7 @@
 layout: manual
 title: How to use the CMS service
 category: Help people to use your service
-draft: false
+draft: true
 ---
 
 {% include breadcrumbs.html %}
