@@ -1,6 +1,6 @@
 ---
 layout: manual
-title: Using Data
+title: Using analytics
 category: Do measurements
 draft: true
 ---

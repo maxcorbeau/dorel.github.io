@@ -8,11 +8,11 @@
   
     {% if breadcrumb contains ".html" %}
   
-      <a href="/" target="_self">{{ breadcrumb | remove: ".html" }}</a>
+      <a href="/" target="_self">{{ breadcrumb | remove: ".html" | replace: "-", " "  }}</a>
   
       {% else %}
   
-        {{ breadcrumb }} <span>&#187;</span>
+        {{ breadcrumb | replace: "-", " " }} <span>&#187;</span>
   
     {% endif %}
   
