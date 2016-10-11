@@ -4,3 +4,6 @@ _site
 
 # Ignore DS_Store (for our Mac loving friends)
 .DS_Store
+
+# bower components should be installed locally
+bower_components

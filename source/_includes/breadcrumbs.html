@@ -1,0 +1,21 @@
+{% assign breadcrumbs = page.url | split: '/' %}
+
+<div class="breadcrumbs">
+
+  <a href="/" target="_self">home</a>
+  
+  {% for breadcrumb in breadcrumbs %}
+  
+    {% if breadcrumb contains ".html" %}
+  
+      <a href="/" target="_self">{{ breadcrumb | remove: ".html" | replace: "-", " "  }}</a>
+  
+      {% else %}
+  
+        {{ breadcrumb | replace: "-", " " }} <span>&#187;</span>
+  
+    {% endif %}
+  
+  {% endfor %}
+
+</div>
