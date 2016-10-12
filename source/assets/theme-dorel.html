@@ -35,7 +35,7 @@ Version: 0.0.1
         @apply(--shadow-elevation-2dp);
     }
 
-    li {
+    ul:not(.not-enum) li {
       display: list-item;
       list-style-position: inside;
     }
@@ -44,6 +44,25 @@ Version: 0.0.1
       margin-top: -2rem;
       margin-bottom: 2rem;
     }
+
+    .breadcrumbs ol li {
+      float: left;
+      text-transform: capitalize;
+    }
+
+    .breadcrumbs ol li:not(:first-child) {
+      padding-left: .25rem;
+    }
+
+    /* component _lists.scss */
+    .not-enum {
+      margin-left: 0;
+    }
+
+    .not-enum li {
+      list-style-type: none;
+    }
+
 
     @media only screen (min-width: 40.063em)  { /* 641/16 = 641px, medium screens */
       .page {
