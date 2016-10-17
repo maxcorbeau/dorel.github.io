@@ -1,0 +1,415 @@
+<!--
+Author: Studio Spindle, Remi Vledder
+Version: 0.0.1
+Description:  Dorel's webcomponent styling -config
+              You can use these generic variables in your elements for easy theming.
+-->
+
+<style is="custom-style">
+
+    /* 
+     * /components/:
+     * _typography.scss 
+     */
+    a {
+      color: var(--theme-color-link-primary);
+    }
+
+    .list-title {
+      padding-bottom: .3rem;
+    }
+
+    .draft {
+      color: var(--theme-color-disabled);
+    }
+
+    main p {
+      line-height: var(--theme-text-line-height);
+      max-width: 40rem; /* set max width for legibility */
+      @apply(--paper-font-body1);
+      @apply(--theme-ui-bodycopy-margins);
+    }
+
+    main h1 {
+      @apply(--paper-font-display1);
+      @apply(--theme-ui-bodycopy-margins);
+    }
+
+    main h2 {
+      @apply(--paper-font-headline);
+      @apply(--theme-ui-bodycopy-margins);
+    }
+
+    main h3 {
+      @apply(--paper-font-title);
+      @apply(--theme-ui-bodycopy-margins);
+    }
+
+    main h4 {
+      @apply(--paper-font-body2);
+      @apply(--theme-ui-bodycopy-margins);
+    }
+
+    main ul {
+      @apply(--theme-ui-bodycopy-margins);
+    }
+
+    main ul li {
+      line-height: calc(var(--theme-text-line-height) * 1.2);
+    }
+
+    span {
+      line-height: var(--theme-text-line-height);
+    }
+
+    .type-ui-secondary {
+      color: var(--theme-color-foreground-tertiary);
+    }
+
+    /* 
+     * /components/: 
+     * _page.scss 
+     */
+    .page {
+        background-color: var(--white);
+        padding: 1.5em;
+        float: left;
+        margin-bottom: 2rem;
+    }
+
+    .container-center-page {
+      margin: 0 auto;
+    }
+
+    .page-header {
+      margin-bottom:1rem;
+    }
+
+    @media screen and (min-width: 40.063em) { /* 641/16 = 641px, medium screens */
+      .page {
+        padding: var(--theme-component-space-inner-medium);
+      }
+    }
+
+    @media screen and (min-width: 64.063em) { /* 1025/16 = 1025px, large screens */
+      .page {
+        padding: var(--theme-component-space-inner-large);
+      }
+      .container-center-page .page {
+        padding: 2.5rem 5rem 5rem 5rem;
+      }
+    }
+
+    .full-width {
+      width: 100%;
+    }
+
+    .background-page {
+      background-color: var(--theme-brand-color);
+      height: 398px;
+      position: absolute;
+      width: 100%;
+    }
+
+    .page-header {
+      float: left;
+    }
+
+    /* 
+     * /components/:
+     * _breadcrumbs.scss
+     */
+
+    .breadcrumbs {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .breadcrumbs ol li {
+      float: left;
+      text-transform: capitalize;
+      font-size: .825rem;
+    }
+
+    .breadcrumbs ol li:not(:first-child) {
+      padding-left: .25rem;
+    }
+
+    .container-center-page .breadcrumbs li,
+    .container-center-page .breadcrumbs a {
+      color: var(--white);
+    }
+
+    /* 
+     * /components/:
+     * _lists.scss
+     */
+    ul:not(.not-enum) li {
+      display: list-item;
+      list-style-position: inside;
+    }
+
+     /* general lists */
+    .not-enum {
+      margin-left: 0;
+    }
+
+    .not-enum li {
+      list-style-type: none;
+    }
+
+    article ul {
+      margin-left: 1.25em;
+    }
+
+    article ul li {
+      padding: .25rem 0;
+      display: list-item;
+    }
+
+    /* custom lists */
+    .list-manuals {
+      padding: .5rem 0;
+      margin-left: 0;
+      width: 100%;
+      border-top: 2px solid var(--theme-color-foreground-tertiary);
+    }
+
+    .list-manuals li {
+      padding: .5rem 0 .2rem 0; 
+      float: left;
+      width: 100%;
+      @apply(--paper-font-body1);
+    }
+
+    .list-manuals li a {
+      float: left;
+      width: 100%;
+    }
+
+    .list-manuals li span {
+      float: left;
+      display: block;
+      line-height: 1.5rem;
+      margin-top: .2rem; /* align with icon */
+    }
+
+    .list-manuals li iron-icon {
+      float: right;
+    }
+
+    /* 
+     * /components/:
+     * _disqus-custom.scss
+     */
+
+    .container-disqus {
+      background-color: var(--theme-color-background);
+      padding-top: var(--theme-component-space-inner-large);
+      padding-bottom: var(--theme-component-space-inner-large);
+    }
+
+    /* 
+     * /sections/:
+     * _utility.scss
+     */
+    body {
+      background-color: var(--theme-color-background-tertiary);
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    /* 
+     * /sections/:
+     * _site-header.scss
+     */
+
+    .header-site {
+       padding-right: var(--theme-component-space-inner);
+       padding-left: var(--theme-component-space-inner);
+     }
+
+     --theme-component-space-inner-large
+    @media screen and (min-width: 40.063em) { /* 641/16 = 641px, medium screens */
+      .header-site {
+        padding-left: var(--theme-component-space-inner-medium);
+        padding-right: var(--theme-component-space-inner-medium);
+      }
+    }
+
+    @media screen and (min-width: 64.063em) { /* 1025/16 = 64.0625em, large screens */
+      .header-site {
+        padding-left: var(--theme-component-space-inner-large);
+        padding-right: var(--theme-component-space-inner-large);
+      }
+
+      .header-proposition {
+        margin-left: 2rem;
+      }
+
+    }
+
+    /* XS only
+       mobile specific styles get defined first,
+       then the mobile first approach and last
+       the styling for larger screens */
+    @media screen and (max-width: 33em) { /* 530/16 = 33 (XS only) */
+      .container-header-logo {
+        height: 55px;
+        margin-top: 1rem;
+        width: 100%;
+        text-align:center;
+      }
+      .header-proposition {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .logo-dorel {
+      height: 50px;
+      margin: .5rem;
+    }
+
+    .header-proposition {
+      margin-top: 1rem;  /* centers the proposition text to "DOREL" in logo */
+      width: 100%;
+    }
+
+    .contact-right {
+      margin-left: auto;
+      margin-top: 1.3rem; /* centers the text to the header height, custom height based on header height text */
+    }
+
+    @media screen and (min-width: 40.063em) { /* 641/16 = 40,0625, medium screens and up */
+      .header-proposition { 
+        text-align: right;
+      }
+      .contact-right {
+        margin-bottom: 1.3rem;
+      }
+    }
+
+    @media screen and (min-width: 40.063em) and (max-width: 64.063em) { /* M ONLY */
+      .logo-dorel {
+        margin-top: 1rem;
+      }
+      .contact-right {
+        margin-top: 0;
+      }
+    }
+
+    @media screen and (min-width: 64.063em) { /* 1025/16 = 64.0625, large screens */
+      .header-proposition { 
+        text-align: center;
+      }
+    }
+
+    /*
+     * /components/:
+     * _blocks-content.scss
+     */
+
+    .block-contact-info {
+      background-color: var(--theme-color-link-primary);
+      width: 100%;
+      display: flex;
+      padding: 1rem;
+    }
+
+    .block-contact-info .container-contact-info {
+      align-self: center;
+    }
+
+    .block-contact-info span {
+      color: var(--white);
+      font-size: 1rem;
+    }
+
+    @media screen and (min-width: 40.063em) { /* 641/16 = 40,0625, M screens and up */
+      .block-contact-info {
+        padding: 0 1.3rem;
+      }
+      .block-contact-info span {
+        font-size: 1.3rem;
+      }
+    }
+
+    /*
+     * /components/:
+     * _code.scss
+     */
+
+     code {
+       background-color: var(--theme-color-background-tertiary);
+       padding: .2rem .4rem;
+       border-radius: var(--theme-roundness);
+     }
+
+    /*
+     * /components/:
+     * _animations
+     */
+
+     /* immersive actions, for instance the result of clicking on a button will make a window pop-up */
+    .animate-pop-up:hover > iron-icon {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+
+    .animate-next div {
+      display: block;
+      overflow: hidden;
+      float: right;
+    }
+
+    .animate-next:hover div > iron-icon {
+      -webkit-animation: slide var(--theme-animation-speed) forwards;
+      -webkit-animation-delay: 2s;
+      animation: slide var(--theme-animation-speed) forwards;
+    }
+
+    @keyframes slide {
+      0% { right: 0;  }
+      55% { right: -50px; }
+      60% { left: -50px; }
+      100% { left: 0px; }
+    }
+
+    /* @-webkit-keyframes slide */
+
+   /*
+    * === usable classes. This typically get's baked into a Web component ===
+    */
+
+    .flex-horizontal {
+      @apply(--layout-horizontal);
+    }
+    .flexchild {
+      @apply(--layout-flex);
+    }
+    .paper-font-headline {
+      @apply(--paper-font-headline);
+    }
+    .flex-horizontal-with-ratios {
+      @apply(--layout-horizontal);
+    }
+    .flex2child {
+      @apply(--layout-flex-2);
+    }
+    .flex3child {
+      @apply(--layout-flex-3);
+    }
+
+    /* 
+     * /helpers/:
+     * _flexbox.scss
+     */
+
+    .vtop {
+      align-self: flex-start;
+    }
+
+</style>

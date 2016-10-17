@@ -16,5 +16,10 @@
     "paper-menu": "PolymerElements/paper-menu#^1.2.2",
     "iron-media-query": "PolymerElements/iron-media-query#^1.0.8",
     "iron-grid": "*"
+  },
+  "dependencies": {
+    "iron-icons": "PolymerElements/iron-icons#^1.1.3",
+    "iron-iconset-svg": "PolymerElements/iron-iconset-svg#^1.0.11",
+    "paper-ripple": "PolymerElements/paper-ripple#^1.0.10"
   }
 }
