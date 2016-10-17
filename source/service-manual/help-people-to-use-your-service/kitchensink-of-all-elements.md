@@ -1,6 +1,6 @@
 ---
 layout: blank
-title: A kitchendink of all elements
+title: A kitchensink of all elements
 category: Help people to use your service
 draft: true
 ---
