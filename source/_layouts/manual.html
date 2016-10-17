@@ -7,13 +7,21 @@
   <div class="background-page"><div>
 
     <iron-grid>
-        <main class="xs12 s10 m8 vtop container-center-page">
-          {% include breadcrumbs.html %}
-          <div class="page full-width">
-            <h1>{{ page.title }}</h1>
-            {{ content }}
-          </div>
-        </main>
+      <main class="xs12 s10 m8 vtop container-center-page">
+        {% include breadcrumbs.html %}
+        <div class="page full-width">
+          <h1>{{ page.title }}</h1>
+          {{ content }}
+        </div>
+      </main>
+    </iron-grid>
+
+    <iron-grid>
+      <div class="container-disqus full-width">
+        <div class="xs12 s10 m8 vtop container-center-page">
+          {% include disqus.html %}
+        </div>
+      </div>
     </iron-grid>
 
 </body>
