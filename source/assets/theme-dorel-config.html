@@ -32,17 +32,26 @@ Description: Dorel's webcomponent styling -config
       --theme-brand-color: rgb(0, 122, 195);
       --theme-brand-color-complementary: rgb(195, 112, 0);
 
-      --theme-color-link-primary: var(--theme-color-background);
+      /* if the theme's brand color is quite similar to the browsers' native link color use 
+         it for the primary link color. Adding a new link-blue color close to that color will 
+         not  match since the colors will then be too close to eachother in the color spectrum */
+      --theme-color-link-primary: var(--theme-brand-color); 
 
       /* 
-       * Custom property mixins 
+       * Modular scale
        */
 
-       /* Modular scale */
-      --ui-bodycopy-margins: {
+      --theme-text-line-height: 1.45em; /* use em over rem, since line-height should be relative to it's parent */
+
+      --theme-component-space-inner: 1.5rem;
+      --theme-component-space-inner-medium: calc(1.5rem * 1.2);
+      --theme-component-space-inner-large: calc(1.5rem * 1.5);
+
+      --theme-animation-speed: 0.3s;
+
+      --theme-ui-bodycopy-margins: {
         margin-bottom: .8rem;
       };
-
 
       /* 
        * Polymer element styling overrides 

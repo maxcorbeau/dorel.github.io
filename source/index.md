@@ -48,9 +48,11 @@ title: Welcome to dorel.io
                 {% else %}
 
                   <li>
-                    <a href="{{ site.url }}{{ page.url }}">
+                    <a href="{{ site.url }}{{ page.url }}" class="animate-next">
                       <span class="text">{{ page.title }}</span>
+                      <div>
                       <iron-icon icon="icons:arrow-forward" size="16"></iron-icon>
+                      </div>
                     </a>
                   </li>
 
@@ -69,9 +71,13 @@ title: Welcome to dorel.io
 
     
     <div class="xs12 s6 m4">
-      <a href="#" class="block-contact-info">
-        <span>Request service information:</span>
-        <span>Contact us</span>
+
+      <a href="mailto:{{ site.data.info | map: 'email' }}" class="block-contact-info">
+        <div class="container-contact-info">
+          <span>Interested in contributing to the service design manual or have questions?</span>
+          <span>Feel free to <u>Contact Us</u></span>
+        </div>
+        <paper-ripple recenters></paper-ripple>
       </a>
     </div>
 

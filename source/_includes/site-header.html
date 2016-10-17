@@ -1,14 +1,31 @@
 
-<!-- paper-header-panel must have an explicit height -->
-<paper-header-panel>
-  <paper-toolbar>
-    <div class="container flex-horizontal-with-ratios">
-      <div class="flex2child">
-        <img class="logo-dorel" src="/assets/img/svg/dorel-logo.svg" alt="Logo Dorel" />
+
+<header class="header-site">
+  <iron-grid>
+
+    <div class="xs12 s6 m4 vtop">
+      <div class="container-header-logo">
+        <a href="/" title="Back to the Service Design Manual homepage">
+          <img class="logo-dorel" src="/assets/img/svg/dorel-logo.svg" alt="Logo Dorel" />
+        </a>
       </div>
-      <div class="flex3child">
+    </div>
+
+    <div class="xs12 s6 m4">
+      <div class="header-proposition">
         <p class="paper-font-headline">Service Design Manual</p>
       </div>
     </div>
-  </paper-toolbar>
-</paper-header-panel>
+
+    <div class="xs12 order-xs1 s12 m4">
+      <div class="contact-right">
+        <a class="icon-button animate-pop-up" href="mailto:{{ site.data.info | map: 'email' }}">
+          <iron-icon icon="icons:info-outline" size="16"></iron-icon>
+          <span>Contact us</span>
+          <paper-ripple recenters></paper-ripple>
+        </a>
+      </div>
+  </div>
+
+  </iron-grid>
+</header>

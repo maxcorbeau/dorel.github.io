@@ -23,34 +23,38 @@ Description:  Dorel's webcomponent styling -config
       color: var(--theme-color-disabled);
     }
 
-    article p {
-      line-height: 1.45rem;
+    main p {
+      line-height: var(--theme-text-line-height);
       @apply(--paper-font-body1);
-      @apply(--ui-bodycopy-margins);
+      @apply(--theme-ui-bodycopy-margins);
     }
 
-    article h1 {
+    main h1 {
       @apply(--paper-font-display1);
-      @apply(--ui-bodycopy-margins);
+      @apply(--theme-ui-bodycopy-margins);
     }
 
-    article h2 {
+    main h2 {
       @apply(--paper-font-headline);
-      @apply(--ui-bodycopy-margins);
+      @apply(--theme-ui-bodycopy-margins);
     }
 
-    article h3 {
+    main h3 {
       @apply(--paper-font-title);
-      @apply(--ui-bodycopy-margins);
+      @apply(--theme-ui-bodycopy-margins);
     }
 
-    article h4 {
+    main h4 {
       @apply(--paper-font-body2);
-      @apply(--ui-bodycopy-margins);
+      @apply(--theme-ui-bodycopy-margins);
     }
 
-    article ul {
-      @apply(--ui-bodycopy-margins);
+    main ul {
+      @apply(--theme-ui-bodycopy-margins);
+    }
+
+    span {
+      line-height: var(--theme-text-line-height);
     }
 
     .type-ui-secondary {
@@ -77,23 +81,15 @@ Description:  Dorel's webcomponent styling -config
       margin-bottom:1rem;
     }
 
-    /* only full width page floats,
-     * other .page elements get location based on grid
-     */ 
-    .page.full-width {
-      float: left;
-    }
-
     @media screen and (min-width: 40.063em) { /* 641/16 = 641px, medium screens */
       .page {
-        padding: 2rem;
-        margin: 1rem auto 0;
+        padding: var(--theme-component-space-inner-medium);
       }
     }
 
     @media screen and (min-width: 64.063em) { /* 1025/16 = 1025px, large screens */
       .page {
-        margin: 2rem auto 0;
+        padding: var(--theme-component-space-inner-large);
       }
     }
 
@@ -205,10 +201,87 @@ Description:  Dorel's webcomponent styling -config
      * /sections/:
      * _site-header.scss
      */
-    .logo-dorel {
-      width: 90px;
+
+    .header-site {
+       padding-right: var(--theme-component-space-inner);
+       padding-left: var(--theme-component-space-inner);
+     }
+
+     --theme-component-space-inner-large
+    @media screen and (min-width: 40.063em) { /* 641/16 = 641px, medium screens */
+      .header-site {
+        padding-left: var(--theme-component-space-inner-medium);
+        padding-right: var(--theme-component-space-inner-medium);
+      }
     }
 
+    @media screen and (min-width: 64.063em) { /* 1025/16 = 64.0625em, large screens */
+      .header-site {
+        padding-left: var(--theme-component-space-inner-large);
+        padding-right: var(--theme-component-space-inner-large);
+      }
+
+      .header-proposition {
+        margin-left: 2rem;
+      }
+
+    }
+
+    /* XS only
+       mobile specific styles get defined first,
+       then the mobile first approach and last
+       the styling for larger screens */
+    @media screen and (max-width: 33em) { /* 530/16 = 33 (XS only) */
+      .container-header-logo {
+        height: 55px;
+        margin-top: 1rem;
+        width: 100%;
+        text-align:center;
+      }
+      .header-proposition {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .logo-dorel {
+      height: 50px;
+      margin: .5rem;
+    }
+
+    .header-proposition {
+      margin-top: 1rem;  /* centers the proposition text to "DOREL" in logo */
+      width: 100%;
+    }
+
+    .contact-right {
+      margin-left: auto;
+      margin-top: 1.3rem; /* centers the text to the header height, custom height based on header height text */
+    }
+
+    @media screen and (min-width: 40.063em) { /* 641/16 = 40,0625, medium screens and up */
+      .header-proposition { 
+        text-align: right;
+      }
+      .contact-right {
+        margin-bottom: 1.3rem;
+      }
+    }
+
+    @media screen and (min-width: 40.063em) and (max-width: 64.063em) { /* M ONLY */
+      .logo-dorel {
+        margin-top: 1rem;
+      }
+      .contact-right {
+        margin-top: 0;
+      }
+    }
+
+    @media screen and (min-width: 64.063em) { /* 1025/16 = 64.0625, large screens */
+      .header-proposition { 
+        text-align: center;
+      }
+    }
 
     /*
      * /components/:
@@ -216,8 +289,61 @@ Description:  Dorel's webcomponent styling -config
      */
 
     .block-contact-info {
-      background-color: --theme-color-link-primary;
+      background-color: var(--theme-color-link-primary);
+      width: 100%;
+      display: flex;
+      padding: 1rem;
     }
+
+    .block-contact-info .container-contact-info {
+      align-self: center;
+    }
+
+    .block-contact-info span {
+      color: var(--white);
+      font-size: 1rem;
+    }
+
+    @media screen and (min-width: 40.063em) { /* 641/16 = 40,0625, M screens and up */
+      .block-contact-info {
+        padding: 0 1.3rem;
+      }
+      .block-contact-info span {
+        font-size: 1.3rem;
+      }
+    }
+
+    /*
+     * /components/:
+     * _animations
+     */
+
+     /* immersive actions, for instance the result of clicking on a button will make a window pop-up */
+    .animate-pop-up:hover > iron-icon {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+
+    .animate-next div {
+      display: block;
+      overflow: hidden;
+      float: right;
+    }
+
+    .animate-next:hover div > iron-icon {
+      -webkit-animation: slide var(--theme-animation-speed) forwards;
+      -webkit-animation-delay: 2s;
+      animation: slide var(--theme-animation-speed) forwards;
+    }
+
+    @keyframes slide {
+      0% { right: 0;  }
+      55% { right: -50px; }
+      60% { left: -50px; }
+      100% { left: 0px; }
+    }
+
+    /* @-webkit-keyframes slide */
 
    /*
     * === usable classes. This typically get's baked into a Web component ===
