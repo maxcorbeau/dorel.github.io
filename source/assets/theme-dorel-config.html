@@ -1,0 +1,76 @@
+<!--
+Author: Studio Spindle, Remi Vledder
+Version: 0.0.1
+Description: Dorel's webcomponent styling -config
+-->
+
+<style is="custom-style">
+
+  /* 
+   * Config
+   * - Defines document-wide default will not override a :host rule 
+   */
+
+  :root {
+
+      --white: rgb(255, 254, 255);
+      --black: rgb(50, 50, 50);
+
+      /* the lighter the background, the more important 
+       * the foreground information will be */
+      --theme-color-background: rgb(220, 220, 220);
+      --theme-color-background-secondary: rgb(230, 230, 230);
+      --theme-color-background-tertiary: rgb(245, 245, 245);
+
+      --theme-color-foreground: var(--black);
+      --theme-color-foreground-secondary: rgb(80, 80, 80);
+      --theme-color-foreground-tertiary: rgb(155, 155, 155);
+
+      --theme-color-disabled: var(--theme-color-foreground-tertiary);
+
+      --theme-primary-text-color: var(--theme-color-foreground-secondary);
+      --theme-brand-color: rgb(0, 122, 195);
+      --theme-brand-color-complementary: rgb(195, 112, 0);
+
+      --theme-color-link-primary: var(--theme-color-background);
+
+      /* 
+       * Custom property mixins 
+       */
+
+       /* Modular scale */
+      --ui-bodycopy-margins: {
+        margin-bottom: .8rem;
+      };
+
+
+      /* 
+       * Polymer element styling overrides 
+       */
+
+       /* Define Polymer global variables */
+
+      --paper-font-body1: 21px;
+
+      --primary-text-color: var(--theme-primary-text-color);
+      --primary-background-color: var(--theme-color-background);
+      --secondary-text-color: var(--light-theme-secondary-color);
+      --disabled-text-color: var(--light-theme-disabled-color);
+      --divider-color: var(--light-theme-divider-color);
+      --error-color: var(--paper-deep-orange-a700);
+
+      /* set icon font same size as body copy */
+      --iron-icon-width: var(--paper-font-body1);
+      --iron-icon-height: var(--paper-font-body1);
+
+      /* Define Polymer elements  */
+
+      paper-toolbar {
+        --paper-toolbar-background: var(--theme-primary-background-color, --white);
+        --paper-toolbar-color: var(--theme-primary-text-color, --black);
+      }
+
+  }
+
+
+</style>

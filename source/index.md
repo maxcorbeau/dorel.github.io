@@ -18,7 +18,7 @@ title: Welcome to dorel.io
       *
   {% endcomment %}
 
-  {% assign categories = site.pages | group_by:"category" | sort: "order" %}
+  {% assign categories = site.pages | group_by:"category" | sort: "title" | reverse %}
 
   <!--ul class="list-manuals not-enum"-->
   <iron-grid>
@@ -66,6 +66,14 @@ title: Welcome to dorel.io
       {% endif %}
 
     {% endfor %}
+
+    
+    <div class="xs12 s6 m4">
+      <a href="#" class="block-contact-info">
+        <span>Request service information:</span>
+        <span>Contact us</span>
+      </a>
+    </div>
 
   </iron-grid>
   <!--/ul-->

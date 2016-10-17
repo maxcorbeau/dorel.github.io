@@ -1,11 +1,8 @@
 <!--
-Theme: Dorel
 Author: Studio Spindle, Remi Vledder
 Version: 0.0.1
--->
-
-<!-- 
-  General styling
+Description:  Dorel's webcomponent styling -config
+              You can use these generic variables in your elements for easy theming.
 -->
 
 <style is="custom-style">
@@ -15,7 +12,7 @@ Version: 0.0.1
      * _typography.scss 
      */
     a {
-      color: var(--theme-brand-color);
+      color: var(--theme-color-link-primary);
     }
 
     .list-title {
@@ -112,14 +109,6 @@ Version: 0.0.1
       float: left;
     }
 
-    /* 
-     * /components/:
-     * _lists.scss
-     */
-    ul:not(.not-enum) li {
-      display: list-item;
-      list-style-position: inside;
-    }
 
     /* 
      * /components/:
@@ -146,6 +135,11 @@ Version: 0.0.1
      * /components/:
      * _lists.scss
      */
+    ul:not(.not-enum) li {
+      display: list-item;
+      list-style-position: inside;
+    }
+
      /* general lists */
     .not-enum {
       margin-left: 0;
@@ -215,6 +209,16 @@ Version: 0.0.1
       width: 90px;
     }
 
+
+    /*
+     * /components/:
+     * _blocks-content.scss
+     */
+
+    .block-contact-info {
+      background-color: --theme-color-link-primary;
+    }
+
    /*
     * === usable classes. This typically get's baked into a Web component ===
     */
@@ -245,71 +249,6 @@ Version: 0.0.1
 
     .vtop {
       align-self: flex-start;
-    }
-
-    /* 
-     * Config
-     * - Defines document-wide default will not override a :host rule 
-     */
-    :root {
-
-        --white: rgb(255, 254, 255);
-        --black: rgb(50, 50, 50);
-
-        /* the lighter the background, the more important 
-         * the foreground information will be */
-        --theme-color-background: rgb(220, 220, 220);
-        --theme-color-background-secondary: rgb(230, 230, 230);
-        --theme-color-background-tertiary: rgb(245, 245, 245);
-
-        --theme-color-foreground: var(--black);
-        --theme-color-foreground-secondary: rgb(80, 80, 80);
-        --theme-color-foreground-tertiary: rgb(155, 155, 155);
-
-        --theme-color-disabled: var(--theme-color-foreground-tertiary);
-
-        --theme-primary-text-color: var(--theme-color-foreground-secondary);
-        --theme-brand-color: rgb(0, 122, 195);
-        --theme-brand-color-complementary: rgb(195, 112, 0);
-
-        /* custom property mixin */
-
-        --ui-bodycopy-margins: {
-          margin-bottom: .8rem;
-        };
-
-
-        /* Example of custom properties (similar to mixins in Sass)
-
-        // define mixin 
-        ui-message {
-        --ui-message-container-theme: {
-          box-shadow: 0;
-          color: #534234;
-          padding: 14px 21px;
-        };
-        --ui-message-header-theme: {
-          color: #297187;
-          font-size: 1.5rem;
-          font-weight: 700;
-        };
-        --ui-message-header-theme: {
-          color: #297187;
-          font-size: 1rem;
-        };
-        }
-
-        // use mixin (typically in for instance a web component file)
-        .container {
-        padding: 10px;
-        @apply(--ui-message-container-theme)
-        }
-
-        .header {
-        @apply(--ui-message-header-theme)
-        }
-        */
-
     }
 
 </style>
