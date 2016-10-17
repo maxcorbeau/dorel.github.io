@@ -5,5 +5,4 @@ description: Service Design Guide information
 theme: minima # github pages only supports minima theme
 
 ## Jekyll setup
-source:       ./source
 markdown:    kramdown
