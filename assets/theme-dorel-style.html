@@ -16,7 +16,7 @@ Description:  Dorel's webcomponent styling -config
     }
 
     .list-title {
-      padding-bottom: .3rem;
+      padding-bottom: .9rem;
     }
 
     .draft {
@@ -63,7 +63,12 @@ Description:  Dorel's webcomponent styling -config
     }
 
     .type-ui-secondary {
+      @apply(--paper-font-headline);
       color: var(--theme-color-foreground-tertiary);
+    }
+
+    .page-header .type-ui-secondary {
+      @apply(--theme-ui-bodycopy-margins);
     }
 
     /* 
@@ -173,6 +178,7 @@ Description:  Dorel's webcomponent styling -config
       margin-left: 0;
       width: 100%;
       border-top: 2px solid var(--theme-color-foreground-tertiary);
+      @apply(--theme-ui-bodycopy-margins);
     }
 
     .list-manuals li {
