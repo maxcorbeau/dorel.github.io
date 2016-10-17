@@ -25,6 +25,7 @@ Description:  Dorel's webcomponent styling -config
 
     main p {
       line-height: var(--theme-text-line-height);
+      max-width: 40rem; /* set max width for legibility */
       @apply(--paper-font-body1);
       @apply(--theme-ui-bodycopy-margins);
     }
@@ -53,6 +54,10 @@ Description:  Dorel's webcomponent styling -config
       @apply(--theme-ui-bodycopy-margins);
     }
 
+    main ul li {
+      line-height: var(--theme-text-line-height);
+    }
+
     span {
       line-height: var(--theme-text-line-height);
     }
@@ -68,13 +73,11 @@ Description:  Dorel's webcomponent styling -config
     .page {
         background-color: var(--white);
         padding: 1.5em;
+        float: left;
     }
 
-    .page-single {
-      max-width: 832px; /* add media query large to 832px */
-      min-height: 485px; /* add media query to adapt */
-
-      @apply(--shadow-elevation-2dp);
+    .container-center-page {
+      margin: 0 auto;
     }
 
     .page-header {
@@ -91,6 +94,13 @@ Description:  Dorel's webcomponent styling -config
       .page {
         padding: var(--theme-component-space-inner-large);
       }
+      .container-center-page .page {
+        padding: 2.5rem 5rem 5rem 5rem;
+      }
+    }
+
+    .full-width {
+      width: 100%;
     }
 
     .background-page {
@@ -112,8 +122,8 @@ Description:  Dorel's webcomponent styling -config
      */
 
     .breadcrumbs {
-      margin-top: -2rem;
-      margin-bottom: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
     }
 
     .breadcrumbs ol li {
@@ -126,6 +136,10 @@ Description:  Dorel's webcomponent styling -config
       padding-left: .25rem;
     }
 
+    .container-center-page .breadcrumbs li,
+    .container-center-page .breadcrumbs a {
+      color: var(--white);
+    }
 
     /* 
      * /components/:
@@ -312,6 +326,17 @@ Description:  Dorel's webcomponent styling -config
         font-size: 1.3rem;
       }
     }
+
+    /*
+     * /components/:
+     * _code.scss
+     */
+
+     code {
+       background-color: var(--theme-color-background-tertiary);
+       padding: .2rem .4rem;
+       border-radius: var(--theme-roundness);
+     }
 
     /*
      * /components/:
