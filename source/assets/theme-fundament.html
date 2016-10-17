@@ -25,12 +25,18 @@ Version: 0.0.1
     --theme-error-color: var(--paper-deep-orange-a700);*/
 
 
+    --paper-font-body1: 21px;
+
     /* Refactor this to have one .html theme file per theme element */
 
     paper-toolbar {
       --paper-toolbar-background: var(--theme-primary-background-color, --white);
       --paper-toolbar-color: var(--theme-primary-text-color, --black);
     }
+
+    /* set icon font same size as body copy */
+    --iron-icon-width: var(--paper-font-body1);
+    --iron-icon-height: var(--paper-font-body1);
 
   }
 

@@ -4,93 +4,16 @@ Author: Studio Spindle, Remi Vledder
 Version: 0.0.1
 -->
 
+<!-- 
+  General styling
+-->
+
 <style is="custom-style">
 
-   /*
-    * === General css styling ===
-    */
-
-    body {
-      background-color: var(--theme-color-background-tertiary);
-    }
-
-    .content-background {
-      background-color: var(--theme-brand-color);
-      height: 398px;
-      position: absolute;
-      top: 60px;
-      width: 100%;
-    }
-
-    .container {
-      width: 100%;
-    }
-
-    .page {
-        background-color: var(--white);
-        padding: 1.5em;
-        max-width: 832px; /* add media query large to 832px */
-        min-height: 485px; /* add media query to adapt */
-
-        @apply(--shadow-elevation-2dp);
-    }
-
-    ul:not(.not-enum) li {
-      display: list-item;
-      list-style-position: inside;
-    }
-
-    .breadcrumbs {
-      margin-top: -2rem;
-      margin-bottom: 2rem;
-    }
-
-    .breadcrumbs ol li {
-      float: left;
-      text-transform: capitalize;
-    }
-
-    .breadcrumbs ol li:not(:first-child) {
-      padding-left: .25rem;
-    }
-
-    /* component _lists.scss */
-    .not-enum {
-      margin-left: 0;
-    }
-
-    .not-enum li {
-      list-style-type: none;
-    }
-
-
-    @media only screen (min-width: 40.063em)  { /* 641/16 = 641px, medium screens */
-      .page {
-        padding: 2em;
-        margin: 1em auto 0;
-      }
-    }
-
-    @media only screen and (min-width: 64.063em) { /* 1025/16 = 1025px, large screens */
-      .page {
-        padding: 4em;
-        margin: 2em auto 0;
-      }
-    }
-
-    .list-manuals ul {
-      padding: .5rem 0;
-    }
-
-    .list-manuals li {
-      padding: .2rem 0;
-      @apply(--paper-font-body1);
-    }
-
-    .list-manuals > li {
-      margin-bottom: 1rem;
-    }
-
+    /* 
+     * /components/:
+     * _typography.scss 
+     */
     a {
       color: var(--theme-brand-color);
     }
@@ -104,7 +27,8 @@ Version: 0.0.1
     }
 
     article p {
-      line-height: 1.45em;
+      line-height: 1.45rem;
+      @apply(--paper-font-body1);
       @apply(--ui-bodycopy-margins);
     }
 
@@ -129,14 +53,164 @@ Version: 0.0.1
     }
 
     article ul {
+      @apply(--ui-bodycopy-margins);
+    }
+
+    .type-ui-secondary {
+      color: var(--theme-color-foreground-tertiary);
+    }
+
+    /* 
+     * /components/: 
+     * _page.scss 
+     */
+    .page {
+        background-color: var(--white);
+        padding: 1.5em;
+    }
+
+    .page-single {
+      max-width: 832px; /* add media query large to 832px */
+      min-height: 485px; /* add media query to adapt */
+
+      @apply(--shadow-elevation-2dp);
+    }
+
+    .page-header {
+      margin-bottom:1rem;
+    }
+
+    /* only full width page floats,
+     * other .page elements get location based on grid
+     */ 
+    .page.full-width {
+      float: left;
+    }
+
+    @media screen and (min-width: 40.063em) { /* 641/16 = 641px, medium screens */
+      .page {
+        padding: 2rem;
+        margin: 1rem auto 0;
+      }
+    }
+
+    @media screen and (min-width: 64.063em) { /* 1025/16 = 1025px, large screens */
+      .page {
+        margin: 2rem auto 0;
+      }
+    }
+
+    .background-page {
+      background-color: var(--theme-brand-color);
+      height: 398px;
+      position: absolute;
+      top: 60px;
+      width: 100%;
+    }
+
+    .page-header {
+      float: left;
+    }
+
+    /* 
+     * /components/:
+     * _lists.scss
+     */
+    ul:not(.not-enum) li {
+      display: list-item;
+      list-style-position: inside;
+    }
+
+    /* 
+     * /components/:
+     * _breadcrumbs.scss
+     */
+
+    .breadcrumbs {
+      margin-top: -2rem;
+      margin-bottom: 2rem;
+    }
+
+    .breadcrumbs ol li {
+      float: left;
+      text-transform: capitalize;
+      font-size: .825rem;
+    }
+
+    .breadcrumbs ol li:not(:first-child) {
+      padding-left: .25rem;
+    }
+
+
+    /* 
+     * /components/:
+     * _lists.scss
+     */
+     /* general lists */
+    .not-enum {
+      margin-left: 0;
+    }
+
+    .not-enum li {
+      list-style-type: none;
+    }
+
+    article ul {
       margin-left: 1.25em;
     }
 
     article ul li {
-      padding: .25em 0;
+      padding: .25rem 0;
       display: list-item;
     }
 
+    /* custom lists */
+    .list-manuals {
+      padding: .5rem 0;
+      margin-left: 0;
+      width: 100%;
+      border-top: 2px solid var(--theme-color-foreground-tertiary);
+    }
+
+    .list-manuals li {
+      padding: .5rem 0 .2rem 0; 
+      float: left;
+      width: 100%;
+      @apply(--paper-font-body1);
+    }
+
+    .list-manuals li a {
+      float: left;
+      width: 100%;
+    }
+
+    .list-manuals li span {
+      float: left;
+      display: block;
+      line-height: 1.5rem;
+      margin-top: .2rem; /* align with icon */
+    }
+
+    .list-manuals li iron-icon {
+      float: right;
+    }
+
+    /* 
+     * /sections/:
+     * _utility.scss
+     */
+    body {
+      background-color: var(--theme-color-background-tertiary);
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    /* 
+     * /sections/:
+     * _site-header.scss
+     */
     .logo-dorel {
       width: 90px;
     }
@@ -164,10 +238,22 @@ Version: 0.0.1
       @apply(--layout-flex-3);
     }
 
-    /* Define document-wide default will not override a :host rule */
+    /* 
+     * /helpers/:
+     * _flexbox.scss
+     */
+
+    .vtop {
+      align-self: flex-start;
+    }
+
+    /* 
+     * Config
+     * - Defines document-wide default will not override a :host rule 
+     */
     :root {
 
-        --white: rgb(241, 241, 241);
+        --white: rgb(255, 254, 255);
         --black: rgb(50, 50, 50);
 
         /* the lighter the background, the more important 
@@ -182,14 +268,14 @@ Version: 0.0.1
 
         --theme-color-disabled: var(--theme-color-foreground-tertiary);
 
-        --theme-primary-text-color: --black;
+        --theme-primary-text-color: var(--theme-color-foreground-secondary);
         --theme-brand-color: rgb(0, 122, 195);
         --theme-brand-color-complementary: rgb(195, 112, 0);
 
         /* custom property mixin */
 
         --ui-bodycopy-margins: {
-          margin-bottom: 1em;
+          margin-bottom: .8rem;
         };
 
 
