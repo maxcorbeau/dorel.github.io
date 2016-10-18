@@ -20,6 +20,7 @@
   "dependencies": {
     "iron-icons": "PolymerElements/iron-icons#^1.1.3",
     "iron-iconset-svg": "PolymerElements/iron-iconset-svg#^1.0.11",
-    "paper-ripple": "PolymerElements/paper-ripple#^1.0.10"
+    "paper-ripple": "PolymerElements/paper-ripple#^1.0.10",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.2.5"
   }
 }
