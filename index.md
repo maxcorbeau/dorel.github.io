@@ -43,7 +43,7 @@ title: Welcome to dorel.io
 
                   <li class="draft"><span>{{ page.title }} (coming soon)</span></li>
                   <!-- keep this url in comment for dev reference: -->
-                  <!-- a href="{{ site.url }}{{ manual.url }}">{{ manual.title }}</a-->
+                  <!-- a href=".{{ page.url }}">{{ page.title }}</a-->
 
                 {% else %}
 
