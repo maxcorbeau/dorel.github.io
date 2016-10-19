@@ -5,8 +5,6 @@ category: Vision
 draft: false
 ---
 
-{% include breadcrumbs.html %}
-
 For platforms and ecosystems, Dorel uses custom definitions based on generally accepted terms. Things that are not fetchable in one of these two categories are often applications (see below).
 
 All new services Dorel uses should meet the platform and ecosystem requirenements.

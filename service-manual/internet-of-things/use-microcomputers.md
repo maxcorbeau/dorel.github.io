@@ -5,8 +5,6 @@ category: Internet of Things
 draft: true
 ---
 
-{% include breadcrumbs.html %}
-
 ...introduction...
 
 ## Connecting Devices

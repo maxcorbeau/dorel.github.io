@@ -5,8 +5,6 @@ category: Help people to use your service
 draft: true
 ---
 
-{% include breadcrumbs.html %}
-
 Dorel's CMS service is build on top of one of the most powerful content management systems around: [Wordpress](https://en.wikipedia.org/wiki/WordPress)
 
 ## Wordpress as a Service
