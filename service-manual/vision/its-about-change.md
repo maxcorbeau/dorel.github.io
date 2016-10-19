@@ -13,11 +13,11 @@ Our digital services and the technology on which they are built should enable ch
 ## What good looks like
 Our digital services are based on user needs, not on organisation structures and processes.
 We have:
-o	Digital technology team that is knowledgeable about existing and emerging technology options
-o	a governance and management structure that is an enabler, not a bottleneck or barrier to change
-o	flexible commercial models that meet consumer needs
-o	transparency and trust in our supplier relationships
-o	pricing competition and the ability to switch between alternative technology suppliers
+- Digital technology team that is knowledgeable about existing and emerging technology options
+-	a governance and management structure that is an enabler, not a bottleneck or barrier to change
+-	flexible commercial models that meet consumer needs
+-	transparency and trust in our supplier relationships
+-	pricing competition and the ability to switch between alternative technology suppliers
 
 ## Breaking down barriers to technology change
 We may come across inertia or resistance when trying to make necessary changes to our technology or how our service is provided.
