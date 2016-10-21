@@ -5,6 +5,4 @@ category: Use technology
 draft: true
 ---
 
-{% include breadcrumbs.html %}
-
 ...

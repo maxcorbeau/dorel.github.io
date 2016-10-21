@@ -5,8 +5,6 @@ category: Work on the service service manual
 draft: false
 ---
 
-{% include breadcrumbs.html %}
-
 Every employee of Dorel or every freelancer or agency that works for Dorel is welcome to contribute to the service design manual. In this manual we explain _how Dorel creates services for its customers_. Customers can be people who buy Dorel products, but also internal customers, like a marketing team that uses a digital service.
 
 ## How to write an article for the Service Manual?

@@ -5,6 +5,4 @@ category: Making software
 draft: true
 ---
 
-{% include breadcrumbs.html %}
-
 ...

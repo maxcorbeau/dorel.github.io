@@ -5,8 +5,6 @@ category: Help people to use your service
 draft: false
 ---
 
-{% include breadcrumbs.html %}
-
 Dorel offers all digital platforms in the form of services (service platform). By creating adaptable services for each platform the whole organisation is able to rapidly create new services which can be used whenever suitable.
 
 ## One for all, all for one

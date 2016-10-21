@@ -7,7 +7,7 @@ title: Welcome to dorel.io
 
   <iron-grid>
     <header class="page-header xs12">
-      <h2 class="type-ui-secondary">What do you want to achieve?</h2>
+      <h2 class="type-ui-primary">Dorel Juvenile's service guide to make better, faster, and shared services.</h2>
     </header>
   </iron-grid>
 
@@ -23,7 +23,9 @@ title: Welcome to dorel.io
   <!--ul class="list-manuals not-enum"-->
   <iron-grid>
 
-    {% for category in categories %}
+    {% assign categoriesSort = categories | sort: "name" %}
+
+    {% for category in categoriesSort %}
 
       {% if category.name != '' %}
 
@@ -70,7 +72,7 @@ title: Welcome to dorel.io
     {% endfor %}
 
     
-    <div class="xs12 s6 m4">
+    <!--div class="xs12 s6 m4">
 
       <a href="mailto:{{ site.data.info | map: 'email' }}" class="block-contact-info">
         <div class="container-contact-info">
@@ -79,7 +81,7 @@ title: Welcome to dorel.io
         </div>
         <paper-ripple recenters></paper-ripple>
       </a>
-    </div>
+    </div-->
 
   </iron-grid>
   <!--/ul-->
