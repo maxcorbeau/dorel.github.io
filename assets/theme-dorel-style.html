@@ -7,12 +7,23 @@ Description:  Dorel's webcomponent styling -config
 
 <style is="custom-style">
 
+    body {
+      font: var(--theme-size-base)/1 sans-serif;
+    }
+
     /* 
      * /components/:
      * _typography.scss 
      */
     a {
       color: var(--theme-color-link-primary);
+    }
+
+    .bodycopy a {
+      /* link color in running text should be the same as body copy,
+         this improves legibility */
+      color: var(--theme-primary-text-color); 
+      text-decoration: underline;
     }
 
     .list-title {
@@ -24,34 +35,67 @@ Description:  Dorel's webcomponent styling -config
     }
 
     .bodycopy p {
-      line-height: var(--theme-text-line-height);
-      max-width: 40rem; /* set max width for legibility */
       @apply(--paper-font-body1);
-      @apply(--theme-ui-bodycopy-margins);
+      @apply(--theme-bodycopy);
     }
 
-    .bodycopy h1 {
-      @apply(--paper-font-display1);
-      @apply(--theme-ui-bodycopy-margins);
+    /* decoupled semantic heading (h1, h2, etc.) 
+       elements from visual representation 
+       use classes instead */
+
+    .headline {
+      font-size: var(--theme-size-headline);
+      margin-bottom: var(--theme-margin-headings);
+      @apply(--theme-heading);
     }
 
-    .bodycopy h2 {
-      @apply(--paper-font-headline);
-      @apply(--theme-ui-bodycopy-margins);
+    .subhead {
+      font-size: var(--theme-size-subhead);
+      margin-bottom: var(--theme-margin-headings);
+      @apply(--theme-heading);
     }
 
-    .bodycopy h3 {
-      @apply(--paper-font-title);
-      @apply(--theme-ui-bodycopy-margins);
+    /* markdown-generated-content
+       sine the html can't get class names */
+    .display1,
+    .markdown-generated-content h1 {
+      font-size: var(--theme-size-headline);
+      margin-bottom: var(--theme-margin-headings);
+      @apply(--theme-heading);
     }
 
-    .bodycopy h4 {
-      @apply(--paper-font-body2);
-      @apply(--theme-ui-bodycopy-margins);
+    .display2,
+    .markdown-generated-content h2 {
+      font-size: var(--theme-size-display2);
+      margin-bottom: var(--theme-margin-headings);
+      @apply(--theme-heading);
     }
 
-    .bodycopy ul {
-      @apply(--theme-ui-bodycopy-margins);
+    .display3,
+    .markdown-generated-content h3 {
+      font-size: var(--theme-size-display3);
+      margin-bottom: var(--theme-margin-headings);
+      @apply(--theme-heading);
+    }
+
+    .display4,
+    .markdown-generated-content h4 {
+      font-size: var(--theme-size-display4);
+      /* margin-bottom: var(--theme-margin-headings); intentionally no bottom margin */
+      @apply(--theme-heading);
+    }
+
+    .bodycopy ul,
+    .bodycopy ol {
+      margin-left: 1.7rem;
+      @apply(--theme-bodycopy);
+    }
+
+    .bodycopy ul li,
+    .bodycopy ol li {
+      line-height: var(--theme-text-line-height);
+      margin-bottom: 1em; /* slightly slimmer than paragraph's bottom margin */
+      display: list-item;
     }
 
     .bodycopy ul li {
@@ -63,20 +107,26 @@ Description:  Dorel's webcomponent styling -config
     }
 
     .type-ui-primary {
-      @apply(--paper-font-headline);
       color: var(--theme-color-foreground-primary);
+      @apply(--paper-font-headline);
     }
 
     .type-ui-secondary {
-      @apply(--paper-font-headline);
       color: var(--theme-color-foreground-tertiary);
+      @apply(--paper-font-headline);
     }
 
     .page-header .type-ui-secondary {
-      @apply(--theme-ui-bodycopy-margins);
+      @apply(--theme-bodycopy-margins);
     }
 
-    /* 
+    blockquote {
+      border-left: 3px solid var(--theme-color-background);
+      padding-left: .8em;
+      max-width: 41.2em; /* aligns with running copy minus padding (42em - .8em) */
+    }
+
+    /*
      * /components/: 
      * _page.scss 
      */
@@ -89,6 +139,11 @@ Description:  Dorel's webcomponent styling -config
 
     .container-center-page {
       margin: 0 auto;
+    }
+
+    .container-center-copy {
+      margin: 0 auto;
+      @apply(--theme-bodycopy-width);
     }
 
     .page-header {
@@ -116,7 +171,7 @@ Description:  Dorel's webcomponent styling -config
 
     .background-page {
       background-color: var(--theme-brand-color);
-      height: 398px;
+      height: 3em;
       position: absolute;
       width: 100%;
     }
@@ -131,14 +186,14 @@ Description:  Dorel's webcomponent styling -config
      */
 
     .breadcrumbs {
-      margin-top: 2rem;
-      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
     .breadcrumbs ol li {
       float: left;
       text-transform: capitalize;
-      font-size: .825rem;
+      font-size: var(--theme-size-small);
     }
 
     .breadcrumbs ol li:not(:first-child) {
@@ -183,7 +238,7 @@ Description:  Dorel's webcomponent styling -config
       margin-left: 0;
       width: 100%;
       border-top: 2px solid var(--theme-color-foreground-tertiary);
-      @apply(--theme-ui-bodycopy-margins);
+      margin-bottom: 1rem;
     }
 
     .list-manuals li {
@@ -346,6 +401,25 @@ Description:  Dorel's webcomponent styling -config
       .block-contact-info span {
         font-size: 1.3rem;
       }
+    }
+
+    /*
+     * /components/:
+     * _ui.scss
+     */
+
+    .ui-text {
+      font-size: var(--theme-size-ui);
+      @apply(--theme-ui);
+    }
+
+    .ui-pages-overview {
+
+    }
+
+    .ui-pages-overview .list-title,
+    .ui-pages-overview li {
+      font-size: .8em;
     }
 
     /*

@@ -21,7 +21,7 @@ title: Welcome to dorel.io
   {% assign categories = site.pages | group_by:"category" | sort: "title" | reverse %}
 
   <!--ul class="list-manuals not-enum"-->
-  <iron-grid>
+  <iron-grid class="ui-pages-overview">
 
     {% assign categoriesSort = categories | sort: "name" %}
 
@@ -31,7 +31,7 @@ title: Welcome to dorel.io
 
         <div class="xs12 s6 m4 vtop">
 
-          <p class="list-title">{{ category.name }}</p>
+          <span class="list-title">{{ category.name }}</span>
 
           <ul class="list-manuals not-enum">
 
