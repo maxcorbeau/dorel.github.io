@@ -107,7 +107,7 @@ Description:  Dorel's webcomponent styling -config
     }
 
     .type-ui-primary {
-      color: var(--theme-color-foreground-primary);
+      color: var(--theme-color-foreground);
       @apply(--paper-font-headline);
     }
 
@@ -131,10 +131,10 @@ Description:  Dorel's webcomponent styling -config
      * _page.scss 
      */
     .page {
-        background-color: var(--white);
-        padding: 1.5em;
-        float: left;
-        margin-bottom: 2rem;
+      background-color: var(--white);
+      padding: 1.5em;
+      float: left;
+      margin-bottom: 2rem;
     }
 
     .container-center-page {
@@ -332,6 +332,16 @@ Description:  Dorel's webcomponent styling -config
         text-align: center;
         margin-bottom: 1.5rem;
       }
+
+      /* change order in header */
+      .header-site .container-header-logo {
+        order: 2;
+        margin-bottom: 2rem;
+      }
+
+      .header-site .contact-right {
+        order: 1;
+      }
     }
 
     .logo-dorel {
@@ -432,6 +442,34 @@ Description:  Dorel's webcomponent styling -config
        padding: .2rem .4rem;
        border-radius: var(--theme-roundness);
      }
+
+     /* 
+      * /components/:
+      * _payoff.scss
+      */
+
+    .container-home-payoff {
+      padding: 1.5em;
+      float: left;
+    }
+
+    .background-page-payoff {
+      height: 7em;
+    }
+
+    @media screen and (max-width: 33em) { /* 530/16 = 33 (XS only) */
+      .background-page-payoff {
+        height: 9em;
+      }
+    }
+
+    .background-page-payoff .home-payoff {
+      margin-top: .5rem;
+      font-family: var(--theme-font-sans-serif);
+      font-weight: 500;
+      line-height: var(--theme-text-line-height);
+      color: white;
+    }
 
     /*
      * /components/:

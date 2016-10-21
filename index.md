@@ -5,12 +5,6 @@ title: Welcome to dorel.io
 
 <div class="page">
 
-  <iron-grid>
-    <header class="page-header xs12">
-      <h2 class="type-ui-primary">Dorel Juvenile's service guide to make better, faster, and shared services.</h2>
-    </header>
-  </iron-grid>
-
   {% comment %}
       *
       * The following section loops through the folders in service-manual
