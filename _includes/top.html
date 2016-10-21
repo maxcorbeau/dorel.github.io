@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }} - {{ site.title }} - dorel.io</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Fundament style to reset browser defaults -->
+  <link rel="stylesheet" type="text/css" href="/assets/styles/reset-custom.css">
+
+  {% comment %}
+    *
+    * webcomponents-lite.min.js = polyfill for polymer elements
+    *
+  {% endcomment %}
+
+  <script src="/assets/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+  <link rel="import" href="/assets/bower_components/paper-header-panel/paper-header-panel.html">
+  <link rel="import" href="/assets/bower_components/paper-toolbar/paper-toolbar.html">
+  <link rel="import" href="/assets/bower_components/paper-ripple/paper-ripple.html">
+  <link rel="import" href="/assets/bower_components/iron-media-query/iron-media-query.html">
+  <!-- custom polymer element source: https://github.com/The5heepDev/iron-grid -->
+  <link rel="import" href="/assets/bower_components/iron-grid/iron-grid.html">
+  <link rel="import" href="/assets/bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="/assets/bower_components/iron-icons/maps-icons.html">
+  <link rel="import" href="/assets/bower_components/iron-flex-layout/iron-flex-layout.html">
+  <link rel="import" href="/assets/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+  <link rel="import" href="/assets/bower_components/paper-styles/typography.html">
+  <link rel="import" href="/assets/bower_components/paper-styles/shadow.html">
+
+  <!-- 
+    Themes 
+    - Add theme files the <head> tag _AFTER_ the
+      webcomponents-lite.min.js and other HTML imports. 
+    - These can be used for the template switcher.
+  -->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Open+Sans:400,700,800" rel="stylesheet">
+
+  <link rel="import" href="/assets/theme-dorel-config.html">
+  <link rel="import" href="/assets/theme-dorel-style.html">
+
+</head>

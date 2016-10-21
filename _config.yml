@@ -1,0 +1,8 @@
+## GitPages + Jekyll setup
+name: Dorel.io
+title: Service Design Guide
+description: Service Design Guide information
+theme: minima # github pages only supports minima theme
+
+## Jekyll setup
+markdown:    kramdown
