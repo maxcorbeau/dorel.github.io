@@ -7,7 +7,7 @@ title: Welcome to dorel.io
 
   <iron-grid>
     <header class="page-header xs12">
-      <h2 class="type-ui-secondary">What do you want to achieve?</h2>
+      <h2 class="type-ui-primary">Dorel Juvenile's service guide to make better, faster, and shared services.</h2>
     </header>
   </iron-grid>
 
