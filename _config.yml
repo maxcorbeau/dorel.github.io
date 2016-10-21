@@ -4,5 +4,8 @@ title: Service Design Guide
 description: Service Design Guide information
 theme: minima # github pages only supports minima theme
 
+## Gitpages
+baseurl: /
+
 ## Jekyll setup
 markdown:    kramdown
