@@ -72,7 +72,7 @@ title: Welcome to dorel.io
     {% endfor %}
 
     
-    <div class="xs12 s6 m4">
+    <!--div class="xs12 s6 m4">
 
       <a href="mailto:{{ site.data.info | map: 'email' }}" class="block-contact-info">
         <div class="container-contact-info">
@@ -81,7 +81,7 @@ title: Welcome to dorel.io
         </div>
         <paper-ripple recenters></paper-ripple>
       </a>
-    </div>
+    </div-->
 
   </iron-grid>
   <!--/ul-->
