@@ -1,6 +1,6 @@
 ---
 layout: manual
-title: Digitial Culture
+title: Digital Culture
 category: Vision
 draft: false
 ---
