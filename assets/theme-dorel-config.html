@@ -13,6 +13,10 @@ Description: Dorel's webcomponent styling -config
 
   :root {
 
+      /* ------------------------------------------------
+       * Color
+       */
+
       --white: rgb(255, 254, 255);
       --black: rgb(50, 50, 50);
 
@@ -37,11 +41,9 @@ Description: Dorel's webcomponent styling -config
          not  match since the colors will then be too close to eachother in the color spectrum */
       --theme-color-link-primary: var(--theme-brand-color); 
 
-      /* 
+      /* ------------------------------------------------
        * Modular scale
        */
-
-      --theme-text-line-height: 1.45em; /* use em over rem, since line-height should be relative to it's parent */
 
       --theme-component-space-inner: 1.5rem;
       --theme-component-space-inner-medium: calc(1.5rem * 1.2);
@@ -51,18 +53,77 @@ Description: Dorel's webcomponent styling -config
 
       --theme-roundness: .32rem;
 
-      --theme-ui-bodycopy-margins: {
-        /* margin-top: 1em; */
-        margin-bottom: 1em;
+      --theme-margin-bodycopy: 1.2em;
+      --theme-margin-headings: .5em;
+
+      /* ------------------------------------------------
+       * Typography
+       */
+
+      --theme-size-base: 21px; /* used as bodycopy */
+
+      /* Use 'em' since font sizes are based on the
+         theme's size base, which is applied to the
+         css body tag */
+      --theme-size-headline: 2em;
+      --theme-size-subhead: 1.62em;
+
+      --theme-size-display1: 1.62em; /* used for example h1 */
+      --theme-size-display2: 1.12em; /* used for example h2 */
+      --theme-size-display3: 1em; /* used for example h3 */
+      --theme-size-display4: 1em; /* used for example h4, h5, h6 */
+      --theme-size-ui: .7em;
+      --theme-size-small: .762em;
+
+      --theme-text-line-height: 1.45em; /* use em over rem, since line-height should be relative to it's parent */
+
+      --theme-bodycopy-width: {
+        max-width: 42rem; /* set max width for legibility */
       };
 
-      /* 
+       --theme-font-sans-serif: 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
+       --theme-font-serif: 'Lora', Georgia, Cambria, "Times New Roman", Times, serif;
+
+       --theme-bodycopy: {
+          font-family: var(--theme-font-serif);
+          line-height: var(--theme-text-line-height);
+          margin-bottom: var(--theme-margin-bodycopy);
+          color: rgba(0,0,0,.8); /* make slightly translucent so the color adapts to the background */
+          @apply(--theme-bodycopy-width);
+       };
+
+       --theme-heading: {
+         font-family: var(--theme-font-sans-serif);
+         font-weight: 800;
+         font-style: normal;
+         line-height: var(--theme-text-line-height);
+         color: rgba(0,0,0,.8); /* make slightly translucent so the color adapts to the background */
+         @apply(--theme-bodycopy-width);
+       };
+
+       --theme-ui: {
+         font-family: var(--theme-font-sans-serif);
+         font-weight: 600;
+         text-transform: uppercase;
+       };
+
+      /* ----------------------------------------------------------------
        * Polymer element styling overrides 
        */
 
        /* Define Polymer global variables */
 
-      --paper-font-body1: 21px;
+      --paper-font-headline: var(--theme-size-headline);
+      --paper-font-subhead: var(--theme-size-headline);
+      --paper-font-display1: var(--theme-size-display-1);
+      --paper-font-display2: var(--theme-size-display-2);
+      --paper-font-display3: var(--theme-size-display-3);
+      --paper-font-display4: var(--theme-size-display-4);
+      --paper-font-body1: var(--theme-size-base);
+      --paper-font-body2: var(--theme-size-base);
+      --paper-font-caption: var(--theme-size-base);
+      --paper-font-menu: var(--theme-size-ui);
+      --paper-font-button: var(--theme-size-ui);
 
       --primary-text-color: var(--theme-primary-text-color);
       --primary-background-color: var(--theme-color-background);
