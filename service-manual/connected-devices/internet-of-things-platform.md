@@ -1,7 +1,7 @@
 ---
 layout: manual
-title: Use microcontrollers
-category: Internet of Things
+title: Internet of Things platform
+category: Connected Devices
 draft: true
 ---
 

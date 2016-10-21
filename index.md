@@ -23,7 +23,9 @@ title: Welcome to dorel.io
   <!--ul class="list-manuals not-enum"-->
   <iron-grid>
 
-    {% for category in categories %}
+    {% assign categoriesSort = categories | sort: "name" %}
+
+    {% for category in categoriesSort %}
 
       {% if category.name != '' %}
 
