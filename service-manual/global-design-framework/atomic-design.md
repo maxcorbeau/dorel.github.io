@@ -5,11 +5,11 @@ category: Global Design Framework
 draft: false
 ---
 
-To create frontend design as services, Dorel uses [Google Polymer](http://polymer-project.org).
-With Polymer elements, we can assemble websites like lego blocks. All elements are created for a certain purpose, like: "input fields", "sliders", "headers", etcetera.
-This methodology creates a design system with a five stop hierarchy. Atoms, Molecules, Organisms, Templates, Pages
+To create Frontend Design as a Service, Dorel uses [Google Polymer](http://polymer-project.org).
+With Polymer elements, you can assemble websites like lego blocks. All elements are created for a certain purpose, like: "input fields", "sliders", "headers", etcetera.
+This methodology creates a design system with a five step hierarchy. Atoms, Molecules, Organisms, Templates, and Pages.
 
-By creating these elements in a structured way we can automate the process of creating new branded elements.
+> By creating these elements in a structured way we can automate the process of creating new branded elements and websites.
 
 ## Dorel's Holistic Design Framework
 
