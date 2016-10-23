@@ -175,6 +175,12 @@ Description:  Dorel's webcomponent styling -config
       position: absolute;
       width: 100%;
     }
+  
+    @media screen and (max-width: 33em) { /* 530/16 = 33 (XS only) */
+       .background-page {
+         height: 4em;
+       }
+    }
 
     .page-header {
       float: left;
@@ -199,6 +205,12 @@ Description:  Dorel's webcomponent styling -config
     .breadcrumbs ol li:not(:first-child) {
       padding-left: .25rem;
     }
+  
+    @media screen and (max-width: 33em) { /* 530/16 = 33 (XS only) */
+      .breadcrumbs li {
+        height: 1.5rem;
+      }
+     }
 
     .container-center-page .breadcrumbs li,
     .container-center-page .breadcrumbs a {
