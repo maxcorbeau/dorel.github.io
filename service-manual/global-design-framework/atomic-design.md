@@ -1,5 +1,5 @@
 ---
-layout: manual
+layout: manual-poly
 title: Atomic Design
 category: Global Design Framework
 draft: false
