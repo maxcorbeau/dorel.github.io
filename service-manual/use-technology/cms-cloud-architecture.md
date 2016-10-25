@@ -5,19 +5,19 @@ category: Use technology
 draft: false
 ---
 
-Dorel leverages the power of the Google Cloud to bring webservices as fast as possible to the end-users.
+Dorel Juvenile leverages the power of the Google Cloud to bring webservices as fast as possible to the end-users.
 
 _Note: click [here](./container-architecture.html) for the container architecture_
 
 ## Platforms
 
-As defined in the [holistic strategy](../../strategy/holistic), Dorel uses a platform strategy to connect all services. Thoese services are delivered through their respective APIs and can be consumed by other platforms.
+As defined in the [holistic strategy](../../strategy/holistic), Dorel Juvenile uses a platform strategy to connect all services. Thoese services are delivered through their respective APIs and can be consumed by other platforms.
 
 ## Leveraging Point of Presence and Content Delivery Network locations.
 
-Google Cloud consists of a [large network of PoP locations](https://peering.google.com/#/infrastructure) that Dorel uses to deliver content to customers as quick as possibe. To learn more about the Google Cloud CDN concept visit [this page](https://cloud.google.com/cdn/docs/caching).
+Google Cloud consists of a [large network of PoP locations](https://peering.google.com/#/infrastructure) that Dorel Juvenile uses to deliver content to customers as quick as possibe. To learn more about the Google Cloud CDN concept visit [this page](https://cloud.google.com/cdn/docs/caching).
 
-Dorel defines content as follows:
+Dorel Juvenile defines content as follows:
 - Non-dynamic
 - Semi-dynamic
 - Super-dynamic

@@ -7,7 +7,7 @@ draft: false
 
 ## Digital Service Standard
 
-The Digital Service Standard is a set of criteria to help Dorel and partners to create and operate superior digital experiences.
+The Digital Service Standard is a set of criteria to help Dorel Juvenile and partners to create and operate superior digital experiences.
 
 All consumer facing services must meet the standard. It’s used by our respective Technology departments to check whether a service is good enough for consumers use.
 

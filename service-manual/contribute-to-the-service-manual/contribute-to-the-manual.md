@@ -5,7 +5,7 @@ category: Work on the service service manual
 draft: false
 ---
 
-Every employee of Dorel or every freelancer or agency that works for Dorel is welcome to contribute to the service design manual. In this manual we explain _how Dorel creates services for its customers_. Customers can be people who buy Dorel products, but also internal customers, like a marketing team that uses a digital service.
+Every employee of Dorel Juvenile or every freelancer or agency that works for Dorel Juvenile is welcome to contribute to the service design manual. In this manual we explain _how Dorel Juvenile creates services for its customers_. Customers can be people who buy Dorel Juvenile products, but also internal customers, like a marketing team that uses a digital service.
 
 ## How to write an article for the Service Manual?
 
@@ -38,7 +38,7 @@ You can find what others have been writing and -if possible- connect your contri
 
 Our service manual is on [Github](https://github.com/dorel/dorel.github.io) and we use [Markdown](https://en.wikipedia.org/wiki/Markdown) to write articles. We highly recommend contributing directly on Github.
 
-You can learn more about contributing on Dorel's Github [here](/service-manual/make-software/maintaining-version-control-in-coding.html).
+You can learn more about contributing on Dorel Juvenile's Github [here](/service-manual/make-software/maintaining-version-control-in-coding.html).
 
 ## What is Service Design?
 
