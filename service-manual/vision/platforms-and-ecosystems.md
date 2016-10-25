@@ -46,4 +46,4 @@ An example of a platform and an application.
 
 ### Magento, an e-commerce platform
 
-Following Dorel's platform definitions, Magento 1.x is _not_ a platform but only an application. Because of the RESTful API interface in Magento 2. Magento became a hybrid, an application _and_ a platform. Read more about how Dorel uses Magento 2 [here](./technology/ecommerce-container-architecture).
+Following Dorel's platform definitions, Magento 1.x is _not_ a platform but only an application. Because of the RESTful API interface in Magento 2. Magento became a hybrid, an application _and_ a platform. Read more about how Dorel uses Magento 2 [here](./use-technology/container-architecture).

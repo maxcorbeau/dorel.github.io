@@ -7,7 +7,7 @@ draft: false
 
 Dorel leverages the power of the Google Cloud to bring webservices as fast as possible to the end-users.
 
-_Note: click [here](./container-architecture) for the container architecture_
+_Note: click [here](./container-architecture.html) for the container architecture_
 
 ## Platforms
 
