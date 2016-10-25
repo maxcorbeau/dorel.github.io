@@ -34,7 +34,7 @@ Where 'prjct' stands for project, and the first letter from each word in the pro
 
 projects:
 - lowercase project name: 'gh' = Github project: Tickets in the issue list of the repo
-- Uppercase project name: 'DSG' = project: Dorel Style Guide
+- Uppercase project name: 'DSG' = project: Dorel Juvenile Style Guide
 
 Mergin branches will always have to be “git merge --no-ff” to always keep the reference to the original pull request in our commit history.
 
@@ -56,7 +56,7 @@ Write the commit message in imperative. Typical commit message start with "Add..
 
 It might be helpful to install a githook. The githook checks if your message is correct and lets you change it in case you have made a mistake or have forgotten to mention it.
 
-[Install the Dorel webhook](https://github.com/dorel/git-hooks).
+[Install the Dorel Juvenile webhook](https://github.com/dorel/git-hooks).
 
 ## git paticipation
 
