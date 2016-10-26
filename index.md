@@ -14,70 +14,69 @@ title: Welcome to dorel.io
 
   {% assign categories = site.pages | group_by:"category" | sort: "title" | reverse %}
 
-  <!--ul class="list-manuals not-enum"-->
-  <iron-grid class="ui-pages-overview">
+  <div class="iron-container">
+    <iron-grid class="ui-pages-overview">
 
-    {% assign categoriesSort = categories | sort: "name" %}
+      {% assign categoriesSort = categories | sort: "name" %}
 
-    {% for category in categoriesSort %}
+      {% for category in categoriesSort %}
 
-      {% if category.name != '' %}
+        {% if category.name != '' %}
 
-        <div class="xs12 s6 m4 vtop">
+          <div class="xs12 s6 m4 vtop">
 
-          <span class="list-title">{{ category.name }}</span>
+            <span class="list-title">{{ category.name }}</span>
 
-          <ul class="list-manuals not-enum">
+            <ul class="list-manuals not-enum">
 
-            {% assign sitepages = site.pages | sort: "title" %}
+              {% assign sitepages = site.pages | sort: "title" %}
 
-            {% for page in sitepages %}
+              {% for page in sitepages %}
 
-              {% if page.category == category.name %}
+                {% if page.category == category.name %}
 
-                {% if page.draft == true %}
+                  {% if page.draft == true %}
 
-                  <li class="draft"><span>{{ page.title }} (coming soon)</span></li>
-                  <!-- keep this url in comment for dev reference: -->
-                  <!-- a href=".{{ page.url }}">{{ page.title }}</a-->
+                    <li class="draft"><span>{{ page.title }} (coming soon)</span></li>
+                    <!-- keep this url in comment for dev reference: -->
+                    <!-- a href=".{{ page.url }}">{{ page.title }}</a-->
 
-                {% else %}
+                  {% else %}
 
-                  <li>
-                    <a href="{{ site.url }}{{ page.url }}" class="animate-next">
-                      <span class="text">{{ page.title }}</span>
-                      <div>
-                      <iron-icon icon="icons:arrow-forward" size="16"></iron-icon>
-                      </div>
-                    </a>
-                  </li>
+                    <li>
+                      <a href="{{ site.url }}{{ page.url }}" class="animate-next">
+                        <span class="text">{{ page.title }}</span>
+                        <div>
+                        <iron-icon icon="icons:arrow-forward" size="16"></iron-icon>
+                        </div>
+                      </a>
+                    </li>
+
+                  {% endif %}
 
                 {% endif %}
 
-              {% endif %}
+              {% endfor %}
 
-            {% endfor %}
+            </ul>
+          </div>
 
-          </ul>
-        </div>
+        {% endif %}
 
-      {% endif %}
+      {% endfor %}
 
-    {% endfor %}
+      <!--div class="xs12 s6 m4">
 
-    
-    <!--div class="xs12 s6 m4">
+        <a href="mailto:{{ site.data.info | map: 'email' }}" class="block-contact-info">
+          <div class="container-contact-info">
+            <span>Interested in contributing to the service design manual or have questions?</span>
+            <span>Feel free to <u>Contact Us</u></span>
+          </div>
+          <paper-ripple recenters></paper-ripple>
+        </a>
+      </div-->
 
-      <a href="mailto:{{ site.data.info | map: 'email' }}" class="block-contact-info">
-        <div class="container-contact-info">
-          <span>Interested in contributing to the service design manual or have questions?</span>
-          <span>Feel free to <u>Contact Us</u></span>
-        </div>
-        <paper-ripple recenters></paper-ripple>
-      </a>
-    </div-->
-
-  </iron-grid>
-  <!--/ul-->
+    </iron-grid>
+  </div>
 
 </div>

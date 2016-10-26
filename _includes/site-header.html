@@ -1,29 +1,31 @@
 <header class="header-site">
-  <iron-grid>
+  <div class="iron-container">
+    <iron-grid>
 
-    <div class="xs12 vtop">
-      <div class="container-header-logo">
-        <a href="/" title="Back to the Service Design Manual homepage">
-          <img class="logo-dorel" src="/assets/img/svg/dorel-logo.svg" alt="Logo Dorel" />
-        </a>
-      </div>
-    <!--/div-->
+      <div class="xs12 vtop">
+        <div class="container-header-logo">
+          <a href="/" title="Back to the Service Design Manual homepage">
+            <img class="logo-dorel" src="/assets/img/svg/dorel-juvenile-logo.svg" alt="Logo Dorel" />
+          </a>
+        </div>
+      <!--/div-->
 
-    <!--div class="xs12 s6 m4">
-      <div class="header-proposition">
-        <p class="paper-font-headline">Service Design Manual</p>
-      </div>
-    </div-->
+      <!--div class="xs12 s6 m4">
+        <div class="header-proposition">
+          <p class="paper-font-headline">Service Design Manual</p>
+        </div>
+      </div-->
 
-    <!--div class="xs12 s6"-->
-      <div class="contact-right">
-        <a class="icon-button animate-pop-up ui-text" href="mailto:{{ site.data.info | map: 'email' }}">
-          <iron-icon icon="icons:info-outline" size="16"></iron-icon>
-          <span>Contact us</span>
-          <paper-ripple recenters></paper-ripple>
-        </a>
-      </div>
+      <!--div class="xs12 s6"-->
+        <div class="contact-right">
+          <a class="icon-button animate-pop-up ui-text" href="mailto:{{ site.data.info | map: 'email' }}">
+            <iron-icon icon="icons:info-outline" size="16"></iron-icon>
+            <span>Contact us</span>
+            <paper-ripple recenters></paper-ripple>
+          </a>
+        </div>
+    </div>
+
+    </iron-grid>
   </div>
-
-  </iron-grid>
 </header>

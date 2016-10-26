@@ -28,13 +28,14 @@ Description: Dorel's webcomponent styling -config
 
       --theme-color-foreground: var(--black);
       --theme-color-foreground-secondary: rgb(80, 80, 80);
-      --theme-color-foreground-tertiary: rgb(155, 155, 155);
+      --theme-color-foreground-tertiary: rgb(177, 179, 179);
 
       --theme-color-disabled: var(--theme-color-foreground-tertiary);
 
       --theme-primary-text-color: var(--theme-color-foreground-secondary);
-      --theme-brand-color: rgb(0, 122, 195);
-      --theme-brand-color-complementary: rgb(195, 112, 0);
+
+      --theme-brand-color: rgb(0, 114, 206);
+      --theme-brand-color-complementary: rgb(237, 139, 0);
 
       /* if the theme's brand color is quite similar to the browsers' native link color use 
          it for the primary link color. Adding a new link-blue color close to that color will 
@@ -136,12 +137,16 @@ Description: Dorel's webcomponent styling -config
       --iron-icon-width: var(--paper-font-body1);
       --iron-icon-height: var(--paper-font-body1);
 
-      /* Define Polymer elements  */
+      /* Define Polymer per element styling */
 
+      /* paper-toolbar: */
       paper-toolbar {
         --paper-toolbar-background: var(--theme-primary-background-color, --white);
         --paper-toolbar-color: var(--theme-primary-text-color, --black);
       }
+
+      /* iron-grid: */
+      --iron-container-width: 100%;
 
   }
 
