@@ -1,6 +1,6 @@
 {
   "name": "dorel-io",
-  "version": "0.1.1",
+  // "version": "0.1.1", dorel-io uses github tags for versioning instead
   "authors": [
     "Remi <remi@studiospindle.nl>",
     "Bob van Luijt <bob@kubrickolo.gy>"
