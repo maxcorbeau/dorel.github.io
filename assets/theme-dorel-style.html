@@ -175,7 +175,11 @@ Description:  Dorel's webcomponent styling -config
       position: absolute;
       width: 100%;
     }
-  
+
+    .static-background-push-small {
+      margin-top: 4em;
+    }
+
     @media screen and (max-width: 33em) { /* 530/16 = 33 (XS only) */
        .background-page {
          height: 4em;
@@ -215,7 +219,7 @@ Description:  Dorel's webcomponent styling -config
 
     .container-center-page .breadcrumbs li,
     .container-center-page .breadcrumbs a {
-      color: var(--white);
+      color: var(--black);
     }
 
     /* 
@@ -298,6 +302,12 @@ Description:  Dorel's webcomponent styling -config
 
     .container {
       width: 100%;
+    }
+
+    .iron-container {
+      margin: 0 auto;
+      /* max-width: 1280px; */
+      width: var(--iron-container-width);
     }
 
     /* 
@@ -385,9 +395,6 @@ Description:  Dorel's webcomponent styling -config
     }
 
     @media screen and (min-width: 40.063em) and (max-width: 64.063em) { /* M ONLY */
-      .logo-dorel {
-        margin-top: 1rem;
-      }
       .contact-right {
         margin-top: 0;
       }
@@ -474,9 +481,16 @@ Description:  Dorel's webcomponent styling -config
       height: 7em;
     }
 
+    .static-background-push-large {
+      margin-top: 7em;
+    }
+
     @media screen and (max-width: 33em) { /* 530/16 = 33 (XS only) */
       .background-page-payoff {
         height: 9em;
+      }
+      .static-background-push-large {
+        margin-top: 9em;
       }
     }
 
