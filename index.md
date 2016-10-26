@@ -14,7 +14,7 @@ title: Welcome to dorel.io
 
   {% assign categories = site.pages | group_by:"category" | sort: "title" | reverse %}
 
-  <div class="iron-container">
+  <iron-grid-container>
     <iron-grid class="ui-pages-overview">
 
       {% assign categoriesSort = categories | sort: "name" %}
@@ -77,6 +77,6 @@ title: Welcome to dorel.io
       </div-->
 
     </iron-grid>
-  </div>
+  </iron-grid-container>
 
 </div>
