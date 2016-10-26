@@ -4,22 +4,24 @@
 
   {% include site-header.html %}
 
-  <div class="background-page"><div>
+  <div class="background-page"></div>
 
-  <div class="iron-container">
-    <iron-grid>
-      <main class="xs12 s10 m8 vtop container-center-page">
-        {% include breadcrumbs.html %}
-        <div class="page full-width bodycopy">
-          <div class="container-center-copy">
-            <h1 class="headline">{{ page.title }}</h1>
-            <div class="markdown-generated-content">
-              {{ content }}
+  <div class="static-background-push-small">
+    <div class="iron-container">
+      <iron-grid>
+        <main class="xs12 s10 m8 vtop container-center-page">
+          {% include breadcrumbs.html %}
+          <div class="page page-with-background full-width bodycopy">
+            <div class="container-center-copy">
+              <h1 class="headline">{{ page.title }}</h1>
+              <div class="markdown-generated-content">
+                {{ content }}
+              </div>
             </div>
           </div>
-        </div>
-      </main>
-    </iron-grid>
+        </main>
+      </iron-grid>
+    </div>
   </div>
 
     <!--iron-grid>
