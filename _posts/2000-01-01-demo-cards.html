@@ -133,12 +133,21 @@ title: Cards
   <h4 class="demo-heading">Paper-cards can have expanded supporting text</h4>
   <demo-snippet class="centered-demo">
     <template>
-      <paper-card heading="Top western road trips" image="/assets/demo/trip.png" alt="Sailboat Harbor" class="white">
+      <style is="custom-style">
+        .demo-card-width {
+          max-width: 400px;
+        }
+      </style>
+      <paper-card heading="Top western road trips" image="/assets/demo/trip.png" alt="Sailboat Harbor" class="white demo-card-width">
         <div class="card-content">1,000 miles of wonder</div>
         <div class="card-actions">
           <paper-button>Share</paper-button>
           <paper-button>Explore</paper-button>
-          <paper-icon-button icon="hardware:keyboard-arrow-up" title="more info" onclick="_toggle()" style="float:right;">
+          <paper-icon-button 
+            icon="hardware:keyboard-arrow-up" 
+            title="more info" 
+            onclick="_toggle()" 
+            style="float:right;">
           </paper-icon-button>
           <iron-collapse id="more-info" style="width:100%;">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim ante, tempus eget volutpat ac, cursus ac ante. Nulla facilisi. Praesent sed lacinia ligula. Donec malesuada nisl eget quam iaculis, vel placerat justo cursus.
@@ -171,7 +180,7 @@ title: Cards
           --paper-card-header-color: #fff;
         }
       </style>
-      <paper-card heading="Pre-fab homes" image="/assets/demo/house.png" alt="House" class="white" style="margin-bottom:8px;">
+      <paper-card heading="Pre-fab homes" image="/assets/demo/house.png" alt="House" class="demo-card-width white" style="margin-bottom:8px;">
         <div class="card-actions">
           <paper-icon-button icon="favorite"></paper-icon-button>
           <paper-icon-button icon="bookmark"></paper-icon-button>

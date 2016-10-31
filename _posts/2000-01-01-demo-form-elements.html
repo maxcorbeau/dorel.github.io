@@ -7,20 +7,14 @@ title: Form Elements
   <demo-snippet class="centered-demo">
     <template>
 
-      <paper-input-container>
-        <label>Paper (+iron for data binding) input</label>
-        <input is="iron-input" bind-value="{{myValue}}"><!-- do binding example -->
-      </paper-input-container>
+      <label>Paper (+iron for data binding) input</label>
+      <input is="iron-input" bind-value="{{myValue}}"><!-- do binding example -->
 
-      <paper-input-container>
-        <label>Text input</label>
-        <paper-input label="text input"></paper-input>
-      </paper-input-container>
+      <label>Text input</label>
+      <paper-input label="text input"></paper-input>
 
-      <paper-input-container>
-        <label>Input password</label>
-        <paper-input label="password input" type="password"></paper-input>
-      </paper-input-container>
+      <label>Input password</label>
+      <paper-input label="password input" type="password"></paper-input>
 
       <paper-input label="total">
         <label>Total</label>
@@ -28,9 +22,12 @@ title: Form Elements
         <paper-icon-button suffix icon="clear"></paper-icon-button>
       </paper-input>
 
-      <paper-input-container>
-        <label>Disabled input</label>
-        <paper-input label="disabled input" disabled></paper-input>
+      <label>Disabled input</label>
+      <paper-input label="disabled input" disabled></paper-input>
+
+      <paper-input-container attr-for-value="ssn-value">
+        <label>Social security number</label>
+        <ssn-input class="paper-input-input"></ssn-input>
       </paper-input-container>
 
     </template>
