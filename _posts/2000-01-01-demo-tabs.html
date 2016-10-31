@@ -1,0 +1,57 @@
+---
+title: Tabs
+---
+
+<article class="vertical-section-container centered">
+  <h4 class="demo-heading">Plain tabs</h4>
+  <demo-snippet class="centered-demo">
+    <template>
+      <paper-tabs selected="0">
+        <paper-tab>ITEM ONE</paper-tab>
+        <paper-tab>ITEM TWO</paper-tab>
+        <paper-tab>ITEM THREE</paper-tab>
+      </paper-tabs>
+    </template>
+  </demo-snippet>
+</article>
+
+<article class="vertical-section-container centered">
+  <h4 class="demo-heading">The scrollable attribute causes the tabs to scroll, rather than compress, when there is not enough space. Arrow buttons appear when any of the tabs are not completely visible.</h4>
+  <demo-snippet class="centered-demo">
+    <template>
+      <paper-tabs selected="0" scrollable>
+        <paper-tab>NUMBER ONE ITEM</paper-tab>
+        <paper-tab>ITEM TWO</paper-tab>
+        <paper-tab>THE THIRD ITEM</paper-tab>
+        <paper-tab>THE ITEM FOUR</paper-tab>
+        <paper-tab>FIFTH</paper-tab>
+        <paper-tab>THE SIXTH TAB</paper-tab>
+        <paper-tab>NUMBER SEVEN</paper-tab>
+        <paper-tab>EIGHT</paper-tab>
+        <paper-tab>NUMBER NINE</paper-tab>
+        <paper-tab>THE TENTH</paper-tab>
+        <paper-tab>THE ITEM ELEVEN</paper-tab>
+        <paper-tab>TWELFTH ITEM</paper-tab>
+      </paper-tabs>
+    </template>
+  </demo-snippet>
+</article>
+
+<article class="vertical-section-container centered">
+  <h4 class="demo-heading">The fit-container attribute causes scrollable tabs to stretch to fit their container if the tabs don't need to scroll.</h4>
+  <demo-snippet class="centered-demo">
+    <template>
+      <paper-tabs selected="0" scrollable fit-container>
+        <paper-tab>NUMBER ONE ITEM</paper-tab>
+        <paper-tab>ITEM TWO</paper-tab>
+        <paper-tab>THE THIRD ITEM</paper-tab>
+      </paper-tabs>
+      <br>
+      <paper-tabs selected="0" scrollable fit-container style="width: 50%;">
+        <paper-tab>NUMBER ONE ITEM</paper-tab>
+        <paper-tab>ITEM TWO</paper-tab>
+        <paper-tab>THE THIRD ITEM</paper-tab>
+      </paper-tabs>
+    </template>
+  </demo-snippet>
+</article>
