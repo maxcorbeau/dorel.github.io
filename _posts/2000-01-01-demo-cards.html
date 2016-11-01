@@ -173,35 +173,38 @@ title: Cards
     <template>
 
       <style is="custom-style">
-        .demo-card-width {
+        .demo-card-width,
+        .demo-stack-cart-container {
           max-width: 400px;
         }
         paper-card.white {
           --paper-card-header-color: #fff;
         }
       </style>
-      <paper-card heading="Pre-fab homes" image="/assets/demo/house.png" alt="House" class="demo-card-width white" style="margin-bottom:8px;">
-        <div class="card-actions">
-          <paper-icon-button icon="favorite"></paper-icon-button>
-          <paper-icon-button icon="bookmark"></paper-icon-button>
-          <paper-icon-button icon="social:share"></paper-icon-button>
+      <div class="demo-stack-cart-container">
+        <paper-card heading="Pre-fab homes" image="/assets/demo/house.png" alt="House" class="demo-card-width white" style="margin-bottom:8px;">
+          <div class="card-actions">
+            <paper-icon-button icon="favorite"></paper-icon-button>
+            <paper-icon-button icon="bookmark"></paper-icon-button>
+            <paper-icon-button icon="social:share"></paper-icon-button>
+          </div>
+        </paper-card>
+        <div class="horizontal demo-card-width">
+          <paper-card heading="Favorite trips" image="/assets/demo/trip.png" alt="Trip" class="white" style="margin-right:4px;">
+            <div class="card-actions horizontal justified">
+              <paper-icon-button icon="favorite"></paper-icon-button>
+              <paper-icon-button icon="bookmark"></paper-icon-button>
+              <paper-icon-button icon="social:share"></paper-icon-button>
+            </div>
+          </paper-card>
+          <paper-card heading="Best airlines" image="/assets/demo/travel.png" alt="Travel" class="white" style="margin-left:4px;">
+            <div class="card-actions horizontal justified">
+              <paper-icon-button icon="favorite"></paper-icon-button>
+              <paper-icon-button icon="bookmark"></paper-icon-button>
+              <paper-icon-button icon="social:share"></paper-icon-button>
+            </div>
+          </paper-card>
         </div>
-      </paper-card>
-      <div class="horizontal">
-        <paper-card heading="Favorite trips" image="/assets/demo/trip.png" alt="Trip" class="white" style="margin-right:4px;">
-          <div class="card-actions horizontal justified">
-            <paper-icon-button icon="favorite"></paper-icon-button>
-            <paper-icon-button icon="bookmark"></paper-icon-button>
-            <paper-icon-button icon="social:share"></paper-icon-button>
-          </div>
-        </paper-card>
-        <paper-card heading="Best airlines" image="/assets/demo/travel.png" alt="Travel" class="white" style="margin-left:4px;">
-          <div class="card-actions horizontal justified">
-            <paper-icon-button icon="favorite"></paper-icon-button>
-            <paper-icon-button icon="bookmark"></paper-icon-button>
-            <paper-icon-button icon="social:share"></paper-icon-button>
-          </div>
-        </paper-card>
       </div>
     </template>
   </demo-snippet>
@@ -226,33 +229,38 @@ title: Cards
           margin: 4px;
           flex: 0 0 auto;
         }
+        .demo-stack-cart-container {
+          max-width: 400px;
+        }
       </style>
       <div id="notes">
-        <paper-card heading="Call Jennifer" class="cyan">
-          <div class="card-actions">
-            <paper-icon-button icon="communication:call" style="color:white;"></paper-icon-button>
-            <span>March 19, 2017</span>
-          </div>
-        </paper-card>
-        <paper-card class="dark">
-          <div class="card-content">
-            <p>Groceries:</p>
-            <paper-checkbox>almond milk</paper-checkbox>
-            <paper-checkbox>coconut water</paper-checkbox>
-            <paper-checkbox>cheese</paper-checkbox>
-            <paper-checkbox>green apples</paper-checkbox>
-          </div>
-          <div class="card-actions">
-            <paper-icon-button icon="communication:location-on" style="color:white"></paper-icon-button>
-            <span>Campbell</span>
-          </div>
-        </paper-card>
-        <paper-card heading="clean desk" class="lime"></paper-card>
-        <paper-card image="/assets/demo/donuts.png" alt="Donuts" class="amber">
-          <div class="card-content">New cafe opened on Valencia St.</div>
-        </paper-card>
-        <paper-card heading="Yuna tickets on sale 6/24" class="cyan">
-        </paper-card>
+        <div class="demo-stack-cart-container">
+          <paper-card heading="Call Jennifer" class="cyan">
+            <div class="card-actions">
+              <paper-icon-button icon="communication:call" style="color:white;"></paper-icon-button>
+              <span>March 19, 2017</span>
+            </div>
+          </paper-card>
+          <paper-card class="dark">
+            <div class="card-content">
+              <p>Groceries:</p>
+              <paper-checkbox>almond milk</paper-checkbox>
+              <paper-checkbox>coconut water</paper-checkbox>
+              <paper-checkbox>cheese</paper-checkbox>
+              <paper-checkbox>green apples</paper-checkbox>
+            </div>
+            <div class="card-actions">
+              <paper-icon-button icon="communication:location-on" style="color:white"></paper-icon-button>
+              <span>Campbell</span>
+            </div>
+          </paper-card>
+          <paper-card heading="clean desk" class="lime"></paper-card>
+          <paper-card image="/assets/demo/donuts.png" alt="Donuts" class="amber">
+            <div class="card-content">New cafe opened on Valencia St.</div>
+          </paper-card>
+          <paper-card heading="Yuna tickets on sale 6/24" class="cyan">
+          </paper-card>
+        </div>
       </div>
     </template>
   </demo-snippet>

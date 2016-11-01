@@ -1,6 +1,8 @@
 <head>
   <meta charset="utf-8">
+
   <title>{{ page.title }} - {{ site.title }} - dorel.io</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <!-- Fundament style to reset browser defaults -->
@@ -38,13 +40,18 @@
   <link rel="import" href="/assets/bower_components/paper-card/paper-card.html">
   <link rel="import" href="/assets/bower_components/paper-card/paper-card.html">
   <link rel="import" href="/assets/bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="/assets/bower_components/iron-icons/communication-icons.html">
+  <link rel="import" href="/assets/bower_components/iron-icons/hardware-icons.html">
+  <link rel="import" href="/assets/bower_components/iron-icons/social-icons.html">
 
 
   <!-- iron elements -->
   <link rel="import" href="/assets/bower_components/iron-flex-layout/iron-flex-layout.html">
+  <link rel="import" href="/assets/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
   <link rel="import" href="/assets/bower_components/iron-iconset/iron-iconset.html">
   <link rel="import" href="/assets/bower_components/iron-input/iron-input.html">
   <link rel="import" href="/assets/bower_components/iron-label/iron-label.html">
+  <link rel="import" href="/assets/bower_components/iron-collapse/iron-collapse.html">
   <link rel="import" href="/assets/bower_components/iron-autogrow-textarea/iron-autogrow-textarea.html">
 
   <!-- demo elements -->
@@ -58,7 +65,9 @@
       margin-left: auto;
       margin-right: auto;
     }
-
+    .horizontal {
+      @apply(--layout-horizontal);
+    }
     .vertical-section-container {
       max-width: 500px;
     }
@@ -75,9 +84,25 @@
     .paper-font-display2 {
       font-size: var(--theme-size-display2);
     }
-
     .paper-font-display3 {
       font-size: var(--theme-size-display3);
+    }
+
+    .amber {
+      background: var(--paper-amber-900);
+    }
+    .lime {
+      background: var(--paper-lime-500);
+    }
+    .cyan {
+      background: var(--paper-cyan-500);
+    }
+    .dark {
+      background: var(--paper-blue-grey-500);
+    }
+    paper-card.dark, paper-card.amber, paper-card.lime, paper-card.cyan {
+      color: white;
+      --paper-card-header-color: white;
     }
 
   </style>
