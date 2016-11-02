@@ -1,0 +1,43 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<!--
+`<paper-scroll-item>` uses the paper-item element to create a scroll to functionality.
+
+If we want to have a link that scrolls to a certain div#my-div we define its scrollAnchor
+and linkText. This element handles the scrolling with a CSS3 transform
+
+    <body>
+      <paper-scroll-item
+        scroll-anchor="my-div"
+        link-text="scroll to my-div"></paper-scroll-item>
+-->
+<dom-module id="paper-scroll-item">
+  <style>
+    /* CSS rules for your element */
+  </style>
+  <template>
+    <paper-item raised on-tap="scrollTo">[[linkText]]</paper-item>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: 'paper-scroll-item',
+    properties: {
+      scrollAnchor: String,
+      linkText: {
+        type: String,
+        value: 'linkText: undefined'
+      }
+    },
+
+    /**
+     * @param {Object} event - The event that triggerd this function
+     */
+    scrollTo: function(event) {
+      var el = $('#' + this.scrollAnchor).offset();
+      $('#mainContainer').animate({scrollTop: el.top}, 2000);
+    }
+  });
+</script>

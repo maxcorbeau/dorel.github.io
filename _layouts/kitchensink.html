@@ -37,13 +37,15 @@
   <link rel="import" href="/assets/bower_components/paper-toggle-button/paper-toggle-button.html">
   <link rel="import" href="/assets/bower_components/paper-card/paper-card.html">
 
-
   <!-- iron elements -->
   <link rel="import" href="/assets/bower_components/iron-flex-layout/iron-flex-layout.html">
   <link rel="import" href="/assets/bower_components/iron-iconset/iron-iconset.html">
   <link rel="import" href="/assets/bower_components/iron-input/iron-input.html">
   <link rel="import" href="/assets/bower_components/iron-label/iron-label.html">
   <link rel="import" href="/assets/bower_components/iron-autogrow-textarea/iron-autogrow-textarea.html">
+
+  <!-- custom elements -->
+  <link rel="import" href="/assets/custom_components/paper-scroll-item/paper-scroll-item.html">
 
   <!-- demo elements -->
   <link rel="import" href="/assets/bower_components/iron-demo-helpers/demo-snippet.html">
@@ -118,25 +120,22 @@
 </style>
 
 <body>
-
   <paper-drawer-panel>
-
     <paper-header-panel drawer>
+    
       <paper-toolbar>
         <paper-icon-button icon="close" paper-drawer-toggle></paper-icon-button>
       </paper-toolbar>
 
       <span>Kitchensink elements</span>
 
-      <ul class="not-enum">
-
+      <paper-listbox class="not-enum">
         {% for post in site.posts %}
-          <li>
-            <a href="#{{ post.title | remove: " -" | replace: " ", "-" | downcase }}">{{ post.title }}</a>
-          </li>
+          <paper-scroll-item 
+            scroll-anchor="{{ post.title | remove: " -" | replace: " ", "-" | downcase }}"
+            link-text="{{ post.title | remove: " -" | replace: " ", "-" | downcase }}"></paper-scroll-item>
         {% endfor %}
-
-      </ul>
+      </paper-listbox>
 
     </paper-header-panel>
 
