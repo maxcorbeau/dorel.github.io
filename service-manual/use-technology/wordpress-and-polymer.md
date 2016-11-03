@@ -5,7 +5,7 @@ category: Use technology
 draft: false
 ---
 
-Wordpress is the main application we use for all our branded websites. To understand the way we use Wordpress in combination with our Polymer building blocks we created a diagram which will be explained in detail in this document. In this document we zoom in to the Wordpress containers we've defined in [this document](./container-architecture.html).
+Wordpress is the main application used for all our branded marketing websites. The following diagram will explain in detail how Wordpress is setup in combination with the Polymer building blocks. In this document we zoom in to the Wordpress containers we've defined in [the Container Architecture](./container-architecture.html).
 
 ## Overview
 
@@ -33,3 +33,8 @@ A page template alone is not of any use yet. The page now only has a layout. We 
 ### Polymer Components
 
 TBD;
+
+All Wordpress containers are setup with the <code>wp-cli</code>. There are two main reasons:
+
+- *Scripting* - You can put several commands in a text file and have it executed automatically. This way we can standardize certain processes that are used regularly. This also ties in with other services we use to automate the installation process.
+- *The keyboard is faster than the mouse* - For power users, typing a command can be orders of magnitude faster than pressing a button in a web browser.
