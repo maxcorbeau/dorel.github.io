@@ -5,7 +5,7 @@ category: Use technology
 draft: false
 ---
 
-Wordpress is the main application used for all our branded marketing websites. The following diagram will explain in detail how Wordpress is setup in combination with the Polymer building blocks. In this document we zoom in to the Wordpress containers we've defined in [the Container Architecture](./container-architecture.html).
+Wordpress is the main application used for all our branded marketing websites. The following diagram will explain in detail how Wordpress is setup in combination with the Polymer building blocks. In this document we zoom in to the Wordpress containers that are defined in [the Container Architecture](./container-architecture.html).
 
 ## Overview
 
@@ -28,7 +28,7 @@ We've created one custom theme to supply the needs of all our brands. The custom
 
 ### ACF Pro Plugin
 
-A page template alone is not of any use yet. The page now only has a layout. We can enrich these pages with building blocks. 
+A page template alone is not of any use yet. The page now only has a layout. We can enrich these pages with building blocks.
 
 ### Polymer Components
 
