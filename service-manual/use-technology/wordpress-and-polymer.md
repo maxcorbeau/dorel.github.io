@@ -7,12 +7,29 @@ draft: false
 
 Wordpress is the main application we use for all our branded websites. To understand the way we use Wordpress in combination with our Polymer building blocks we created a diagram which will be explained in detail in this document. In this document we zoom in to the Wordpress containers we've defined in [this document](./container-architecture.html).
 
-_Note: click [here](./cms-cloud-architecture.html) for the cloud architecture_
-
 ## Overview
 
 ![Container Setup](/assets/img/wp-polymer-setup.png "Wordpress and Polymer Setup")
 
 ## Wordpress Setup
 
-All Wordpress containers are setup with the <code>wp-cli</code>.
+All Wordpress containers are setup with the <code>wp-cli</code>. The use of the <code>wp-cli</code> has several benefits for us, which are:
+1. We can manage our Wordpress installation in a bash script
+2. Less steps need to be taken to make our WP installation work
+
+The minimum requirements for our Wordpress container are:
+- Dorel.io Theme
+- ACF Pro Plugin
+- Polymer Components
+
+### Dorel.io Theme - one theme to rule them all
+
+We've created one custom theme to supply the needs of all our brands. The custom theme serves all predefined page templates. Page templates defines it's layout. Clients can choose between a one column page, two column page or a page with content and a sidebar.
+
+### ACF Pro Plugin
+
+A page template alone is not of any use yet. The page now only has a layout. We can enrich these pages with building blocks. 
+
+### Polymer Components
+
+TBD;
