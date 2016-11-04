@@ -1,7 +1,7 @@
 ---
 layout: manual
 title: Working Agile and maintainability
-category: Making software
+category: Make software
 draft: true
 ---
 

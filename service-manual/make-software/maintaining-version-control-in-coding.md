@@ -1,7 +1,7 @@
 ---
 layout: manual
 title: Maintaining version control in coding
-category: Making software
+category: Make software
 draft: false
 ---
 
