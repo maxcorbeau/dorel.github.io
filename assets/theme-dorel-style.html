@@ -460,10 +460,32 @@ Description:  Dorel's webcomponent styling -config
      * _code.scss
      */
 
-     code {
-       background-color: var(--theme-color-background-tertiary);
-       padding: .2rem .4rem;
-       border-radius: var(--theme-roundness);
+     /* both code block as inline code */
+     .highlighter-rouge {
+      font-size: var(--theme-size-small);
+      line-height: var(--theme-text-line-height);
+      background-color: var(--theme-color-background-tertiary);
+      border-radius: var(--theme-roundness);
+     }
+
+     .bodycopy .highlighter-rouge {
+       margin-bottom: var(--theme-margin-bodycopy);
+     }
+
+     .highlighter-rouge .highlight {
+       margin: 0;
+     }
+
+     /* inline code example */
+     p .highlighter-rouge,
+     li .highlighter-rouge {
+      padding: .2rem .4rem;
+     }
+
+     /* code blocks */
+     .highlighter-rouge pre {
+      margin-bottom: 1rem;
+      padding: .7rem;
      }
 
      /* 
