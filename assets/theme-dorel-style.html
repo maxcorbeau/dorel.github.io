@@ -73,13 +73,6 @@ Description:  Dorel's webcomponent styling -config
       @apply(--theme-heading);
     }
 
-    .bodycopy a {
-      /* link color in running text should be the same as body copy,
-         this improves legibility */
-      color: var(--theme-primary-text-color); 
-      text-decoration: underline;
-    }
-
     span {
       line-height: var(--theme-text-line-height);
     }
@@ -110,7 +103,15 @@ Description:  Dorel's webcomponent styling -config
      */
 
     .bodycopy p {
+      margin-bottom: var(--theme-margin-bodycopy);
       @apply(--theme-bodycopy);
+    }
+
+    .bodycopy a {
+      /* link color in running text should be the same as body copy,
+         this improves legibility */
+      color: var(--theme-primary-text-color); 
+      text-decoration: underline;
     }
 
     .bodycopy ul,
@@ -446,10 +447,6 @@ Description:  Dorel's webcomponent styling -config
     .ui-text {
       font-size: var(--theme-size-ui);
       @apply(--theme-ui);
-    }
-
-    .ui-pages-overview {
-
     }
 
     .ui-pages-overview .list-title,
