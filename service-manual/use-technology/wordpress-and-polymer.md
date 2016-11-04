@@ -2,7 +2,7 @@
 layout: manual
 title: Wordpress and Polymer
 category: Use technology
-draft: false
+draft: true
 ---
 
 Wordpress is the main application used for all our branded marketing websites. The following diagram will explain in detail how Wordpress is setup in combination with the Polymer building blocks. In this document we zoom in to the Wordpress containers that are defined in [the Container Architecture](./container-architecture.html).
