@@ -7,58 +7,17 @@ draft: false
 
 When contributing to the project start your development in a separate branch. Please take close attention of the branching conventions stated below. 
 
-## branching model: gitflow
+## git workflow
 
-The develop branch is default and is where the developed features will be merged in. Off this develop branch feature branches can be branched to develop functionality. The master branch is a direct representation of what's released on production. 
+The preferred branching model is gitflow. The develop branch is default and is where the developed features will be merged in. Off this develop branch feature branches can be branched to develop functionality. 
 
-Detailed in formation on Gitflow can be found on [gitflow, a successful git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
-
-## tagging
-
-New releases (in Master) should be tagged following the [Semantic Versioning 2.0.0](http://semver.org) standard.
+The master branch is a direct representation of what's released on production. New releases (in Master) should be tagged following the [Semantic Versioning 2.0.0](http://semver.org) standard. 
 
 Example: `v0.0.1`
 
-## branching
+Detailed in formation on Gitflow can be found on [gitflow, a successful git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 
-The typical workflow is that you get a ticket assigned. For future reference in the git history, this ticket reference needs to be reflected in both the branch as in the commit message. 
-
-Example of branch name when working on a ticket:
-
-`$ git checkout -b "ticket/prjct-x_ticket-name-hyphend"`
-
-Where 'prjct' stands for project, and the first letter from each word in the project's name will be used for the prefix. The x stands for the ticket number. After the underscore is the ticket's name. 
-
-- Example of github ticket system, gh: `ticket/gh-3\_create-git-guidelines`
-- Example of JIRA ticket system: `ticket/DSG-1245\_create-polymer-integration`
-
-projects:
-- lowercase project name: 'gh' = Github project: Tickets in the issue list of the repo
-- Uppercase project name: 'DSG' = project: Dorel Juvenile Style Guide
-
-Mergin branches will always have to be “git merge --no-ff” to always keep the reference to the original pull request in our commit history.
-
-## git history
-
-The git history should be readable, traversable, and flexible enough to operate on. You must make logical commits regularly to create a logical timeline. Only use history changes on commits that you haven't shared with anybody.
-
-### commit messages
-
-Having a good commit timeline will speed up the reviewing process and help write a good release note.
-
-Keep in mind that making a commit means making a set of changes permanent. Also a diff will tell you _what_ changed, but only the commit message can properly tell you _why_.
-
-Start a commit message again with first the ticket number. 
-
-Write the commit message in imperative. Typical commit message start with "Add..", "Fix..", "Rework..", "Enable..", "Replace..", "Polish.." etc.
-
-### commit message Githook
-
-It might be helpful to install a githook. The githook checks if your message is correct and lets you change it in case you have made a mistake or have forgotten to mention it.
-
-[Install the Dorel Juvenile webhook](https://github.com/dorel/git-hooks).
-
-## git paticipation
+## git participation
 
 Two types of developers
 
@@ -71,3 +30,104 @@ Typical actions for the contributor are: Starting of a branch, filing in Pull Re
 ### maintainer 
 Authors the code of the contributor before it's merged. 
 Typical actions for the maintainer are: Review Pull Requests. 
+
+## branching
+
+The typical workflow is that you get a JIRA ticket assigned. For future reference in the git history, this ticket reference needs to be reflected in the commit message as described in the next chapter *git history* title. But these commits will also need to be contained in a encapsuled version of the repository so you can work freely without interferring with other developers. For that you can create a branch. 
+
+Example of branch name when working on a ticket or bugfix:
+
+- Example of JIRA ticket system: `feature/DIO-123_search`
+- Example of JIRA ticket system: `bugfix/DIO-124_tabs`
+- Example of JIRA ticket system: `feature/gh-1_another-feature`
+
+The words in feature branches are separated by hyphens.
+
+projects:
+- lowercase project name: 'gh' = Github project: Tickets in the issue list of the repo
+- Uppercase project name: 'DIO' = dorel.io project in JIRA
+
+Mergin branches will always have to be `$ git merge --no-ff` to always keep the reference to the original pull request in our commit history.
+
+## git history
+
+The git history should be readable, traversable, and flexible enough to operate on. You must make logical commits regularly to create a logical timeline. Only use history changes on commits that you haven't shared with anybody.
+
+### (smart) commit messages
+
+Having a good commit timeline will speed up the reviewing process and help write a good release note.
+
+Keep in mind that making a commit means making a set of changes permanent. Also a diff will tell you _what_ changed, but only the commit message can properly tell you _why_.
+
+#### composition of a commit message
+
+Start a commit message with first the ticket number. 
+
+Example commit message: `DIO-1 #comment Add highlight option #time 0d 1h #done`. Using smart commits, the there are a few commands you can pass through: 
+- comment: `#comment` part adds a comment directly to the ticket in JIRA. 
+- time: `#time` will state how much time it took to fix this ticket 
+- transition: `#done` The last command shows the transition of the ticket state. At the moment we only have three transitions: '#to-do', '#in-progress' and '#done'. Typically you'd only use the last command #done since the first two transitions are maintained in the JIRA board, and will be changed in the sprint meetings. 
+
+##### comment
+Write the commit message in imperative. Typical commit message start with "Add..", "Fix..", "Rework..", "Enable..", "Replace..", "Polish.." etc.
+
+##### time
+Typically commits don't consist of work more than four hours. See for guidelines on how to compose a commit message 
+
+##### transition
+
+These commands are not mandatory on every commit. However at your last commit, once you finish the ticket, use the last '#done' command. It's also possible to resolve multiple JIRA tickets with one commit using `DIO-1 DIO-2 DIO-3 #comment change setup of foo #time 0d 2h #done`
+
+### commit message Githook
+
+Dorel uses githooks. The githook checks if your message is correct and lets you change it in case you've made a mistake or have forgotten to mention it.
+
+[Install the Dorel Juvenile webhook](https://github.com/dorel/git-hooks).
+
+## Tutorial on new feature/bugfix workflow
+
+This tutorial assumes you're working using the terminal and that you have a basic understanding of Git.
+
+1. Typically you get a JIRA ticket assigned to you. Check and make sure that the corresponding issue unique reference (DIO-x) is not already available in the existing branches. You can check this both in the JIRA ticket itself, to see if someone already comitted. Since it's a new issue ideally it shouldn't. Then perfom the next step.
+
+```
+// use fetch to get all remote branches
+$ git fetch --all
+// get overview of all the branches
+$ git branch -a
+// always do a git pull to make sure you've got the latest version
+$ git pull
+```
+
+2. The next step is to create a branch with the corresponding ticket reference, by branching of off the develop branch. The -b prefix will create a new branch if the branch doesn't exist yet:
+
+`$ git checkout -b DIO-x develop`
+
+3. Start working on the feature/bugfix. Gradually commit your changes as described in the previous chapter *git history*:
+
+First stage the changes you've made:
+```
+// stage specific files
+$ git add <filepath>
+$ git add <anotherfilepath>
+```
+
+or
+
+```
+// stage all changes
+$ git add .
+```
+
+Then commit the staged changes:
+
+`DIO-1 #comment Add highlight option #time 0d 1h #done`
+
+Keep repeating this step until your function is finished. Once you're done your branch is ready to be tested.
+
+6. Move the changes you made to remote (a.k.a. origin):
+
+`$ git push origin HEAD`
+
+7. At this point open github.com and the correseponding repository. Make a pull request and assign this to another developer to review. Once the other developer sees no mistakes he/she will merge the pull request and your code will be in the develop branch. 
+
