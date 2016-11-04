@@ -19,24 +19,12 @@ Description:  Dorel's webcomponent styling -config
       color: var(--theme-color-link-primary);
     }
 
-    .bodycopy a {
-      /* link color in running text should be the same as body copy,
-         this improves legibility */
-      color: var(--theme-primary-text-color); 
-      text-decoration: underline;
-    }
-
     .list-title {
       padding-bottom: .9rem;
     }
 
     .draft {
       color: var(--theme-color-disabled);
-    }
-
-    .bodycopy p {
-      @apply(--paper-font-body1);
-      @apply(--theme-bodycopy);
     }
 
     /* decoupled semantic heading (h1, h2, etc.) 
@@ -85,21 +73,11 @@ Description:  Dorel's webcomponent styling -config
       @apply(--theme-heading);
     }
 
-    .bodycopy ul,
-    .bodycopy ol {
-      margin-left: 1.7rem;
-      @apply(--theme-bodycopy);
-    }
-
-    .bodycopy ul li,
-    .bodycopy ol li {
-      line-height: var(--theme-text-line-height);
-      margin-bottom: 1em; /* slightly slimmer than paragraph's bottom margin */
-      display: list-item;
-    }
-
-    .bodycopy ul li {
-      line-height: calc(var(--theme-text-line-height) * 1.2);
+    .bodycopy a {
+      /* link color in running text should be the same as body copy,
+         this improves legibility */
+      color: var(--theme-primary-text-color); 
+      text-decoration: underline;
     }
 
     span {
@@ -124,6 +102,33 @@ Description:  Dorel's webcomponent styling -config
       border-left: 3px solid var(--theme-color-background);
       padding-left: .8em;
       max-width: 41.2em; /* aligns with running copy minus padding (42em - .8em) */
+    }
+
+    /*
+     * /components/: 
+     * _bodycopy.scss 
+     */
+
+    .bodycopy p {
+      @apply(--paper-font-body1);
+      @apply(--theme-bodycopy);
+    }
+
+    .bodycopy ul,
+    .bodycopy ol {
+      margin-left: 1.7rem;
+      margin-bottom: 1em; /* slightly slimmer than paragraph's bottom margin */
+      @apply(--theme-bodycopy);
+    }
+
+    .bodycopy ul li,
+    .bodycopy ol li {
+      line-height: var(--theme-text-line-height);
+      display: list-item;
+    }
+
+    .bodycopy ul li {
+      line-height: calc(var(--theme-text-line-height) * 1.2);
     }
 
     /*
