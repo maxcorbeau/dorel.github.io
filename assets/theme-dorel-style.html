@@ -73,13 +73,6 @@ Description:  Dorel's webcomponent styling -config
       @apply(--theme-heading);
     }
 
-    .bodycopy a {
-      /* link color in running text should be the same as body copy,
-         this improves legibility */
-      color: var(--theme-primary-text-color); 
-      text-decoration: underline;
-    }
-
     span {
       line-height: var(--theme-text-line-height);
     }
@@ -110,8 +103,15 @@ Description:  Dorel's webcomponent styling -config
      */
 
     .bodycopy p {
-      @apply(--paper-font-body1);
+      margin-bottom: var(--theme-margin-bodycopy);
       @apply(--theme-bodycopy);
+    }
+
+    .bodycopy a {
+      /* link color in running text should be the same as body copy,
+         this improves legibility */
+      color: var(--theme-primary-text-color); 
+      text-decoration: underline;
     }
 
     .bodycopy ul,
@@ -266,7 +266,7 @@ Description:  Dorel's webcomponent styling -config
       padding: .5rem 0 .2rem 0; 
       float: left;
       width: 100%;
-      @apply(--paper-font-body1);
+      @apply(--theme-bodycopy);
     }
 
     .list-manuals li a {
@@ -300,9 +300,6 @@ Description:  Dorel's webcomponent styling -config
      * /sections/:
      * _utility.scss
      */
-    body {
-      background-color: var(--theme-color-background-tertiary);
-    }
 
     .container {
       width: 100%;
@@ -452,10 +449,6 @@ Description:  Dorel's webcomponent styling -config
       @apply(--theme-ui);
     }
 
-    .ui-pages-overview {
-
-    }
-
     .ui-pages-overview .list-title,
     .ui-pages-overview li {
       font-size: .8em;
@@ -467,10 +460,33 @@ Description:  Dorel's webcomponent styling -config
      * _code.scss
      */
 
-     code {
-       background-color: var(--theme-color-background-tertiary);
-       padding: .2rem .4rem;
-       border-radius: var(--theme-roundness);
+     /* both code block as inline code */
+     .highlighter-rouge {
+      color: var(--theme-primary-text-color);
+      font-size: var(--theme-size-small);
+      line-height: var(--theme-text-line-height);
+      background-color: var(--theme-color-background-tertiary);
+      border-radius: var(--theme-roundness);
+     }
+
+     .bodycopy .highlighter-rouge {
+       margin-bottom: var(--theme-margin-bodycopy);
+     }
+
+     .highlighter-rouge .highlight {
+       margin: 0;
+     }
+
+     /* inline code example */
+     p .highlighter-rouge,
+     li .highlighter-rouge {
+      padding: .2rem .4rem;
+     }
+
+     /* code blocks */
+     .highlighter-rouge pre {
+      margin-bottom: 1rem;
+      padding: .7rem;
      }
 
      /* 
@@ -480,7 +496,6 @@ Description:  Dorel's webcomponent styling -config
 
     .container-home-payoff {
       padding: 1.5em;
-      float: left;
     }
 
     .background-page-payoff {

@@ -61,7 +61,7 @@ Description: Dorel's webcomponent styling -config
        * Typography
        */
 
-      --theme-size-base: 21px; /* used as bodycopy */
+      --theme-size-base: 20px; /* used as bodycopy */
 
       /* Use 'em' since font sizes are based on the
          theme's size base, which is applied to the
@@ -76,10 +76,10 @@ Description: Dorel's webcomponent styling -config
       --theme-size-ui: .7em;
       --theme-size-small: .762em;
 
-      --theme-text-line-height: 1.45em; /* use em over rem, since line-height should be relative to it's parent */
+      --theme-text-line-height: 1.5em; /* use em over rem, since line-height should be relative to it's parent */
 
       --theme-bodycopy-width: {
-        max-width: 42rem; /* set max width for legibility */
+        max-width: 46rem; /* set max width for legibility */
       };
 
        --theme-font-sans-serif: 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -89,14 +89,12 @@ Description: Dorel's webcomponent styling -config
           font-family: var(--theme-font-serif);
           font-size: var(--theme-size-base);
           line-height: var(--theme-text-line-height);
-          margin-bottom: var(--theme-margin-bodycopy);
           color: rgba(0,0,0,.8); /* make slightly translucent so the color adapts to the background */
           @apply(--theme-bodycopy-width);
        };
 
        --theme-heading: {
          font-family: var(--theme-font-sans-serif);
-         font-weight: 800;
          font-style: normal;
          line-height: var(--theme-text-line-height);
          color: rgba(0,0,0,.8); /* make slightly translucent so the color adapts to the background */
