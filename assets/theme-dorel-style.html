@@ -131,6 +131,11 @@ Description:  Dorel's webcomponent styling -config
       line-height: calc(var(--theme-text-line-height) * 1.2);
     }
 
+    .bodycopy blockquote {
+      margin-bottom: var(--theme-margin-bodycopy);
+      @apply(--theme-bodycopy);
+    }
+
     /*
      * /components/: 
      * _page.scss 
