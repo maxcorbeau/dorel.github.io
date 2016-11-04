@@ -21,7 +21,7 @@ The goal of a user story is to deliver a particular value back to the customer. 
 <blockquote>
 User stories are often written using the following template:
 
-As a <type of user>, I want <goal> so that I <receive benefit>.
+As a &lsaquo;type of user&rsaquo;, I want &lsaquo;goal&rsaquo; so that I &lsaquo;receive benefit&rsaquo;.
 Let's use a website as a simple example to create a user story.
 
 As a customer, I want to be able to create an account so that I can see the purchases I made in the last year to help me budget for next year.
