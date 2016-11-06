@@ -55,12 +55,33 @@
   <link rel="import" href="/assets/bower_components/iron-autogrow-textarea/iron-autogrow-textarea.html">
 
   <!-- demo elements -->
-  <link rel="import" href="/assets/bower_components/iron-demo-helpers/demo-snippet.html">
-  <link rel="import" href="/assets/bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+  <!-- link rel="import" href="/assets/bower_components/iron-demo-helpers/demo-snippet.html"-->
+  <!-- link rel="import" href="/assets/bower_components/iron-demo-helpers/demo-pages-shared-styles.html"-->
 
-  <style is="custom-style" include="demo-pages-shared-styles">
+  <!-- paper-styles 
+  <link rel="import" href="/assets/bower_components/paper-styles/color.html">
+  <link rel="import" href="/assets/bower_components/paper-styles/shadow.html">
+  <link rel="import" href="/assets/bower_components/paper-styles/typography.html"-->
 
-    .centered {
+  <!-- 
+    Themes 
+    - Add theme files the <head> tag _AFTER_ the
+      webcomponents-lite.min.js and other HTML imports. 
+    - These can be used for the template switcher.
+  -->
+  <!--link rel="import" href="/assets/bower_components/paper-styles/default-theme"-->
+  <link rel="import" href="/assets/theme-dorel-config.html">
+  <!--link rel="import" href="/assets/theme-polymer-config.html"-->
+  <link rel="import" href="/assets/theme-dorel-style.html">
+
+  <!--script src="assets/bower_components/platform/platform.js"></script-->
+
+</head>
+
+<!-- Custom style for polymer objects -->
+<style is="custom-style">
+
+  .centered {
       min-width: calc(100% - 200px);
       margin-left: auto;
       margin-right: auto;
@@ -105,31 +126,6 @@
       --paper-card-header-color: white;
     }
 
-  </style>
-
-  <!-- paper-styles 
-  <link rel="import" href="/assets/bower_components/paper-styles/color.html">
-  <link rel="import" href="/assets/bower_components/paper-styles/shadow.html">
-  <link rel="import" href="/assets/bower_components/paper-styles/typography.html"-->
-
-  <!-- 
-    Themes 
-    - Add theme files the <head> tag _AFTER_ the
-      webcomponents-lite.min.js and other HTML imports. 
-    - These can be used for the template switcher.
-  -->
-  <!--link rel="import" href="/assets/bower_components/paper-styles/default-theme"-->
-  <link rel="import" href="/assets/theme-dorel-config.html">
-  <!--link rel="import" href="/assets/theme-polymer-config.html"-->
-  <link rel="import" href="/assets/theme-dorel-style.html">
-
-  <!--script src="assets/bower_components/platform/platform.js"></script-->
-
-</head>
-
-<!-- Custom style for polymer objects -->
-<style is="custom-style">
-
   .shadow {
     display: inline-block;
     padding: 8px;
@@ -142,64 +138,98 @@
     @apply(--shadow-elevation-2dp);
   }
 
+  .ktch_container {
+    width: 100%;
+    float: left;
+    clear: both;
+  }
+
+  .ktch_select-brand {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--theme-color-background-tertiary);
+  }
+  .ktch_toggle-brand {
+    display: inline-block;
+  }
+  .ktch_block-color {
+    width: 9rem;
+    height: 5rem;
+    display: flex;
+    float: left;
+    margin: 0 1rem 1rem 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ktch_theme-brand-color {
+    background-color: var(--theme-brand-color);
+  }
+  .ktch_theme-brand-color-complementary {
+    background-color: var(--theme-brand-color-complementary);
+  }
+  .ktch_theme-color-background {
+    background-color: var(--theme-color-background);
+  }
+
 </style>
 
 <body>
 
-  <p>The ktichensink includes every single element in the framework. The kitchensink is typically used for visual regression testing. After you change one element, see if it doesn't inflict another element. But also the other way around, if you change a certain element, sometimes other related elements need to change as well to maintain the visual coherence between the elements.</p>
-  <p>Do not use this as a component library. Instead check the element's page itself in the catalog. This will contain info about how to use and implementation details.</p>
+  <iron-grid-container>
+      <iron-grid>
+        <main class="xs12 vtop container-center-page">
 
-  <paper-drawer-panel>
+          <div class="page full-width bodycopy">
+            <div class="ktch_container">
+              <h1 class="theme-font-display1">{{ page.title }}</h1>
+              <p>The ktichensink includes every single element in the framework. The kitchensink is typically used for visual regression testing. After you change one element, see if it doesn't inflict another element. But also the other way around, if you change a certain element, sometimes other related elements need to change as well to maintain the visual coherence between the elements.</p>
+              <p>Do not use this as a component library. Instead check the element's page itself in the catalog. This will contain info about how to use and implementation details.</p>
+            </div>
+          </div>
 
-    <paper-header-panel drawer>
-      <paper-toolbar>
-        <paper-icon-button icon="close" paper-drawer-toggle></paper-icon-button>
-      </paper-toolbar>
+        </main>
 
-      <span>Kitchensink elements</span>
+        <div class="xs12 vtop container-center-page">
 
-      <ul class="not-enum">
+          <section class="vertical-section-container centered ktch_select-brand">
+            <div class="ktch_container">
+                <div class="ktch_toggle-brand">
+                  <paper-toggle-button checked>Dorel Juvenile</paper-toggle-button>
+                </div>
+                <div class="ktch_toggle-brand">
+                  <paper-toggle-button disabled>Maxi Cosi</paper-toggle-button>
+                </div>
+                <div class="ktch_toggle-brand">
+                  <paper-toggle-button disabled>Quinny</paper-toggle-button>
+                </div>
+              </div>
+          </section>
 
-        {% for post in site.posts %}
-          <li>
-            <a href="#{{ post.title | remove: " -" | replace: " ", "-" | downcase }}">{{ post.title }}</a>
-          </li>
-        {% endfor %}
+          {% comment %} 
+           *
+           * This loop iterates through posts for demo content of kitchensink.
+           * Using a loop makes it easier to maintain the different sections.
+           * 
+           * Uses the filename minus the date for the section id.
+           *
+          {% endcomment %}
 
-      </ul>
+          {% for post in site.posts reversed %}
+            <section id="{{ post.title | remove: " -" | replace: " ", "-" | downcase }}" class="ktch_container">
 
-    </paper-header-panel>
+              <header class="vertical-section-container centered">
+                <h3 class="theme-font-display2">{{ post.title }}</h3>
+              </header>
 
-    <paper-header-panel main>
+              {{ post.content }}
 
-      <paper-toolbar>
-        <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
-      </paper-toolbar>
-
-      {% comment %} 
-       *
-       * This loop iterates through posts for demo content of kitchensink.
-       * Using a loop makes it easier to maintain the different sections.
-       * 
-       * Uses the filename minus the date for the section id.
-       *
-      {% endcomment %}
-
-      {% for post in site.posts %}
-        <section id="{{ post.title | remove: " -" | replace: " ", "-" | downcase }}">
-
-          <header class="vertical-section-container centered">
-            <h3 class="paper-font-display2">{{ post.title }}</h3>
-          </header>
-
-          {{ post.content }}
-
-        </section>
-      {% endfor %}
-
-    </paper-header-panel>
-
-  </paper-drawer-panel>
+            </section>
+          {% endfor %}
+        </div>
+      </iron-grid>
+    </iron-grid-container>
 
   <script>
     // Uses webcomponents-lite.min.js.
