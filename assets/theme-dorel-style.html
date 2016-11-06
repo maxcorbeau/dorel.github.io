@@ -31,13 +31,13 @@ Description:  Dorel's webcomponent styling -config
        elements from visual representation 
        use classes instead */
 
-    .headline {
+    .theme-font-headline {
       font-size: var(--theme-size-headline);
       margin-bottom: var(--theme-margin-headings);
       @apply(--theme-heading);
     }
 
-    .subhead {
+    .theme-font-subhead {
       font-size: var(--theme-size-subhead);
       margin-bottom: var(--theme-margin-headings);
       @apply(--theme-heading);
@@ -45,28 +45,28 @@ Description:  Dorel's webcomponent styling -config
 
     /* markdown-generated-content
        sine the html can't get class names */
-    .display1,
+    .theme-font-display1,
     .markdown-generated-content h1 {
       font-size: var(--theme-size-headline);
       margin-bottom: var(--theme-margin-headings);
       @apply(--theme-heading);
     }
 
-    .display2,
+    .theme-font-display2,
     .markdown-generated-content h2 {
       font-size: var(--theme-size-display2);
       margin-bottom: var(--theme-margin-headings);
       @apply(--theme-heading);
     }
 
-    .display3,
+    .theme-font-display3,
     .markdown-generated-content h3 {
       font-size: var(--theme-size-display3);
       margin-bottom: var(--theme-margin-headings);
       @apply(--theme-heading);
     }
 
-    .display4,
+    .theme-font-display4,
     .markdown-generated-content h4 {
       font-size: var(--theme-size-display4);
       /* margin-bottom: var(--theme-margin-headings); intentionally no bottom margin */
@@ -75,16 +75,6 @@ Description:  Dorel's webcomponent styling -config
 
     span {
       line-height: var(--theme-text-line-height);
-    }
-
-    .type-ui-primary {
-      color: var(--theme-color-foreground);
-      @apply(--paper-font-headline);
-    }
-
-    .type-ui-secondary {
-      color: var(--theme-color-foreground-tertiary);
-      @apply(--paper-font-headline);
     }
 
     .page-header .type-ui-secondary {
@@ -134,6 +124,10 @@ Description:  Dorel's webcomponent styling -config
     .bodycopy blockquote {
       margin-bottom: var(--theme-margin-bodycopy);
       @apply(--theme-bodycopy);
+    }
+
+    .bodycopy p .highlight {
+      background-color: var(--theme-color-highlight);
     }
 
     /*
@@ -249,14 +243,14 @@ Description:  Dorel's webcomponent styling -config
       list-style-type: none;
     }
 
-    article ul {
+    /*article ul {
       margin-left: 1.25em;
     }
 
     article ul li {
       padding: .25rem 0;
       display: list-item;
-    }
+    }*/
 
     /* custom lists */
     .list-manuals {
