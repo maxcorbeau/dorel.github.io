@@ -69,6 +69,7 @@
       webcomponents-lite.min.js and other HTML imports. 
     - These can be used for the template switcher.
   -->
+
   <!--link rel="import" href="/assets/bower_components/paper-styles/default-theme"-->
   <link rel="import" href="/assets/theme-dorel-config.html">
   <!--link rel="import" href="/assets/theme-polymer-config.html"-->
@@ -81,51 +82,45 @@
 <!-- Custom style for polymer objects -->
 <style is="custom-style">
 
+  /* refactor this */
   .centered {
-      min-width: calc(100% - 200px);
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .horizontal {
-      @apply(--layout-horizontal);
-    }
-    .vertical-section-container {
-      max-width: 500px;
-    }
-
-    .demo-heading {
-      display: block;
-      -webkit-margin-before: 1.33em;
-      -webkit-margin-after: 1.33em;
-      -webkit-margin-start: 0px;
-      -webkit-margin-end: 0px;
-      font-weight: bold;
-    }
-
-    .paper-font-display2 {
-      font-size: var(--theme-size-display2);
-    }
-    .paper-font-display3 {
-      font-size: var(--theme-size-display3);
-    }
-
-    .amber {
-      background: var(--paper-amber-900);
-    }
-    .lime {
-      background: var(--paper-lime-500);
-    }
-    .cyan {
-      background: var(--paper-cyan-500);
-    }
-    .dark {
-      background: var(--paper-blue-grey-500);
-    }
-    paper-card.dark, paper-card.amber, paper-card.lime, paper-card.cyan {
-      color: white;
-      --paper-card-header-color: white;
-    }
-
+    min-width: calc(100% - 200px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .horizontal {
+    @apply(--layout-horizontal);
+  }
+  .demo-heading {
+    display: block;
+    -webkit-margin-before: 1.33em;
+    -webkit-margin-after: 1.33em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+  }
+  .paper-font-display2 {
+    font-size: var(--theme-size-display2);
+  }
+  .paper-font-display3 {
+    font-size: var(--theme-size-display3);
+  }
+  .amber {
+    background: var(--paper-amber-900);
+  }
+  .lime {
+    background: var(--paper-lime-500);
+  }
+  .cyan {
+    background: var(--paper-cyan-500);
+  }
+  .dark {
+    background: var(--paper-blue-grey-500);
+  }
+  paper-card.dark, paper-card.amber, paper-card.lime, paper-card.cyan {
+    color: white;
+    --paper-card-header-color: white;
+  }
   .shadow {
     display: inline-block;
     padding: 8px;
@@ -133,21 +128,32 @@
     height: 50px;
     width: 50px;
   }
-
   .shadow-2dp {
     @apply(--shadow-elevation-2dp);
   }
+  /* refactoring until here */
 
+  .ktch_background {
+    background-color: var(--theme-color-background-secondary);
+  }
+  .ktch_vertical-section-container {
+    max-width: 500px;
+  }
   .ktch_container {
     width: 100%;
     float: left;
     clear: both;
   }
-
-  .ktch_select-brand {
+  .ktch_select-brand,
+  .ktch_section {
     margin-bottom: 1rem;
     padding: 1rem;
+  }
+  .ktch_select-brand {
     background-color: var(--theme-color-background-tertiary);
+  }
+  .ktch_section {
+    background-color: white;
   }
   .ktch_toggle-brand {
     display: inline-block;
@@ -162,7 +168,6 @@
     align-items: center;
     justify-content: center;
   }
-
   .ktch_theme-brand-color {
     background-color: var(--theme-brand-color);
   }
@@ -178,22 +183,24 @@
 <body>
 
   <iron-grid-container>
-      <iron-grid>
-        <main class="xs12 vtop container-center-page">
-
-          <div class="page full-width bodycopy">
-            <div class="ktch_container">
-              <h1 class="theme-font-display1">{{ page.title }}</h1>
-              <p>The ktichensink includes every single element in the framework. The kitchensink is typically used for visual regression testing. After you change one element, see if it doesn't inflict another element. But also the other way around, if you change a certain element, sometimes other related elements need to change as well to maintain the visual coherence between the elements.</p>
-              <p>We would advise not to use this as a component library. Instead check the element's page itself in the catalog. This will contain info about how to use and implementation details.</p>
-            </div>
+    <iron-grid>
+      <main class="xs12 vtop container-center-page">
+        <div class="page full-width bodycopy">
+          <div class="ktch_container">
+            <h1 class="theme-font-display1">{{ page.title }}</h1>
+            <p>The ktichensink includes every single element in the framework. The kitchensink is typically used for visual regression testing. After you change one element, see if it doesn't inflict another element. But also the other way around, if you change a certain element, sometimes other related elements need to change as well to maintain the visual coherence between the elements.</p>
+            <p>We would advise not to use this as a component library. Instead check the element's page itself in the catalog. This will contain info about how to use and implementation details.</p>
           </div>
+        </div>
+      </main>
+    </iron-grid>
+  </iron-grid-container>
 
-        </main>
-
+  <!--div class="ktch_background"-->
+    <iron-grid-container>
+      <iron-grid>
         <div class="xs12 vtop container-center-page">
-
-          <section class="vertical-section-container centered ktch_select-brand">
+          <section class="ktch_vertical-section-container centered ktch_select-brand">
             <paper-radio-group aria-labelledby="label1" class="ktch_container">
                 <div class="ktch_toggle-brand">
                   <paper-radio-button checked>Dorel Juvenile</paper-radio-button>
@@ -217,19 +224,17 @@
           {% endcomment %}
 
           {% for post in site.posts reversed %}
-            <section id="{{ post.title | remove: " -" | replace: " ", "-" | downcase }}" class="ktch_container">
-
-              <header class="vertical-section-container centered">
-                <h3 class="theme-font-display2">{{ post.title }}</h3>
+            <section id="{{ post.title | remove: " -" | replace: " ", "-" | downcase }}" class="ktch_vertical-section-container ktch_section centered">
+              <header class="vertical-section-container centered ktch_section-header">
+                <h3 class="ui-text">{{ post.title }}</h3>
               </header>
-
               {{ post.content }}
-
             </section>
           {% endfor %}
         </div>
       </iron-grid>
     </iron-grid-container>
+  <!--/div-->
 
   <script>
     // Uses webcomponents-lite.min.js.
