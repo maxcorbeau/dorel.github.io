@@ -19,13 +19,6 @@ Description:  Dorel's webcomponent styling -config
       color: var(--theme-color-link-primary);
     }
 
-    .bodycopy a {
-      /* link color in running text should be the same as body copy,
-         this improves legibility */
-      color: var(--theme-primary-text-color); 
-      text-decoration: underline;
-    }
-
     .list-title {
       padding-bottom: .9rem;
     }
@@ -34,22 +27,17 @@ Description:  Dorel's webcomponent styling -config
       color: var(--theme-color-disabled);
     }
 
-    .bodycopy p {
-      @apply(--paper-font-body1);
-      @apply(--theme-bodycopy);
-    }
-
     /* decoupled semantic heading (h1, h2, etc.) 
        elements from visual representation 
        use classes instead */
 
-    .headline {
+    .theme-font-headline {
       font-size: var(--theme-size-headline);
       margin-bottom: var(--theme-margin-headings);
       @apply(--theme-heading);
     }
 
-    .subhead {
+    .theme-font-subhead {
       font-size: var(--theme-size-subhead);
       margin-bottom: var(--theme-margin-headings);
       @apply(--theme-heading);
@@ -57,63 +45,36 @@ Description:  Dorel's webcomponent styling -config
 
     /* markdown-generated-content
        sine the html can't get class names */
-    .display1,
+    .theme-font-display1,
     .markdown-generated-content h1 {
       font-size: var(--theme-size-headline);
       margin-bottom: var(--theme-margin-headings);
       @apply(--theme-heading);
     }
 
-    .display2,
+    .theme-font-display2,
     .markdown-generated-content h2 {
       font-size: var(--theme-size-display2);
       margin-bottom: var(--theme-margin-headings);
       @apply(--theme-heading);
     }
 
-    .display3,
+    .theme-font-display3,
     .markdown-generated-content h3 {
       font-size: var(--theme-size-display3);
       margin-bottom: var(--theme-margin-headings);
       @apply(--theme-heading);
     }
 
-    .display4,
+    .theme-font-display4,
     .markdown-generated-content h4 {
       font-size: var(--theme-size-display4);
       /* margin-bottom: var(--theme-margin-headings); intentionally no bottom margin */
       @apply(--theme-heading);
     }
 
-    .bodycopy ul,
-    .bodycopy ol {
-      margin-left: 1.7rem;
-      @apply(--theme-bodycopy);
-    }
-
-    .bodycopy ul li,
-    .bodycopy ol li {
-      line-height: var(--theme-text-line-height);
-      margin-bottom: 1em; /* slightly slimmer than paragraph's bottom margin */
-      display: list-item;
-    }
-
-    .bodycopy ul li {
-      line-height: calc(var(--theme-text-line-height) * 1.2);
-    }
-
     span {
       line-height: var(--theme-text-line-height);
-    }
-
-    .type-ui-primary {
-      color: var(--theme-color-foreground);
-      @apply(--paper-font-headline);
-    }
-
-    .type-ui-secondary {
-      color: var(--theme-color-foreground-tertiary);
-      @apply(--paper-font-headline);
     }
 
     .page-header .type-ui-secondary {
@@ -124,6 +85,49 @@ Description:  Dorel's webcomponent styling -config
       border-left: 3px solid var(--theme-color-background);
       padding-left: .8em;
       max-width: 41.2em; /* aligns with running copy minus padding (42em - .8em) */
+    }
+
+    /*
+     * /components/: 
+     * _bodycopy.scss 
+     */
+
+    .bodycopy p {
+      margin-bottom: var(--theme-margin-bodycopy);
+      @apply(--theme-bodycopy);
+    }
+
+    .bodycopy a {
+      /* link color in running text should be the same as body copy,
+         this improves legibility */
+      color: var(--theme-primary-text-color); 
+      text-decoration: underline;
+    }
+
+    .bodycopy ul,
+    .bodycopy ol {
+      margin-left: 1.7rem;
+      margin-bottom: 1em; /* slightly slimmer than paragraph's bottom margin */
+      @apply(--theme-bodycopy);
+    }
+
+    .bodycopy ul li,
+    .bodycopy ol li {
+      line-height: var(--theme-text-line-height);
+      display: list-item;
+    }
+
+    .bodycopy ul li {
+      line-height: calc(var(--theme-text-line-height) * 1.2);
+    }
+
+    .bodycopy blockquote {
+      margin-bottom: var(--theme-margin-bodycopy);
+      @apply(--theme-bodycopy);
+    }
+
+    .bodycopy p .highlight {
+      background-color: var(--theme-color-highlight);
     }
 
     /*
@@ -239,14 +243,14 @@ Description:  Dorel's webcomponent styling -config
       list-style-type: none;
     }
 
-    article ul {
+    /*article ul {
       margin-left: 1.25em;
     }
 
     article ul li {
       padding: .25rem 0;
       display: list-item;
-    }
+    }*/
 
     /* custom lists */
     .list-manuals {
@@ -261,7 +265,7 @@ Description:  Dorel's webcomponent styling -config
       padding: .5rem 0 .2rem 0; 
       float: left;
       width: 100%;
-      @apply(--paper-font-body1);
+      @apply(--theme-bodycopy);
     }
 
     .list-manuals li a {
@@ -295,9 +299,6 @@ Description:  Dorel's webcomponent styling -config
      * /sections/:
      * _utility.scss
      */
-    body {
-      background-color: var(--theme-color-background-tertiary);
-    }
 
     .container {
       width: 100%;
@@ -447,10 +448,6 @@ Description:  Dorel's webcomponent styling -config
       @apply(--theme-ui);
     }
 
-    .ui-pages-overview {
-
-    }
-
     .ui-pages-overview .list-title,
     .ui-pages-overview li {
       font-size: .8em;
@@ -462,10 +459,33 @@ Description:  Dorel's webcomponent styling -config
      * _code.scss
      */
 
-     code {
-       background-color: var(--theme-color-background-tertiary);
-       padding: .2rem .4rem;
-       border-radius: var(--theme-roundness);
+     /* both code block as inline code */
+     .highlighter-rouge {
+      color: var(--theme-primary-text-color);
+      font-size: var(--theme-size-small);
+      line-height: var(--theme-text-line-height);
+      background-color: var(--theme-color-background-tertiary);
+      border-radius: var(--theme-roundness);
+     }
+
+     .bodycopy .highlighter-rouge {
+       margin-bottom: var(--theme-margin-bodycopy);
+     }
+
+     .highlighter-rouge .highlight {
+       margin: 0;
+     }
+
+     /* inline code example */
+     p .highlighter-rouge,
+     li .highlighter-rouge {
+      padding: .2rem .4rem;
+     }
+
+     /* code blocks */
+     .highlighter-rouge pre {
+      margin-bottom: 1rem;
+      padding: .7rem;
      }
 
      /* 
@@ -475,7 +495,6 @@ Description:  Dorel's webcomponent styling -config
 
     .container-home-payoff {
       padding: 1.5em;
-      float: left;
     }
 
     .background-page-payoff {

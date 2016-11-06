@@ -30,12 +30,14 @@ Description: Dorel's webcomponent styling -config
       --theme-color-foreground-secondary: rgb(80, 80, 80);
       --theme-color-foreground-tertiary: rgb(177, 179, 179);
 
+      --theme-color-highlight: rgba(255, 247, 0, 0.3);
       --theme-color-disabled: var(--theme-color-foreground-tertiary);
 
       --theme-primary-text-color: var(--theme-color-foreground-secondary);
 
       --theme-brand-color: rgb(0, 114, 206);
       --theme-brand-color-complementary: rgb(237, 139, 0);
+
 
       /* if the theme's brand color is quite similar to the browsers' native link color use 
          it for the primary link color. Adding a new link-blue color close to that color will 
@@ -61,7 +63,7 @@ Description: Dorel's webcomponent styling -config
        * Typography
        */
 
-      --theme-size-base: 21px; /* used as bodycopy */
+      --theme-size-base: 20px; /* used as bodycopy */
 
       /* Use 'em' since font sizes are based on the
          theme's size base, which is applied to the
@@ -76,10 +78,10 @@ Description: Dorel's webcomponent styling -config
       --theme-size-ui: .7em;
       --theme-size-small: .762em;
 
-      --theme-text-line-height: 1.45em; /* use em over rem, since line-height should be relative to it's parent */
+      --theme-text-line-height: 1.5em; /* use em over rem, since line-height should be relative to it's parent */
 
       --theme-bodycopy-width: {
-        max-width: 42rem; /* set max width for legibility */
+        max-width: 46rem; /* set max width for legibility */
       };
 
        --theme-font-sans-serif: 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -87,15 +89,14 @@ Description: Dorel's webcomponent styling -config
 
        --theme-bodycopy: {
           font-family: var(--theme-font-serif);
+          font-size: var(--theme-size-base);
           line-height: var(--theme-text-line-height);
-          margin-bottom: var(--theme-margin-bodycopy);
           color: rgba(0,0,0,.8); /* make slightly translucent so the color adapts to the background */
           @apply(--theme-bodycopy-width);
        };
 
        --theme-heading: {
          font-family: var(--theme-font-sans-serif);
-         font-weight: 800;
          font-style: normal;
          line-height: var(--theme-text-line-height);
          color: rgba(0,0,0,.8); /* make slightly translucent so the color adapts to the background */
@@ -107,46 +108,6 @@ Description: Dorel's webcomponent styling -config
          font-weight: 600;
          text-transform: uppercase;
        };
-
-      /* ----------------------------------------------------------------
-       * Polymer element styling overrides 
-       */
-
-       /* Define Polymer global variables */
-
-      --paper-font-headline: var(--theme-size-headline);
-      --paper-font-subhead: var(--theme-size-headline);
-      --paper-font-display1: var(--theme-size-display-1);
-      --paper-font-display2: var(--theme-size-display-2);
-      --paper-font-display3: var(--theme-size-display-3);
-      --paper-font-display4: var(--theme-size-display-4);
-      --paper-font-body1: var(--theme-size-base);
-      --paper-font-body2: var(--theme-size-base);
-      --paper-font-caption: var(--theme-size-base);
-      --paper-font-menu: var(--theme-size-ui);
-      --paper-font-button: var(--theme-size-ui);
-
-      --primary-text-color: var(--theme-primary-text-color);
-      --primary-background-color: var(--theme-color-background);
-      --secondary-text-color: var(--light-theme-secondary-color);
-      --disabled-text-color: var(--light-theme-disabled-color);
-      --divider-color: var(--light-theme-divider-color);
-      --error-color: var(--paper-deep-orange-a700);
-
-      /* set icon font same size as body copy */
-      --iron-icon-width: var(--paper-font-body1);
-      --iron-icon-height: var(--paper-font-body1);
-
-      /* Define Polymer per element styling */
-
-      /* paper-toolbar: */
-      paper-toolbar {
-        --paper-toolbar-background: var(--theme-primary-background-color, --white);
-        --paper-toolbar-color: var(--theme-primary-text-color, --black);
-      }
-
-      /* iron-grid: */
-      --iron-container-width: 100%;
 
   }
 

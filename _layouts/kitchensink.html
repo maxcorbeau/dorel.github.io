@@ -1,6 +1,8 @@
 <head>
   <meta charset="utf-8">
+
   <title>{{ page.title }} - {{ site.title }} - dorel.io</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <!-- Fundament style to reset browser defaults -->
@@ -21,39 +23,40 @@
 
   <!-- paper elements -->
   <link rel="import" href="/assets/bower_components/paper-header-panel/paper-header-panel.html">
+  <link rel="import" href="/assets/bower_components/paper-drawer-panel/paper-drawer-panel.html">
   <link rel="import" href="/assets/bower_components/paper-toolbar/paper-toolbar.html">
   <link rel="import" href="/assets/bower_components/paper-badge/paper-badge.html">
+  <link rel="import" href="/assets/bower_components/paper-input/paper-input.html">
+  <link rel="import" href="/assets/bower_components/paper-checkbox/paper-checkbox.html">
+  <link rel="import" href="/assets/bower_components/paper-button/paper-button.html">
+  <link rel="import" href="/assets/bower_components/paper-radio-button/paper-radio-button.html">
+  <link rel="import" href="/assets/bower_components/paper-radio-group/paper-radio-group.html">
+  <link rel="import" href="/assets/bower_components/paper-slider/paper-slider.html">
+  <link rel="import" href="/assets/bower_components/paper-spinner/paper-spinner.html">
+  <link rel="import" href="/assets/bower_components/paper-spinner/paper-spinner-lite.html">
+  <link rel="import" href="/assets/bower_components/paper-tabs/paper-tab.html">
+  <link rel="import" href="/assets/bower_components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="/assets/bower_components/paper-toggle-button/paper-toggle-button.html">
+  <link rel="import" href="/assets/bower_components/paper-card/paper-card.html">
+  <link rel="import" href="/assets/bower_components/paper-card/paper-card.html">
+  <link rel="import" href="/assets/bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="/assets/bower_components/iron-icons/communication-icons.html">
+  <link rel="import" href="/assets/bower_components/iron-icons/hardware-icons.html">
+  <link rel="import" href="/assets/bower_components/iron-icons/social-icons.html">
+
 
   <!-- iron elements -->
   <link rel="import" href="/assets/bower_components/iron-flex-layout/iron-flex-layout.html">
+  <link rel="import" href="/assets/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
   <link rel="import" href="/assets/bower_components/iron-iconset/iron-iconset.html">
+  <link rel="import" href="/assets/bower_components/iron-input/iron-input.html">
+  <link rel="import" href="/assets/bower_components/iron-label/iron-label.html">
+  <link rel="import" href="/assets/bower_components/iron-collapse/iron-collapse.html">
+  <link rel="import" href="/assets/bower_components/iron-autogrow-textarea/iron-autogrow-textarea.html">
 
   <!-- demo elements -->
-  <link rel="import" href="/assets/bower_components/iron-demo-helpers/demo-snippet.html">
-  <link rel="import" href="/assets/bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
-
-  <style is="custom-style" include="demo-pages-shared-styles">
-
-    .centered {
-      min-width: calc(100% - 200px);
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .vertical-section-container {
-      max-width: 500px;
-    }
-
-    .demo-heading {
-      display: block;
-      -webkit-margin-before: 1.33em;
-      -webkit-margin-after: 1.33em;
-      -webkit-margin-start: 0px;
-      -webkit-margin-end: 0px;
-      font-weight: bold;
-    }
-
-  </style>
+  <!-- link rel="import" href="/assets/bower_components/iron-demo-helpers/demo-snippet.html"-->
+  <!-- link rel="import" href="/assets/bower_components/iron-demo-helpers/demo-pages-shared-styles.html"-->
 
   <!-- paper-styles 
   <link rel="import" href="/assets/bower_components/paper-styles/color.html">
@@ -66,18 +69,58 @@
       webcomponents-lite.min.js and other HTML imports. 
     - These can be used for the template switcher.
   -->
+
   <!--link rel="import" href="/assets/bower_components/paper-styles/default-theme"-->
   <link rel="import" href="/assets/theme-dorel-config.html">
+  <!--link rel="import" href="/assets/theme-polymer-config.html"-->
   <link rel="import" href="/assets/theme-dorel-style.html">
 
-
-
   <!--script src="assets/bower_components/platform/platform.js"></script-->
+
 </head>
 
 <!-- Custom style for polymer objects -->
 <style is="custom-style">
 
+  /* refactor this */
+  .centered {
+    min-width: calc(100% - 200px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .horizontal {
+    @apply(--layout-horizontal);
+  }
+  .demo-heading {
+    display: block;
+    -webkit-margin-before: 1.33em;
+    -webkit-margin-after: 1.33em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+  }
+  .paper-font-display2 {
+    font-size: var(--theme-size-display2);
+  }
+  .paper-font-display3 {
+    font-size: var(--theme-size-display3);
+  }
+  .amber {
+    background: var(--paper-amber-900);
+  }
+  .lime {
+    background: var(--paper-lime-500);
+  }
+  .cyan {
+    background: var(--paper-cyan-500);
+  }
+  .dark {
+    background: var(--paper-blue-grey-500);
+  }
+  paper-card.dark, paper-card.amber, paper-card.lime, paper-card.cyan {
+    color: white;
+    --paper-card-header-color: white;
+  }
   .shadow {
     display: inline-block;
     padding: 8px;
@@ -85,388 +128,113 @@
     height: 50px;
     width: 50px;
   }
-
   .shadow-2dp {
     @apply(--shadow-elevation-2dp);
+  }
+  /* refactoring until here */
+
+  .ktch_background {
+    background-color: var(--theme-color-background-secondary);
+  }
+  .ktch_vertical-section-container {
+    max-width: 500px;
+  }
+  .ktch_container {
+    width: 100%;
+    float: left;
+    clear: both;
+  }
+  .ktch_select-brand,
+  .ktch_section {
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+  .ktch_select-brand {
+    background-color: var(--theme-color-background-tertiary);
+  }
+  .ktch_section {
+    background-color: white;
+  }
+  .ktch_toggle-brand {
+    display: inline-block;
+  }
+  .ktch_block-color {
+    width: 9rem;
+    height: 5rem;
+    display: flex;
+    float: left;
+    margin: 0 1rem 1rem 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .ktch_theme-brand-color {
+    background-color: var(--theme-brand-color);
+  }
+  .ktch_theme-brand-color-complementary {
+    background-color: var(--theme-brand-color-complementary);
+  }
+  .ktch_theme-color-background {
+    background-color: var(--theme-color-background);
   }
 
 </style>
 
 <body>
 
-  <main>
-
-  <!--div class="centered">
-    <demo-snippet>
-      <template>
-        <paper-header-panel mode="waterfall-tall">
-          <paper-toolbar>
-            <div>Header</div>
-          </paper-toolbar>
-        </paper-header-panel>
-      </template>
-    </demo-snippet>
-  </div-->
-
-  <section class="typography">
-
-    <article class="vertical-section-container centered">
-      <h4 class="demo-heading">Demo of default heading elements</h4>
-      <demo-snippet>
-        <template>
-          <h1>Heading 1</h1>
-          <h2>Heading 2</h2>
-          <h3>Heading 3</h3>
-          <h4>Heading 4</h4>
-          <h5>Heading 5</h5>
-          <h6>Heading 6</h6>
-        </template>
-      </demo-snippet>
-    </article>
-
-    <article class="vertical-section-container centered">
-      <h4 class="demo-heading">Demo of heading classes</h4>
-      <p>Styling should be separate from semantics)</p>
-      <demo-snippet>
-        <template>
-          <div class="paper-font-headline">Headline</div>
-          <div class="paper-font-title">Title</div>
-          <div class="paper-font-subhead">Subhead</div>
-          <div class="paper-font-display1">Display 1</div>
-          <div class="paper-font-display2">Display 2</div>
-          <div class="paper-font-display3">Display 3</div>
-          <div class="paper-font-display4">Display 4</div>
-          <div class="paper-font-body2">Body 2</div>
-          <div class="paper-font-body1">Body 1</div>
-          <div class="paper-font-caption">Caption</div>
-          <div class="paper-font-menu">Menu</div>
-          <div class="paper-font-button">Button</div>
-        </template>
-      </demo-snippet>
-    </article>
-
-    <article class="vertical-section-container centered">
-      <h4 class="demo-heading">Demo of running text in bodycopy</h4>
-      <demo-snippet>
-        <template>
-          <div class="bodycopy">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non igitur potestis voluptate omnia dirigentes aut tueri aut retinere virtutem. Equidem e Cn. Quid, si etiam iucunda memoria est praeteritorum malorum? Ita multo sanguine profuso in laetitia et in victoria est mortuus. Nunc ita separantur, ut disiuncta sint, quo nihil potest esse perversius. Duo Reges: constructio interrete.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non igitur potestis voluptate omnia dirigentes aut tueri aut retinere virtutem. Equidem e Cn. Quid, si etiam iucunda memoria est praeteritorum malorum? Ita multo sanguine profuso in laetitia et in victoria est mortuus. Nunc ita separantur, ut disiuncta sint, quo nihil potest esse perversius. Duo Reges: constructio interrete.</p>
+  <iron-grid-container>
+    <iron-grid>
+      <main class="xs12 vtop container-center-page">
+        <div class="page full-width bodycopy">
+          <div class="ktch_container">
+            <h1 class="theme-font-display1">{{ page.title }}</h1>
+            <p>The ktichensink includes every single element in the framework. The kitchensink is typically used for visual regression testing. After you change one element, see if it doesn't inflict another element. But also the other way around, if you change a certain element, sometimes other related elements need to change as well to maintain the visual coherence between the elements.</p>
+            <p>We would advise not to use this as a component library. Instead check the element's page itself in the catalog. This will contain info about how to use and implementation details.</p>
           </div>
-        </template>
-      </demo-snippet>
-    </article>
+        </div>
+      </main>
+    </iron-grid>
+  </iron-grid-container>
 
-    <article class="vertical-section-container centered">
-      <h4 class="demo-heading">Demo of lists in bodycopy</h4>
-      <demo-snippet>
-        <template>
-          <div class="bodycopy">
-            <ul>
-              <li>list item 1</li>
-              <li>list item 2</li>
-              <li>list item 3</li>
-            </ul>
-          </div>
-        </template>
-      </demo-snippet>
-    </article>
-
-    <article class="vertical-section-container centered">
-      <h4 class="demo-heading">Demo of citation in running text (make yellow bg)</h4>
-      <demo-snippet>
-        <template>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quo tandem modo? Nam si propter voluptatem, <cite>quae est ista laus, quae possit e macello peti?</cite> Quid affers.</p>
-
-          <p>Cur Thorius, cur Caius Postumius, cur omnium horum magister, Orata, non iucundissime vixerit? <cite><a href="#">Parvi enim primo ortu</a></cite> sic iacent, tamquam omnino sine animo sint. Quare ad ea primum, si videtur; Duo Reges: constructio interrete. Satisne ergo pudori consulat, si quis sine teste libidini pareat?</p>
-        </template>
-      </demo-snippet>
-    </article>
-
-    <article class="vertical-section-container centered">
-      <h4 class="demo-heading">Demo of blockquotes</h4>
-      <demo-snippet>
-        <template>
-          <blockquote>
-            This is a short block quote — look Ma, no paragraph tags! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Propter nos enim illam, non propter eam nosmet ipsos diligimus. Si quae forte-possumus.
-          </blockquote>
-          <blockquote>
-            <p>This is a longer block quote.</p>
-            <p>It uses paragraph elements.</p>
-          </blockquote>
-          <blockquote cite="http://www.imdb.com/character/ch0000672/quotes">
-            <p>You know the golden rule, don’t you boy? Those who have the gold make the rules.</p>
-            <footer>
-              — <a href="http://www.imdb.com/character/ch0000672/quotes">Crazy hunch-backed old guy in Aladdin</a>
-            </footer>
-          </blockquote>
-        </template>
-      </demo-snippet>
-    </article>
-
-  </section><!-- END #typography -->
-
-  <section>
-
-    <article class="vertical-section-container centered">
-      <h4 class="demo-heading">Demo of shadow</h4>
-      <demo-snippet>
-        <template>
-          <h2>shadow.html</h2>
-          <div class="shadow shadow-2dp">2dp</div>
-          <div class="shadow shadow-3dp">3dp</div>
-          <div class="shadow shadow-4dp">4dp</div>
-          <div class="shadow shadow-6dp">6dp</div>
-          <div class="shadow shadow-8dp">8dp</div>
-          <div class="shadow shadow-12dp">12dp</div>
-          <div class="shadow shadow-16dp">16dp</div>
-        </template>
-      </demo-snippet>
-    </article>
-
-  </section>
-
-  <section>
-
-      <article class="vertical-section-container centered">
-        <h4 class="demo-heading">Horizontal sections</h4>
-        <demo-snippet>
-          <template>
-
-            <div class="horizontal-section-container">
-              <div>
-                <h4>Column 1</h4>
-                <div class="horizontal-section">
-                  <div>Oxygen</div>
-                  <div>Carbon</div>
-                  <div>Hydrogen</div>
-                  <div>Nitrogen</div>
-                  <div>Calcium</div>
+  <!--div class="ktch_background"-->
+    <iron-grid-container>
+      <iron-grid>
+        <div class="xs12 vtop container-center-page">
+          <section class="ktch_vertical-section-container centered ktch_select-brand">
+            <paper-radio-group aria-labelledby="label1" class="ktch_container">
+                <div class="ktch_toggle-brand">
+                  <paper-radio-button checked>Dorel Juvenile</paper-radio-button>
                 </div>
-              </div>
-              <div>
-                <h4>Column 2</h4>
-                <div class="horizontal-section">
-                  <div>Oxygen</div>
-                  <div>Carbon</div>
-                  <div>Hydrogen</div>
-                  <div>Nitrogen</div>
-                  <div>Calcium</div>
+                <div class="ktch_toggle-brand">
+                  <paper-radio-button disabled>Maxi Cosi</paper-radio-button>
                 </div>
-              </div>
-              <div>
-                <h4>Column 3</h4>
-                <div class="horizontal-section">
-                  <div>Oxygen</div>
-                  <div>Carbon</div>
-                  <div>Hydrogen</div>
-                  <div>Nitrogen</div>
-                  <div>Calcium</div>
+                <div class="ktch_toggle-brand">
+                  <paper-radio-button disabled>Quinny</paper-radio-button>
                 </div>
-              </div>
-            </div>
+              </paper-radio-group>
+          </section>
 
-          </template>
-        </demo-snippet>
-      </article>
+          {% comment %} 
+           *
+           * This loop iterates through posts for demo content of kitchensink.
+           * Using a loop makes it easier to maintain the different sections.
+           * 
+           * Uses the filename minus the date for the section id.
+           *
+          {% endcomment %}
 
-      <article class="vertical-section-container centered">
-        <h4 class="demo-heading">Vertical sections</h4>
-        <demo-snippet>
-          <template>
-
-            <div class="vertical-section-container">
-              <div>
-                <h4>Section 1</h4>
-                <div class="vertical-section">
-                  <div>Oxygen</div>
-                  <div>Carbon</div>
-                  <div>Hydrogen</div>
-                  <div>Nitrogen</div>
-                  <div>Calcium</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="vertical-section-container centered">
-              <h4>Section 2 (centered)</h4>
-              <div class="vertical-section">
-                <div>Oxygen</div>
-                <div>Carbon</div>
-                <div>Hydrogen</div>
-                <div>Nitrogen</div>
-                <div>Calcium</div>
-              </div>
-            </div>
-
-          </template>
-        </demo-snippet>
-      </article>
-
-    </section>
-
-    <section id="default-theme">
-
-      <article class="vertical-section-container centered">
-        <h4 class="demo-heading">mobile app theme</h4>
-        <demo-snippet>
-          <template>
-            <section class="mobile-app">
-              <div class="toolbar">
-                Title
-              </div>
-              <div class="item">
-                <div class="fab">+</div>
-                <div class="primary">Primary text</div>
-                <div class="secondary">Secondary text</div>
-              </div>
-              <div class="disabled-item">
-                Disabled
-              </div>
+          {% for post in site.posts reversed %}
+            <section id="{{ post.title | remove: " -" | replace: " ", "-" | downcase }}" class="ktch_vertical-section-container ktch_section centered">
+              <header class="vertical-section-container centered ktch_section-header">
+                <h3 class="ui-text">{{ post.title }}</h3>
+              </header>
+              {{ post.content }}
             </section>
-          </template>
-        </demo-snippet>
-      </article>
-
-    </section>
-
-    <section id="form-elements">
-
-      <article class="vertical-section-container centered">
-        <h4 class="demo-heading">Badges can be customized using custom properties</h4>
-        <demo-snippet class="centered-demo">
-          <template>
-            <paper-input-container>
-              <label>Your name</label>
-              <input is="iron-input">
-            </paper-input-container>
-          </template>
-        </demo-snippet>
-      </article>
-
-      <article class="vertical-section-container centered">
-        <h4 class="demo-heading">Badges can be customized using custom properties</h4>
-        <demo-snippet class="centered-demo">
-          <template>
-            <paper-input label="text input"></paper-input>
-            <paper-textarea label="autoresizing textarea input"></paper-textarea>
-            <paper-input label="password input" type="password"></paper-input>
-            <paper-input label="disabled input" disabled></paper-input>
-          </template>
-        </demo-snippet>
-      </article>
-
-      <article class="vertical-section-container centered">
-        <h4 class="demo-heading">Badges can be customized using custom properties</h4>
-        <demo-snippet class="centered-demo">
-          <template>
-            <paper-checkbox>Checkbox</paper-checkbox>
-            <paper-checkbox checked>Checkbox</paper-checkbox>
-
-            <!-- example of styling -->
-            <style is="custom-style">
-              paper-checkbox.blue {
-                --paper-checkbox-checked-color: var(--paper-blue-500);
-                --paper-checkbox-checked-ink-color: var(--paper-blue-500);
-                --paper-checkbox-unchecked-color: var(--paper-blue-900);
-                --paper-checkbox-unchecked-ink-color: var(--paper-blue-900);
-                --paper-checkbox-label-color: var(--paper-blue-500);
-              }
-              paper-checkbox.red {
-                --paper-checkbox-checked-color: var(--paper-red-500);
-                --paper-checkbox-checked-ink-color: var(--paper-red-500);
-                --paper-checkbox-unchecked-color: var(--paper-red-900);
-                --paper-checkbox-unchecked-ink-color: var(--paper-red-900);
-                --paper-checkbox-label-color: var(--paper-red-500);
-              }
-            </style>
-
-            <paper-checkbox class="blue">Checkbox</paper-checkbox>
-            <paper-checkbox checked class="red">Checkbox</paper-checkbox>
-          </template>
-        </demo-snippet>
-      </article>
-
-    </section>
-
-    <section id="badges">
-
-      <article class="vertical-section-container centered">
-        <h4 class="demo-heading">Badges</h4>
-        <demo-snippet class="centered-demo">
-          <template>
-            <paper-icon-button id="number" icon="communication:email" alt="inbox">
-            </paper-icon-button>
-            <paper-badge for="number" label="4">
-            </paper-badge>
-
-            <paper-icon-button id="icon" icon="account-box" alt="person">
-            </paper-icon-button>
-            <paper-badge icon="social:mood" for="icon" label="happy">
-            </paper-badge>
-          </template>
-        </demo-snippet>
-      </article>
-
-      <article class="vertical-section-container centered">
-        <h4 class="demo-heading">Badges can be customized using custom properties</h4>
-        <demo-snippet class="centered-demo">
-          <template>
-            <paper-icon-button id="number2" icon="communication:email" alt="inbox">
-            </paper-icon-button>
-            <paper-badge for="number2" label="4" class="red">
-            </paper-badge>
-
-            <paper-icon-button id="icon2" icon="account-box" alt="account-box">
-            </paper-icon-button>
-            <paper-badge icon="social:mood" for="icon2" label="happy" class="blue">
-            </paper-badge>
-
-            <style is="custom-style">
-              .red {
-                --paper-badge-background: var(--paper-red-300);
-              }
-              .blue {
-                --paper-badge-background: var(--paper-light-blue-300);
-              }
-            </style>
-          </template>
-        </demo-snippet>
-      </article>
-
-      <article class="vertical-section-container centered">
-        <h4 class="demo-heading">Badges can be applied to direct siblings</h4>
-        <demo-snippet class="centered-demo">
-          <template>
-            <div class="container" tabindex="0">
-              <span>Inbox</span>
-              <paper-badge label="4"></paper-badge>
-            </div>
-
-            <div class="container" tabindex="0">
-              <span>Mood</span>
-              <paper-badge icon="social:mood" label="happy"></paper-badge>
-            </div>
-
-            <style is="custom-style">
-              .container {
-                display: inline-block;
-                margin-left: 30px;
-                margin-right: 30px;
-              }
-              /* Need to position the badge to look like a text superscript */
-              .container > paper-badge {
-                --paper-badge-margin-left: 20px;
-                --paper-badge-margin-bottom: 0px;
-              }
-            </style>
-          </template>
-        </demo-snippet>
-      </article>
-
-    </section>
-
-  </main>
+          {% endfor %}
+        </div>
+      </iron-grid>
+    </iron-grid-container>
+  <!--/div-->
 
   <script>
     // Uses webcomponents-lite.min.js.

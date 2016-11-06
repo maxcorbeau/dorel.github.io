@@ -1,7 +1,7 @@
 ---
 layout: manual
 title: Application Programming Interfaces
-category: Making software
+category: Make software
 draft: true
 ---
 

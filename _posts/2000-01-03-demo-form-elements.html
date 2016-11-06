@@ -1,0 +1,162 @@
+---
+title: Form Elements
+---
+
+<article class="vertical-section-container centered">
+  <h4 class="demo-heading">Paper input fields</h4>
+  <label>Paper (+iron for data binding) input</label>
+  <input is="iron-input" bind-value="{{myValue}}"><!-- do binding example -->
+
+  <label>Text input</label>
+  <paper-input label="text input"></paper-input>
+
+  <label>Input password</label>
+  <paper-input label="password input" type="password"></paper-input>
+
+  <paper-input label="total">
+    <label>Total</label>
+    <div prefix>$</div>
+    <paper-icon-button suffix icon="clear"></paper-icon-button>
+  </paper-input>
+
+  <label>Disabled input</label>
+  <paper-input label="disabled input" disabled></paper-input>
+
+  <paper-input-container attr-for-value="ssn-value">
+    <label>Social security number</label>
+    <ssn-input class="paper-input-input"></ssn-input>
+  </paper-input-container>
+</article>
+
+<article class="vertical-section-container centered">
+  <h4 class="demo-heading">Iron form fields</h4>
+  <label>Autoresizing textarea</label>
+  <iron-autogrow-textarea max-rows="4" placeholder="scrolls after 4 rows"></iron-autogrow-textarea>
+  <iron-autogrow-textarea style="max-height: 50px;" placeholder="scrolls after 50px"></iron-autogrow-textarea>
+</article>
+
+<article class="vertical-section-container centered">
+  <h4 class="demo-heading">Checkboxes</h4>
+  <paper-checkbox>Checkbox</paper-checkbox>
+  <paper-checkbox checked>Checkbox</paper-checkbox>
+
+  <!-- example of styling -->
+  <style is="custom-style">
+    paper-checkbox.blue {
+      --paper-checkbox-checked-color: var(--paper-blue-500);
+      --paper-checkbox-checked-ink-color: var(--paper-blue-500);
+      --paper-checkbox-unchecked-color: var(--paper-blue-900);
+      --paper-checkbox-unchecked-ink-color: var(--paper-blue-900);
+      --paper-checkbox-label-color: var(--paper-blue-500);
+    }
+    paper-checkbox.red {
+      --paper-checkbox-checked-color: var(--paper-red-500);
+      --paper-checkbox-checked-ink-color: var(--paper-red-500);
+      --paper-checkbox-unchecked-color: var(--paper-red-900);
+      --paper-checkbox-unchecked-ink-color: var(--paper-red-900);
+      --paper-checkbox-label-color: var(--paper-red-500);
+    }
+  </style>
+
+  <paper-checkbox class="blue">Checkbox</paper-checkbox>
+  <paper-checkbox checked class="red">Checkbox</paper-checkbox>
+</article>
+
+<article class="vertical-section-container centered">
+  <h4 class="demo-heading">Radio</h4>
+  <paper-radio-button>Radio</paper-radio-button>
+  <paper-radio-button checked>Radio</paper-radio-button>
+  <paper-radio-button disabled>Disabled</paper-radio-button>
+  <paper-radio-button noink>Radio</paper-radio-button>
+
+  <style is="custom-style">
+    paper-radio-button.red {
+      --paper-radio-button-checked-color: var(--paper-red-500);
+      --paper-radio-button-checked-ink-color: var(--paper-red-500);
+      --paper-radio-button-unchecked-color: var(--paper-red-900);
+      --paper-radio-button-unchecked-ink-color: var(--paper-red-900);
+      --paper-radio-button-label-color: var(--paper-red-500);
+    }
+    paper-radio-button.green {
+      --paper-radio-button-checked-color: var(--paper-green-500);
+      --paper-radio-button-checked-ink-color: var(--paper-green-500);
+      --paper-radio-button-unchecked-color: var(--paper-green-900);
+      --paper-radio-button-unchecked-ink-color: var(--paper-green-900);
+      --paper-radio-button-label-color: var(--paper-green-500);
+    }
+  </style>
+  <paper-radio-button class="red">Radio</paper-radio-button>
+  <paper-radio-button checked class="green">Radio</paper-radio-button>
+</article>
+
+<article class="vertical-section-container centered">
+  <h4>A paper-radio-group allows only one item to be selected</h4>
+  <label id="label1">Dinosaurs:</label>
+  <paper-radio-group aria-labelledby="label1">
+    <paper-radio-button name="a">allosaurus</paper-radio-button>
+    <paper-radio-button name="b">brontosaurus</paper-radio-button>
+    <paper-radio-button name="d" disabled>diplodocus</paper-radio-button>
+  </paper-radio-group>
+
+  <label id="label3">Deselectable:</label>
+  <paper-radio-group selected="b" allow-empty-selection aria-labelledby="label3">
+    <paper-radio-button name="a">allosaurus</paper-radio-button>
+    <paper-radio-button name="b">brontosaurus</paper-radio-button>
+    <paper-radio-button name="d" disabled>diplodocus</paper-radio-button>
+  </paper-radio-group>
+</article>
+
+<article class="vertical-section-container centered">
+  <h4 class="demo-heading">Buttons</h4>
+  <paper-button>Flat button</paper-button>
+  <paper-button raised>Raised button</paper-button>
+  <paper-button noink>No ripple effect</paper-button>
+  <paper-button toggles>Toggle-able button</paper-button>
+  <paper-button disabled>disabled</paper-button>
+  <paper-button><iron-icon icon="check"></iron-icon>link</paper-button>
+  <paper-button raised><iron-icon icon="file-download"></iron-icon>raised</paper-button>
+  <paper-button toggles raised><iron-icon icon="favorite"></iron-icon>toggles</paper-button>
+  <paper-button disabled><iron-icon icon="block"></iron-icon>disabled</paper-button>
+  <a href="https://www.polymer-project.org/" tabindex="-1">
+    <paper-button raised>Polymer Project</paper-button>
+  </a>
+</article>
+
+<article class="vertical-section-container centered">
+  <h4 class="demo-heading">Toggle buttons can be checked and disabled</h4>
+  <paper-toggle-button>Toggle</paper-toggle-button>
+  <paper-toggle-button checked>Toggle</paper-toggle-button>
+  <paper-toggle-button disabled>Disabled</paper-toggle-button>
+  <paper-toggle-button invalid>Invalid</paper-toggle-button>
+</article>
+
+<article class="vertical-section-container centered">
+  <h4 class="demo-heading">Toggle buttons can hide the ripple effect using the noink attribute</h4>
+  <paper-toggle-button noink>Toggle</paper-toggle-button>
+</article>
+
+<article class="vertical-section-container centered">
+  <h4 class="demo-heading">[demo name]</h4>
+  <style is="custom-style">
+    paper-toggle-button.green {
+      --paper-toggle-button-checked-bar-color:  var(--paper-green-500);
+      --paper-toggle-button-checked-button-color:  var(--paper-green-500);
+      --paper-toggle-button-checked-ink-color: var(--paper-green-500);
+      --paper-toggle-button-unchecked-bar-color:  var(--paper-teal-500);
+      --paper-toggle-button-unchecked-button-color:  var(--paper-teal-500);
+      --paper-toggle-button-unchecked-ink-color: var(--paper-teal-500);
+    }
+    paper-toggle-button.pink {
+      --paper-toggle-button-checked-bar-color:  var(--paper-pink-500);
+      --paper-toggle-button-checked-button-color:  var(--paper-pink-500);
+      --paper-toggle-button-checked-ink-color: var(--paper-pink-500);
+      --paper-toggle-button-unchecked-bar-color:  var(--paper-indigo-900);
+      --paper-toggle-button-unchecked-button-color:  var(--paper-indigo-900);
+      --paper-toggle-button-unchecked-ink-color: var(--paper-indigo-900);
+    }
+  </style>
+
+  <paper-toggle-button class="green">Toggle</paper-toggle-button>
+  <paper-toggle-button checked class="pink">Toggle</paper-toggle-button>
+</article>
+
