@@ -5,13 +5,13 @@ category: Make software
 draft: false
 ---
 
-When contributing to the project start your development in a separate branch. Please take close attention of the branching conventions stated below. 
+When contributing to the project start your development in a separate branch. Please take close attention of the branching conventions stated below.
 
 ## git workflow
 
-The preferred branching model is gitflow. The develop branch is default and is where the developed features will be merged in. Off this develop branch feature branches can be branched to develop functionality. 
+The preferred branching model is gitflow. The develop branch is default and is where the developed features will be merged in. Off this develop branch feature branches can be branched to develop functionality.
 
-The master branch is a direct representation of what's released on production. New releases (in Master) should be tagged following the [Semantic Versioning 2.0.0](http://semver.org) standard. 
+The master branch is a direct representation of what's released on production. New releases (in Master) should be tagged following the [Semantic Versioning 2.0.0](http://semver.org) standard.
 
 Example: `v0.0.1`
 
@@ -24,27 +24,30 @@ Two types of developers
 - contributor: contributes to the repository
 - maintainer: maintains the git repository
 
-### contributor
-Typical actions for the contributor are: Starting of a branch, filing in Pull Requests.
-
-### maintainer 
-Authors the code of the contributor before it's merged. 
-Typical actions for the maintainer are: Review Pull Requests. 
+- contributor: Typical actions for the contributor are: Starting of a branch, filing in Pull Requests.
+- maintainer: Authors the code of the contributor before it's merged. Typical actions for the maintainer are: Review Pull Requests.
 
 ## branching
 
-The typical workflow is that you get a JIRA ticket assigned. For future reference in the git history, this ticket reference needs to be reflected in the commit message as described in the next chapter *git history* title. But these commits will also need to be contained in a encapsuled version of the repository so you can work freely without interferring with other developers. For that you can create a branch. 
+The typical workflow is that you get a JIRA ticket assigned. For future reference in the git history, this ticket reference needs to be reflected in the commit message as described in the next chapter *git history* title. But these commits will also need to be contained in a encapsuled version of the repository so you can work freely without interferring with other developers. For that you can create a branch.
 
 Example of branch name when working on a ticket or bugfix:
 
-- Example of JIRA ticket system: `feature/DIO-123_search`
-- Example of JIRA ticket system: `bugfix/DIO-124_tabs`
-- Example of JIRA ticket system: `feature/gh-1_another-feature`
+- Example of JIRA ticket system: `feature/DIO-123`
+- Example of JIRA ticket system: `bugfix/DIO-124`
+- Example of JIRA ticket system: `feature/gh-1`
 
 The words in feature branches are separated by hyphens.
 
+When branching a specific task, use the dedicated branch folders. Example of branch folders:
+
+- feature/DIO-x
+- bugfix/DIO-x
+- release/DIO-x
+
 projects:
-- lowercase project name: 'gh' = Github project: Tickets in the issue list of the repo
+
+- Lowercase project name: 'gh' = Github project
 - Uppercase project name: 'DIO' = dorel.io project in JIRA
 
 Mergin branches will always have to be `$ git merge --no-ff` to always keep the reference to the original pull request in our commit history.
@@ -52,6 +55,8 @@ Mergin branches will always have to be `$ git merge --no-ff` to always keep the 
 ## git history
 
 The git history should be readable, traversable, and flexible enough to operate on. You must make logical commits regularly to create a logical timeline. Only use history changes on commits that you haven't shared with anybody.
+
+It's recommended to have component names in the commit message so it's easy to track in the history when a new component is available.
 
 ### (smart) commit messages
 
@@ -61,18 +66,18 @@ Keep in mind that making a commit means making a set of changes permanent. Also 
 
 #### composition of a commit message
 
-Start a commit message with first the ticket number. 
+Start a commit message with first the ticket number.
 
-Example commit message: `DIO-1 #comment Add highlight option #time 0d 1h #done`. Using smart commits, the there are a few commands you can pass through: 
-- comment: `#comment` part adds a comment directly to the ticket in JIRA. 
-- time: `#time` will state how much time it took to fix this ticket 
-- transition: `#done` The last command shows the transition of the ticket state. At the moment we only have three transitions: '#to-do', '#in-progress' and '#done'. Typically you'd only use the last command #done since the first two transitions are maintained in the JIRA board, and will be changed in the sprint meetings. 
+Example commit message: `DIO-1 #comment Add highlight option #time 0d 1h #done`. Using smart commits, the there are a few commands you can pass through:
+- comment: `#comment` part adds a comment directly to the ticket in JIRA.
+- time: `#time` will state how much time it took to fix this ticket
+- transition: `#done` The last command shows the transition of the ticket state. At the moment we only have three transitions: '#to-do', '#in-progress' and '#done'. Typically you'd only use the last command #done since the first two transitions are maintained in the JIRA board, and will be changed in the sprint meetings.
 
 ##### comment
 Write the commit message in imperative. Typical commit message start with "Add..", "Fix..", "Rework..", "Enable..", "Replace..", "Polish.." etc.
 
 ##### time
-Typically commits don't consist of work more than four hours. See for guidelines on how to compose a commit message 
+Typically commits don't consist of work more than four hours. See for guidelines on how to compose a commit message
 
 ##### transition
 
@@ -84,7 +89,23 @@ Dorel uses githooks. The githook checks if your message is correct and lets you 
 
 [Install the Dorel Juvenile webhook](https://github.com/dorel/git-hooks).
 
-## Tutorial on new feature/bugfix workflow
+## Releases
+
+Everytime a release to master is done it needs to be tied to a version number. Check [Semver](http://semver.org/) is used for this purpose.
+
+TL;DR:
+
+- MAJOR version when you make incompatible API changes,
+- MINOR version when you add functionality in a backwards-compatible manner, and
+- PATCH version when you make backwards-compatible bug fixes.
+
+After the release has been released in origin master, make this released version 'Latest release' if applicable to have the repo reflect the latest version. See Githubs documentation for this [linking-to-releases](https://help.github.com/articles/linking-to-releases/)
+
+---
+
+## Tutorials
+
+### 1. new feature/bugfix workflow
 
 This tutorial assumes you're working using the terminal and that you have a basic understanding of Git.
 
@@ -101,7 +122,7 @@ $ git pull
 
 2. The next step is to create a branch with the corresponding ticket reference, by branching of off the develop branch. The -b prefix will create a new branch if the branch doesn't exist yet:
 
-`$ git checkout -b DIO-x develop`
+`$ git checkout -b feature/DIO-x develop`
 
 3. Start working on the feature/bugfix. Gradually commit your changes as described in the previous chapter *git history*:
 
@@ -129,5 +150,42 @@ Keep repeating this step until your function is finished. Once you're done your 
 
 `$ git push origin HEAD`
 
-7. At this point open github.com and the correseponding repository. Make a pull request and assign this to another developer to review. Once the other developer sees no mistakes he/she will merge the pull request and your code will be in the develop branch. 
+7. At this point open github.com and the correseponding repository. Make a pull request and assign this to another developer to review. Once the other developer sees no mistakes he/she will merge the pull request and your code will be in the develop branch.
 
+### 2. Doing a release
+
+Always work from the develop branch:
+`$ git checkout develop`
+
+Make sure you have the latest changes:
+`$ git pull`
+`$ git checkout -b release/0.4.0 develop`
+
+Tag the commits *with an annotation* making it a solid commit (as opposed to a lightweight tag). An annotated tag always has tagger (author) and date. This will make it show up in the overview:
+
+```
+$ git checkout master
+$ git merge --no-ff release/0.4.0
+```
+
+Tag the commit:
+`$ git tag -a 0.4.0`
+
+_Additional information on source: [what-is-the-difference-between-an-annotated-and-unannotated-tag](http://stackoverflow.com/questions/11514075/what-is-the-difference-between-an-annotated-and-unannotated-tag)_
+
+Then push the tags:
+`$ git push --follow-tags`
+
+```
+$ git checkout develop
+$ git merge --no-ff release/0.4.0
+$ git branch -d release/0.4.0
+```
+
+Push all the branches:
+
+```
+$ git push origin master
+$ git push origin develop
+$ git push origin --tags
+```
