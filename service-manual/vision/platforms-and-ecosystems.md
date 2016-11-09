@@ -28,6 +28,7 @@ An ecosystem is identified based on the following requirements;
 1. *Adaptive*. The ecosystem changes over time and should be adaptive to all platforms that meet the platform requirenments.
 2. *Self-organising*. The ecosystem changes over time, different sets of platforms create different ecosystems.
 3. *Open*. The platform can always be extended with other platforms or sub-ecosystems.
+4. *Single Purpouse*. Every platform should be single purpose to avoid to-complex-to-handle setups.
 
 _Important: Dorel Juvenile avoids third party walled gardens. Meaning that access to ecosystems are restricted. This would be considered an anti-pattern!_
 
