@@ -1,7 +1,7 @@
 ---
 layout: manual
 title: Understanding Service Design
-category: Work on the service service manual
+category: Work on the service manual
 draft: false
 ---
 
