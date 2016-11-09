@@ -1,7 +1,7 @@
 ---
 layout: manual
 title: How we design services
-category: Work on the service service manual
+category: Work on the service manual
 draft: true
 ---
 
