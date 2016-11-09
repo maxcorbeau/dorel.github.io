@@ -1,7 +1,7 @@
 ---
 layout: manual
 title: Contribute to the manual
-category: Work on the service service manual
+category: Work on the service manual
 draft: false
 ---
 
