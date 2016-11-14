@@ -16,6 +16,7 @@ A platform is a service that can run with _any_ provider on _any_ location and s
 1. *A platform has an API*. Preferably using generally accepted architectural styles such as RESTful. Platforms that have integrations, like batch jobs, are generally accepted as bad practices and should be avoided.
 2. *Technology Agnostic*. If the above requirenment is met, we do not care about what technology runs the service.
 3. *Scalable*. We expect the service to scale regardless of our usage.
+4. *Single Purpose*. Every platform should have a single purpose to avoid to-complex-to-handle setups.
 
 Dorel Juvenile uses these measurements regardless of these services run inhouse or at a Platform as a Service provider. Different platforms can be hosted either inhouse or at different providers.
 
@@ -28,7 +29,6 @@ An ecosystem is identified based on the following requirements;
 1. *Adaptive*. The ecosystem changes over time and should be adaptive to all platforms that meet the platform requirenments.
 2. *Self-organising*. The ecosystem changes over time, different sets of platforms create different ecosystems.
 3. *Open*. The platform can always be extended with other platforms or sub-ecosystems.
-4. *Single Purpose*. Every platform should have a single purpose to avoid to-complex-to-handle setups.
 
 _Important: Dorel Juvenile avoids third party walled gardens. Meaning that access to ecosystems are restricted. This would be considered an anti-pattern!_
 
