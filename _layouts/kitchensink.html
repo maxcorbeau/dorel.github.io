@@ -132,7 +132,9 @@
     @apply(--shadow-elevation-2dp);
   }
   /* refactoring until here */
-
+  .ktch_section-standout-first {
+    padding-bottom: 0;
+  }
   .ktch_background {
     background-color: var(--theme-color-background-secondary);
   }
@@ -140,17 +142,15 @@
     max-width: 500px;
   }
   .ktch_container {
-    width: 100%;
     float: left;
     clear: both;
   }
-  .ktch_select-brand,
+  .ktch_fullwidth {
+    width: 100%;
+  }
   .ktch_section {
     margin-bottom: 1rem;
     padding: 1rem;
-  }
-  .ktch_select-brand {
-    background-color: var(--theme-color-background-tertiary);
   }
   .ktch_section {
     background-color: white;
@@ -177,6 +177,9 @@
   .ktch_theme-color-background {
     background-color: var(--theme-color-background);
   }
+  .ktch_brand-tabs {
+
+  }
 
 </style>
 
@@ -185,7 +188,7 @@
   <iron-grid-container>
     <iron-grid>
       <main class="xs12 vtop container-center-page">
-        <div class="page full-width bodycopy">
+        <div class="section-centered section-standout ktch_section-standout-first ktch_fullwidth bodycopy">
           <div class="ktch_container">
             <h1 class="theme-font-display1">{{ page.title }}</h1>
             <p>The ktichensink includes every single element in the framework. The kitchensink is typically used for visual regression testing. After you change one element, see if it doesn't inflict another element. But also the other way around, if you change a certain element, sometimes other related elements need to change as well to maintain the visual coherence between the elements.</p>
@@ -196,24 +199,41 @@
     </iron-grid>
   </iron-grid-container>
 
-  <!--div class="ktch_background"-->
+  <hr>
+
+
+  <iron-grid-container>
+    <iron-grid>
+
+      <div class="xs12 vtop container-center-page">
+        <section class="section-standout-narrow ktch_select-brand">
+          <div class="flex">
+            <style is="custom-style">
+              paper-tabs {
+                --paper-tabs-selection-bar-color: var(--theme-color-link-primary);
+              }
+              paper-tab[disabled] {
+                color: var(--theme-color-disabled);
+              }
+            </style>
+            <paper-tabs selected="0">
+              <paper-tab>Dorel Juvenile</paper-tab>
+              <paper-tab disabled>Maxi Cosi (coming soon)</paper-tab>
+              <paper-tab disabled>Quinny</paper-tab>
+            </paper-tabs>
+          </div>
+        </section>
+      </div>
+
+      </iron-grid>
+  </iron-grid-container>
+
+  <div class="ktch_background">
+
     <iron-grid-container>
       <iron-grid>
-        <div class="xs12 vtop container-center-page">
-          <section class="ktch_vertical-section-container centered ktch_select-brand">
-            <paper-radio-group aria-labelledby="label1" class="ktch_container">
-                <div class="ktch_toggle-brand">
-                  <paper-radio-button checked>Dorel Juvenile</paper-radio-button>
-                </div>
-                <div class="ktch_toggle-brand">
-                  <paper-radio-button disabled>Maxi Cosi</paper-radio-button>
-                </div>
-                <div class="ktch_toggle-brand">
-                  <paper-radio-button disabled>Quinny</paper-radio-button>
-                </div>
-              </paper-radio-group>
-          </section>
 
+        <div class="xs12 vtop container-center-page">
           {% comment %} 
            *
            * This loop iterates through posts for demo content of kitchensink.
@@ -232,9 +252,12 @@
             </section>
           {% endfor %}
         </div>
+
       </iron-grid>
     </iron-grid-container>
-  <!--/div-->
+
+  </div>
+
 
   <script>
     // Uses webcomponents-lite.min.js.

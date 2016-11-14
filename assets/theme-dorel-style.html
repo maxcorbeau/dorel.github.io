@@ -11,6 +11,11 @@ Description:  Dorel's webcomponent styling -config
       font: var(--theme-size-base)/1 sans-serif;
     }
 
+    hr {
+      border-top: var(--theme-color-background-tertiary);
+      margin-bottom: 0;
+    }
+
     /* 
      * /components/:
      * _typography.scss 
@@ -134,14 +139,10 @@ Description:  Dorel's webcomponent styling -config
      * /components/: 
      * _page.scss 
      */
-    .page {
-      background-color: var(--white);
-      padding: 1.5em;
-      margin-bottom: 2rem;
-    }
 
-    .container-center-page {
-      margin: 0 auto;
+    .page-header {
+      margin-bottom:1rem;
+      float: left;
     }
 
     .container-center-copy {
@@ -149,24 +150,26 @@ Description:  Dorel's webcomponent styling -config
       @apply(--theme-bodycopy-width);
     }
 
-    .page-header {
-      margin-bottom:1rem;
-    }
-
-    @media screen and (min-width: 40.063em) { /* 641/16 = 641px, medium screens */
-      .page {
-        padding: var(--theme-component-space-inner-medium);
-      }
+    /*
+     * /components/: 
+     * _sections.scss 
+     */
+    .section-centered {
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0 auto 2rem auto;
     }
 
     @media screen and (min-width: 64.063em) { /* 1025/16 = 1025px, large screens */
-      .page {
-        padding: var(--theme-component-space-inner-large);
+      .section-standout {
+        padding: calc(var(--theme-modular-size-large) - 1rem) var(--theme-modular-size-large) var(--theme-modular-size-large);
       }
-      .container-center-page .page {
-        padding: 4rem 5rem 5rem 5rem;
+      .section-standout-narrow {
+        padding: 0 var(--theme-modular-size-large);
       }
     }
+
+
 
     .full-width {
       width: 100%;
@@ -187,10 +190,6 @@ Description:  Dorel's webcomponent styling -config
        .background-page {
          height: 4em;
        }
-    }
-
-    .page-header {
-      float: left;
     }
 
     /* 
