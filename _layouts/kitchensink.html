@@ -91,14 +91,6 @@
   .horizontal {
     @apply(--layout-horizontal);
   }
-  .demo-heading {
-    display: block;
-    -webkit-margin-before: 1.33em;
-    -webkit-margin-after: 1.33em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    font-weight: bold;
-  }
   .paper-font-display2 {
     font-size: var(--theme-size-display2);
   }
@@ -146,6 +138,10 @@
   .left {
     float: left;
   }
+  .theme-brand-color {
+    color: var(--theme-brand-color);
+  }
+
   /* 
    * refactoring until here 
    */
@@ -153,7 +149,7 @@
     padding-bottom: 0;
   }
   .ktch_background {
-    background-color: var(--theme-color-background-secondary);
+    background-color: var(--theme-color-background-tertiary);
   }
   .ktch_vertical-section-container {
     max-width: 500px;
@@ -213,12 +209,20 @@
   .ktch_section-header .ui-text {
     float: right;
   }
-  .ktch_heading {
+  .ktch_header {
     margin-bottom: var(--theme-margin-headings);
     margin-top: var(--theme-margin-bodycopy);
+    width: 100%;
+    float: left;
+    padding-bottom: .825rem;
+    border-bottom: 1px dotted var(--theme-color-foreground-tertiary);
   }
   .ktch_vertical-section-container .ktch_heading-first {
     margin-top: 0;
+  }
+  .ktch_theme-font-container {
+    margin-bottom: var(--theme-component-space-inner);
+    @apply(--theme-section-vertical-padding);
   }
 
 </style>
@@ -269,45 +273,43 @@
 
   <div class="ktch_background">
 
-    <iron-grid-container>
-      <iron-grid>
+    {% comment %} 
+     *
+     * This loop iterates through posts for demo content of kitchensink.
+     * Using a loop makes it easier to maintain the different sections.
+     * 
+     * Uses the filename minus the date for the section id.
+     *
+    {% endcomment %}
 
-        <div class="xs12 vtop container-center-page ktch_section-components">
-          {% comment %} 
-           *
-           * This loop iterates through posts for demo content of kitchensink.
-           * Using a loop makes it easier to maintain the different sections.
-           * 
-           * Uses the filename minus the date for the section id.
-           *
-          {% endcomment %}
-
-          {% for post in site.posts reversed %}
+    {% for post in site.posts reversed %}
+      <iron-grid-container>
+        <iron-grid>
+          <div class="xs12 vtop container-center-page ktch_section-components">
             <section id="{{ post.title | remove: " -" | replace: " ", "-" | downcase }}" class="ktch_vertical-section-container ktch_section centered">
               {{ post.content }}
             </section>
-          {% endfor %}
-        </div>
-
-      </iron-grid>
-    </iron-grid-container>
+          </div>
+        </iron-grid>
+      </iron-grid-container>
+    {% endfor %}
 
   </div>
-
 
   <script>
     // Uses webcomponents-lite.min.js.
     // If you aren't using the polyfill, you can't rely on the WebComponentsReady.
     // To ensure that elements are ready on polyfilled browsers, 
-    // wait for WebComponentsReady.
-    document.addEventListener('WebComponentsReady', function() {
-      var input = document.querySelector('paper-input');
-      var button = document.querySelector('paper-button');
-      var greeting = document.getElementById("greeting");
-      button.addEventListener('click', function() {
-        greeting.textContent = 'Hello, ' + input.value;
-      });
-    });
+    // wait for WebComponentsReady.\
+
+    // document.addEventListener('WebComponentsReady', function() {
+    //   var input = document.querySelector('paper-input');
+    //   var button = document.querySelector('paper-button');
+    //   var greeting = document.getElementById("greeting");
+    //   button.addEventListener('click', function() {
+    //     greeting.textContent = 'Hello, ' + input.value;
+    //   });
+    // });
   </script>
 
 </body>

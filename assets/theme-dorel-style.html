@@ -169,8 +169,6 @@ Description:  Dorel's webcomponent styling -config
       }
     }
 
-
-
     .full-width {
       width: 100%;
     }
@@ -281,6 +279,38 @@ Description:  Dorel's webcomponent styling -config
 
     .list-manuals li iron-icon {
       float: right;
+    }
+
+    /* 
+     * /components/:
+     * _messaging.scss
+     */
+    [class^='message-'] {
+      border-style: solid;
+      border-width: 1px;
+      padding: var(--theme-component-space-inner);
+      margin-bottom: var(--theme-margin-bodycopy);
+    }
+
+    [class*='-information'] {
+      color: var(--theme-color-information-foreground);
+      background-color: var(--theme-color-information-background);
+      border-color: var(--theme-color-information-foreground);
+    }
+
+    [class*='-confirmation'] {
+      color: var(--theme-color-confirmation-foreground);
+      background-color: var(--theme-color-confirmation-background);
+      border-color: var(--theme-color-confirmation-foreground);
+    }
+
+    /* 
+     * /components/:
+     * _forms.scss
+     */
+
+    form {
+      max-width: 28.572rem; /* 600px */
     }
 
     /* 

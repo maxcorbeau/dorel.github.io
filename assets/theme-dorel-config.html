@@ -33,6 +33,11 @@ Description: Dorel's webcomponent styling -config
       --theme-color-highlight: rgba(255, 247, 0, 0.3);
       --theme-color-disabled: var(--theme-color-foreground-tertiary);
 
+      --theme-color-information-foreground: rgb(0, 157, 210);
+      --theme-color-information-background: rgb(235, 247, 253);
+      --theme-color-confirmation-foreground: rgb(44, 165, 29);
+      --theme-color-confirmation-background: rgb(231, 249, 194);
+
       --theme-primary-text-color: var(--theme-color-foreground-secondary);
 
       --theme-brand-color: rgb(0, 114, 206);
@@ -43,6 +48,7 @@ Description: Dorel's webcomponent styling -config
          it for the primary link color. Adding a new link-blue color close to that color will 
          not  match since the colors will then be too close to eachother in the color spectrum */
       --theme-color-link-primary: var(--theme-brand-color); 
+      --theme-color-hover: var(--theme-color-foreground-secondary);
 
       /* ------------------------------------------------
        * Modular scale
@@ -60,6 +66,11 @@ Description: Dorel's webcomponent styling -config
 
       --theme-margin-bodycopy: 1.2em;
       --theme-margin-headings: .5em;
+
+      --theme-section-vertical-padding: {
+        padding-top: var(--theme-component-space-inner);
+        padding-bottom: var(--theme-component-space-inner);
+      };
 
       /* ------------------------------------------------
        * Typography
