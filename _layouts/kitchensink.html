@@ -131,7 +131,24 @@
   .shadow-2dp {
     @apply(--shadow-elevation-2dp);
   }
-  /* refactoring until here */
+  .flex-vertical {
+    @apply(--layout-vertical);
+  }
+  .flex-horizontal-with-ratios {
+    @apply(--layout-horizontal);
+  }
+  .flexchild {
+    @apply(--layout-flex);
+  }
+  .right {
+    float: right;
+  }
+  .left {
+    float: left;
+  }
+  /* 
+   * refactoring until here 
+   */
   .ktch_section-standout-first {
     padding-bottom: 0;
   }
@@ -158,15 +175,28 @@
   .ktch_toggle-brand {
     display: inline-block;
   }
-  .ktch_block-color {
+  .ktch_block-color-container {
     width: 9rem;
-    height: 5rem;
-    display: flex;
+    display: block;
     float: left;
+    margin-right: .5rem;
+  }
+  .ktch_block-color {
+    width: 100%;
+    height: 5rem;
+    display: block;
     margin: 0 1rem 1rem 0;
     text-align: center;
     align-items: center;
     justify-content: center;
+  }
+  .ktch_block-meta {
+    float: left;
+    position: relative;
+  }
+  .ktch_block-meta span {
+    float: left;
+    position: relative;
   }
   .ktch_theme-brand-color {
     background-color: var(--theme-brand-color);
@@ -177,8 +207,18 @@
   .ktch_theme-color-background {
     background-color: var(--theme-color-background);
   }
-  .ktch_brand-tabs {
-
+  .ktch_section-components section:first-child {
+    margin-top: var(--theme-component-space-inner-large);
+  }
+  .ktch_section-header .ui-text {
+    float: right;
+  }
+  .ktch_heading {
+    margin-bottom: var(--theme-margin-headings);
+    margin-top: var(--theme-margin-bodycopy);
+  }
+  .ktch_vertical-section-container .ktch_heading-first {
+    margin-top: 0;
   }
 
 </style>
@@ -201,13 +241,12 @@
 
   <hr>
 
-
   <iron-grid-container>
     <iron-grid>
 
       <div class="xs12 vtop container-center-page">
         <section class="section-standout-narrow ktch_select-brand">
-          <div class="flex">
+          <div class="flex-child">
             <style is="custom-style">
               paper-tabs {
                 --paper-tabs-selection-bar-color: var(--theme-color-link-primary);
@@ -233,7 +272,7 @@
     <iron-grid-container>
       <iron-grid>
 
-        <div class="xs12 vtop container-center-page">
+        <div class="xs12 vtop container-center-page ktch_section-components">
           {% comment %} 
            *
            * This loop iterates through posts for demo content of kitchensink.
@@ -245,9 +284,6 @@
 
           {% for post in site.posts reversed %}
             <section id="{{ post.title | remove: " -" | replace: " ", "-" | downcase }}" class="ktch_vertical-section-container ktch_section centered">
-              <header class="vertical-section-container centered ktch_section-header">
-                <h3 class="ui-text">{{ post.title }}</h3>
-              </header>
               {{ post.content }}
             </section>
           {% endfor %}
