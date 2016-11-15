@@ -1,0 +1,107 @@
+<link rel="import" href="../../../../assets/bower_components/polymer/polymer.html">
+<!-- <link rel="import" href="../polymer/polymer.html"> -->
+
+<dom-module id="reveal-color">
+  <style>
+    .ktch_block-color-container {
+      width: 9rem;
+      display: block;
+      float: left;
+      margin-right: .5rem;
+    }
+    .ktch_block-color {
+      width: 100%;
+      height: 5rem;
+      display: block;
+      margin: 0 1rem 1rem 0;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+    .ktch_block-meta {
+      float: left;
+      position: relative;
+    }
+    .ktch_block-meta span {
+      float: left;
+      position: relative;
+    }
+    .ktch_theme-brand-color {
+      background-color: var(--theme-brand-color);
+    }
+    .ktch_theme-brand-color-complementary {
+      background-color: var(--theme-brand-color-complementary);
+    }
+    .ktch_theme-color-background {
+      background-color: var(--theme-color-background);
+    }
+  </style>
+  <template>
+    <div class="ktch_block-color-container">
+      <div class$="ktch_block-color {{uiClass}}"></div>
+      <div class="ktch_block-meta">
+        <small class="ui-text">{{uiText}}</small>
+        <small id="color-output"></small>
+      </div>
+    </div>
+    <content></content>
+  </template>
+  <script>
+    Polymer({
+      is: 'reveal-color',
+      
+      properties: {
+        uiClass: String,
+        uiText: String
+      },
+
+      /** 
+       * @name rgb2Arr
+       * @description converts the rgb notation to an array
+       * @return Array containing [0] red, [1] green, [2] blue
+       */
+      rgb2Arr: function (rgb) {
+        return rgb.substring(rgb.indexOf('(') + 1, rgb.lastIndexOf(')')).split(/,\s*/);
+      },
+
+      /** 
+       * @name byte2Hex
+       * @description converts the given byte from r, g or b to a hex code
+       * @param Number - n - contains a red, green or blue number code
+       * @return String containing the converted number or character
+       */
+      byte2Hex: function (n) {
+        var nybHexString = "0123456789ABCDEF";
+        return String(nybHexString.substr((n >> 4) & 0x0F,1)) + nybHexString.substr(n & 0x0F,1);
+      },
+
+      /** 
+       * @name rgb2Hex
+       * @description converts the given byte from r, g or b to a hex code
+       * @param Number - r - red color number
+       * @param Number - g - green color number
+       * @param Number - b - blue color number
+       * @return String containing the converted number or character
+       */
+      rgb2Hex: function (r, g, b) {
+        return '#' + this.byte2Hex(r) + this.byte2Hex(g) + this.byte2Hex(b);
+      },
+
+      /** 
+       * @name attached
+       * @description polymer lifecycle function after all elements are attached to the dom.
+       * Takes the backgroundColor of the given uiClass property and coverts it to a Hexcolor, then
+       * outputs it to the color-output element.
+       */
+      attached: function () {
+        var element = Polymer.dom(this.root).querySelector('.' + this.uiClass);
+        var cOutput = Polymer.dom(this.root).querySelector('#color-output');
+        var rgbColor = getComputedStyle(element).backgroundColor;
+        var rgbArr = this.rgb2Arr(rgbColor);
+        var hexColor = this.rgb2Hex(rgbArr[0], rgbArr[1], rgbArr[2]);
+
+        cOutput.innerHTML = hexColor;
+      }
+    });
+  </script>
+</dom-module>
