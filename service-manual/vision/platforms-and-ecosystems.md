@@ -17,6 +17,7 @@ A platform is a service that can run with _any_ provider on _any_ location and s
 2. *Technology Agnostic*. If the above requirenment is met, we do not care about what technology runs the service.
 3. *Scalable*. We expect the service to scale regardless of our usage.
 4. *Single Purpose*. Every platform should have a single purpose to avoid to-complex-to-handle setups.
+5. *Open by Default*. From a security perspective, the API's follow the: "open unless" rule. Meaning that all services are available on The Internet through the APIs, unless access is restricted.
 
 Dorel Juvenile uses these measurements regardless of these services run inhouse or at a Platform as a Service provider. Different platforms can be hosted either inhouse or at different providers.
 
