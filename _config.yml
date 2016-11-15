@@ -11,5 +11,5 @@ baseurl: /
 markdown:    kramdown
 
 ## directories
-assets_dir: ./assets
-bower_dir: ./assets/bower_components
+assets_dir: /assets
+bower_dir: /assets/bower_components
