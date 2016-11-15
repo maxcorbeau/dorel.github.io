@@ -1,0 +1,45 @@
+---
+title: Iconography
+---
+
+<div class="flex-vertical">
+
+  <div class="flexchild">
+    <header class="ktch_header ktch_heading-first">
+      <div class="left">
+        <h4>Icons</h4>
+      </div>
+      <div class="right">
+        <h3 class="ui-text">{{ page.title }}</h3>
+      </div>
+    </header>
+  </div>
+
+  <article class="flexchild">
+
+    <template is="dom-bind">
+       <iron-meta type="iconset" list="{{iconsets}}"></iron-meta>
+
+        <template is="dom-repeat" items="{{iconsets}}">
+          <h2>{{item.name}}</h2>
+
+          <div class="set">
+            <template is="dom-repeat" items="{{getIconNames(item)}}">
+              <span class="container">
+                <iron-icon icon="{{item}}"></iron-icon>
+                <div>{{item}}</div>
+              </span>
+            </template>
+          </div>
+        </template>
+      </template>
+
+      <script>
+        document.querySelector('[is=dom-bind]').getIconNames = function(iconset) {
+          return iconset.getIconNames();
+        };
+      </script>
+
+  </article>
+
+</div>

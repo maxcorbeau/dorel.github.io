@@ -39,20 +39,36 @@
   <link rel="import" href="{{ site.bower_dir }}/paper-toggle-button/paper-toggle-button.html">
   <link rel="import" href="{{ site.bower_dir }}/paper-card/paper-card.html">
   <link rel="import" href="{{ site.bower_dir }}/paper-card/paper-card.html">
+  <link rel="import" href="{{ site.bower_dir }}/paper-tooltip/paper-tooltip.html">
   <link rel="import" href="{{ site.bower_dir }}/paper-icon-button/paper-icon-button.html">
-  <link rel="import" href="{{ site.bower_dir }}/iron-icons/communication-icons.html">
-  <link rel="import" href="{{ site.bower_dir }}/iron-icons/hardware-icons.html">
-  <link rel="import" href="{{ site.bower_dir }}/iron-icons/social-icons.html">
-
 
   <!-- iron elements -->
   <link rel="import" href="{{ site.bower_dir }}/iron-flex-layout/iron-flex-layout.html">
   <link rel="import" href="{{ site.bower_dir }}/iron-flex-layout/iron-flex-layout-classes.html">
-  <link rel="import" href="{{ site.bower_dir }}/iron-iconset/iron-iconset.html">
   <link rel="import" href="{{ site.bower_dir }}/iron-input/iron-input.html">
   <link rel="import" href="{{ site.bower_dir }}/iron-label/iron-label.html">
   <link rel="import" href="{{ site.bower_dir }}/iron-collapse/iron-collapse.html">
   <link rel="import" href="{{ site.bower_dir }}/iron-autogrow-textarea/iron-autogrow-textarea.html">
+  
+  <!-- custom elements -->
+  <link rel="import" href="/assets/custom_components/reveal-color/reveal-color.html">
+
+  <!-- iron elements / iron icons -->
+
+  <!--link rel="import" href="{{ site.bower_dir }}/iron-iconset/iron-iconset.html"-->
+
+  <link rel="import" href="{{ site.bower_dir }}/iron-icons/iron-icons.html"><!-- default iconset -->
+  <!-- load the rest of the icons -->
+  <link rel="import" href="{{ site.bower_dir }}/iron-icons/av-icons.html">
+  <link rel="import" href="{{ site.bower_dir }}/iron-icons/communication-icons.html">
+  <link rel="import" href="{{ site.bower_dir }}/iron-icons/device-icons.html">
+  <link rel="import" href="{{ site.bower_dir }}/iron-icons/editor-icons.html">
+  <link rel="import" href="{{ site.bower_dir }}/iron-icons/hardware-icons.html">
+  <link rel="import" href="{{ site.bower_dir }}/iron-icons/image-icons.html">
+  <link rel="import" href="{{ site.bower_dir }}/iron-icons/maps-icons.html">
+  <link rel="import" href="{{ site.bower_dir }}/iron-icons/notification-icons.html">
+  <link rel="import" href="{{ site.bower_dir }}/iron-icons/social-icons.html">
+  <link rel="import" href="{{ site.bower_dir }}/iron-icons/places-icons.html">
 
   <!-- demo elements -->
   <!-- link rel="import" href="{{ site.bower_dir }}/iron-demo-helpers/demo-snippet.html"-->
@@ -91,14 +107,6 @@
   .horizontal {
     @apply(--layout-horizontal);
   }
-  .demo-heading {
-    display: block;
-    -webkit-margin-before: 1.33em;
-    -webkit-margin-after: 1.33em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    font-weight: bold;
-  }
   .paper-font-display2 {
     font-size: var(--theme-size-display2);
   }
@@ -131,26 +139,47 @@
   .shadow-2dp {
     @apply(--shadow-elevation-2dp);
   }
-  /* refactoring until here */
+  .flex-vertical {
+    @apply(--layout-vertical);
+  }
+  .flex-horizontal-with-ratios {
+    @apply(--layout-horizontal);
+  }
+  .flexchild {
+    @apply(--layout-flex);
+  }
+  .right {
+    float: right;
+  }
+  .left {
+    float: left;
+  }
+  .theme-brand-color {
+    color: var(--theme-brand-color);
+  }
 
+  /* 
+   * refactoring until here 
+   */
+  .ktch_section-standout-first {
+    padding-bottom: 0;
+  }
   .ktch_background {
-    background-color: var(--theme-color-background-secondary);
+    background-color: var(--theme-color-background-tertiary);
   }
   .ktch_vertical-section-container {
     max-width: 500px;
   }
   .ktch_container {
-    width: 100%;
     float: left;
     clear: both;
   }
-  .ktch_select-brand,
+  .ktch_fullwidth {
+    width: 100%;
+  }
   .ktch_section {
     margin-bottom: 1rem;
     padding: 1rem;
-  }
-  .ktch_select-brand {
-    background-color: var(--theme-color-background-tertiary);
   }
   .ktch_section {
     background-color: white;
@@ -158,15 +187,29 @@
   .ktch_toggle-brand {
     display: inline-block;
   }
-  .ktch_block-color {
+  .ktch_block-color-container {
     width: 9rem;
-    height: 5rem;
-    display: flex;
+    display: block;
     float: left;
+    margin-right: .5rem;
+    margin-bottom: .5rem;
+  }
+  .ktch_block-color {
+    width: 100%;
+    height: 5rem;
+    display: block;
     margin: 0 1rem 1rem 0;
     text-align: center;
     align-items: center;
     justify-content: center;
+  }
+  .ktch_block-meta {
+    float: left;
+    position: relative;
+  }
+  .ktch_block-meta span {
+    float: left;
+    position: relative;
   }
   .ktch_theme-brand-color {
     background-color: var(--theme-brand-color);
@@ -174,18 +217,77 @@
   .ktch_theme-brand-color-complementary {
     background-color: var(--theme-brand-color-complementary);
   }
+  .ktch_theme-color-link {
+    background-color: var(--theme-color-link-primary);
+  }
+  .ktch_theme-color-hover {
+    background-color: var(--theme-color-hover);
+  }
+  .ktch_theme-color-cta {
+    background-color: var(--theme-color-cta);
+  }
+  .ktch_theme-color-primary-text-color {
+    background-color: var(--theme-primary-text-color);
+  }
+  .ktch_theme-color-black {
+    background-color: var(--theme-black);
+  }
+  .ktch_theme-color-white {
+    background-color: var(--theme-white);
+  }
   .ktch_theme-color-background {
     background-color: var(--theme-color-background);
+  }
+  .ktch_theme-color-background-secondary {
+    background-color: var(--theme-color-background-secondary);
+  }
+  .ktch_theme-color-background-tertiary {
+    background-color: var(--theme-color-background-tertiary);
+  }
+  .ktch_theme-color-foreground {
+    background-color: var(--theme-color-foreground);
+  }
+  .ktch_theme-color-foreground-secondary {
+    background-color: var(--theme-color-foreground-secondary);
+  }
+  .ktch_theme-color-foreground-tertiary {
+    background-color: var(--theme-color-foreground-tertiary);
+  }
+  .ktch_theme-color-highlight {
+    background-color: var(--theme-color-highlight);
+  }
+  .ktch_theme-color-disabled {
+    background-color: var(--theme-color-disabled);
+  }
+  .ktch_section-components section:first-child {
+    margin-top: var(--theme-component-space-inner-large);
+  }
+  .ktch_section-header .ui-text {
+    float: right;
+  }
+  .ktch_header {
+    margin-bottom: var(--theme-margin-headings);
+    margin-top: var(--theme-margin-bodycopy);
+    width: 100%;
+    float: left;
+    padding-bottom: .825rem;
+    border-bottom: 1px dotted var(--theme-color-foreground-tertiary);
+  }
+  .ktch_vertical-section-container .ktch_heading-first {
+    margin-top: 0;
+  }
+  .ktch_theme-font-container {
+    margin-bottom: var(--theme-component-space-inner);
+    @apply(--theme-section-vertical-padding);
   }
 
 </style>
 
 <body>
-
   <iron-grid-container>
     <iron-grid>
       <main class="xs12 vtop container-center-page">
-        <div class="page full-width bodycopy">
+        <div class="section-centered section-standout ktch_section-standout-first ktch_fullwidth bodycopy">
           <div class="ktch_container">
             <h1 class="theme-font-display1">{{ page.title }}</h1>
             <p>The ktichensink includes every single element in the framework. The kitchensink is typically used for visual regression testing. After you change one element, see if it doesn't inflict another element. But also the other way around, if you change a certain element, sometimes other related elements need to change as well to maintain the visual coherence between the elements.</p>
@@ -196,59 +298,73 @@
     </iron-grid>
   </iron-grid-container>
 
-  <!--div class="ktch_background"-->
-    <iron-grid-container>
-      <iron-grid>
-        <div class="xs12 vtop container-center-page">
-          <section class="ktch_vertical-section-container centered ktch_select-brand">
-            <paper-radio-group aria-labelledby="label1" class="ktch_container">
-                <div class="ktch_toggle-brand">
-                  <paper-radio-button checked>Dorel Juvenile</paper-radio-button>
-                </div>
-                <div class="ktch_toggle-brand">
-                  <paper-radio-button disabled>Maxi Cosi</paper-radio-button>
-                </div>
-                <div class="ktch_toggle-brand">
-                  <paper-radio-button disabled>Quinny</paper-radio-button>
-                </div>
-              </paper-radio-group>
-          </section>
+  <hr>
 
-          {% comment %} 
-           *
-           * This loop iterates through posts for demo content of kitchensink.
-           * Using a loop makes it easier to maintain the different sections.
-           * 
-           * Uses the filename minus the date for the section id.
-           *
-          {% endcomment %}
+  <iron-grid-container>
+    <iron-grid>
 
-          {% for post in site.posts reversed %}
+      <div class="xs12 vtop container-center-page">
+        <section class="section-standout-narrow ktch_select-brand">
+          <div class="flex-child">
+            <style is="custom-style">
+              paper-tabs {
+                --paper-tabs-selection-bar-color: var(--theme-color-link-primary);
+              }
+              paper-tab[disabled] {
+                color: var(--theme-color-disabled);
+              }
+            </style>
+            <paper-tabs selected="0">
+              <paper-tab>Dorel Juvenile</paper-tab>
+              <paper-tab disabled>Maxi Cosi (coming soon)</paper-tab>
+              <paper-tab disabled>Quinny</paper-tab>
+            </paper-tabs>
+          </div>
+        </section>
+      </div>
+
+      </iron-grid>
+  </iron-grid-container>
+
+  <div class="ktch_background">
+
+    {% comment %} 
+     *
+     * This loop iterates through posts for demo content of kitchensink.
+     * Using a loop makes it easier to maintain the different sections.
+     * 
+     * Uses the filename minus the date for the section id.
+     *
+    {% endcomment %}
+
+    {% for post in site.posts reversed %}
+      <iron-grid-container>
+        <iron-grid>
+          <div class="xs12 vtop container-center-page ktch_section-components">
             <section id="{{ post.title | remove: " -" | replace: " ", "-" | downcase }}" class="ktch_vertical-section-container ktch_section centered">
-              <header class="vertical-section-container centered ktch_section-header">
-                <h3 class="ui-text">{{ post.title }}</h3>
-              </header>
               {{ post.content }}
             </section>
-          {% endfor %}
-        </div>
-      </iron-grid>
-    </iron-grid-container>
-  <!--/div-->
+          </div>
+        </iron-grid>
+      </iron-grid-container>
+    {% endfor %}
+
+  </div>
 
   <script>
     // Uses webcomponents-lite.min.js.
     // If you aren't using the polyfill, you can't rely on the WebComponentsReady.
     // To ensure that elements are ready on polyfilled browsers, 
-    // wait for WebComponentsReady.
-    document.addEventListener('WebComponentsReady', function() {
-      var input = document.querySelector('paper-input');
-      var button = document.querySelector('paper-button');
-      var greeting = document.getElementById("greeting");
-      button.addEventListener('click', function() {
-        greeting.textContent = 'Hello, ' + input.value;
-      });
-    });
+    // wait for WebComponentsReady.\
+
+    // document.addEventListener('WebComponentsReady', function() {
+    //   var input = document.querySelector('paper-input');
+    //   var button = document.querySelector('paper-button');
+    //   var greeting = document.getElementById("greeting");
+    //   button.addEventListener('click', function() {
+    //     greeting.textContent = 'Hello, ' + input.value;
+    //   });
+    // });
   </script>
 
 </body>

@@ -35,7 +35,7 @@ Example of branch name when working on a ticket or bugfix:
 
 - Example of JIRA ticket system: `feature/DIO-123`
 - Example of JIRA ticket system: `bugfix/DIO-124`
-- Example of JIRA ticket system: `feature/gh-1`
+- Example of Github ticket system: `feature/gh-1`
 
 The words in feature branches are separated by hyphens.
 
