@@ -17,28 +17,7 @@ title: Iconography
 
   <article class="flexchild">
 
-    <template is="dom-bind">
-       <iron-meta type="iconset" list="{{iconsets}}"></iron-meta>
-
-        <template is="dom-repeat" items="{{iconsets}}">
-          <h2>{{item.name}}</h2>
-
-          <div class="set">
-            <template is="dom-repeat" items="{{getIconNames(item)}}">
-              <span class="container">
-                <iron-icon icon="{{item}}"></iron-icon>
-                <div>{{item}}</div>
-              </span>
-            </template>
-          </div>
-        </template>
-      </template>
-
-      <script>
-        document.querySelector('[is=dom-bind]').getIconNames = function(iconset) {
-          return iconset.getIconNames();
-        };
-      </script>
+    <show-iconsets></show-iconsets>
 
   </article>
 
