@@ -4,28 +4,187 @@ title: Colors
 
 <div class="flex-vertical">
 
-  <div class="flexchild">
-
-    <div class="left">
-      <h4 class="ktch_heading ktch_heading-first">Brand colors</h4>
-    </div>
-    <div class="right">
-      <h3 class="ui-text">{{ page.title }}</h3>
-    </div>
+  <article class="flexchild">
+    <header class="ktch_header ktch_heading-first">
+      <div class="left">
+        <h4>Brand colors</h4>
+      </div>
+      <div class="right">
+        <h3 class="ui-text">{{ page.title }}</h3>
+      </div>
+    </header>
 
     <div class="horizontal-section ktch_container">
       <reveal-color ui-text="Brand color" ui-class="ktch_theme-brand-color"></reveal-color>
       <reveal-color ui-text="Brand complementary color" ui-class="ktch_theme-brand-color-complementary"></reveal-color>
     </div>
-  </div>
 
-  <div class="flexchild">
+  </article>
 
-    <h4 class="ktch_heading">Brand background colors</h4>
+  <article class="flexchild">
+
+    <header class="ktch_header">
+      <h4>Interaction colors</h4>
+    </header>
+
+    <div class="horizontal-section ktch_container">
+
+      <div class="message-information">
+        <p>
+          <small>If the theme's brand color is quite similar to the browsers' native link color use it for the primary link color. Adding a new link-blue color close to that color will not  match since the colors will then be too close to eachother in the color spectrum.</small>
+        </p>
+      </div>
+      
+      <div class="ktch_block-color-container">
+        <div class="ktch_block-color ktch_theme-color-link"></div>
+        <div class="ktch_block-meta">
+          <small class="ui-text">Link color</small>
+          <small class="ui-text">#</small>
+        </div>
+
+        <paper-tooltip for="tooltip_theme-color-link"></paper-tooltip>
+      </div>
+
+      <div class="ktch_block-color-container">
+        <div class="ktch_block-color ktch_theme-color-hover"></div>
+        <div class="ktch_block-meta">
+          <small class="ui-text">Link hover color</small>
+          <small class="ui-text">#</small>
+        </div>
+      </div>
+
+      <div class="ktch_block-color-container">
+        <div class="ktch_block-color ktch_theme-color-cta"></div>
+        <div class="ktch_block-meta">
+          <small class="ui-text">Theme call to action color</small>
+          <small class="ui-text">#</small>
+        </div>
+      </div>
+
+    </div>
+
+  </article>
+
+  <article class="flexchild">
+
+    <header class="ktch_header">
+      <h4>Utility colors</h4>
+    </header>
 
     <div class="horizontal-section ktch_container">
       <reveal-color ui-text="Brand color background" ui-class="ktch_theme-color-background"></reveal-color>
+
+      <div class="ktch_block-color-container">
+        <div class="ktch_block-color ktch_theme-color-primary-text-color"></div>
+        <div class="ktch_block-meta">
+          <small class="ui-text">Primary text color</small>
+          <small class="ui-text">#</small>
+        </div>
+      </div>
+
+      <div class="ktch_block-color-container">
+        <div class="ktch_block-color ktch_theme-color-black"></div>
+        <div class="ktch_block-meta">
+          <small class="ui-text">Theme black</small>
+          <small class="ui-text">#</small>
+        </div>
+      </div>
+
+      <div class="ktch_block-color-container">
+        <div class="ktch_block-color ktch_theme-color-white"></div>
+        <div class="ktch_block-meta">
+          <small class="ui-text">Theme white</small>
+          <small class="ui-text">#</small>
+        </div>
+      </div>
+
+      <div class="ktch_block-color-container">
+        <div class="ktch_block-color ktch_theme-color-highlight"></div>
+        <div class="ktch_block-meta">
+          <small class="ui-text">Theme highlight</small>
+          <small class="ui-text">#</small>
+        </div>
+      </div>
+
+      <div class="ktch_block-color-container">
+        <div class="ktch_block-color ktch_theme-color-disabled"></div>
+        <div class="ktch_block-meta">
+          <small class="ui-text">Theme disabled</small>
+          <small class="ui-text">#</small>
+        </div>
+      </div>
+
     </div>
-  </div>
+  </article>
+
+  <article class="flexchild">
+
+    <header class="ktch_header">
+      <h4>Brand proximity colors</h4>
+    </header>
+
+    <div class="horizontal-section ktch_container">
+
+      <div class="message-information">
+        <p>
+          <small>The lighter the background, the more important the foreground information will be.</small>
+        </p>
+      </div>
+
+      <div class="ktch_block-color-container">
+        <div class="ktch_block-color ktch_theme-color-background"></div>
+        <div class="ktch_block-meta">
+          <small class="ui-text">Background color</small>
+          <small class="ui-text">#</small>
+        </div>
+      </div>
+
+      <div class="ktch_block-color-container">
+        <div class="ktch_block-color ktch_theme-color-background-secondary"></div>
+        <div class="ktch_block-meta">
+          <small class="ui-text">Background color secondary</small>
+          <small class="ui-text">#</small>
+        </div>
+      </div>
+
+      <div class="ktch_block-color-container">
+        <div class="ktch_block-color ktch_theme-color-background-tertiary"></div>
+        <div class="ktch_block-meta">
+          <small class="ui-text">Background color tertiary</small>
+          <small class="ui-text">#</small>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="horizontal-section ktch_container">
+    
+      <div class="ktch_block-color-container">
+        <div class="ktch_block-color ktch_theme-color-foreground"></div>
+        <div class="ktch_block-meta">
+          <small class="ui-text">Foreground color</small>
+          <small class="ui-text">#</small>
+        </div>
+      </div>
+
+      <div class="ktch_block-color-container">
+        <div class="ktch_block-color ktch_theme-color-foreground-secondary"></div>
+        <div class="ktch_block-meta">
+          <small class="ui-text">Foreground color secondary</small>
+          <small class="ui-text">#</small>
+        </div>
+      </div>
+
+      <div class="ktch_block-color-container">
+        <div class="ktch_block-color ktch_theme-color-foreground-tertiary"></div>
+        <div class="ktch_block-meta">
+          <small class="ui-text">Foreground color tertiary</small>
+          <small class="ui-text">#</small>
+        </div>
+      </div>
+
+    </div>
+
+  </article>
 
 </div>
