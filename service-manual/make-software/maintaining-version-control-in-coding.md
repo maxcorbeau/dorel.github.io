@@ -159,25 +159,27 @@ Keep repeating this step until your function is finished. Once you're done your 
 
 ### 2. Doing a release
 
-Start with the develop branch:
+Create new release branch with latest commits:
 
-`$ git checkout develop`
+```
+// Start with the develop branch:
+$ git checkout develop
+// Make sure you have the latest changes:
+$ git pull
+// Create local release branch:
+$ git checkout -b release/0.4.0 develop
 
-Make sure you have the latest changes:
+```
 
-`$ git pull`
-
-Create local release branch:
-
-`$ git checkout -b release/0.4.0 develop`
-
-Tag the commits *with an annotation* making it a solid commit (as opposed to a lightweight tag). An annotated tag always has tagger (author) and date. This will make it show up in the overview:
+Merge release into master
 
 ```
 $ git checkout master
 $ git pull master
 $ git merge --no-ff release/0.4.0
 ```
+
+Tag the commits *with an annotation* making it a solid commit (as opposed to a lightweight tag). An annotated tag always has tagger (author) and date. This will make it show up in the overview:
 
 Tag the commit:
 `$ git tag -a 0.4.0`
