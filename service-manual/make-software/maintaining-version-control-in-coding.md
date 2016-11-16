@@ -27,36 +27,33 @@ Two types of developers
 - contributor: Typical actions for the contributor are: Starting of a branch, filing in Pull Requests.
 - maintainer: Authors the code of the contributor before it's merged. Typical actions for the maintainer are: Review Pull Requests.
 
-## branching
+## Branching
 
 The typical workflow is that you get a JIRA ticket assigned. For future reference in the git history, this ticket reference needs to be reflected in the commit message as described in the next chapter *git history* title. But these commits will also need to be contained in a encapsuled version of the repository so you can work freely without interferring with other developers. For that you can create a branch.
 
+### Branch folders
+
 When branching a specific task, use the dedicated branch folders. Example of branch folders:
 
-- feature/..
-- bugfix/..
-- release/..
+- `feature/..`
+- `bugfix/..`
+- `release/..`
 
-projects:
-
-- Lowercase project name: 'gh' = Github project
-- Uppercase project name: 'DIO' = dorel.io project in JIRA
-
-For a feature:
+### Feature branch:
 
 - Example of JIRA ticket system: `feature/kitchensink` (feature name)
 
 The kitchensink is a dedicated page meaning that the work can be encapsuled on a single branch. Multiple tickets can be comitted in this branch which allows for solving multiple tasks for that feature. The words in feature branches are separated by hyphens.
 
-For a bugfix:
+### Bugfix branch:
 
-- Example of JIRA ticket system: `bugfix/DIO-124`
+- Example of JIRA ticket system: `bugfix/DIO-124` (DIO-124 is a unique ticket reference for JIRA)
 
 Bugfixes can be created as a single branch with the branchname of the bugfix. That way you can work on it encapsuled, and there's always a reference back to the ticket in which information is stored. 
 
 For external logged bugfixes (exception):
 
-- Example of Github ticket system: `bugfix/gh-1`
+- Example of Github ticket system: `bugfix/gh-1` (gh-1 is a unique ticket reference for GitHub)
 
 Mergin branches will always have to be `$ git merge --no-ff` to always keep the reference to the original pull request in our commit history.
 
