@@ -114,7 +114,7 @@ After the release has been released in origin master, make this released version
 
 This tutorial assumes you're working using the terminal and that you have a basic understanding of Git.
 
-1. Typically you get a JIRA ticket assigned to you. Check and make sure that the corresponding issue unique reference (DIO-x) is not already available in the existing branches. You can check this both in the JIRA ticket itself, to see if someone already comitted. Since it's a new issue ideally it shouldn't. Then perfom the next step.
+1) Typically you get a JIRA ticket assigned to you. Check and make sure that the corresponding issue unique reference (DIO-x) is not already available in the existing branches. You can check this both in the JIRA ticket itself, to see if someone already comitted. Since it's a new issue ideally it shouldn't. Then perfom the next step.
 
 ```
 // use fetch to get all remote branches
@@ -125,11 +125,11 @@ $ git branch -a
 $ git pull
 ```
 
-2. The next step is to create a branch with the corresponding ticket reference, by branching of off the develop branch. The -b prefix will create a new branch if the branch doesn't exist yet:
+2) The next step is to create a branch with the corresponding ticket reference, by branching of off the develop branch. The -b prefix will create a new branch if the branch doesn't exist yet:
 
 `$ git checkout -b feature/DIO-x develop`
 
-3. Start working on the feature/bugfix. Gradually commit your changes as described in the previous chapter *git history*:
+3) Start working on the feature/bugfix. Gradually commit your changes as described in the previous chapter *git history*:
 
 First stage the changes you've made:
 ```
@@ -151,15 +151,15 @@ Then commit the staged changes:
 
 Keep repeating this step until your function is finished. Once you're done your branch is ready to be tested.
 
-6. Move the changes you made to remote (a.k.a. origin):
+6) Move the changes you made to remote (a.k.a. origin):
 
 `$ git push origin HEAD`
 
-7. At this point open github.com and the correseponding repository. Make a pull request and assign this to another developer to review. Once the other developer sees no mistakes he/she will merge the pull request and your code will be in the develop branch.
+7) At this point open github.com and the correseponding repository. Make a pull request and assign this to another developer to review. Once the other developer sees no mistakes he/she will merge the pull request and your code will be in the develop branch.
 
 ### 2. Doing a release
 
-Create new release branch with latest commits:
+1) Create new release branch with latest commits:
 
 ```
 // Start with the develop branch:
@@ -171,7 +171,7 @@ $ git checkout -b release/0.4.0 develop
 
 ```
 
-Merge release into master
+2) Merge release into master
 
 ```
 $ git checkout master
@@ -179,7 +179,7 @@ $ git pull master
 $ git merge --no-ff release/0.4.0
 ```
 
-Tag the commits *with an annotation* making it a solid commit (as opposed to a lightweight tag). An annotated tag always has tagger (author) and date. This will make it show up in the overview:
+3) Tag the commits *with an annotation* making it a solid commit (as opposed to a lightweight tag). An annotated tag always has tagger (author) and date. This will make it show up in the overview:
 
 Tag the commit:
 `$ git tag -a 0.4.0`
@@ -192,7 +192,7 @@ Then push the tags:
 
 `$ git push --follow-tags`
 
-Merge back into develop:
+4) Merge back into develop:
 
 ```
 $ git checkout develop
