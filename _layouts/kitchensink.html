@@ -52,6 +52,7 @@
   
   <!-- custom elements -->
   <link rel="import" href="/assets/custom_components/reveal-color/reveal-color.html">
+  <link rel="import" href="/assets/custom_components/show-iconsets/show-iconsets.html">
 
   <!-- iron elements / iron icons -->
 
@@ -96,7 +97,7 @@
 </head>
 
 <!-- Custom style for polymer objects -->
-<style is="custom-style">
+<style is="custom-style" include="iron-flex">
 
   /* refactor this */
   .centered {
@@ -138,6 +139,24 @@
   }
   .shadow-2dp {
     @apply(--shadow-elevation-2dp);
+  }
+  .shadow-3dp {
+    @apply(--shadow-elevation-3dp);
+  }
+  .shadow-4dp {
+    @apply(--shadow-elevation-4dp);
+  }
+  .shadow-6dp {
+    @apply(--shadow-elevation-6dp);
+  }
+  .shadow-8dp {
+    @apply(--shadow-elevation-8dp);
+  }
+  .shadow-12dp {
+    @apply(--shadow-elevation-12dp);
+  }
+  .shadow-16dp {
+    @apply(--shadow-elevation-16dp);
   }
   .flex-vertical {
     @apply(--layout-vertical);
@@ -206,6 +225,7 @@
   .ktch_block-meta {
     float: left;
     position: relative;
+    min-height: 3rem;
   }
   .ktch_block-meta span {
     float: left;
@@ -259,6 +279,30 @@
   .ktch_theme-color-disabled {
     background-color: var(--theme-color-disabled);
   }
+  .ktch_theme-color-information-foreground {
+    background-color: var(--theme-color-information-foreground);
+  }
+  .ktch_theme-color-information-background {
+    background-color: var(--theme-color-information-background);
+  }
+  .ktch_theme-color-confirmation-foreground {
+    background-color: var(--theme-color-confirmation-foreground);
+  }
+  .ktch_theme-color-confirmation-background {
+    background-color: var(--theme-color-confirmation-background);
+  }
+  .ktch_theme-color-warning-foreground {
+    background-color: var(--theme-color-warning-background);
+  }
+  .ktch_theme-color-warning-background {
+    background-color: var(--theme-color-warning-background);
+  }
+  .ktch_theme-color-danger-foreground {
+    background-color: var(--theme-color-danger-foreground);
+  }
+  .ktch_theme-color-danger-background {
+    background-color: var(--theme-color-danger-background);
+  }
   .ktch_section-components section:first-child {
     margin-top: var(--theme-component-space-inner-large);
   }
@@ -279,6 +323,26 @@
   .ktch_theme-font-container {
     margin-bottom: var(--theme-component-space-inner);
     @apply(--theme-section-vertical-padding);
+  }
+  .ktch_block-modular-scale {
+    border: 1px dashed var(--black);
+    display: block;
+    float: left;
+  }
+  .ktch_theme-component-space-inner {
+    height: var(--theme-component-space-inner);
+    width: var(--theme-component-space-inner);
+  }
+  .ktch_theme-component-space-inner-medium {
+    height: var(--theme-component-space-inner-medium);
+    width: var(--theme-component-space-inner-medium);
+  }
+  .ktch_theme-component-space-inner-large {
+    height: var(--theme-component-space-inner-large);
+    width: var(--theme-component-space-inner-large);
+  }
+  .ktch_badge-header {
+    margin-bottom: var(--theme-component-space-inner);
   }
 
 </style>

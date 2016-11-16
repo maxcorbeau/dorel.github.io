@@ -78,10 +78,6 @@ Description:  Dorel's webcomponent styling -config
       @apply(--theme-heading);
     }
 
-    span {
-      line-height: var(--theme-text-line-height);
-    }
-
     .page-header .type-ui-secondary {
       @apply(--theme-bodycopy-margins);
     }
@@ -226,19 +222,55 @@ Description:  Dorel's webcomponent styling -config
      * /components/:
      * _lists.scss
      */
-    ul:not(.not-enum) li {
+
+    /* lists enumerated */
+    --enum-li {
       display: list-item;
       list-style-position: inside;
     }
 
-     /* general lists */
-    .not-enum {
+    /* lists not enumerated */
+    --not-enum {
       margin-left: 0;
+    }
+    --not-enum-li {
+      list-style-type: none;
+    }
+
+    ul:not(.not-enum) li {
+      @apply(--enum-li);
+    }
+
+    .not-enum {
+      @apply(--not-enum);
     }
 
     .not-enum li {
-      list-style-type: none;
+      @apply(--not-enum-li);
     }
+
+    /* 
+     * /components/:
+     * _pagination.scss
+     */
+
+     .pagination li {
+      float: left;
+     }
+
+     /* mimic paper-icon-button styling 
+      * TODO: hook into paper polymer styling
+     */
+     .pagination-page-element {
+      padding: 8px;
+      height: 23px;
+      width: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--theme-size-small);
+      @apply(--theme-ui);
+     }
 
     /*article ul {
       margin-left: 1.25em;
@@ -361,7 +393,6 @@ Description:  Dorel's webcomponent styling -config
        padding-left: var(--theme-component-space-inner);
      }
 
-     --theme-component-space-inner-large
     @media screen and (min-width: 40.063em) { /* 641/16 = 641px, medium screens */
       .header-site {
         padding-left: var(--theme-component-space-inner-medium);
