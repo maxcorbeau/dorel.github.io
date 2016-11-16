@@ -1,0 +1,76 @@
+---
+title: Tabs
+---
+
+<div class="flex-vertical">
+
+  <div class="flexchild">
+    <header class="ktch_header ktch_heading-first">
+      <div class="left">
+        <h4>Plain tabs</h4>
+      </div>
+      <div class="right">
+        <h3 class="ui-text">{{ page.title }}</h3>
+      </div>
+    </header>
+  </div>
+
+  <article class="flexchild">
+
+    <paper-tabs selected="0">
+      <paper-tab>ITEM ONE</paper-tab>
+      <paper-tab>ITEM TWO</paper-tab>
+      <paper-tab>ITEM THREE</paper-tab>
+    </paper-tabs>
+
+  </article>
+
+</div>
+
+<div class="flex-vertical">
+
+  <article class="flexchild">
+    <header class="ktch_header">
+      <h4>Scrollable tabs</h4>
+    </header>
+
+    <div class="horizontal-section ktch_container" style="width:500px;">
+      <paper-tabs selected="0" scrollable>
+        <paper-tab>NUMBER ONE ITEM</paper-tab>
+        <paper-tab>ITEM TWO</paper-tab>
+        <paper-tab>THE THIRD ITEM</paper-tab>
+        <paper-tab>THE ITEM FOUR</paper-tab>
+        <paper-tab>FIFTH</paper-tab>
+        <paper-tab>THE SIXTH TAB</paper-tab>
+        <paper-tab>NUMBER SEVEN</paper-tab>
+        <paper-tab>EIGHT</paper-tab>
+        <paper-tab>NUMBER NINE</paper-tab>
+        <paper-tab>THE TENTH</paper-tab>
+        <paper-tab>THE ITEM ELEVEN</paper-tab>
+        <paper-tab>TWELFTH ITEM</paper-tab>
+      </paper-tabs>
+    </div>
+
+  </article>
+
+  <article class="flexchild">
+    <header class="ktch_header">
+      <h4>Scrollable fitcontainer tab</h4>
+    </header>
+    <div class="horizontal-section ktch_container" style="width:500px;">
+      <paper-tabs selected="0" scrollable fit-container>
+        <paper-tab>NUMBER ONE ITEM</paper-tab>
+        <paper-tab>ITEM TWO</paper-tab>
+        <paper-tab>THE THIRD ITEM</paper-tab>
+      </paper-tabs>
+    </div>
+    <div class="horizontal-section ktch_container" style="width:500px;">
+      <paper-tabs selected="0" scrollable fit-container style="width: 50%;">
+        <paper-tab>NUMBER ONE ITEM</paper-tab>
+        <paper-tab>ITEM TWO</paper-tab>
+        <paper-tab>THE THIRD ITEM</paper-tab>
+      </paper-tabs>
+    </div>
+  </article>
+
+</div>
