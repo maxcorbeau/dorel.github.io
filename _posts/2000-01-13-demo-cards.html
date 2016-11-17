@@ -16,17 +16,58 @@ title: Cards
     </header>
   </div>
 
-  <!--article class="flexchild">
-    <p>A paper-card with a simple heading, header image, body content, and actions</p>
+  <article class="flexchild">
     <style is="custom-style">
-      .demo-card-width {
+      .card-content {
+        background-color: var(--theme-brand-color);
+        padding: var(--theme-component-space-inner-large);
+        color: var(--theme-white);
+      }
+      .card-content .card-excerpt {
+        @apply(--theme-ui-bodycopy);
+      }
+      .card-content-light * {
+        color: var(--theme-white);
+      }
+      /* slanting background
+         make this mixin reusability */
+      .card-content:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 95px; /* make this a var */
+        top: -95px; /* same var as above, but then - */
+        position: absolute;
+        left: 0;
+        background-size: 100% 100%;
+        background: url('data:image/svg+xml;utf8,<svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"><polygon points="0,42 583,95 0,95" fill="var(--theme-brand-color)"/><polygon points="0,42 583,95 583,0 0,95" opacity=".2" fill="var(--theme-brand-color-complementary)"/></svg>');
+      }
+
+      .theme-paper-card {
+        --paper-card-header: {
+          /* border-radius: 10rem 10rem 0 0; */
+        };
+        --paper-card: {
+          background-color: red;
+          /* border-radius: var(--theme-roundness); */
+          border-radius: 20px;
+        };
+      }
+
+      .ktch_card-info {
         max-width: 400px;
+        margin: 0 auto;
+        display: block;
       }
     </style>
 
-    <paper-card class="demo-card-width" heading="Emmental" image="http://placehold.it/350x150/FFC107/000000" alt="Emmental">
-      <div class="card-content">
-        Emmentaler or Emmental is a yellow, medium-hard cheese that originated in the area around Emmental, Switzerland. It is one of the cheeses of Switzerland, and is sometimes known as Swiss cheese.
+    <paper-card class="theme-paper-card ktch_card-info" heading="Emmental" image="https://elements.polymer-project.org/bower_components/paper-card/demo/trip.png" alt="Maxi Cosi Kids">
+      <div class="card-content card-content-light">
+        <h1 class="theme-font-display2">Title of this tile</h1>
+        <div class="theme-ie-bodycopy">
+          <p>Emmentaler or Emmental is a yellow, medium-hard cheese that originated in the area around Emmental, Switzerland.</p> 
+          <p>It is one of the cheeses of Switzerland, and is sometimes known as Swiss cheese.</p>
+        </div>
       </div>
       <div class="card-actions">
         <paper-button>Share</paper-button>
@@ -35,7 +76,7 @@ title: Cards
     </paper-card>
   </article>
 
-  <article class="flexchild">
+  <!--article class="flexchild">
     <h4 class="ktch_heading">Paper-cards can contain advanced content</h4>
     <style is="custom-style">
       .demo-card-width {

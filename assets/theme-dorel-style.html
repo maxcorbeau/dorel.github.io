@@ -528,6 +528,26 @@ Description:  Dorel's webcomponent styling -config
 
     /*
      * /components/:
+     * _interactive-elements.scss
+     */
+
+    .theme-ie-bodycopy {
+      @apply(--theme-ie-bodycopy);
+    }
+
+    .theme-ie-bodycopy p:not(:only-child):not(:last-child) {
+      margin-bottom: var(--theme-margin-bodycopy) !important;
+    }
+
+    /*
+     * /components/:
+     * _cards.scss
+     */
+
+    /* see kitchensink */
+
+    /*
+     * /components/:
      * _code.scss
      */
 
