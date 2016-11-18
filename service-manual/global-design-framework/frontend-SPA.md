@@ -8,6 +8,7 @@ draft: false
 Dorel Juvenile's front-end architecture is based on two core principles. Firstly, Dorel Juvenile's [platform and ecosystems strategy](http://www.dorel.io/service-manual/vision/platforms-and-ecosystems.html), and secondly the [single-page application (SPA)](https://en.wikipedia.org/wiki/Single-page_application) to give users the experience of using a native mobile / desktop application. Practically this means that all Javascript, HTML, and Cascading style sheet (CSS) files are hosted as a static platform-application itself.
 
 General rules for the hosting of the application files:
+
 - All files are set as non-dynamic content as described on the [cloud architecture page](http://www.dorel.io/service-manual/use-technology/cms-cloud-architecture.html).
 - The [framework](http://www.dorel.io/service-manual/global-design-framework/atomic-design.html) URLs should contain a [semver version number](http://semver.org) because of the longevity of the files on the [Point of Presence (PoP) locations](https://peering.google.com/#/infrastructure).
 - The platform is the content delivery platform. Meaning that there is no middleware to deliver the content from the server to the PoP locations.
@@ -51,42 +52,37 @@ The example below shows the inclusion of both Magento 2 and Wordpress informatio
 
 ```
 {
-	window: { // window object for the global scope
-		_collect: { // private collect object
-			MAGE: { // object representing a platform, in this case Magento 2
-				"/V1/product/test123": { // API endpoint, note how the object represents the Magento 2 JSON schema
-					name: "Test Product",
-					weight: 123,
-					extension_attributes: {
-						bundle_product_options: [{
-							option_id: 1,
-							title: "some title",
-						}]
-					}
-				}
-				WRPS: { // object representing a platform, in this case Wordpress
-					"/categories/0": { // API endpoint, note how the object represents the Wordpress JSON schema
-						"id": 1,
-						"link": "Some url",
-						"name": "Some name",
-						"taxonomy": "category",
-					},
-					"/posts/1": {
-						"date": "2016-11-18T16:09:51.328Z",
-						"date_gmt": "2016-11-18T16:09:51.328Z",
-						"id": 0,
-						"title": "Some title",
-						"content": "Hello World"
-					}
-				}
-			}
-		}
-	}
+  window: { // window object for the global scope
+    _collect: { // private collect object
+      MAGE: { // object representing a platform, in this case Magento 2
+        "/V1/product/test123": { // API endpoint, note how the object represents the Magento 2 JSON schema
+          name: "Test Product",
+          weight: 123,
+          extension_attributes: {
+            bundle_product_options: [{
+              option_id: 1,
+              title: "some title",
+            }]
+          }
+        }
+        WRPS: { // object representing a platform, in this case Wordpress
+          "/categories/0": { // API endpoint, note how the object represents the Wordpress JSON schema
+            id:1,
+            link:"Some url"
+          },
+          "/posts/1": {
+            date:"2016-11-18T16:09:51.328Z",
+            id:0
+          }
+        }
+      }
+    }
+  }
 }
 ```
 
-Magento 2 JSON schema: http://devdocs.magento.com/swagger/
-Wordpress JSON schema: https://app.swaggerhub.com/api/starfishmod/Wordpress/0.1.0
+- [Magento 2 JSON schema](http://devdocs.magento.com/swagger/)
+- [Wordpress JSON schema](https://app.swaggerhub.com/api/starfishmod/Wordpress/0.1.0)
 
 ## Search engine optimization (SEO) and JSON-LD
 
