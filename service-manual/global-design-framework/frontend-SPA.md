@@ -10,7 +10,7 @@ Dorel Juvenile's front-end architecture is based on two core principles. Firstly
 General rules for the hosting of the application files:
 
 - All files are set as non-dynamic content as described on the [cloud architecture page](/service-manual/use-technology/cms-cloud-architecture.html).
-- The [SPA and framework](/service-manual/global-design-framework/atomic-design.html) is the source of the domain of a website. When the framework is updated, the [Point of Presence (PoP) locations](https://peering.google.com/#/infrastructure) will be invalidated. For more information see [&para; Scoping of platforms bullet point 2](/service-manual/use-technology/cms-cloud-architecture.html)/service-manual/use-technology/cms-cloud-architecture.html
+- The [SPA and framework](/service-manual/global-design-framework/atomic-design.html) is the source of the domain of a website. When the framework is updated, the [Point of Presence (PoP) locations](https://peering.google.com/#/infrastructure) will be invalidated. For more information see [&para; Scoping of platforms bullet point 2](/service-manual/use-technology/cms-cloud-architecture.html).
 - The platform is the content delivery platform. Meaning that there is no middleware to deliver the content from the server to the PoP locations.
 - For more information on the URL structures of all platforms, read [&para; Scoping of platforms](/service-manual/use-technology/cms-cloud-architecture.html).
 
