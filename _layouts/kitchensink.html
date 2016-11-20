@@ -17,6 +17,7 @@
   {% endcomment %}
 
   <script src="{{ site.bower_dir }}/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <!--link rel="import" href="{{ site.bower_dir }}/polymer/polymer.html"-->
 
   <!-- custom polymer element source: https://github.com/The5heepDev/iron-grid -->
   <link rel="import" href="{{ site.bower_dir }}/iron-grid/iron-grid.html">
@@ -381,7 +382,7 @@
                 color: var(--theme-color-disabled);
               }
             </style>
-            <paper-tabs selected="0">
+            <paper-tabs select="0">
               <paper-tab>Dorel Juvenile</paper-tab>
               <paper-tab disabled>Maxi Cosi (coming soon)</paper-tab>
               <paper-tab disabled>Quinny</paper-tab>
@@ -392,6 +393,7 @@
 
       </iron-grid>
   </iron-grid-container>
+
 
   <div class="ktch_background">
 

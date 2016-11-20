@@ -18,8 +18,10 @@ title: Cards
 
   <article class="flexchild">
     <style is="custom-style">
-      .card-content {
+      .ktch_card-info {
         background-color: var(--theme-brand-color);
+      }
+      .ktch_card-info .card-content {
         padding: var(--theme-component-space-inner-large);
         color: var(--theme-white);
       }
@@ -29,9 +31,12 @@ title: Cards
       .card-content-light * {
         color: var(--theme-white);
       }
+      .card-content {
+
+      }
       /* slanting background
          make this mixin reusability */
-      .card-content:before {
+      .DRL_theme-card-content:before {
         content: '';
         display: block;
         width: 100%;
@@ -44,13 +49,13 @@ title: Cards
       }
 
       .theme-paper-card {
-        --paper-card-header: {
-          /* border-radius: 10rem 10rem 0 0; */
-        };
         --paper-card: {
-          background-color: red;
-          /* border-radius: var(--theme-roundness); */
           border-radius: 20px;
+          @apply(--shadow-elevation-8dp);
+        };
+        --paper-card-actions: {
+          border-top-color: #00569c;
+          color: #0d3d65;
         };
       }
 
@@ -61,8 +66,8 @@ title: Cards
       }
     </style>
 
-    <paper-card class="theme-paper-card ktch_card-info" heading="Emmental" image="https://elements.polymer-project.org/bower_components/paper-card/demo/trip.png" alt="Maxi Cosi Kids">
-      <div class="card-content card-content-light">
+    <paper-card class="theme-paper-card ktch_card-info" heading="" image="{{ site.assets_dir }}/img/maxi-cosi-KIDS.png" alt="Maxi Cosi Kids">
+      <div class="card-content card-content-light DRL_theme-card-content">
         <h1 class="theme-font-display2">Title of this tile</h1>
         <div class="theme-ie-bodycopy">
           <p>Emmentaler or Emmental is a yellow, medium-hard cheese that originated in the area around Emmental, Switzerland.</p> 
@@ -74,6 +79,83 @@ title: Cards
         <paper-button>Explore!</paper-button>
       </div>
     </paper-card>
+  </article>
+
+  <article class="flexchild" style="margin-top:2rem;">
+    <!-- 
+      Example of heavily customized card 
+      Can be made into either a custom polymer element,
+      or customize the existing paper-card with a 
+      conditional
+    -->
+
+    <style is="custom-style">
+      /* customized maxi cosi styling */
+      .MC_skewed-line-wrap {
+        position: relative;
+      }
+      .MC_skewed-line {
+        display: inline-block;
+        position: absolute;
+        width: calc(100% + var(--MC_border-width-paper-card) + var(--MC_border-width-paper-card));
+        left: -var(--MC_border-width-paper-card);
+        height: 290px; /* height of the image that is below it */
+        z-index: 999;
+        background: transparent; /* or background image */
+        overflow: hidden;
+      }
+      .MC_skewed-line::before, 
+      .MC_skewed-line::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        display: block;
+        width: calc(100% - 12px);
+        height: 100%;
+        border-width: 4px var(--MC_border-width-paper-card);
+        border-style: solid;
+        border-color: var(--theme-brand-color);
+        border-radius: 15px;
+        box-shadow: 36px -36px 0 36px var(--theme-brand-color), -2px 2px 0 2px var(--theme-brand-color);
+        transform: skewY(11deg);
+        
+      }
+      .MC_skewed-line::before {
+        bottom: 29%;
+      }
+      .MC_skewed-line::after {
+        top: 72%;
+        box-shadow: -36px 36px 0 36px var(--theme-brand-color), 2px -2px 0 2px var(--theme-brand-color);
+      }
+      .MC_paper-card-header {
+        border-width: var(--MC_border-width-paper-card);
+        border-style: solid;
+        border-color: var(--theme-brand-color);
+      }
+    </style>
+
+    <div class="theme-paper-card ktch_card-info">
+
+      <div class="header MC_paper-card-header">
+        <div class="MC_skewed-line-wrap">
+          <div class="MC_skewed-line"></div><!-- Custom element -->
+        </div>
+        <iron-image
+          src="{{ site.assets_dir }}/img/maxi-cosi-KIDS.png"
+          alt="Maxi Cosi Kids"></iron-image>
+      </div>
+      <!--div class="card-content card-content-light">
+        <h1 class="theme-font-display2">Title of this tile</h1>
+        <div class="theme-ie-bodycopy">
+          <p>Emmentaler or Emmental is a yellow, medium-hard cheese that originated in the area around Emmental, Switzerland.</p>
+        </div>
+      </div>
+      <div class="card-actions">
+        <paper-button>Share</paper-button>
+        <paper-button>Explore!</paper-button>
+      </div-->
+    </div>
+
   </article>
 
   <!--article class="flexchild">
