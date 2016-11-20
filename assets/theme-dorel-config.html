@@ -91,12 +91,12 @@ Description: Dorel's webcomponent styling -config
     --theme-size-display2: 1.12em; /* used for example h2 */
     --theme-size-display3: 1em; /* used for example h3 */
     --theme-size-display4: 1em; /* used for example h4, h5, h6 */
-    --theme-size-ui: .7em;
-    --theme-size-small: .762em;
+    --theme-size-ui: .75em;
+    --theme-size-small: .9em;
 
     /* use em over rem, since line-height should be relative to it's parent */
     --theme-text-line-height: 1.5em;
-    --theme-text-line-height-small: 1.3em;
+    --theme-text-line-height-small: 1.6em;
 
     --theme-bodycopy-width: {
       max-width: 46rem; /* set max width for legibility */
@@ -126,6 +126,16 @@ Description: Dorel's webcomponent styling -config
       font-weight: 600;
       text-transform: uppercase;
     };
+
+    /* interactive elements */
+    --theme-ie-bodycopy: {
+      font-family: var(--theme-font-serif);
+      font-size: var(--theme-size-small);
+      line-height: var(--theme-text-line-height-small);
+      @apply(--theme-bodycopy-width);
+    }
+
+    --MC_border-width-paper-card: 6px;
 
   }
 
