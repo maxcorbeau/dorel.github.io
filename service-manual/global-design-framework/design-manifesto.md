@@ -13,7 +13,7 @@ The digital design guide (kitchensink, component library, etc.) on Dorel.IO is l
 > -- <cite>Henk Jan Gerzee</cite>
 
 (source: from [Digital Culture](/service-manual/vision/digital-culture.html))
-Additions are then directly in the main source (Dorel.IO framework) and is then by definition globally available.
+Additions are then directly in the main source (Dorel.IO framework) and is then by definition **directly globally available**.
 
 ## Design with purpose: 
 Designing without purpose is decoration. This usually clutters information.
@@ -35,3 +35,7 @@ Focus on the content, and for instance use important keywords in the titles so a
 
 ## Mobile first: 
 Mobile is intertwined with how users gather information from our websites. Having a mobile first approach focusses on the most important information, and then build onwards from that. Enhance the experience once the screen size grows. Always refer back to the [Creative Brief](http://localhost:4000/service-manual/global-design-framework/creative-brief.html) created for that page, to see if the content you want to place or design you’d like to create still fits the purpose of the page.
+
+## The canvas for the website is interactive: 
+Compared to traditional offline marketing, online marketing will have to have a different look and feel because it online elements are interactive elements. For this Dorel.IO uses the base principle's layed out by Google's material design.
+For example, if elements that are loaded in a page via Ajax are designed using a card layout which elevates a bit off the page, or a dialog window that shows temporary content that should be on top of the page. More on these and similar patterns can be read on [Material Design](https://material.google.com/)
