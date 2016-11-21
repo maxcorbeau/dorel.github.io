@@ -13,6 +13,7 @@ Our digital services and the technology on which they are built should enable ch
 ## What good looks like
 Our digital services are based on user needs, not on organisation structures and processes.
 We have:
+
 - Digital technology team that is knowledgeable about existing and emerging technology options
 - a governance and management structure that is an enabler, not a bottleneck or barrier to change
 - flexible commercial models that meet consumer needs
