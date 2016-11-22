@@ -23,7 +23,7 @@ This can be done for a page by for instance using the [Creative Brief](/service-
 ## Make design global/scalable: 
 The brands for Dorel Juvenile are global. Inconsistent design for a userpath across websites is disruptive. The collective costs of designing and maintaining all these designs is significant.  Local resources are better spent on creating local content. 
 Every design element should fit in the global master brand. A global template which allows for global consistency allowing room for local content and promotions is key.
-If you’ve implemented something on a specific location, think on forehand about possibilities of how it could be used in other locations as well. And how it could potentially affect other elements. The [Kitchen Sink](http://localhost:4000/service-manual/help-people-to-use-your-service/kitchensink-of-all-elements.html) is an ideal tool to validate how design elements relate to one another.
+If you’ve implemented something on a specific location, think on forehand about possibilities of how it could be used in other locations as well. And how it could potentially affect other elements. The [Kitchen Sink](/service-manual/help-people-to-use-your-service/kitchensink-of-all-elements.html) is an ideal tool to validate how design elements relate to one another.
 
 ## Make design consistent: 
 The framework is based on global design pattern definitions. 
@@ -34,7 +34,7 @@ This goes both for visual designers as for content editors, make the design scan
 Focus on the content, and for instance use important keywords in the titles so a user can relate. In that same way the design of the page should always be content first, design is a tool to utilize the contents potential.
 
 ## Mobile first: 
-Mobile is intertwined with how users gather information from our websites. Having a mobile first approach focusses on the most important information, and then build onwards from that. Enhance the experience once the screen size grows. Always refer back to the [Creative Brief](http://localhost:4000/service-manual/global-design-framework/creative-brief.html) created for that page, to see if the content you want to place or design you’d like to create still fits the purpose of the page.
+Mobile is intertwined with how users gather information from our websites. Having a mobile first approach focusses on the most important information, and then build onwards from that. Enhance the experience once the screen size grows. Always refer back to the [Creative Brief](/service-manual/global-design-framework/creative-brief.html) created for that page, to see if the content you want to place or design you’d like to create still fits the purpose of the page.
 
 ## The canvas for the website is interactive: 
 Compared to traditional offline marketing, online marketing will have to have a different look and feel because it online elements are interactive elements. For this Dorel.IO uses the base principle's layed out by Google's material design.
