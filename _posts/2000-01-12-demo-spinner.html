@@ -2,19 +2,28 @@
 title: Spinners
 ---
 
-<article class="vertical-section-container centered">
-  <h4 class="ktch_heading">Spinners can be deactivated or activated</h4>
+<div class="flexchild">
+  <header class="ktch_header ktch_heading-first">
+    <div class="left">
+      <h4>Spinners</h4>
+    </div>
+    <div class="right">
+      <h3 class="ui-text">{{ page.title }}</h3>
+    </div>
+  </header>
+</div>
+
+<article class="flexchild">
   <paper-spinner></paper-spinner>
   <paper-spinner active></paper-spinner>
 
   <paper-spinner-lite></paper-spinner-lite>
   <paper-spinner-lite active></paper-spinner-lite>
 
-  <button onclick="toggle(event)">Toggle</button>
+  <!--button onclick="toggle(event)">Toggle</button-->
 </article>
 
-<article class="vertical-section-container centered">
-  <h4 class="ktch_heading">Spinners can be styled using custom properties</h4>
+<article class="flexchild">
   <style is="custom-style">
     paper-spinner.multi {
       --paper-spinner-layer-1-color: var(--paper-purple-500);
@@ -44,3 +53,4 @@ title: Spinners
   <paper-spinner-lite class="thin" active></paper-spinner-lite>
   <paper-spinner-lite class="thick" active></paper-spinner-lite>
 </article>
+

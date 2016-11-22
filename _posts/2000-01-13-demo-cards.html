@@ -1,0 +1,396 @@
+---
+title: Cards
+---
+
+<div class="flexchild">
+  <header class="ktch_header ktch_heading-first">
+    <div class="left">
+      <h4>Card examples (compositions of elements)</h4>
+    </div>
+    <div class="right">
+      <h3 class="ui-text">{{ page.title }}</h3>
+    </div>
+  </header>
+</div>
+
+<article class="flexchild">
+  <style is="custom-style">
+    .ktch_card-info {
+      background-color: var(--theme-brand-color);
+    }
+    .ktch_card-info .card-content {
+      padding: var(--theme-component-space-inner-large);
+      color: var(--theme-white);
+    }
+    .card-content .card-excerpt {
+      @apply(--theme-ui-bodycopy);
+    }
+    .card-content-light * {
+      color: var(--theme-white);
+    }
+    .card-content {
+
+    }
+    /* slanting background
+       make this mixin reusability */
+    .DRL_theme-card-content:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 95px; /* make this a var */
+      top: -95px; /* same var as above, but then - */
+      position: absolute;
+      left: 0;
+      background-size: 100% 100%;
+      background: url('data:image/svg+xml;utf8,<svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"><polygon points="0,42 583,95 0,95" fill="var(--theme-brand-color)"/><polygon points="0,42 583,95 583,0 0,95" opacity=".2" fill="var(--theme-brand-color-complementary)"/></svg>');
+    }
+
+    .theme-paper-card {
+      --paper-card: {
+        border-radius: 20px;
+        @apply(--shadow-elevation-8dp);
+      };
+      --paper-card-actions: {
+        border-top-color: #00569c;
+        color: #0d3d65;
+      };
+    }
+
+    .ktch_card-info-container {
+      max-width: 400px;
+      margin: 0 auto;
+      display: block;
+    }
+  </style>
+
+
+  <div class="horizontal-section ktch_container">
+    <div class="message-information">
+      <p><small>Experimental area. Will be finalized based on design.</small><p>
+    </div>
+  </div>
+
+  <div class="horizontal-section ktch_container ktch_card-info-container">
+    <div class="layout horizontal">
+      <div class="ktch_card-info-container">
+
+        <paper-card class="theme-paper-card ktch_card-info" heading="" image="{{ site.assets_dir }}/img/maxi-cosi-KIDS.png" alt="Maxi Cosi Kids">
+          <div class="card-content card-content-light DRL_theme-card-content">
+            <h1 class="theme-font-display2">Title of this tile</h1>
+            <div class="theme-ie-bodycopy">
+              <p>Emmentaler or Emmental is a yellow, medium-hard cheese that originated in the area around Emmental, Switzerland.</p> 
+              <p>It is one of the cheeses of Switzerland, and is sometimes known as Swiss cheese.</p>
+            </div>
+          </div>
+          <div class="card-actions">
+            <paper-button>Share</paper-button>
+            <paper-button>Explore!</paper-button>
+          </div>
+        </paper-card>
+
+      </div>
+    </div>
+  </div>
+</article>
+
+<article class="flexchild" style="margin-top:2rem;">
+  <!-- 
+    Example of heavily customized card 
+    Can be made into either a custom polymer element,
+    or customize the existing paper-card with a 
+    conditional
+  -->
+
+  <style is="custom-style">
+    /* customized maxi cosi styling */
+    .MC_skewed-line-wrap {
+      position: relative;
+    }
+    .MC_skewed-line {
+      display: inline-block;
+      position: absolute;
+      width: calc(100% + var(--MC_border-width-paper-card) + var(--MC_border-width-paper-card));
+      left: -var(--MC_border-width-paper-card);
+      height: 290px; /* height of the image that is below it */
+      z-index: 999;
+      background: transparent; /* or background image */
+      overflow: hidden;
+    }
+    .MC_skewed-line::before, 
+    .MC_skewed-line::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      display: block;
+      width: calc(100% - 12px);
+      height: 100%;
+      border-width: 4px var(--MC_border-width-paper-card);
+      border-style: solid;
+      border-color: var(--theme-brand-color);
+      border-radius: 15px;
+      box-shadow: 36px -36px 0 36px var(--theme-brand-color), -2px 2px 0 2px var(--theme-brand-color);
+      transform: skewY(11deg);
+      
+    }
+    .MC_skewed-line::before {
+      bottom: 29%;
+    }
+    .MC_skewed-line::after {
+      top: 72%;
+      box-shadow: -36px 36px 0 36px var(--theme-brand-color), 2px -2px 0 2px var(--theme-brand-color);
+    }
+    .MC_paper-card-header {
+      border-width: var(--MC_border-width-paper-card);
+      border-style: solid;
+      border-color: var(--theme-brand-color);
+    }
+  </style>
+
+  <div class="horizontal-section ktch_container ktch_card-info-container">
+    <div class="layout horizontal">
+      <div class="ktch_card-info-container">
+  
+        <div class="theme-paper-card">
+          <div class="header MC_paper-card-header">
+            <div class="MC_skewed-line-wrap">
+              <div class="MC_skewed-line"></div><!-- Custom element -->
+            </div>
+            <iron-image
+              src="{{ site.assets_dir }}/img/maxi-cosi-KIDS.png"
+              alt="Maxi Cosi Kids"></iron-image>
+          </div>
+          <!--div class="card-content card-content-light">
+            <h1 class="theme-font-display2">Title of this tile</h1>
+            <div class="theme-ie-bodycopy">
+              <p>Emmentaler or Emmental is a yellow, medium-hard cheese that originated in the area around Emmental, Switzerland.</p>
+            </div>
+          </div>
+          <div class="card-actions">
+            <paper-button>Share</paper-button>
+            <paper-button>Explore!</paper-button>
+          </div-->
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</article>
+
+<!--article class="flexchild">
+  <h4 class="ktch_heading">Paper-cards can contain advanced content</h4>
+  <style is="custom-style">
+    .demo-card-width {
+      max-width: 400px;
+    }
+    .cafe-header { @apply(--paper-font-headline); }
+    .cafe-light { color: var(--paper-grey-600); }
+    .cafe-location {
+      float: right;
+      font-size: 15px;
+      vertical-align: middle;
+    }
+    .cafe-reserve { color: var(--google-blue-500); }
+    iron-icon.star {
+      --iron-icon-width: 16px;
+      --iron-icon-height: 16px;
+      color: var(--paper-amber-500);
+    }
+    iron-icon.star:last-of-type { color: var(--paper-grey-500); }
+  </style>
+    <paper-card class="demo-card-width" image="/assets/demo/donuts.png" alt="Donuts">
+      <div class="card-content">
+        <div class="cafe-header">Cafe Basilico
+          <div class="cafe-location cafe-light">
+            <iron-icon icon="communication:location-on"></iron-icon>
+            <span>250ft</span>
+          </div>
+        </div>
+        <div class="cafe-rating">
+          <iron-icon class="star" icon="star"></iron-icon>
+          <iron-icon class="star" icon="star"></iron-icon>
+          <iron-icon class="star" icon="star"></iron-icon>
+          <iron-icon class="star" icon="star"></iron-icon>
+          <iron-icon class="star" icon="star"></iron-icon>
+        </div>
+        <p>$・Italian, Cafe</p>
+        <p class="cafe-light">Small plates, salads &amp; sandwiches in an intimate setting with 12 indoor seats plus patio seating.</p>
+      </div>
+      <div class="card-actions">
+        <p>Tonight's availability</p>
+        <div class="horizontal justified">
+          <paper-icon-button icon="icons:event"></paper-icon-button>
+          <paper-button>5:30PM</paper-button>
+          <paper-button>7:30PM</paper-button>
+          <paper-button>9:00PM</paper-button>
+        </div>
+        <paper-button class="cafe-reserve">Reserve</paper-button>
+      </div>
+    </paper-card>
+</article>
+
+<article class="flexchild">
+  <h4 class="ktch_heading">Paper-cards can have a horizontal image</h4>
+  <style is="custom-style">
+    .demo-card-width {
+      max-width: 400px;
+    }
+    paper-card.rate { @apply(--layout-horizontal); }
+    .rate-image {
+      width: 100px;
+      height: 170px;
+      background: url('/assets/demo/donuts.png');
+      background-size: cover;
+    }
+    .rate-content {
+      @apply(--layout-flex);
+      float: left;
+    }
+    .rate-header { @apply(--paper-font-headline); }
+    .rate-name { color: var(--paper-grey-600); margin: 10px 0; }
+    paper-icon-button.rate-icon {
+      --iron-icon-fill-color: white;
+      --iron-icon-stroke-color: var(--paper-grey-600);
+    }
+  </style>
+  <paper-card class="demo-card-width rate">
+    <div class="rate-content">
+      <div class="card-content">
+        <div class="rate-header">Rate this album</div>
+        <div class="rate-name">Mac Miller</div>
+        <div>Live from space</div>
+      </div>
+      <div class="card-actions">
+        <paper-icon-button class="rate-icon" icon="star"></paper-icon-button>
+        <paper-icon-button class="rate-icon" icon="star"></paper-icon-button>
+        <paper-icon-button class="rate-icon" icon="star"></paper-icon-button>
+        <paper-icon-button class="rate-icon" icon="star"></paper-icon-button>
+        <paper-icon-button class="rate-icon" icon="star"></paper-icon-button>
+      </div>
+    </div>
+    <div class="rate-image"></div>
+  </paper-card>
+</article>
+
+<article class="flexchild">
+  <h4 class="ktch_heading">Paper-cards can have expanded supporting text</h4>
+  <style is="custom-style">
+    .demo-card-width {
+      max-width: 400px;
+    }
+  </style>
+  <paper-card heading="Top western road trips" image="/assets/demo/trip.png" alt="Sailboat Harbor" class="white demo-card-width">
+    <div class="card-content">1,000 miles of wonder</div>
+    <div class="card-actions">
+      <paper-button>Share</paper-button>
+      <paper-button>Explore</paper-button>
+      <paper-icon-button 
+        icon="hardware:keyboard-arrow-up" 
+        title="more info" 
+        onclick="_toggle()" 
+        style="float:right;">
+      </paper-icon-button>
+      <iron-collapse id="more-info" style="width:100%;">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim ante, tempus eget volutpat ac, cursus ac ante. Nulla facilisi. Praesent sed lacinia ligula. Donec malesuada nisl eget quam iaculis, vel placerat justo cursus.
+      </iron-collapse>
+      <script>
+        function _toggle() {
+          var moreInfo = document.getElementById('more-info');
+          var iconButton = Polymer.dom(event).localTarget;
+          iconButton.icon = moreInfo.opened ? 'hardware:keyboard-arrow-up'
+                                            : 'hardware:keyboard-arrow-down';
+          moreInfo.toggle();
+        }
+      </script>
+    </div>
+  </paper-card>
+</article>
+
+<article class="flexchild">
+  <h4 class="ktch_heading">[demo name]</h4>
+  <style is="custom-style">
+    .demo-card-width,
+    .demo-stack-cart-container {
+      max-width: 400px;
+    }
+    paper-card.white {
+      --paper-card-header-color: #fff;
+    }
+  </style>
+  <div class="demo-stack-cart-container">
+    <paper-card heading="Pre-fab homes" image="/assets/demo/house.png" alt="House" class="demo-card-width white" style="margin-bottom:8px;">
+      <div class="card-actions">
+        <paper-icon-button icon="favorite"></paper-icon-button>
+        <paper-icon-button icon="bookmark"></paper-icon-button>
+        <paper-icon-button icon="social:share"></paper-icon-button>
+      </div>
+    </paper-card>
+    <div class="horizontal demo-card-width">
+      <paper-card heading="Favorite trips" image="/assets/demo/trip.png" alt="Trip" class="white" style="margin-right:4px;">
+        <div class="card-actions horizontal justified">
+          <paper-icon-button icon="favorite"></paper-icon-button>
+          <paper-icon-button icon="bookmark"></paper-icon-button>
+          <paper-icon-button icon="social:share"></paper-icon-button>
+        </div>
+      </paper-card>
+      <paper-card heading="Best airlines" image="/assets/demo/travel.png" alt="Travel" class="white" style="margin-left:4px;">
+        <div class="card-actions horizontal justified">
+          <paper-icon-button icon="favorite"></paper-icon-button>
+          <paper-icon-button icon="bookmark"></paper-icon-button>
+          <paper-icon-button icon="social:share"></paper-icon-button>
+        </div>
+      </paper-card>
+    </div>
+  </div>
+</article>
+
+<article class="flexchild">
+  <h4 class="ktch_heading">Different layout and content</h4>
+  <style is="custom-style">
+    #notes {
+      @apply(--layout-vertical);
+      @apply(--layout-wrap);
+      height: 344px;
+      width: 384px;
+    }
+
+    #notes > paper-card {
+      box-sizing: border-box;
+      max-width: 184px;
+      margin: 4px;
+      flex: 0 0 auto;
+    }
+    .demo-stack-cart-container {
+      max-width: 400px;
+    }
+  </style>
+  <div id="notes">
+    <div class="demo-stack-cart-container">
+      <paper-card heading="Call Jennifer" class="cyan">
+        <div class="card-actions">
+          <paper-icon-button icon="communication:call" style="color:white;"></paper-icon-button>
+          <span>March 19, 2017</span>
+        </div>
+      </paper-card>
+      <paper-card class="dark">
+        <div class="card-content">
+          <p>Groceries:</p>
+          <paper-checkbox>almond milk</paper-checkbox>
+          <paper-checkbox>coconut water</paper-checkbox>
+          <paper-checkbox>cheese</paper-checkbox>
+          <paper-checkbox>green apples</paper-checkbox>
+        </div>
+        <div class="card-actions">
+          <paper-icon-button icon="communication:location-on" style="color:white"></paper-icon-button>
+          <span>Campbell</span>
+        </div>
+      </paper-card>
+      <paper-card heading="clean desk" class="lime"></paper-card>
+      <paper-card image="/assets/demo/donuts.png" alt="Donuts" class="amber">
+        <div class="card-content">New cafe opened on Valencia St.</div>
+      </paper-card>
+      <paper-card heading="Yuna tickets on sale 6/24" class="cyan">
+      </paper-card>
+    </div>
+  </div>
+</article-->

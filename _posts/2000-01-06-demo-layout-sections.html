@@ -2,23 +2,101 @@
 title: Layout sections
 ---
 
-<div class="flex-vertical">
+<div class="flexchild">
+  <header class="ktch_header ktch_heading-first">
+    <div class="left">
+      <h4>2 horizontal sections</h4>
+    </div>
+    <div class="right">
+      <h3 class="ui-text">{{ page.title }}</h3>
+    </div>
+  </header>
+</div>
 
-  <div class="flexchild">
-    <header class="ktch_header ktch_heading-first">
-      <div class="left">
-        <h4>2 horizontal sections</h4>
+<article class="flexchild">
+  <div class="horizontal-section ktch_container">
+    <div class="layout horizontal">
+
+      <div class="ktch_element-column">
+        <h5>Column 1</h5>
+        <div>
+          <div>Oxygen</div>
+          <div>Carbon</div>
+          <div>Hydrogen</div>
+          <div>Nitrogen</div>
+          <div>Calcium</div>
+        </div>
       </div>
-      <div class="right">
-        <h3 class="ui-text">{{ page.title }}</h3>
+
+      <div class="ktch_element-column">
+        <h5>Column 2</h5>
+        <div>
+          <div>Oxygen</div>
+          <div>Carbon</div>
+          <div>Hydrogen</div>
+          <div>Nitrogen</div>
+          <div>Calcium</div>
+        </div>
       </div>
-    </header>
+
+    </div>
+  </div>
+</article>
+
+<header class="ktch_header">
+  <h4>3 horizontal sections</h4>
+</header>
+
+<article class="flexchild">
+
+  <div class="horizontal-section ktch_container">
+    <div class="layout horizontal">
+      <div class="ktch_element-column">
+        <h5>Column 1</h5>
+        <div>
+          <div>Oxygen</div>
+          <div>Carbon</div>
+          <div>Hydrogen</div>
+          <div>Nitrogen</div>
+          <div>Calcium</div>
+        </div>
+      </div>
+
+      <div class="ktch_element-column">
+        <h5>Column 2</h5>
+        <div>
+          <div>Oxygen</div>
+          <div>Carbon</div>
+          <div>Hydrogen</div>
+          <div>Nitrogen</div>
+          <div>Calcium</div>
+        </div>
+      </div>
+
+      <div class="ktch_element-column">
+        <h5>Column 3</h5>
+        <div>
+          <div>Oxygen</div>
+          <div>Carbon</div>
+          <div>Hydrogen</div>
+          <div>Nitrogen</div>
+          <div>Calcium</div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <article class="flexchild">
-    <div class="layout horizontal">
+</article>
 
-      <div class="flex">
+<header class="ktch_header">
+  <h4>3 horizontal sections (flexible layout)</h4>
+</header>
+
+<article class="flexchild">
+
+  <div class="horizontal-section ktch_container">
+    <div class="layout horizontal">
+      <div class="ktch_element-column">
         <h5>Column 1</h5>
         <div>
           <div>Oxygen</div>
@@ -29,7 +107,7 @@ title: Layout sections
         </div>
       </div>
 
-      <div class="flex">
+      <div class="ktch_element-column">
         <h5>Column 2</h5>
         <div>
           <div>Oxygen</div>
@@ -40,39 +118,7 @@ title: Layout sections
         </div>
       </div>
 
-    </div>
-  </article>
-
-  <header class="ktch_header">
-    <h4>3 horizontal sections</h4>
-  </header>
-
-  <article class="flexchild">
-
-    <div class="layout horizontal">
-      <div>
-        <h5>Column 1</h5>
-        <div>
-          <div>Oxygen</div>
-          <div>Carbon</div>
-          <div>Hydrogen</div>
-          <div>Nitrogen</div>
-          <div>Calcium</div>
-        </div>
-      </div>
-
-      <div>
-        <h5>Column 2</h5>
-        <div>
-          <div>Oxygen</div>
-          <div>Carbon</div>
-          <div>Hydrogen</div>
-          <div>Nitrogen</div>
-          <div>Calcium</div>
-        </div>
-      </div>
-
-      <div>
+      <div class="ktch_element-column">
         <h5>Column 3</h5>
         <div>
           <div>Oxygen</div>
@@ -83,17 +129,19 @@ title: Layout sections
         </div>
       </div>
     </div>
+  </div>
 
-  </article>
+</article>
 
-  <header class="ktch_header">
-    <h4>3 horizontal sections (flexible layout)</h4>
-  </header>
+<header class="ktch_header">
+  <h4>3 horizontal sections (flexible layout)</h4>
+</header>
 
-  <article class="flexchild">
+<article class="flexchild">
 
+  <div class="horizontal-section ktch_container">
     <div class="layout horizontal">
-      <div>
+      <div class="ktch_element-column">
         <h5>Column 1</h5>
         <div>
           <div>Oxygen</div>
@@ -104,7 +152,7 @@ title: Layout sections
         </div>
       </div>
 
-      <div class="flex">
+      <div class="ktch_element-column">
         <h5>Column 2</h5>
         <div>
           <div>Oxygen</div>
@@ -115,7 +163,7 @@ title: Layout sections
         </div>
       </div>
 
-      <div>
+      <div class="ktch_element-column">
         <h5>Column 3</h5>
         <div>
           <div>Oxygen</div>
@@ -126,17 +174,20 @@ title: Layout sections
         </div>
       </div>
     </div>
+  </div>
 
-  </article>
+</article>
 
-  <header class="ktch_header">
-    <h4>3 horizontal sections (flexible layout)</h4>
-  </header>
+<header class="ktch_header">
+  <h4>4 horizontal sections</h4>
+</header>
 
-  <article class="flexchild">
+<article class="flexchild">
 
+  <div class="horizontal-section ktch_container">
     <div class="layout horizontal">
-      <div class="flex">
+
+      <div class="ktch_element-column">
         <h5>Column 1</h5>
         <div>
           <div>Oxygen</div>
@@ -147,7 +198,7 @@ title: Layout sections
         </div>
       </div>
 
-      <div>
+      <div class="ktch_element-column">
         <h5>Column 2</h5>
         <div>
           <div>Oxygen</div>
@@ -158,51 +209,7 @@ title: Layout sections
         </div>
       </div>
 
-      <div>
-        <h5>Column 3</h5>
-        <div>
-          <div>Oxygen</div>
-          <div>Carbon</div>
-          <div>Hydrogen</div>
-          <div>Nitrogen</div>
-          <div>Calcium</div>
-        </div>
-      </div>
-    </div>
-
-  </article>
-
-  <header class="ktch_header">
-    <h4>4 horizontal sections</h4>
-  </header>
-
-  <article class="flexchild">
-
-    <div class="layout horizontal">
-
-      <div class="flex">
-        <h5>Column 1</h5>
-        <div>
-          <div>Oxygen</div>
-          <div>Carbon</div>
-          <div>Hydrogen</div>
-          <div>Nitrogen</div>
-          <div>Calcium</div>
-        </div>
-      </div>
-
-      <div class="flex">
-        <h5>Column 2</h5>
-        <div>
-          <div>Oxygen</div>
-          <div>Carbon</div>
-          <div>Hydrogen</div>
-          <div>Nitrogen</div>
-          <div>Calcium</div>
-        </div>
-      </div>
-
-      <div class="flex">
+      <div class="ktch_element-column">
         <h5>Column 3</h5>
         <div>
           <div>Oxygen</div>
@@ -213,7 +220,7 @@ title: Layout sections
         </div>
       </div>
 
-      <div class="flex">
+      <div class="ktch_element-column">
         <h5>Column 4</h5>
         <div>
           <div>Oxygen</div>
@@ -225,6 +232,5 @@ title: Layout sections
       </div>
 
     </div>
-  </article>
-
-</div>
+  </div>
+</article>

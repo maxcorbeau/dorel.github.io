@@ -2,23 +2,22 @@
 title: Badges
 ---
 
-<div class="flex-vertical">
+<div class="flexchild ktch_badge-header">
+  <header class="ktch_header ktch_heading-first">
+    <div class="left">
+      <h4>Badges</h4>
+    </div>
+    <div class="right">
+      <h3 class="ui-text">{{ page.title }}</h3>
+    </div>
+  </header>
+</div>
 
-  <div class="flexchild ktch_badge-header">
-    <header class="ktch_header ktch_heading-first">
-      <div class="left">
-        <h4>Badges</h4>
-      </div>
-      <div class="right">
-        <h3 class="ui-text">{{ page.title }}</h3>
-      </div>
-    </header>
-  </div>
+<article class="flexchild">
 
-  <article class="flexchild">
-
+  <div class="horizontal-section ktch_container">
     <div class="layout horizontal">
-      <div>
+      <div class="ktch_element-column">
         <paper-icon-button id="number" icon="communication:email" alt="inbox">
         </paper-icon-button>
         <paper-badge for="number" label="4">
@@ -28,7 +27,7 @@ title: Badges
         <paper-badge icon="social:mood" for="icon" label="happy">
         </paper-badge>
       </div>
-      <div>
+      <div class="ktch_element-column">
         <paper-icon-button id="number2" icon="communication:email" alt="inbox">
         </paper-icon-button>
         <paper-badge for="number2" label="4" class="red">
@@ -46,7 +45,7 @@ title: Badges
           }
         </style>
       </div>
-      <div>
+      <div class="ktch_element-column">
         <div class="ktch_example-badge-container" tabindex="0">
           <span>Inbox</span>
           <paper-badge label="4"></paper-badge>
@@ -68,7 +67,7 @@ title: Badges
           }
         </style>
       </div>
+    </div>
+  </div>
 
-  </article>
-
-  </article>
+</article>

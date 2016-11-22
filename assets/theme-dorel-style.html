@@ -131,6 +131,22 @@ Description:  Dorel's webcomponent styling -config
       background-color: var(--theme-color-highlight);
     }
 
+    /* /components/:
+     * tables
+     */
+
+    .markdown-generated-content table {
+      border-collapse: collapse;
+      @apply(--theme-bodycopy);
+      font-size: var(--theme-size-ui);
+    }
+
+    .markdown-generated-content table td {
+      vertical-align: top;
+      border: 1px solid var(--black);
+      padding: var(--theme-component-space-micro);
+    }
+
     /*
      * /components/: 
      * _page.scss 
@@ -525,6 +541,26 @@ Description:  Dorel's webcomponent styling -config
       font-size: .8em;
       font-family: var(--theme-font-sans-serif);
     }
+
+    /*
+     * /components/:
+     * _interactive-elements.scss
+     */
+
+    .theme-ie-bodycopy {
+      @apply(--theme-ie-bodycopy);
+    }
+
+    .theme-ie-bodycopy p:not(:only-child):not(:last-child) {
+      margin-bottom: var(--theme-margin-bodycopy) !important;
+    }
+
+    /*
+     * /components/:
+     * _cards.scss
+     */
+
+    /* see kitchensink */
 
     /*
      * /components/:

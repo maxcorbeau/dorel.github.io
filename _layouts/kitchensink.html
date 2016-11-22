@@ -17,6 +17,7 @@
   {% endcomment %}
 
   <script src="{{ site.bower_dir }}/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <!--link rel="import" href="{{ site.bower_dir }}/polymer/polymer.html"-->
 
   <!-- custom polymer element source: https://github.com/The5heepDev/iron-grid -->
   <link rel="import" href="{{ site.bower_dir }}/iron-grid/iron-grid.html">
@@ -97,7 +98,7 @@
 </head>
 
 <!-- Custom style for polymer objects -->
-<style is="custom-style" include="iron-flex">
+<style is="custom-style" include="iron-flex iron-flex-alignment">
 
   /* refactor this */
   .centered {
@@ -192,6 +193,7 @@
   .ktch_container {
     float: left;
     clear: both;
+    max-width: 100%;
   }
   .ktch_fullwidth {
     width: 100%;
@@ -225,7 +227,7 @@
   .ktch_block-meta {
     float: left;
     position: relative;
-    min-height: 3rem;
+    min-height: 4rem;
   }
   .ktch_block-meta span {
     float: left;
@@ -303,6 +305,12 @@
   .ktch_theme-color-danger-background {
     background-color: var(--theme-color-danger-background);
   }
+  .ktch_section-components {
+    float: left;
+    position: relative;
+    clear: both;
+    width: 100%;
+  }
   .ktch_section-components section:first-child {
     margin-top: var(--theme-component-space-inner-large);
   }
@@ -344,6 +352,9 @@
   .ktch_badge-header {
     margin-bottom: var(--theme-component-space-inner);
   }
+  .ktch_element-column {
+    padding: var(--theme-component-space-inner);
+  }
 
 </style>
 
@@ -354,7 +365,7 @@
         <div class="section-centered section-standout ktch_section-standout-first ktch_fullwidth bodycopy">
           <div class="ktch_container">
             <h1 class="theme-font-display1">{{ page.title }}</h1>
-            <p>The ktichensink includes every single element in the framework. The kitchensink is typically used for visual regression testing. After you change one element, see if it doesn't inflict another element. But also the other way around, if you change a certain element, sometimes other related elements need to change as well to maintain the visual coherence between the elements.</p>
+            <p>The kitchensink includes every single element in the framework. The kitchensink is typically used for visual regression testing. After you change one element, see if it doesn't inflict another element. But also the other way around, if you change a certain element, sometimes other related elements need to change as well to maintain the visual coherence between the elements.</p>
             <p>We would advise not to use this as a component library. Instead check the element's page itself in the catalog. This will contain info about how to use and implementation details.</p>
           </div>
         </div>
@@ -389,6 +400,7 @@
 
       </iron-grid>
   </iron-grid-container>
+
 
   <div class="ktch_background">
 
