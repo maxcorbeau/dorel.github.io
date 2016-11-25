@@ -98,7 +98,7 @@
 </head>
 
 <!-- Custom style for polymer objects -->
-<style is="custom-style" include="iron-flex">
+<style is="custom-style" include="iron-flex iron-flex-alignment">
 
   /* refactor this */
   .centered {
@@ -193,6 +193,7 @@
   .ktch_container {
     float: left;
     clear: both;
+    max-width: 100%;
   }
   .ktch_fullwidth {
     width: 100%;
@@ -304,6 +305,12 @@
   .ktch_theme-color-danger-background {
     background-color: var(--theme-color-danger-background);
   }
+  .ktch_section-components {
+    float: left;
+    position: relative;
+    clear: both;
+    width: 100%;
+  }
   .ktch_section-components section:first-child {
     margin-top: var(--theme-component-space-inner-large);
   }
@@ -382,7 +389,7 @@
                 color: var(--theme-color-disabled);
               }
             </style>
-            <paper-tabs select="0">
+            <paper-tabs selected="0">
               <paper-tab>Dorel Juvenile</paper-tab>
               <paper-tab disabled>Maxi Cosi (coming soon)</paper-tab>
               <paper-tab disabled>Quinny</paper-tab>

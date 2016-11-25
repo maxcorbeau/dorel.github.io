@@ -131,6 +131,22 @@ Description:  Dorel's webcomponent styling -config
       background-color: var(--theme-color-highlight);
     }
 
+    /* /components/:
+     * tables
+     */
+
+    .markdown-generated-content table {
+      border-collapse: collapse;
+      @apply(--theme-bodycopy);
+      font-size: var(--theme-size-ui);
+    }
+
+    .markdown-generated-content table td {
+      vertical-align: top;
+      border: 1px solid var(--black);
+      padding: var(--theme-component-space-micro);
+    }
+
     /*
      * /components/: 
      * _page.scss 
@@ -578,6 +594,7 @@ Description:  Dorel's webcomponent styling -config
      .highlighter-rouge pre {
       margin-bottom: 1rem;
       padding: .7rem;
+      overflow-x: auto;
      }
 
      /* 
