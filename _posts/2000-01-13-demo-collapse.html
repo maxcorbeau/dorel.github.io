@@ -1,0 +1,101 @@
+---
+title: Progressive disclosure
+---
+
+<div class="flexchild">
+  <header class="ktch_header ktch_heading-first">
+    <div class="left">
+      <h4>Collapsable element</h4>
+    </div>
+    <div class="right">
+      <h3 class="ui-text">{{ page.title }}</h3>
+    </div>
+  </header>
+</div>
+
+<article class="flexchild bodycopy">
+
+  <div class="heading" aria-expanded$="[[isExpanded(opened1)]]" aria-controls="collapse1" onclick="toggle('#collapse1')">
+    Collapse #1
+    <div class="right">
+      <iron-icon icon="icons:expand-more"></iron-icon>
+      <iron-icon icon="icons:expand-less"></iron-icon>
+    </div>
+  </div>
+
+  <iron-collapse id="collapse1" tabindex="0" opened="{{opened1}}">
+    <div class="content">
+      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus. Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>
+    </div>
+  </iron-collapse>
+
+  <script>
+    function toggle(selector) {
+      document.querySelector(selector).toggle();
+    }
+  </script>
+
+</article>
+
+<article class="flexchild bodycopy">
+
+  <header class="ktch_header">
+    <h4>Accordion</h4>
+  </header>
+
+  <div class="heading" aria-expanded$="[[isExpanded(opened1)]]" aria-controls="accordioncollapse1" onclick="toggle('#accordioncollapse1')">
+    Accordion Collapse #1
+    <div class="right">
+      <iron-icon icon="icons:expand-more"></iron-icon>
+      <iron-icon icon="icons:expand-less"></iron-icon>
+    </div>
+  </div>
+
+  <iron-collapse id="accordioncollapse1" tabindex="0" opened="{{opened1}}">
+    <div class="content">
+      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus. Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>
+    </div>
+  </iron-collapse>
+
+  <div class="heading" aria-expanded$="[[isExpanded(opened1)]]" aria-controls="accordioncollapse2" onclick="toggle('#accordioncollapse2')">
+    Accordion Collapse #2
+    <div class="right">
+      <iron-icon icon="icons:expand-more"></iron-icon>
+      <iron-icon icon="icons:expand-less"></iron-icon>
+    </div>
+  </div>
+
+  <iron-collapse id="accordioncollapse2" tabindex="0" opened="{{opened1}}">
+    <div class="content">
+      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus. Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>
+    </div>
+  </iron-collapse>
+
+  <div class="heading" aria-expanded$="[[isExpanded(opened1)]]" aria-controls="accordioncollapse3" onclick="toggle('#accordioncollapse3')">
+    Accordion Collapse #3
+    <div class="right">
+      <iron-icon icon="icons:expand-more"></iron-icon>
+      <iron-icon icon="icons:expand-less"></iron-icon>
+    </div>
+  </div>
+
+  <iron-collapse id="accordioncollapse3" tabindex="0" opened="{{opened1}}">
+    <div class="content">
+      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus. Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>
+    </div>
+  </iron-collapse>
+
+</article>
+
+<article class="flexchild bodycopy">
+
+  <header class="ktch_header">
+    <h4>Read more</h4>
+  </header>
+
+  <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, <span class="clr-link">Read more link<iron-icon icon="icons:expand-more"></iron-icon><iron-icon icon="icons:expand-less"></iron-icon></span>
+
+    <span>at eos discere deleniti sensibus. Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</span>
+  </p>
+
+</article>
