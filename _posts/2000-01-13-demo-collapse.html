@@ -1,0 +1,42 @@
+---
+title: Collapse
+---
+
+<div class="flex-vertical">
+
+  <div class="flexchild">
+    <header class="ktch_header ktch_heading-first">
+      <div class="left">
+        <h4>Collapsable element</h4>
+      </div>
+      <div class="right">
+        <h3 class="ui-text">{{ page.title }}</h3>
+      </div>
+    </header>
+  </div>
+
+  <article class="flexchild">
+
+    <div class="heading" aria-expanded$="[[isExpanded(opened1)]]" aria-controls="collapse1" onclick="toggle('#collapse1')">
+      Collapse #1
+      <iron-icon icon="icons:expand-more"></iron-icon>
+      <iron-icon icon="icons:expand-less"></iron-icon>
+    </div>
+
+    <iron-collapse id="collapse1" tabindex="0" opened="{{opened1}}">
+      <div class="content">
+        <div>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus. Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</div>
+      </div>
+    </iron-collapse>
+
+    <script>
+      function toggle(selector) {
+        document.querySelector(selector).toggle();
+      }
+    </script>
+
+  </article>
+
+  
+
+</div>
