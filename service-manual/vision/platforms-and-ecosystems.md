@@ -13,7 +13,7 @@ All new services Dorel Juvenile uses should meet the platform and ecosystem requ
 
 A platform is a service that can run with _any_ provider on _any_ location and should meet the following requirements.
 
-1. *A platform has an API*. Preferably using generally accepted architectural styles such as RESTful. Platforms that have integrations, like batch jobs, are generally accepted as bad practices and should be avoided.
+1. *A platform has an API*. Preferably using generally accepted architectural styles such as RESTful. Platforms that have integrations, like batch jobs, are generally accepted as bad practices and should be avoided. ([more information](/service-manual/making-services/how-to-design-RESTful-APIs.html))
 2. *Technology Agnostic*. If the above requirenment is met, we do not care about what technology runs the service.
 3. *Scalable*. We expect the service to scale regardless of our usage.
 4. *Single Purpose*. Every platform should have a single purpose to avoid to-complex-to-handle setups.
