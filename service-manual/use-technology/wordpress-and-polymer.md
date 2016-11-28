@@ -25,6 +25,7 @@ With the <code>wp-cli</code> we install the necesarry assets for our Wordpress s
 - [ACF Pro Plugin](https://www.advancedcustomfields.com/pro/)
 - Dorel Custom Fields (ACF import file)
 - [WP REST API Plugin](http://v2.wp-api.org/)
+- [SAML SSO Plugin](https://wordpress.org/plugins/saml-20-single-sign-on/installation/)
 
 ### Dorel.io Theme - one theme to rule them all
 
