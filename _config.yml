@@ -14,4 +14,5 @@ markdown:    kramdown
 assets_dir: /assets
 bower_dir: /assets/bower_components
 
-style_cdn: https://cdn.dorel.io/ 
+style_cdn: https://cdn.dorel.io/
+style_cdn_brands_dir: https://cdn.dorel.io/includes/brands/
