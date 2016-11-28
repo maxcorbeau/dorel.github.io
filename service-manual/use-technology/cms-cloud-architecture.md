@@ -1,6 +1,6 @@
 ---
 layout: manual
-title: CMS Cloud Architecture
+title: Cloud Architecture
 category: Use technology
 draft: false
 ---
