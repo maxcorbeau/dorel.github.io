@@ -11,6 +11,8 @@ This means that all platforms should have API's that follow the [RESTful archite
 
 When you need to create RESTful APIs for your own platform, you should follow these guidelines.
 
+More information about RESTful APIs: [Architectural Styles and the Design of Network-based Software Architectures](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
+
 ## Use Swagger (Open API Initiative) documentation
 
 [Dorel Juvenile's Swagger Github Repo.](https://github.com/dorel/API-swaggers)
@@ -45,7 +47,7 @@ More information:
 Example:
 
 | **Resource**   | **GET**                  | **POST**        | **PUT**                 | **DELETE**              |
-| products       | Returns list of products | Creates product | Not used or update bulk | Not used or delete all  |
+| /products       | Returns list of products | Creates product | Not used or update bulk | Not used or delete all  |
 | /products/{id} | Gets specific product    |  Not used       | Updates product         | Deletes product         |
 
 ## Apply filtering, sorting, field selection and paging for collections
