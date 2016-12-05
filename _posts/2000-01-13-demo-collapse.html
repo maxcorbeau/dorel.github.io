@@ -15,25 +15,62 @@ title: Progressive disclosure
 
 <article class="flexchild bodycopy">
 
-  <div class="heading" aria-expanded$="[[isExpanded(opened1)]]" aria-controls="collapse1" onclick="toggle('#collapse1')">
-    Collapse #1
-    <div class="right">
-      <iron-icon icon="icons:expand-more"></iron-icon>
-      <iron-icon icon="icons:expand-less"></iron-icon>
-    </div>
-  </div>
+    <!-- 
+      Custom element: <dorel-collapse>
+      
+      _ktch1 = unique identifier for this kitchenelement
+      
+      TODO: Create unique identify system for Wordpress components.
+            This unique ID should be added automatically to all necessary elements
+            to prevent bugs.
+      -->
 
-  <iron-collapse id="collapse1" tabindex="0" opened="{{opened1}}">
-    <div class="content">
-      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus. Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>
-    </div>
-  </iron-collapse>
+    <div class="dorel-collapse theme-dorel-collapse">
+      <div class="heading" aria-expanded$="[[isExpanded(opened_ktch1)]]" aria-controls="collapse_ktch1" onclick="toggle('#collapse_ktch1')">
+        <span class="ui-text">Collapse #1</span>
+        <div class="right">
+          <!-- check custom JS for on the bottom of this element for more info -->
+          <iron-icon id="collapse_ktch1_icon-expand-more" icon="icons:expand-more"></iron-icon>
+          <iron-icon id="collapse_ktch1_icon-expand-less" icon="icons:expand-less"></iron-icon>
+        </div>
+      </div>
 
-  <script>
-    function toggle(selector) {
-      document.querySelector(selector).toggle();
-    }
-  </script>
+      <iron-collapse id="collapse_ktch1" tabindex="0">
+        <div class="content">
+          <!-- variable content populated by a WYSIWYG -->
+          <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus. Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>
+        </div>
+      </iron-collapse>
+
+      <script>
+        function toggle(selector) {
+          document.querySelector(selector).toggle();
+        }
+
+        /* 
+         * custom JS
+         * TODO: @Marnix Refactor this.
+         * - hide expand less button by default
+         * - !important: toggle between expand less and more button, 
+         *   based on state of the collapsable area content state
+         */
+
+        document.getElementById('collapse_ktch1_icon-expand-less').style.display = 'none';
+
+        /*
+         * Something like this can be used:
+         */
+
+         // document.querySelector('template[is=dom-bind]').isExpanded = function(opened) {}
+
+        /*
+         * check documentation for more info: 
+         * https://github.com/PolymerElements/iron-collapse/blob/master/demo/index.html#L99
+         */
+
+      </script>
+    </div>
+    <!-- END custom element: </dorel-collapse> -->
 
 </article>
 
