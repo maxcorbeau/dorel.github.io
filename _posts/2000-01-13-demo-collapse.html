@@ -15,62 +15,21 @@ title: Progressive disclosure
 
 <article class="flexchild bodycopy">
 
-    <!-- 
-      Custom element: <dorel-collapse>
-      
-      _ktch1 = unique identifier for this kitchenelement
-      
-      TODO: Create unique identify system for Wordpress components.
-            This unique ID should be added automatically to all necessary elements
-            to prevent bugs.
-      -->
+  <!-- 
+    Custom element: <dorel-collapse>
+    
+    _ktch1 = unique identifier for this kitchenelement
+    
+    TODO: Create unique identify system for Wordpress components.
+          This unique ID should be added automatically to all necessary elements
+          to prevent bugs.
+    -->
 
-    <div class="dorel-collapse theme-dorel-collapse">
-      <div class="heading" aria-expanded$="[[isExpanded(opened_ktch1)]]" aria-controls="collapse_ktch1" onclick="toggle('#collapse_ktch1')">
-        <span class="ui-text">Collapse #1</span>
-        <div class="right">
-          <!-- check custom JS for on the bottom of this element for more info -->
-          <iron-icon id="collapse_ktch1_icon-expand-more" icon="icons:expand-more"></iron-icon>
-          <iron-icon id="collapse_ktch1_icon-expand-less" icon="icons:expand-less"></iron-icon>
-        </div>
-      </div>
-
-      <iron-collapse id="collapse_ktch1" tabindex="0">
-        <div class="content">
-          <!-- variable content populated by a WYSIWYG -->
-          <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus. Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>
-        </div>
-      </iron-collapse>
-
-      <script>
-        function toggle(selector) {
-          document.querySelector(selector).toggle();
-        }
-
-        /* 
-         * custom JS
-         * TODO: @Marnix Refactor this.
-         * - hide expand less button by default
-         * - !important: toggle between expand less and more button, 
-         *   based on state of the collapsable area content state
-         */
-
-        document.getElementById('collapse_ktch1_icon-expand-less').style.display = 'none';
-
-        /*
-         * Something like this can be used:
-         */
-
-         // document.querySelector('template[is=dom-bind]').isExpanded = function(opened) {}
-
-        /*
-         * check documentation for more info: 
-         * https://github.com/PolymerElements/iron-collapse/blob/master/demo/index.html#L99
-         */
-
-      </script>
-    </div>
-    <!-- END custom element: </dorel-collapse> -->
+  <paper-collapse label="Collapse heading" labelIcon="icons:expand-more" closedIcon="icons:expand-less">
+    <!-- variable content populated by a WYSIWYG -->
+    <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>
+    <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>
+  </paper-collapse>
 
 </article>
 
@@ -79,74 +38,20 @@ title: Progressive disclosure
   <header class="ktch_header">
     <h4>Accordion</h4>
   </header>
-
-  <!-- 
-  Custom element: <dorel-accordion>
-  
-  _ktch1 = unique identifier for this kitchenelement
-  
-  TODO: Create unique identify system for Wordpress components.
-        This unique ID should be added automatically to all necessary elements
-        to prevent bugs.
-  -->
-  <div class="dorel-accordion theme-dorel-collapse">
-
-    <div class="heading" aria-expanded$="[[isExpanded(accordion1opened)]]" aria-controls="accordion1collapse" onclick="toggle('#accordion1collapse')">
-      <span class="ui-text">Accordion Collapse #1</span>
-      <div class="right">
-        <iron-icon id="accordion1collapse_icon-expand-more" icon="icons:expand-more"></iron-icon>
-        <iron-icon id="accordion1collapse_icon-expand-less" icon="icons:expand-less"></iron-icon>
-      </div>
-    </div>
-
-    <iron-collapse id="accordion1collapse" tabindex="0">
-      <div class="content">
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus. Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>
-      </div>
-    </iron-collapse>
-
-    <div class="heading" aria-expanded$="[[isExpanded(opened2)]]" aria-controls="accordion2collapse" onclick="toggle('#accordion2collapse')">
-      <span class="ui-text">Accordion Collapse #2</span>
-      <div class="right">
-        <iron-icon id="accordion2collapse_icon-expand-more" icon="icons:expand-more"></iron-icon>
-        <iron-icon id="accordion2collapse_icon-expand-less" icon="icons:expand-less"></iron-icon>
-      </div>
-    </div>
-
-    <iron-collapse id="accordion2collapse" tabindex="0">
-      <div class="content">
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus. Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>
-      </div>
-    </iron-collapse>
-
-    <div class="heading" aria-expanded$="[[isExpanded(opened3)]]" aria-controls="accordion3collapse" onclick="toggle('#accordion3collapse')">
-      <span class="ui-text">Accordion Collapse #3</span>
-      <div class="right">
-        <iron-icon id="accordion3collapse_icon-expand-more" icon="icons:expand-more"></iron-icon>
-        <iron-icon id="accordion3collapse_icon-expand-less" icon="icons:expand-less"></iron-icon>
-      </div>
-    </div>
-
-    <iron-collapse id="accordion3collapse" tabindex="0">
-      <div class="content">
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus. Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>
-      </div>
-    </iron-collapse>
-
-    <script>
-
-    /*
-     * Use same logic as used in the collapse element
-     */
-
-      document.getElementById('accordion1collapse_icon-expand-less').style.display = 'none';
-      document.getElementById('accordion2collapse_icon-expand-less').style.display = 'none';
-      document.getElementById('accordion3collapse_icon-expand-less').style.display = 'none';
-
-    </script>
-
-  </div>
-  <!-- END custom element: </dorel-accordion> -->
+  <paper-accordion-container>
+    <paper-accordion-element label="Accordion title 1" default-icon="icons:expand-more" open-icon="icons:expand-less">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. Nam Pyrrho, Aristo, Erillus iam diu abiecti. Ergo, inquit, tibi Q. Tu enim ista lenius, hic Stoicorum more nos vexat.</p>
+      <p>Quos quidem tibi studiose et diligenter tractandos magnopere censeo. Duo Reges: constructio interrete. Portenta haec esse dicit, neque ea ratione ullo modo posse vivi; Compensabatur, inquit, cum summis doloribus laetitia.</p>
+    </paper-accordion-element>
+    <paper-accordion-element label="Accordion title 2" default-icon="icons:expand-more" open-icon="icons:expand-less">
+      <p>Non potes, nisi retexueris illa. Eaedem enim utilitates poterunt eas labefactare atque pervertere. Consequentia exquirere, quoad sit id, quod volumus, effectum.</p>
+      <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis.</blockquote>
+      <p>Bona autem corporis huic sunt, quod posterius posui, similiora. Illa videamus, quae a te de amicitia dicta sunt. An vero, inquit, quisquam potest probare, quod perceptfum, quod. At eum nihili facit; Ergo hoc quidem apparet, nos ad agendum esse natos.</p>
+    </paper-accordion-element>
+    <paper-accordion-element label="Accordion title 3" default-icon="icons:expand-more" open-icon="icons:expand-less">
+      <p>Re mihi non aeque satisfacit, et quidem locis pluribus. Sed vos squalidius, illorum vides quam niteat oratio. Ergo in gubernando nihil, in officio plurimum interest, quo in genere peccetur. Te ipsum, dignissimum maioribus tuis, voluptasne induxit, ut adolescentulus eriperes P. Tecum optime, deinde etiam cum mediocri amico. Immo videri fortasse. Eaedem enim utilitates poterunt eas labefactare atque pervertere. Facile est hoc cernere in primis puerorum aetatulis. Quid est enim aliud esse versutum? Illi enim inter se dissentiunt.</p>
+     </paper-accordion-element>
+  </paper-accordion-container>
 
 </article>
 
