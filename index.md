@@ -3,6 +3,15 @@ layout: home
 title: Welcome to dorel.io
 ---
 
+<style is="custom-style">
+  .list-title {
+    padding-bottom: .9rem;
+  }
+  .draft {
+    color: var(--theme-color-disabled);
+  }
+</style>
+
 <div class="page">
 
   {% comment %}

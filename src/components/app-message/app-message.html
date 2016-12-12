@@ -1,0 +1,71 @@
+<!--
+-->
+
+<link rel="import" href="../../../../assets/bower_components/polymer/polymer.html">
+<link rel="import" href="../../../../assets/bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="https://dev.cdn.dorel.io/includes/brands/dorel/theme-dorel-shared-styles.html">
+
+<dom-module id="app-message">
+
+  <style is="custom-style" include="theme-dorel-shared-styles">
+    /* full-width, create this as an option. Make sure it's true by default */
+    :host {
+      width: 100%;
+      @apply(--layout-horizontal);
+    }
+    :host .message {
+      border-style: solid;
+      border-width: 1px;
+      padding: 20px;
+      margin-bottom: var(--theme-margin-bodycopy);
+    }
+    :host .message-information {
+      color: var(--theme-color-information-foreground);
+      background-color: var(--theme-color-information-background);
+      border-color: var(--theme-color-information-foreground);
+    }
+    :host .message-confirmation {
+      color: var(--theme-color-confirmation-foreground);
+      background-color: var(--theme-color-confirmation-background);
+      border-color: var(--theme-color-confirmation-foreground);
+    }
+    ::content p {
+        font-family: var(--theme-font-sans-serif);
+        font-size: var(--theme-size-base);
+        line-height: var(--theme-text-line-height);
+        @apply --theme-bodycopy-width;
+    }
+    ::content small {
+      font-size: var(--theme-size-small);
+      line-height: var(--theme-text-line-height-small);
+    }
+  </style>
+
+  <template>
+    <div class="container">
+      <div class$="{{getClasses(messageType)}} message">
+        <content></content>
+      </div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'app-message',
+      properties: {
+        messageType: {
+          type: String,
+        },
+      },
+      getClasses: function(messageType) {
+        if (messageType == 'information') {
+          var messageBox = Polymer.dom(this.root).querySelector('.message');
+          var className = ' message-information';
+          return className;
+        }
+      }
+    });
+
+  </script>
+
+</dom-module>
+

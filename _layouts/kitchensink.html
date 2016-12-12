@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <!-- Fundament style to reset browser defaults -->
-  <link rel="stylesheet" type="text/css" href="/assets/styles/reset-custom.css">
+  <link rel="stylesheet" type="text/css" href="{{ site.cdn_style }}/includes/reset-custom.css">
 
   {% comment %}
     *
@@ -17,172 +17,21 @@
   {% endcomment %}
 
   <script src="{{ site.bower_dir }}/webcomponentsjs/webcomponents-lite.min.js"></script>
-  <!--link rel="import" href="{{ site.bower_dir }}/polymer/polymer.html"-->
 
-  <!-- custom polymer element source: https://github.com/The5heepDev/iron-grid -->
-  <link rel="import" href="{{ site.bower_dir }}/iron-grid/iron-grid.html">
+  <link rel="import" href="/src/pages/app-page-kitchensink.html" async>
 
-  <!-- paper elements -->
-  <link rel="import" href="{{ site.bower_dir }}/paper-header-panel/paper-header-panel.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-drawer-panel/paper-drawer-panel.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-toolbar/paper-toolbar.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-badge/paper-badge.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-input/paper-input.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-checkbox/paper-checkbox.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-button/paper-button.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-radio-button/paper-radio-button.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-radio-group/paper-radio-group.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-slider/paper-slider.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-spinner/paper-spinner.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-spinner/paper-spinner-lite.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-tabs/paper-tab.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-tabs/paper-tabs.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-toggle-button/paper-toggle-button.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-card/paper-card.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-card/paper-card.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-tooltip/paper-tooltip.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-icon-button/paper-icon-button.html">
+  <style>
 
-  <!-- iron elements -->
-  <link rel="import" href="{{ site.bower_dir }}/iron-flex-layout/iron-flex-layout.html">
-  <link rel="import" href="{{ site.bower_dir }}/iron-flex-layout/iron-flex-layout-classes.html">
-  <link rel="import" href="{{ site.bower_dir }}/iron-input/iron-input.html">
-  <link rel="import" href="{{ site.bower_dir }}/iron-label/iron-label.html">
-  <link rel="import" href="{{ site.bower_dir }}/iron-collapse/iron-collapse.html">
-  <link rel="import" href="{{ site.bower_dir }}/iron-autogrow-textarea/iron-autogrow-textarea.html">
-  
-  <!-- custom elements -->
-  <link rel="import" href="{{ site.custom_component_dir }}/reveal-color/reveal-color.html">
-  <link rel="import" href="{{ site.custom_component_dir }}/show-iconsets/show-iconsets.html">
-  <link rel="import" href="{{ site.custom_component_dir }}/paper-collapse/paper-collapse.html">
-  <link rel="import" href="{{ site.custom_component_dir }}/paper-accordion-element/paper-accordion-element.html">
+    body {
+      font: 20px sans-serif;
+    }
 
-  <!-- iron elements / iron icons -->
-
-  <!--link rel="import" href="{{ site.bower_dir }}/iron-iconset/iron-iconset.html"-->
-
-  <link rel="import" href="{{ site.bower_dir }}/iron-icons/iron-icons.html"><!-- default iconset -->
-  <!-- load the rest of the icons -->
-  <link rel="import" href="{{ site.bower_dir }}/iron-icons/av-icons.html">
-  <link rel="import" href="{{ site.bower_dir }}/iron-icons/communication-icons.html">
-  <link rel="import" href="{{ site.bower_dir }}/iron-icons/device-icons.html">
-  <link rel="import" href="{{ site.bower_dir }}/iron-icons/editor-icons.html">
-  <link rel="import" href="{{ site.bower_dir }}/iron-icons/hardware-icons.html">
-  <link rel="import" href="{{ site.bower_dir }}/iron-icons/image-icons.html">
-  <link rel="import" href="{{ site.bower_dir }}/iron-icons/maps-icons.html">
-  <link rel="import" href="{{ site.bower_dir }}/iron-icons/notification-icons.html">
-  <link rel="import" href="{{ site.bower_dir }}/iron-icons/social-icons.html">
-  <link rel="import" href="{{ site.bower_dir }}/iron-icons/places-icons.html">
-
-  <!-- demo elements -->
-  <!-- link rel="import" href="{{ site.bower_dir }}/iron-demo-helpers/demo-snippet.html"-->
-  <!-- link rel="import" href="{{ site.bower_dir }}/iron-demo-helpers/demo-pages-shared-styles.html"-->
-
-  <!-- paper-styles 
-  <link rel="import" href="{{ site.bower_dir }}/paper-styles/color.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-styles/shadow.html">
-  <link rel="import" href="{{ site.bower_dir }}/paper-styles/typography.html"-->
-
-  <!-- 
-    Themes 
-    - Add theme files the <head> tag _AFTER_ the
-      webcomponents-lite.min.js and other HTML imports. 
-    - These can be used for the template switcher.
-  -->
-
-  <!--link rel="import" href="{{ site.bower_dir }}/paper-styles/default-theme"-->
-  <link rel="import" href="{{ site.cdn_style }}/includes/brands/dorel/theme-dorel-config.html">
-  <!--link rel="import" href="{{ site.assets_dir }}/theme-polymer-config.html"-->
-  <link rel="import" href="{{ site.cdn_style }}/includes/brands/dorel/theme-dorel-style.html">
-  <link rel="import" href="{{ site.cdn_style }}/includes/brands/dorel/theme-dorel-kitchensink-style.html">
-
-  <!--script src="{{ site.assets_dir }}/bower_components/platform/platform.js"></script-->
+  </style>
 
 </head>
 
 <body>
-  <iron-grid-container>
-    <iron-grid>
-      <main class="xs12 vtop container-center-page">
-        <div class="section-centered section-standout ktch_section-standout-first ktch_fullwidth bodycopy">
-          <div class="ktch_container">
-            <h1 class="theme-font-display1">{{ page.title }}</h1>
-            <p>The kitchensink includes every single element in the framework. The kitchensink is typically used for visual regression testing. After you change one element, see if it doesn't inflict another element. But also the other way around, if you change a certain element, sometimes other related elements need to change as well to maintain the visual coherence between the elements.</p>
-            <p>We would advise not to use this as a component library. Instead check the element's page itself in the catalog. This will contain info about how to use and implementation details.</p>
-          </div>
-        </div>
-      </main>
-    </iron-grid>
-  </iron-grid-container>
 
-  <hr>
-
-  <iron-grid-container>
-    <iron-grid>
-
-      <div class="xs12 vtop container-center-page">
-        <section class="section-standout-narrow ktch_select-brand">
-          <div class="flex-child">
-            <style is="custom-style">
-              paper-tabs {
-                --paper-tabs-selection-bar-color: var(--theme-color-link-primary);
-              }
-              paper-tab[disabled] {
-                color: var(--theme-color-disabled);
-              }
-            </style>
-            <paper-tabs selected="0">
-              <paper-tab>Dorel Juvenile</paper-tab>
-              <paper-tab disabled>Maxi Cosi (coming soon)</paper-tab>
-              <paper-tab disabled>Quinny</paper-tab>
-            </paper-tabs>
-          </div>
-        </section>
-      </div>
-
-      </iron-grid>
-  </iron-grid-container>
-
-
-  <div class="ktch_background">
-
-    {% comment %} 
-     *
-     * This loop iterates through posts for demo content of kitchensink.
-     * Using a loop makes it easier to maintain the different sections.
-     * 
-     * Uses the filename minus the date for the section id.
-     *
-    {% endcomment %}
-
-    {% for post in site.posts reversed %}
-      <iron-grid-container>
-        <iron-grid>
-          <div class="xs12 vtop container-center-page ktch_section-components">
-            <section id="{{ post.title | remove: " -" | replace: " ", "-" | downcase }}" class="ktch_vertical-section-container ktch_section centered">
-              {{ post.content }}
-            </section>
-          </div>
-        </iron-grid>
-      </iron-grid-container>
-    {% endfor %}
-
-  </div>
-
-  <script>
-    // Uses webcomponents-lite.min.js.
-    // If you aren't using the polyfill, you can't rely on the WebComponentsReady.
-    // To ensure that elements are ready on polyfilled browsers, 
-    // wait for WebComponentsReady.\
-
-    // document.addEventListener('WebComponentsReady', function() {
-    //   var input = document.querySelector('paper-input');
-    //   var button = document.querySelector('paper-button');
-    //   var greeting = document.getElementById("greeting");
-    //   button.addEventListener('click', function() {
-    //     greeting.textContent = 'Hello, ' + input.value;
-    //   });
-    // });
-  </script>
+  <app-page-kitchensink></app-page-kitchensink>
 
 </body>
