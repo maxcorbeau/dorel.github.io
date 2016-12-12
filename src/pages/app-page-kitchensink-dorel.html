@@ -1,0 +1,96 @@
+<!--
+-->
+
+<link rel="import" href="../../../../assets/bower_components/polymer/polymer.html">
+<!--link rel="import" href="https://dev.cdn.dorel.io/includes/brands/dorel/theme-dorel-config.html"-->
+<link rel="import" href="./../components/reveal-color/reveal-color.html">
+<link rel="import" href="./../components/app-demo-article/app-demo-article.html">
+<link rel="import" href="./../components/app-message/app-message.html">
+
+<!--link rel="import" href="https://dev.cdn.dorel.io/includes/brands/dorel/theme-dorel-shared-styles.html">
+<link rel="import" href="./../components/reveal-color/reveal-color-apply-colors.html"-->
+
+<dom-module id="app-page-kitchensink-dorel">
+  <template>
+    <style is="custom-style">
+      :root {
+        --theme-brand-color: rgb(0, 114, 206);
+        --theme-brand-color-complementary: rgb(237, 139, 0);
+      }
+      .ktch_theme-brand-color {
+        background-color: var(--theme-brand-color);
+      }
+      .ktch_theme-brand-color-complementary {
+        background-color: var(--theme-brand-color-complementary);
+      }
+
+      .ktch_section-header .ui-text {
+        float: right;
+      }
+      .ktch_vertical-section-container .ktch_heading-first {
+        margin-top: 0;
+      }
+    </style>
+
+    <iron-grid-container>
+       <iron-grid>
+
+        <app-demo-article article-title="Colors">
+          <app-demo-article-section section-title="Dorel Brand Colors">
+            <reveal-color ui-text="Brand color" ui-class="ktch_theme-brand-color"></reveal-color>
+            <reveal-color ui-text="Brand complementary color" ui-class="ktch_theme-brand-color-complementary"></reveal-color>
+          </app-demo-article-section>
+          <app-demo-article-section section-title="Interaction colors">
+            <app-message message-type="information">
+              <p>
+                <small>If the theme's brand color is quite similar to the browsers' native link color use it for the primary link color. Adding a new link-blue color close to that color will not  match since the colors will then be too close to eachother in the color spectrum.</small>
+              </p>
+            </app-message>
+            <reveal-color ui-text="Link color" ui-class="ktch_theme-color-link"></reveal-color>
+            <reveal-color ui-text="Link color Hover" ui-class="ktch_theme-color-hover"></reveal-color>
+            <reveal-color ui-text="Call to action color" ui-class="ktch_theme-color-cta"></reveal-color>
+          </app-demo-article-section>
+          <app-demo-article-section section-title="Utility colors">
+            <reveal-color ui-text="Primary text color" ui-class="ktch_ktch_theme-color-primary-text-color"></reveal-color>
+            <reveal-color ui-text="Theme black" ui-class="ktch_theme-color-black"></reveal-color>
+            <reveal-color ui-text="Theme white" ui-class="ktch_theme-color-white"></reveal-color>
+            <reveal-color ui-text="Theme highlight" ui-class="ktch_theme-color-highlight"></reveal-color>
+            <reveal-color ui-text="Theme color disabled" ui-class="ktch_theme-color-disabled"></reveal-color>
+          </app-demo-article-section>
+          <app-demo-article-section>
+            <reveal-color ui-text="Information foreground" ui-class="ktch_theme-color-information-foreground"></reveal-color>
+            <reveal-color ui-text="Information background" ui-class="ktch_theme-color-information-background"></reveal-color>
+            <reveal-color ui-text="Confirmation foreground" ui-class="ktch_theme-color-confirmation-foreground"></reveal-color>
+            <reveal-color ui-text="Confirmation background" ui-class="ktch_theme-color-confirmation-background"></reveal-color>
+            <reveal-color ui-text="Warning foreground" ui-class="ktch_theme-color-warning-foreground"></reveal-color>
+            <reveal-color ui-text="Warning background" ui-class="ktch_theme-color-warning-background"></reveal-color>
+            <reveal-color ui-text="Highlight foreground" ui-class="ktch_theme-color-danger-foreground"></reveal-color>
+            <reveal-color ui-text="Highlight background" ui-class="ktch_theme-color-danger-background"></reveal-color>
+          </app-demo-article-section>
+        </app-demo-article>
+
+        <app-demo-article article-title="Progressive disclosure">
+          <app-demo-article-section section-title="Accordion">
+            <app-demo-accordion></app-demo-accordion>
+          </app-demo-article-section>
+          <app-demo-article-section section-title="Collapse">
+            <app-demo-collapse></app-demo-collapse>
+          </app-demo-article-section>
+          <app-demo-article-section section-title="Readmore">
+            <app-demo-readmore></app-demo-readmore>
+          </app-demo-article-section>
+        </app-demo-article>
+
+      </iron-grid>
+    </iron-grid-container>
+
+  </template>
+  <script>
+    Polymer({
+      is: 'app-page-kitchensink-dorel',
+      properties: {
+        articleTitle: String
+      }
+    });
+  </script>
+</dom-module>

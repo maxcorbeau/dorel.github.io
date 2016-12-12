@@ -1,0 +1,95 @@
+
+<link rel="import" href="../../../../assets/bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../../../assets/bower_components/iron-grid/iron-grid.html">
+<link rel="import" href="../../../../assets/bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../../../assets/bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../../../assets/bower_components/paper-tabs/paper-tab.html">
+
+<link rel="import" href="../components/app-standout/app-standout.html">
+
+<link rel="import" href="app-page-kitchensink-dorel.html">
+<link rel="import" href="app-page-kitchensink-maxicosi.html">
+<link rel="import" href="app-page-kitchensink-quinny.html">
+
+<!--link rel="import" href="https://dev.cdn.dorel.io/includes/brands/dorel/theme-dorel-shared-styles.html"-->
+
+<dom-module id="app-page-kitchensink">
+
+  <template>
+
+    <style is="custom-style" include="theme-dorel-shared-styles">
+    :host {
+      --paper-tabs-selection-bar-color: var(--theme-color-link-primary);
+      --paper-tabs-content: {
+        @apply --theme-ie-bodycopy;
+      };
+    }
+
+    .ktch_background {
+      background-color: var(--theme-color-background-tertiary);
+    }
+    hr {
+      border-top: var(--theme-color-background-tertiary);
+      margin-bottom: 0;
+    }
+    </style>
+
+    <app-standout standout-title="A kitchensink of all elements">
+      <p>The kitchensink includes every single element in the framework. The kitchensink is typically used for visual regression testing. After you change one element, see if it doesn't inflict another element. But also the other way around, if you change a certain element, sometimes other related elements need to change as well to maintain the visual coherence between the elements.</p>
+      <p>We would advise not to use this as a component library. Instead check the element's page itself in the catalog. This will contain info about how to use and implementation details.</p>
+    </app-standout>
+
+    <hr>
+
+    <iron-grid-container>
+      <iron-grid>
+        <div class="xs12 vtop container-center-page">
+          <section>
+            <div class="flex-child">
+              <paper-tabs selected="{{selected}}">
+                <paper-tab>Maxi Cosi</paper-tab>
+                <paper-tab>Dorel Juvenile</paper-tab>
+                <paper-tab>Quinny (coming soon)</paper-tab>
+              </paper-tabs>
+            </div>
+          </section>
+        </div>
+      </iron-grid>
+    </iron-grid-container>
+
+    <div class="ktch_background">
+      <iron-pages selected="{{selected}}">
+        <div>
+          <app-page-kitchensink-maxicosi></app-page-kitchensink-maxicosi>
+        </div>
+        <div>
+          <app-page-kitchensink-dorel></app-page-kitchensink-dorel>
+        </div>
+        <div>
+          <app-page-kitchensink-quinny></app-page-kitchensink-quinny>
+        </div>
+      </iron-pages>
+    </div>
+
+  </template>
+
+  <script>
+
+    Polymer({
+      is: 'app-page-kitchensink',
+      properties: {
+        selected: String
+      },
+      ready: function() {
+        this.selected = 0;
+        var pages = document.querySelector('iron-pages');
+        var tabs = document.querySelector('paper-tabs');
+
+        tabs.addEventListener('iron-select', function() { 
+          pages.selected = tabs.selected;
+        });
+      }
+    });
+
+  </script>
