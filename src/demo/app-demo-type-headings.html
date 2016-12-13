@@ -1,0 +1,62 @@
+<!--
+-->
+
+<link rel="import" href="../../assets/bower_components/polymer/polymer.html">
+<!--link rel="import" href="../../assets/custom_components/../.."-->
+
+<link rel="import" href="https://dev.cdn.dorel.io/includes/brands/dorel/theme-dorel-shared-styles.html">
+
+<dom-module id="app-demo-type-headings">
+
+  <template>
+    <style is="custom-style" include="theme-dorel-shared-styles">
+      .theme-brand-color {
+        color: var(--theme-brand-color);
+      }
+      .theme-font-headline {
+        font-size: var(--theme-size-headline);
+        @apply --theme-heading;
+      }
+      .theme-font-subhead {
+        font-size: var(--theme-size-subhead);
+        @apply --theme-heading;
+      }
+      .theme-font-display1 {
+        font-size: var(--theme-size-display1);
+        @apply --theme-heading;
+      }
+      .theme-font-display2 {
+        font-size: var(--theme-size-display2);
+        @apply --theme-heading;
+      }
+      .theme-font-display3 {
+        font-size: var(--theme-size-display3);
+        @apply --theme-heading;
+      }
+      .theme-font-display4 {
+        font-size: var(--theme-size-display4);
+        @apply --theme-heading;
+      }
+    </style>
+
+    <div class="theme-font-headline"><span class="theme-brand-color">Headline</span> - <br>ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz /(.,:; ?!’-_+) 0123456789</div>
+
+    <div class="theme-font-subhead"><span class="theme-brand-color">Subhead</span> - <br>ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz /(.,:; ?!’-_+) 0123456789</div>
+
+    <div class="theme-font-display1"><span class="theme-brand-color">Display 1</span> - <br>
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz /(.,:; ?!’-_+) 0123456789</div>
+
+    <div class="theme-font-display2"><span class="theme-brand-color">Display 2</span> - <br>ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz /(.,:; ?!’-_+) 0123456789</div>
+
+    <div class="theme-font-display3"><span class="theme-brand-color">Display 3</span> - <br>ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz /(.,:; ?!’-_+) 0123456789</div>
+
+    <div class="theme-font-display4"><span class="theme-brand-color">Display 4</span> - <br>ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz /(.,:; ?!’-_+) 0123456789</div>
+
+  </template>
+  <script>
+    Polymer({
+      is: 'app-demo-type-headings'
+    });
+  </script>
+
+</dom-module>
