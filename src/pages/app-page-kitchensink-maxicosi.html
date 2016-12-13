@@ -6,13 +6,13 @@
 <link rel="import" href="./../components/reveal-color/reveal-color.html">
 <link rel="import" href="./../components/app-demo-article/app-demo-article.html">
 <link rel="import" href="./../components/app-message/app-message.html">
-
-<link rel="import" href="https://dev.cdn.dorel.io/includes/brands/maxi-cosi/theme-maxicosi-shared-styles.html">
 <link rel="import" href="./../components/reveal-color/reveal-color-apply-colors.html">
+
+<link rel="import" href="https://dev.cdn.dorel.io/includes/brands/maxicosi/theme-maxicosi-shared-styles.html">
 
 <dom-module id="app-page-kitchensink-maxicosi">
   <template>
-    <style is="custom-style" include="theme-maxicosi-shared-styles reveal-color-apply-colors">
+    <style is="custom-style" include="theme-maxicosi-shared-styles">
       .ktch_theme-brand-color {
         background-color: var(--theme-brand-color);
       }
@@ -31,7 +31,7 @@
             defined on line 17 needs to be stored into something ('var'), and that
             something will need to be added to the reveal-color element
             -->
-            <reveal-color ui-text="Brand color" ui-class="ktch_theme-brand-color" something="storeRGB" theme="theme-maxicosi-shared-styles"></reveal-color>
+            <reveal-color ui-text="Brand color" ui-class="ktch_theme-brand-color"></reveal-color>
             <reveal-color ui-text="Brand complementary color" ui-class="ktch_theme-brand-color-complementary"></reveal-color>
           </app-demo-article-section>
         </app-demo-article>
