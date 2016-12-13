@@ -13,12 +13,6 @@
 <dom-module id="app-page-kitchensink-maxicosi">
   <template>
     <style is="custom-style" include="theme-maxicosi-shared-styles">
-      .ktch_theme-brand-color {
-        background-color: var(--theme-brand-color);
-      }
-      .ktch_theme-brand-color-complementary {
-        background-color: var(--theme-brand-color-complementary);
-      }
     </style>
 
     <iron-grid-container>
@@ -33,6 +27,9 @@
             -->
             <reveal-color ui-text="Brand color" ui-class="ktch_theme-brand-color"></reveal-color>
             <reveal-color ui-text="Brand complementary color" ui-class="ktch_theme-brand-color-complementary"></reveal-color>
+          </app-demo-article-section>
+          <app-demo-article-section section-title="Interaction colors">
+            <reveal-color ui-text="Link color" ui-class="ktch_theme-color-link"></reveal-color>
           </app-demo-article-section>
         </app-demo-article>
 
