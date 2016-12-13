@@ -13,3 +13,7 @@ markdown:    kramdown
 ## directories
 assets_dir: /assets
 bower_dir: /assets/bower_components
+custom_component_dir: /assets/custom_components
+
+## style
+cdn_style: https://dev.cdn.dorel.io

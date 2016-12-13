@@ -1,13 +1,20 @@
+<!--
+-->
+
 <link rel="import" href="../../../../assets/bower_components/polymer/polymer.html">
-<!-- <link rel="import" href="../polymer/polymer.html"> -->
+
+<link rel="import" href="https://dev.cdn.dorel.io/includes/brands/dorel/theme-dorel-shared-styles.html">
+
 
 <dom-module id="reveal-color">
-  <style>
+  <style is="custom-style" include="theme-dorel-shared-styles">
+
     .ktch_block-color-container {
       width: 9rem;
       display: block;
       float: left;
       margin-right: .5rem;
+      margin-bottom: .5rem;
     }
     .ktch_block-color {
       width: 100%;
@@ -21,19 +28,21 @@
     .ktch_block-meta {
       float: left;
       position: relative;
+      min-height: 4rem;
+
     }
     .ktch_block-meta span {
       float: left;
       position: relative;
     }
-    .ktch_theme-brand-color {
-      background-color: var(--theme-brand-color);
-    }
-    .ktch_theme-brand-color-complementary {
-      background-color: var(--theme-brand-color-complementary);
-    }
     .ktch_theme-color-background {
       background-color: var(--theme-color-background);
+    }
+    .ui-text {
+      @apply --theme-ui;
+    }
+    .color-output {
+      clear: left;
     }
   </style>
   <template>
@@ -41,7 +50,7 @@
       <div class$="ktch_block-color {{uiClass}}"></div>
       <div class="ktch_block-meta">
         <small class="ui-text">{{uiText}}</small>
-        <small id="color-output"></small>
+        <small class="ui-text color-output"></small>
       </div>
     </div>
     <content></content>
@@ -95,7 +104,7 @@
        */
       attached: function () {
         var element = Polymer.dom(this.root).querySelector('.' + this.uiClass);
-        var cOutput = Polymer.dom(this.root).querySelector('#color-output');
+        var cOutput = Polymer.dom(this.root).querySelector('.color-output');
         var rgbColor = getComputedStyle(element).backgroundColor;
         var rgbArr = this.rgb2Arr(rgbColor);
         var hexColor = this.rgb2Hex(rgbArr[0], rgbArr[1], rgbArr[2]);

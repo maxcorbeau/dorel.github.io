@@ -15,25 +15,21 @@ title: Progressive disclosure
 
 <article class="flexchild bodycopy">
 
-  <div class="heading" aria-expanded$="[[isExpanded(opened1)]]" aria-controls="collapse1" onclick="toggle('#collapse1')">
-    Collapse #1
-    <div class="right">
-      <iron-icon icon="icons:expand-more"></iron-icon>
-      <iron-icon icon="icons:expand-less"></iron-icon>
-    </div>
-  </div>
+  <!-- 
+    Custom element: <dorel-collapse>
+    
+    _ktch1 = unique identifier for this kitchenelement
+    
+    TODO: Create unique identify system for Wordpress components.
+          This unique ID should be added automatically to all necessary elements
+          to prevent bugs.
+    -->
 
-  <iron-collapse id="collapse1" tabindex="0" opened="{{opened1}}">
-    <div class="content">
-      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus. Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>
-    </div>
-  </iron-collapse>
-
-  <script>
-    function toggle(selector) {
-      document.querySelector(selector).toggle();
-    }
-  </script>
+  <paper-collapse label="Collapse heading" labelIcon="icons:expand-more" closedIcon="icons:expand-less">
+    <!-- variable content populated by a WYSIWYG -->
+    <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>
+    <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>
+  </paper-collapse>
 
 </article>
 
@@ -42,48 +38,20 @@ title: Progressive disclosure
   <header class="ktch_header">
     <h4>Accordion</h4>
   </header>
-
-  <div class="heading" aria-expanded$="[[isExpanded(opened1)]]" aria-controls="accordioncollapse1" onclick="toggle('#accordioncollapse1')">
-    Accordion Collapse #1
-    <div class="right">
-      <iron-icon icon="icons:expand-more"></iron-icon>
-      <iron-icon icon="icons:expand-less"></iron-icon>
-    </div>
-  </div>
-
-  <iron-collapse id="accordioncollapse1" tabindex="0" opened="{{opened1}}">
-    <div class="content">
-      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus. Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>
-    </div>
-  </iron-collapse>
-
-  <div class="heading" aria-expanded$="[[isExpanded(opened1)]]" aria-controls="accordioncollapse2" onclick="toggle('#accordioncollapse2')">
-    Accordion Collapse #2
-    <div class="right">
-      <iron-icon icon="icons:expand-more"></iron-icon>
-      <iron-icon icon="icons:expand-less"></iron-icon>
-    </div>
-  </div>
-
-  <iron-collapse id="accordioncollapse2" tabindex="0" opened="{{opened1}}">
-    <div class="content">
-      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus. Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>
-    </div>
-  </iron-collapse>
-
-  <div class="heading" aria-expanded$="[[isExpanded(opened1)]]" aria-controls="accordioncollapse3" onclick="toggle('#accordioncollapse3')">
-    Accordion Collapse #3
-    <div class="right">
-      <iron-icon icon="icons:expand-more"></iron-icon>
-      <iron-icon icon="icons:expand-less"></iron-icon>
-    </div>
-  </div>
-
-  <iron-collapse id="accordioncollapse3" tabindex="0" opened="{{opened1}}">
-    <div class="content">
-      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus. Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>
-    </div>
-  </iron-collapse>
+  <paper-accordion-container>
+    <paper-accordion-element label="Accordion title 1" default-icon="icons:expand-more" open-icon="icons:expand-less">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Que Manilium, ab iisque M. Nam Pyrrho, Aristo, Erillus iam diu abiecti. Ergo, inquit, tibi Q. Tu enim ista lenius, hic Stoicorum more nos vexat.</p>
+      <p>Quos quidem tibi studiose et diligenter tractandos magnopere censeo. Duo Reges: constructio interrete. Portenta haec esse dicit, neque ea ratione ullo modo posse vivi; Compensabatur, inquit, cum summis doloribus laetitia.</p>
+    </paper-accordion-element>
+    <paper-accordion-element label="Accordion title 2" default-icon="icons:expand-more" open-icon="icons:expand-less">
+      <p>Non potes, nisi retexueris illa. Eaedem enim utilitates poterunt eas labefactare atque pervertere. Consequentia exquirere, quoad sit id, quod volumus, effectum.</p>
+      <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis.</blockquote>
+      <p>Bona autem corporis huic sunt, quod posterius posui, similiora. Illa videamus, quae a te de amicitia dicta sunt. An vero, inquit, quisquam potest probare, quod perceptfum, quod. At eum nihili facit; Ergo hoc quidem apparet, nos ad agendum esse natos.</p>
+    </paper-accordion-element>
+    <paper-accordion-element label="Accordion title 3" default-icon="icons:expand-more" open-icon="icons:expand-less">
+      <p>Re mihi non aeque satisfacit, et quidem locis pluribus. Sed vos squalidius, illorum vides quam niteat oratio. Ergo in gubernando nihil, in officio plurimum interest, quo in genere peccetur. Te ipsum, dignissimum maioribus tuis, voluptasne induxit, ut adolescentulus eriperes P. Tecum optime, deinde etiam cum mediocri amico. Immo videri fortasse. Eaedem enim utilitates poterunt eas labefactare atque pervertere. Facile est hoc cernere in primis puerorum aetatulis. Quid est enim aliud esse versutum? Illi enim inter se dissentiunt.</p>
+     </paper-accordion-element>
+  </paper-accordion-container>
 
 </article>
 
@@ -93,9 +61,70 @@ title: Progressive disclosure
     <h4>Read more</h4>
   </header>
 
-  <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, <span class="clr-link">Read more link<iron-icon icon="icons:expand-more"></iron-icon><iron-icon icon="icons:expand-less"></iron-icon></span>
+  <!-- 
+  Custom element: <dorel-readmore>
+  
+  requirements:
+  - You must be able to add the readmore tag in the middle of a paragraph
+  - The readmore tag needs to be an inline element, and should be on the same line
+    of the last word where you appended it after
+  - By specifying the number of words after this readmore element needs to be appended
+  - It must be possible to add multiple paragraphs in this element. But not images, tables, etc.
+    If the editor wan't to use that, a collapse element would be more appropriate. This readmore 
+    element should only be used for shortening the content of paragraphs.
+    So in Wordpress the WYSIWYG editor should be available with limited options (bold text, italic, blockquote etc.) for this readmore link
+   -->
 
-    <span>at eos discere deleniti sensibus. Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</span>
-  </p>
+  <div class="dorel-readmore theme-dorel-readmore">
+
+    <p id="readmore-initial-copy">Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. <strong>Dolorum verterem ad ius, his et nullam verterem</strong>. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut,<span id="dorel-readmore-link" class="clr-link">Read more<iron-icon icon="icons:expand-more"></iron-icon></span>
+    </p>
+
+    <!-- 
+    Everything that's added after the dorel-readmore-link is stored in a variable.
+    This can be be added after the 'read more' link
+    
+    This enables adding multiple paragraphs and other block level elements (added via WYSIWYG),
+    and the read more still be a inline element.
+    -->
+    <script>
+
+      // store before readmore content 
+      var beforereadmoreHtmlContent = 'Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. <strong>Dolorum verterem ad ius, his et nullam verterem</strong>. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut,';
+
+      // store after readmore content
+      var afterReadmoreHtmlContent = ' at eos discere deleniti sensibus. Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis <strong>incorrupte duo</strong>. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad <em>ponderum petentium suavitate</em>, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>';
+
+        afterReadmoreHtmlContent += '<blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid igitur dubitamus in tota eius natura quaerere quid sit effectum? Aufert enim sensus actionemque tollit omnem. Negabat igitur ullam esse artem, quae ipsa a se proficisceretur; Illa argumenta propria videamus, cur omnia sint paria peccata. Quodsi vultum tibi, si incessum fingeres, quo gravior viderere, non esses tui similis; Me igitur ipsum ames oportet, non mea, si veri amici futuri sumus. </blockquote>'
+
+        afterReadmoreHtmlContent += '<p>Duo Reges: constructio interrete. Illi enim inter se dissentiunt. Idemne potest esse dies saepius, qui semel fuit? Quae quo sunt excelsiores, eo dant clariora indicia naturae. Illa videamus, quae a te de amicitia dicta sunt. Roges enim Aristonem, bonane ei videantur haec: vacuitas doloris, divitiae, valitudo.';
+
+        afterReadmoreHtmlContent += '<span id="dorel-readmore-link" class="clr-link">Read less<iron-icon icon="icons:expand-less"></iron-icon></span>';
+
+        // ! important, by default no '</p>'
+        // Never close the last paragraph, since this content will be appended as html 
+        // inside a paragraph element. 
+        // run a check in JS to see if it closes correctly to prevent bugs. For instance if
+        // you end with a <blockquote> paragraph, the closing </p> tag of #readmore-above-fold-copy
+        // will need to be appended before because <blockquote> is a block level element
+
+        // console.log(afterReadmoreHtmlContent);
+
+      </script>
+
+  </div>
+  <!-- END custom element: </dorel-readmore> -->
+
+  <script>
+    document.getElementById('dorel-readmore-link').onclick = function(e){
+
+      e.preventDefault;
+      // remove readmore link
+      this.style.display = 'none';
+
+      // add stored html in readmore element
+      document.getElementById('readmore-initial-copy').innerHTML = beforereadmoreHtmlContent + afterReadmoreHtmlContent;
+    };
+  </script>
 
 </article>

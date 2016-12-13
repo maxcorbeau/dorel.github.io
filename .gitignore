@@ -7,3 +7,6 @@ _site
 
 # bower components should be installed locally
 assets/bower_components/*
+
+# custom components have their own versioning
+assets/custom_components/*

@@ -1,0 +1,83 @@
+
+<!--
+-->
+
+<link rel="import" href="../../assets/bower_components/polymer/polymer.html">
+<!--link rel="import" href="../../assets/custom_components/paper-collapse/??-readmore.html"-->
+
+<dom-module id="app-demo-readmore">
+
+  <template>
+
+    <!-- 
+    Custom element: <??-readmore>
+    
+    requirements:
+    - You must be able to add the readmore tag in the middle of a paragraph
+    - The readmore tag needs to be an inline element, and should be on the same line
+      of the last word where you appended it after
+    - By specifying the number of words after this readmore element needs to be appended
+    - It must be possible to add multiple paragraphs in this element. But not images, tables, etc.
+      If the editor wan't to use that, a collapse element would be more appropriate. This readmore 
+      element should only be used for shortening the content of paragraphs.
+      So in Wordpress the WYSIWYG editor should be available with limited options (bold text, italic, blockquote etc.) for this readmore link
+     -->
+    <div class="dorel-readmore theme-dorel-readmore">
+
+      <p id="readmore-initial-copy">Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. <strong>Dolorum verterem ad ius, his et nullam verterem</strong>. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut,<span id="dorel-readmore-link" class="clr-link">Read more<iron-icon icon="icons:expand-more"></iron-icon></span>
+      </p>
+
+      <!-- 
+      Everything that's added after the dorel-readmore-link is stored in a variable.
+      This can be be added after the 'read more' link
+      
+      This enables adding multiple paragraphs and other block level elements (added via WYSIWYG),
+      and the read more still be a inline element.
+      -->
+      <script>
+
+        // store before readmore content 
+        var beforereadmoreHtmlContent = 'Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis incorrupte duo. <strong>Dolorum verterem ad ius, his et nullam verterem</strong>. Eu alia debet usu, an doming tritani est. Vix ad ponderum petentium suavitate, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut,';
+
+        // store after readmore content
+        var afterReadmoreHtmlContent = ' at eos discere deleniti sensibus. Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea, id minim maiestatis <strong>incorrupte duo</strong>. Dolorum verterem ad ius, his et nullam verterem. Eu alia debet usu, an doming tritani est. Vix ad <em>ponderum petentium suavitate</em>, eum eu tempor populo, graece sententiae constituam vim ex. Cu torquatos reprimique neglegentur nec, voluptua periculis has ut, at eos discere deleniti sensibus.</p>';
+
+          afterReadmoreHtmlContent += '<blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid igitur dubitamus in tota eius natura quaerere quid sit effectum? Aufert enim sensus actionemque tollit omnem. Negabat igitur ullam esse artem, quae ipsa a se proficisceretur; Illa argumenta propria videamus, cur omnia sint paria peccata. Quodsi vultum tibi, si incessum fingeres, quo gravior viderere, non esses tui similis; Me igitur ipsum ames oportet, non mea, si veri amici futuri sumus. </blockquote>'
+
+          afterReadmoreHtmlContent += '<p>Duo Reges: constructio interrete. Illi enim inter se dissentiunt. Idemne potest esse dies saepius, qui semel fuit? Quae quo sunt excelsiores, eo dant clariora indicia naturae. Illa videamus, quae a te de amicitia dicta sunt. Roges enim Aristonem, bonane ei videantur haec: vacuitas doloris, divitiae, valitudo.';
+
+          afterReadmoreHtmlContent += '<span id="dorel-readmore-link" class="clr-link">Read less<iron-icon icon="icons:expand-less"></iron-icon></span>';
+
+          // ! important, by default no '</p>'
+          // Never close the last paragraph, since this content will be appended as html 
+          // inside a paragraph element. 
+          // run a check in JS to see if it closes correctly to prevent bugs. For instance if
+          // you end with a <blockquote> paragraph, the closing </p> tag of #readmore-above-fold-copy
+          // will need to be appended before because <blockquote> is a block level element
+
+          // console.log(afterReadmoreHtmlContent);
+
+          document.getElementById('dorel-readmore-link').onclick = function(e){
+
+            e.preventDefault;
+            // remove readmore link
+            this.style.display = 'none';
+
+            // add stored html in readmore element
+            document.getElementById('readmore-initial-copy').innerHTML = beforereadmoreHtmlContent + afterReadmoreHtmlContent;
+          };
+
+        </script>
+
+    </div>
+    <!-- END custom element: </??-readmore> -->
+
+  </template>
+  <script>
+    Polymer({
+      is: 'app-demo-readmore'
+    });
+  </script>
+
+</dom-module>
+
