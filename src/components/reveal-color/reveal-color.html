@@ -6,7 +6,16 @@
 <!--link rel="import" href="https://dev.cdn.dorel.io/includes/brands/dorel/theme-dorel-shared-styles.html"-->
 
 <dom-module id="reveal-color">
-  <style is="custom-style" include="theme-dorel-shared-styles">
+  <style is="custom-style" include="{{theme}}">
+
+    /* color definitions based on the include */
+    .ktch_theme-brand-color {
+      background-color: var(--theme-brand-color);
+    }
+    .ktch_theme-brand-color-complementary {
+      background-color: var(--theme-brand-color-complementary);
+    }
+    /* ... */
 
     .ktch_block-color-container {
       width: 9rem;
