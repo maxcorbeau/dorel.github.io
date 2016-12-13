@@ -109,8 +109,8 @@ title: Cards
     .MC_skewed-line {
       display: inline-block;
       position: absolute;
-      width: calc(100% + var(--MC_border-width-paper-card) + var(--MC_border-width-paper-card));
-      left: -var(--MC_border-width-paper-card);
+      width: calc(100% + var(--theme-border-width) + var(--theme-border-width));
+      left: -var(--theme_border-width-paper-card);
       height: 290px; /* height of the image that is below it */
       z-index: 999;
       background: transparent; /* or background image */
@@ -124,7 +124,7 @@ title: Cards
       display: block;
       width: calc(100% - 12px);
       height: 100%;
-      border-width: 4px var(--MC_border-width-paper-card);
+      border-width: 4px var(--theme-border-width);
       border-style: solid;
       border-color: var(--theme-brand-color);
       border-radius: 15px;
@@ -140,7 +140,7 @@ title: Cards
       box-shadow: -36px 36px 0 36px var(--theme-brand-color), 2px -2px 0 2px var(--theme-brand-color);
     }
     .MC_paper-card-header {
-      border-width: var(--MC_border-width-paper-card);
+      border-width: var(--theme-border-width);
       border-style: solid;
       border-color: var(--theme-brand-color);
     }

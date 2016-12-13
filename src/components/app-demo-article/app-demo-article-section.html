@@ -1,0 +1,47 @@
+<!--
+-->
+
+<link rel="import" href="../../../../assets/bower_components/polymer/polymer.html">
+<link rel="import" href="../../../../assets/bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="https://dev.cdn.dorel.io/includes/brands/dorel/theme-dorel-shared-styles.html">
+
+<dom-module id="app-demo-article-section">
+
+  <template>
+
+    <style is="custom-style" include="theme-dorel-shared-styles">
+      .horizontal {
+        @apply(--layout-horizontal);
+        @apply(--layout-wrap);
+      }
+      .full-width {
+        width: 100%;
+      }
+      .ktch_article_section_header {
+        margin-bottom: var(--theme-component-space-inner);
+      }
+      h2 {
+        @apply --theme-heading;
+      }
+    </style>
+
+    <section class="full-width centered">
+      <div class="horizontal ktch_article_section_header">
+        <h2>{{section-title}}</h2>
+      </div>
+      <div class="layout horizontal">
+        <content></content>
+      </div>
+    </section>
+
+  </template>
+  <script>
+    Polymer({
+      is: 'app-demo-article-section',
+      properties: {
+        sectionTitle: String
+      }
+    });
+  </script>
+
+</dom-module>

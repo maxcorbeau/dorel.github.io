@@ -1,7 +1,7 @@
 ---
 layout: manual
 title: Analytics Framework Overview
-category: Do Measurements
+category: Analytics
 draft: false
 ---
 
@@ -15,7 +15,7 @@ The objective is to deliver Analytics as a Service (AaaS) so that business units
 
 Several steps are needed to go from the data we collect to the insights we deliver. Those steps are discussed in more details further below in this document. Here is an overview:
 
-![Analytics Levels](/assets/img/analytics-levels.png "Analytics Levels")
+![Analytics Levels](/assets/img/analytics/levels.png "Analytics Levels")
 
 ## Application level ##
 
@@ -33,7 +33,7 @@ Regarding the data ingredient, we must take into consideration the following pri
  - **We have data model constraints** imposed by certain analytics tools (e.g. Google Analytics e-commerce data has to be formatted a specific way): therefore, we need to format the data at some point so it can be used by the Analytics tools
  - **Data should be open** in order to make switching or integrating other data collection processes harder in the future: therefore, we need to separate the data collection process into 2 phases, a data presentation phase where data remains in open format, vendor-agnostic format, and a data-formatting phase where we comply with vendor's data model requirements
 
-![Data Collection Split](/assets/img/analytics-levels-01-data-collection-split.png "Data Collection Split")
+![Data Collection Split](/assets/img/analytics/levels-01-data-collection-split.png "Data Collection Split")
 
 **Tooling Decision: Google Tag Manager**
 The data collection layer will be handled by Google Tag Manager because:
@@ -53,7 +53,7 @@ GTM works in 2 modes:
 
 Putting all the pieces together, the data collection layer looks as follows:
 
-![Data Collection Details](/assets/img/analytics-levels-01-data-collection-details.png "Data Collection Details")
+![Data Collection Details](/assets/img/analytics/levels-01-data-collection-details.png "Data Collection Details")
 
 
 ## Analytics solution side ##

@@ -1,0 +1,51 @@
+<!--
+-->
+
+<link rel="import" href="../../../../assets/bower_components/polymer/polymer.html">
+<link rel="import" href="https://dev.cdn.dorel.io/includes/brands/maxi-cosi/theme-maxicosi-config.html">
+<link rel="import" href="./../components/reveal-color/reveal-color.html">
+<link rel="import" href="./../components/app-demo-article/app-demo-article.html">
+<link rel="import" href="./../components/app-message/app-message.html">
+
+<link rel="import" href="https://dev.cdn.dorel.io/includes/brands/maxi-cosi/theme-maxicosi-shared-styles.html">
+<link rel="import" href="./../components/reveal-color/reveal-color-apply-colors.html">
+
+<dom-module id="app-page-kitchensink-maxicosi" include="theme-maxicosi-shared-styles reveal-color-apply-colors">
+  <template>
+    <style is="custom-style">
+
+      --theme-brand-color: red;
+      --theme-brand-color-complementary: rgb(225, 225, 0);
+
+      --theme-border-width: 6px;
+
+      .ktch_theme-brand-color {
+        background-color: var(--theme-brand-color);
+      }
+      .ktch_theme-brand-color-complementary {
+        background-color: var(--theme-brand-color-complementary);
+      }
+    </style>
+
+    <iron-grid-container>
+       <iron-grid>
+
+        <app-demo-article article-title="Maxi Cosi Brand Colors">
+          <app-demo-article-section section-title="Brand colors">
+            <reveal-color ui-text="Brand color" ui-class="ktch_theme-brand-color"></reveal-color>
+            <reveal-color ui-text="Brand complementary color" ui-class="ktch_theme-brand-color-complementary"></reveal-color>
+          </app-demo-article-section>
+        </app-demo-article>
+
+      </iron-grid>
+    </iron-grid-container>
+
+  </template>
+
+  <script>
+      Polymer({
+        is: 'app-page-kitchensink-maxicosi',
+      });
+  </script>
+
+</dom-module>

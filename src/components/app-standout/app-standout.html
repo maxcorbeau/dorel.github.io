@@ -1,0 +1,66 @@
+<!--
+-->
+
+<link rel="import" href="../../../../assets/bower_components/polymer/polymer.html">
+<link rel="import" href="../../../../assets/bower_components/iron-grid/iron-grid.html">
+
+<link rel="import" href="https://dev.cdn.dorel.io/includes/brands/dorel/theme-dorel-shared-styles.html">
+
+<dom-module id="app-standout">
+
+  <style is="custom-style" include="theme-dorel-shared-styles">
+
+  :host ::content p {
+    color: green;
+    margin-bottom: var(--theme-margin-bodycopy);
+    @apply --theme-bodycopy;
+  }
+
+  .section-standout {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    margin: 0 auto 2rem auto;
+  }
+
+  h1 {
+    font-size: var(--theme-size-headline);
+    margin-bottom: var(--theme-margin-headings);
+    @apply --theme-heading;
+  }
+
+  @media screen and (min-width: 64.063em) { /* 1025/16 = 1025px, large screens */
+    .section-standout {
+      padding: calc(var(--theme-modular-size-large) - 1rem) var(--theme-modular-size-large) var(--theme-modular-size-large); 
+    }
+    .section-standout-narrow {
+      padding: 0 var(--theme-modular-size-large);
+    }
+  }
+
+  </style>
+
+  <template>
+    <iron-grid-container>
+      <iron-grid>
+        <div class="xs12 vtop container-center-page">
+          <section class="section-standout full-width bodycopy">
+            <div class="ktch_container">
+              <h1 class="theme-font-display1">{{standout-title}}</h1>
+              <content></content>
+            </div>
+          </section>
+        </div>
+      </iron-grid>
+    </iron-grid-container>
+  </template>
+  <script>
+    Polymer({
+      is: 'app-standout',
+      properties: {
+        standoutTitle: String
+      }
+    });
+  </script>
+
+</dom-module>

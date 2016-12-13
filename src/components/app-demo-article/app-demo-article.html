@@ -1,0 +1,66 @@
+<!--
+-->
+
+<link rel="import" href="../../../../assets/bower_components/polymer/polymer.html">
+<link rel="import" href="app-demo-article-section.html">
+<link rel="import" href="https://dev.cdn.dorel.io/includes/brands/dorel/theme-dorel-shared-styles.html">
+
+<dom-module id="app-demo-article">
+  <template>
+    <style is="custom-style" include="theme-dorel-shared-styles">
+    .ktch_article {
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background-color: white;
+    }
+
+    .ktch_article:first-child {
+      margin-top: 1rem;
+    }
+
+    .ktch_article_header {
+      margin-bottom: var(--theme-margin-headings);
+      width: 100%;
+      float: left;
+      padding-bottom: .825rem;
+      border-bottom: 1px dotted var(--theme-color-foreground-tertiary);
+    }
+
+    h1 {
+      /* margin-bottom: var(--theme-margin-bodycopy); */
+      /* @apply --theme-size-display3; */
+      @apply --theme-heading;
+    }
+    /*.ktch_vertical-section-container {
+      max-width: 500px;
+    }*/
+    /* candidate for shared style */
+    .ktch_element-column {
+      /* used in: 
+         - demo-typography.html
+         - demo-layout-sections.html
+         - demo-badges.html
+      */
+      padding: var(--theme-component-space-inner);
+    }
+
+    </style>
+
+    <article class="xs12 vtop container-center-page ktch_article">
+      <div class="ktch_article_header">
+        <h1>{{article-title}}</h1>
+      </div>
+      <content></content>
+    </article>
+
+  </template>
+  <script>
+    Polymer({
+      is: 'app-demo-article',
+      properties: {
+        articleTitle: String
+      }
+    });
+  </script>
+
+</dom-module>
