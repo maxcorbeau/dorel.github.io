@@ -14,34 +14,21 @@
 <link rel="import" href="./../demo/app-demo-type-headings-default.html">
 <link rel="import" href="./../demo/app-demo-type-charactermap.html">
 
-<!--link rel="import" href="https://dev.cdn.dorel.io/includes/brands/dorel/theme-dorel-shared-styles.html">
-<link rel="import" href="./../components/reveal-color/reveal-color-apply-colors.html"-->
+<link rel="import" href="https://dev.cdn.dorel.io/includes/brands/dorel/theme-dorel-shared-styles.html">
+<!--link rel="import" href="./../components/reveal-color/reveal-color-apply-colors.html"-->
 
 <dom-module id="app-page-kitchensink-dorel">
   <template>
-    <style is="custom-style">
-      :root {
-        /* ------------------------------------------------
-         * Color
-         */
-
-        --theme-brand-color: rgb(0, 114, 206);
-        --theme-brand-color-complementary: rgb(237, 139, 0);
-
-        /* if the theme's brand color is quite similar to the browsers' native link color use 
-           it for the primary link color. Adding a new link-blue color close to that color will 
-           not  match since the colors will then be too close to eachother in the color spectrum */
-        --theme-color-link-primary: var(--theme-brand-color); 
-        --theme-color-hover: var(--theme-color-foreground-secondary);
-        --theme-color-cta: var(--theme-brand-color-complementary);
-        /* snippet of variables */
-      }
+    <style is="custom-style" include="theme-dorel-shared-styles">
       .ktch_theme-brand-color {
         background-color: var(--theme-brand-color);
       }
       .ktch_theme-brand-color-complementary {
         background-color: var(--theme-brand-color-complementary);
       }
+
+
+
       .ktch_section-header .ui-text {
         float: right;
       }
