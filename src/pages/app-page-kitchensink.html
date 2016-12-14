@@ -8,17 +8,11 @@
 
 <link rel="import" href="../components/app-standout/app-standout.html">
 
-<link rel="import" href="app-page-kitchensink-dorel.html">
-<link rel="import" href="app-page-kitchensink-maxicosi.html">
-<link rel="import" href="app-page-kitchensink-quinny.html">
-
-<!--link rel="import" href="https://dev.cdn.dorel.io/includes/brands/dorel/theme-dorel-shared-styles.html"-->
-
 <dom-module id="app-page-kitchensink">
 
   <template>
 
-    <style is="custom-style" include="theme-dorel-shared-styles">
+    <style is="custom-style">
     :host {
       --paper-tabs-selection-bar-color: var(--theme-color-link-primary);
       --paper-tabs-content: {
@@ -47,11 +41,19 @@
         <div class="xs12 vtop container-center-page">
           <section>
             <div class="flex-child">
-              <paper-tabs selected="{{selected}}">
-                <paper-tab>Maxi Cosi</paper-tab>
-                <paper-tab>Dorel Juvenile</paper-tab>
-                <paper-tab>Quinny (coming soon)</paper-tab>
+              
+              <paper-tabs 
+                selected="{{ currentBrand }}"
+                attr-for-selected="brand-id">
+
+                <template 
+                  is="dom-repeat" 
+                  items="[[ brands ]]" as="brand" initial-count="4">
+                  <paper-tab brand-id="{{ brand.id }}">{{ brand.title }}</paper-tab>
+                </template>
+
               </paper-tabs>
+
             </div>
           </section>
         </div>
@@ -59,16 +61,14 @@
     </iron-grid-container>
 
     <div class="ktch_background">
-      <iron-pages selected="{{selected}}">
-        <div>
-          <app-page-kitchensink-maxicosi></app-page-kitchensink-maxicosi>
-        </div>
-        <div>
-          <app-page-kitchensink-dorel></app-page-kitchensink-dorel>
-        </div>
-        <div>
-          <app-page-kitchensink-quinny></app-page-kitchensink-quinny>
-        </div>
+
+      <iron-pages 
+        selected="{{ currentBrand }}">
+
+        <app-page-kitchensink-dorel></app-page-kitchensink-dorel>
+        <app-page-kitchensink-maxicosi></app-page-kitchensink-maxicosi>
+        <app-page-kitchensink-quinny></app-page-kitchensink-quinny>
+
       </iron-pages>
     </div>
 
@@ -79,16 +79,45 @@
     Polymer({
       is: 'app-page-kitchensink',
       properties: {
-        selected: String
-      },
-      ready: function() {
-        this.selected = 0;
-        var pages = document.querySelector('iron-pages');
-        var tabs = document.querySelector('paper-tabs');
+        brands: {
+          type: Object,
+          value: function() {
+            return [
+              {
+                "id": 0,
+                "name": "dorel",
+                "title": "Dorel Juvenile"
+              },
+              {
+                "id": 1,
+                "name": "maxicosi",
+                "title": "Maxi Cosi"
+              },
+              {
+                "id": 2,
+                "name": "quinny",
+                "title": "Quinny"
+              }
+            ]
+          }
+        },
 
-        tabs.addEventListener('iron-select', function() { 
-          pages.selected = tabs.selected;
+        currentBrand: {
+          type: Number,
+          value: 0,
+          observer: '_currentChanged'
+        }
+      },
+
+      _currentChanged: function() {
+        var selectedBrandId = this.currentBrand;
+
+        this.selectedBrand = this.brands.find(function(brand) {
+          return (selectedBrandId === brand.id) ? brand : false;
         });
+
+        // add app-page-kitchensink element file on demand
+        this.importHref(this.resolveUrl('app-page-kitchensink-' + this.selectedBrand.name + '.html'));
       }
     });
 
