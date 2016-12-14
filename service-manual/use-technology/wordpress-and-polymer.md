@@ -2,7 +2,7 @@
 layout: manual
 title: Wordpress and Polymer setup
 category: Use technology
-draft: true
+draft: false
 ---
 
 Wordpress is the main application used for all our branded marketing websites. In this document we zoom in to the Wordpress containers that are defined in [the Container Architecture](./container-architecture.html).
@@ -25,7 +25,6 @@ With the <code>wp-cli</code> we install the necesarry assets for our Wordpress s
 - [ACF Pro Plugin](https://www.advancedcustomfields.com/pro/)
 - Dorel Custom Fields (ACF import file)
 - [WP REST API Plugin](http://v2.wp-api.org/)
-- [SAML SSO Plugin](https://wordpress.org/plugins/saml-20-single-sign-on/installation/)
 
 The Wordpress container will primarily be used as a CMS setup. The [REST API Plugin](http://v2.wp-api.org/) channels all data to our [Polymer SPA](http://www.dorel.io/service-manual/global-design-framework/frontend-SPA.html) where we will handle how a page looks and where components are build up.
 
@@ -46,9 +45,5 @@ The ACF Pro Plugin holds all predefined fields and [custom components](http://ww
 ### REST API
 
 [Wordpress' REST API](http://www.dorel.io/service-manual/making-services/how-to-design-RESTful-APIs.html) is called upon in the [Polymer SPA](http://www.dorel.io/service-manual/global-design-framework/frontend-SPA.html). The API call for a page, for example, will return data that builds up the page demanded by the visitor. The [Polymer SPA](http://www.dorel.io/service-manual/global-design-framework/frontend-SPA.html) routing will lead to the right page template and loads the [components](http://www.dorel.io/service-manual/make-software/creating-Polymer-collect-elements.html) defined by the end user in the Wordpress CMS. More info on the complete [REST API](http://www.dorel.io/service-manual/making-services/how-to-design-RESTful-APIs.html) can be found [here](http://v2.wp-api.org/).
-
-### SAML SSO Plugin
-
-The settings for the use of this plugin are defined in a predefined XML file.
 
 
