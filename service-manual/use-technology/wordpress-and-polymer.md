@@ -23,8 +23,11 @@ With the <code>wp-cli</code> we install the necesarry assets for our Wordpress s
 - Dorel.io custom theme (not visible for the end user)
 - Custom Dorel Pagetemplates
 - [ACF Pro Plugin](https://www.advancedcustomfields.com/pro/)
+- [ACF WPCLI Plugin](https://github.com/dorel/advanced-custom-fields-wpcli)
 - Dorel Custom Fields (ACF import file)
 - [WP REST API Plugin](http://v2.wp-api.org/)
+- [WP REST API Menus Plugin](https://nl.wordpress.org/plugins/wp-api-menus/)
+- [WP ACF TO REST API Plugin](https://nl.wordpress.org/plugins/acf-to-rest-api/)
 
 The Wordpress container will primarily be used as a CMS setup. The [REST API Plugin](http://v2.wp-api.org/) channels all data to our [Polymer SPA](http://www.dorel.io/service-manual/global-design-framework/frontend-SPA.html) where we will handle how a page looks and where components are build up.
 
@@ -34,9 +37,31 @@ Dorel Juvenile WP uses a custom theme. The end user will not be able to switch t
 
 ### ACF Pro Plugin
 
-Dorel Juvenile chose to use the ACF Plugin, because it has a wide range of custom fields available and it is highly customizable. With the plugin in Dorel Juvenile can create custom field groups and assign them to specific page templates, posts or options pages. The creation of option pages gives Dorel an oppertunity to separate site wide options from other parts of the CMS. It also lets Dorel Juvenile disable or enable Wordpress' CMS features. 
+Dorel Juvenile chose to use the [ACF Pro Plugin](https://www.advancedcustomfields.com/pro/), because it has a wide range of custom fields available and it is highly customizable. With this plugin installed, Dorel Juvenile can create custom field groups and assign them to specific page templates, posts or options pages. The creation of option pages gives Dorel an oppertunity to separate site wide options from other parts of the CMS. It also gives Dorel an easy way to control the custom page builder Dorel needs for different page templates.
 
-The ACF Pro Plugin holds all predefined fields and [custom components](http://www.dorel.io/service-manual/make-software/creating-Polymer-collect-elements.html) a brand needs to build their pages. In the ACF plugin Dorel specifies which predefined fields and [components](http://www.dorel.io/service-manual/make-software/creating-Polymer-collect-elements.html) can be added to which page templates. There is an options page where main settings can be enabled or disabled. More info can be found [here](https://www.advancedcustomfields.com/pro/).
+The [ACF Pro Plugin](https://www.advancedcustomfields.com/pro/) holds all predefined fields and [custom components](http://www.dorel.io/service-manual/make-software/creating-Polymer-collect-elements.html) a brand needs to build their pages. In the [ACF Pro Plugin](https://www.advancedcustomfields.com/pro/) Dorel specifies which predefined fields and [components](http://www.dorel.io/service-manual/make-software/creating-Polymer-collect-elements.html) can be added to which page templates. There is an options page where main settings can be enabled or disabled.
+
+### ACF WPCLI Plugin
+
+Because the Wordpress platform can only be installed through the <code>wp-cli</code>, we need a way to import/export the custom fields that are created by the [ACF Pro Plugin](https://www.advancedcustomfields.com/pro/). The [ACF WPCLI Plugin](https://github.com/dorel/advanced-custom-fields-wpcli) extends the <code>wp-cli</code> with <code>acf</code> specific commands. Please refer to the [documentation](https://github.com/dorel/advanced-custom-fields-wpcli) of the [ACF WPCLI Plugin](https://github.com/dorel/advanced-custom-fields-wpcli) to find out the exact usage.
+
+### ACF Import file
+
+TBD;
+
+### WP REST API Plugin
+
+At the start of the Dorel Juvenile project Wordpress didn't have REST endpoints build in to its core yet. To enable REST endpoints for Wordpress' content Dorel Juvenile installed the [WP REST API Plugin](http://v2.wp-api.org/). The feature to merge the [WP REST API Plugin](http://v2.wp-api.org/)' code into the Wordpress core is planned later in 2016.
+
+<b>UPDATE:</b> As of 6 December 2016 Automattic released Wordpress 4.7. This update includes merging the code of the [WP REST API Plugin](http://v2.wp-api.org/) into the Wordpress Core. Please check the [release notes](https://wordpress.org/news/2016/12/vaughan/) for more information on this update.
+
+### WP REST API Menus Plugin
+
+The [WP REST API Plugin](http://v2.wp-api.org/) has a lot of endpoints to retrieve Wordpress' content. One of the endpoints that is unfortunately missing is a way to retrieve menus and menu locations. The [WP REST API Menus Plugin](https://nl.wordpress.org/plugins/wp-api-menus/) creates endpoints to do just this.
+
+### WP ACF TO REST API Plugin
+
+The Dorel Juvenile Wordpress Theme relies heavily on the [ACF Pro Plugin](https://www.advancedcustomfields.com/pro/) and the [WP REST API Plugin](http://v2.wp-api.org/) to retrieve its custom content. However out of the box the [WP REST API Plugin](http://v2.wp-api.org/) doesn't have an endpoint to retrieve ACF content, because ACF is a third party plugin. The [WP ACF TO REST API Plugin](https://nl.wordpress.org/plugins/acf-to-rest-api/) adds ACF content to pages and creates endpoints to retrieve option pages fields.
 
 ### Polymer Components
 
