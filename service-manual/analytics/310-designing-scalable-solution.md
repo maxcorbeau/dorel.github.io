@@ -1,9 +1,11 @@
 ---
 layout: manual
-title: Designing a scalable solution
+title: 3.1.0 Designing a scalable solution
 category: Analytics
 draft: false
 ---
+
+Like other platforms of the ecosystem, we are designing Analytics to scale regardless of our usage. This article explains in more details what makes a solution scalable or not.
 
 ## The wrong way ##
 
@@ -44,5 +46,5 @@ Accordingly, here are the principles we must follow to design an analytics solut
 
  - Design generic & flexible
  - Re-use whenever possible
- - Avoid duplication
- - If you have to duplicate, do it as late as possible (ideally at reporting level)
+ - Avoid deploying new resources
+ - If you have to deploy new resources, do it as late as possible (ideally at reporting level)

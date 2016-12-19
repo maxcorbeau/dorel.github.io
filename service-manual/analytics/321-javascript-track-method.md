@@ -1,6 +1,6 @@
 ---
 layout: manual
-title: JavaScript Track Method
+title: 3.2.1 JavaScript Track Method
 category: Analytics
 draft: false
 ---
@@ -42,7 +42,7 @@ var data = {
   request: request, // request = parameters used to query the API
   response: response, // response = data received from API
 }
-track(data)
+track(data);
 ```
 
 ### JSON-LD information ###
@@ -55,4 +55,5 @@ var data = {
   event: 'json_loaded',
   parameters: obj // obj = JSON-LD data in an object format
 }
+track(data);
 ```
